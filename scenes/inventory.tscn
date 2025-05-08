@@ -1,0 +1,295 @@
+[gd_scene load_steps=6 format=3 uid="uid://d36ge2os60wcn"]
+
+[ext_resource type="Texture2D" uid="uid://ben4lr7fsuegu" path="res://assets/TheHostage/2D/inventory/inventory bg.png" id="1_w3ed6"]
+[ext_resource type="PackedScene" uid="uid://dv7rhps4gcrd0" path="res://scenes/inventory_slot.tscn" id="2_gcojh"]
+[ext_resource type="Texture2D" uid="uid://6v50oy0lh2ks" path="res://assets/TheHostage/2D/recoveritem/bread.png" id="3_3ky1n"]
+[ext_resource type="Texture2D" uid="uid://kbkk3f48yx56" path="res://assets/TheHostage/2D/inventoryitem/rusty scissors.png" id="4_obvqf"]
+[ext_resource type="Texture2D" uid="uid://c6kd2ckhvrjb8" path="res://assets/TheHostage/2D/recoveritem/medical_kit.png" id="5_uvlt7"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 800.0
+grow_horizontal = 0
+
+[node name="Inventory_Background" type="Sprite2D" parent="MarginContainer"]
+visible = false
+position = Vector2(1024, 326)
+scale = Vector2(1.004, 0.81125)
+texture = ExtResource("1_w3ed6")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_w3ed6")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 19.0
+offset_right = 250.0
+offset_bottom = 233.0
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Item_Display" parent="MarginContainer/TextureRect/GridContainer/ColorRect/Inventory Slot" index="2"]
+texture = ExtResource("3_3ky1n")
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect2" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Item_Display" parent="MarginContainer/TextureRect/GridContainer/ColorRect2/Inventory Slot" index="2"]
+texture = ExtResource("4_obvqf")
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect2/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect3" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Item_Display" parent="MarginContainer/TextureRect/GridContainer/ColorRect3/Inventory Slot" index="2"]
+texture = ExtResource("5_uvlt7")
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect3/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect4" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect4/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect5" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect5" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect5/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect6" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect6" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect6/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect7" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect7" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect7/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect8" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect8" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect8/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect9" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect9" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect9/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect10" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect10" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect10/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect11" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect11" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect11/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect12" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect12" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect12/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect13" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect13" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect13/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect14" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect14" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect14/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect15" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect15" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect15/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect16" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect16" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect16/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect17" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect17" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect17/Inventory Slot" index="3"]
+text = ""
+
+[node name="ColorRect18" type="ColorRect" parent="MarginContainer/TextureRect/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inventory Slot" parent="MarginContainer/TextureRect/GridContainer/ColorRect18" instance=ExtResource("2_gcojh")]
+position = Vector2(42, 42)
+
+[node name="Quantity_Label" parent="MarginContainer/TextureRect/GridContainer/ColorRect18/Inventory Slot" index="3"]
+text = ""
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Scissors"
+
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect2/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect3/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect4/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect5/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect6/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect7/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect8/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect9/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect10/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect11/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect12/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect13/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect14/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect15/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect16/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect17/Inventory Slot"]
+[editable path="MarginContainer/TextureRect/GridContainer/ColorRect18/Inventory Slot"]

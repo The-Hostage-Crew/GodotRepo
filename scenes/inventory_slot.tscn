@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv7rhps4gcrd0"]
+
+[ext_resource type="Texture2D" uid="uid://bcecuv348a63h" path="res://assets/TheHostage/2D/inventory/icon small.png" id="1_awr8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8s6n"]
+size = Vector2(62, 61)
+
+[node name="Inventory Slot" type="Area2D"]
+position = Vector2(43, 42)
+
+[node name="Slot" type="Sprite2D" parent="."]
+position = Vector2(-5, -4)
+texture = ExtResource("1_awr8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -4.5)
+shape = SubResource("RectangleShape2D_w8s6n")
+
+[node name="Item_Display" type="Sprite2D" parent="."]
+
+[node name="Quantity_Label" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 28.0
+offset_bottom = 33.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+text = "5"

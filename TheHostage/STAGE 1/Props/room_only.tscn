@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://bix0qgd3htfp3"]
+
+[ext_resource type="PackedScene" uid="uid://cc0nrk24387cp" path="res://assets/The Hostage - main game/STAGE 1/3D assets/Room/Room only.glb" id="1_h6nbf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wlg3"]
+size = Vector3(5.189, 1.91132, 3.86023)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsv2q"]
+size = Vector3(0.329742, 0.384766, 0.34021)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qs575"]
+size = Vector3(0.612366, 0.526917, 0.392334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngp47"]
+size = Vector3(0.333771, 1, 0.785278)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
+size = Vector3(0.225433, 0.509277, 0.235596)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xaalt"]
+size = Vector3(0.524902, 0.543213, 0.429932)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_styrj"]
+size = Vector3(0.189209, 0.27124, 0.249054)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brlln"]
+size = Vector3(2.87134, 8.48178, 6.77997)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_um223"]
+size = Vector3(3.97906, 4.86377, 9.1972)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pscq6"]
+size = Vector3(3.14771, 9.0188, 32.295)
+
+[node name="Room only" instance=ExtResource("1_h6nbf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="床組（雙人）" index="4"]
+transform = Transform3D(1, 0, -1.42109e-13, 0, 1, 0, 1.42109e-13, 0, 1, -39.7896, -52.6453, -43.8745)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="床組（雙人）/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, -4.29736e-11, 0, 10, 0, 4.29736e-11, 0, 10, 3.30919, 4.57076, 1.63174)
+shape = SubResource("BoxShape3D_2wlg3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="茶几（小）002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="茶几（小）002/StaticBody3D" index="0"]
+transform = Transform3D(9.99998, 0, 0, 0, 10, 0, 0, 0, 9.99998, -0.132902, -0.46875, 0.0653057)
+shape = SubResource("BoxShape3D_qsv2q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="meja" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meja/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.00366783, 1.18346, -0.156427)
+shape = SubResource("BoxShape3D_qs575")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="meja bangku/書桌002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meja bangku/書桌002/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.325469, 0, -1.07361)
+shape = SubResource("BoxShape3D_ngp47")
+
+[node name="書桌椅002" parent="meja bangku" index="1"]
+transform = Transform3D(-0.949305, 0, -0.314357, 0, 1, 0, 0.314357, 0, -0.949305, -3.44773, -0.196852, -12.2308)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="meja bangku/書桌椅002" index="0"]
+transform = Transform3D(0.999722, 0, -0.0235599, 0, 1, 0, 0.0235599, 0, 0.999722, 1.7124, 0, 1.11944)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meja bangku/書桌椅002/StaticBody3D" index="0"]
+transform = Transform3D(9.99985, 0, 0.0541055, 0, 10, 0, -0.0541055, 0, 9.99985, -1.67735, -0.759277, -0.93407)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="sofa" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sofa/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.251464, 0.186768, -0.601807)
+shape = SubResource("BoxShape3D_xaalt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="古董陶瓷002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="古董陶瓷002/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0646963, 0.687256, 0.494232)
+shape = SubResource("BoxShape3D_styrj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="衣櫃002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="衣櫃002/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -4.11742, 26.9533, -1.08371)
+shape = SubResource("BoxShape3D_brlln")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="箱子002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="箱子002/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 4.54747e-13, 0, 10, 0, -4.54747e-13, 0, 10, 2.9184, -19.3188, -0.97748)
+shape = SubResource("BoxShape3D_um223")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="書櫃（大）002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="書櫃（大）002/StaticBody3D" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10.7385, -40.094, -1.78613)
+shape = SubResource("BoxShape3D_pscq6")

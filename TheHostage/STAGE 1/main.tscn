@@ -1,0 +1,87 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqeuxvexway52"]
+
+[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
+[ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/TheHostage/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
+[ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="6_cmcob"]
+[ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/TheHostage/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
+[ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
+[ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="8_cmcob"]
+[ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
+[ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://bisqa7tfdpuby" path="res://assets/TheHostage/STAGE 1/3D assets/slider/slider.gltf" id="9_tfrmh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxrok"]
+size = Vector3(0.312439, 0.621643, 0.310333)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1eib"]
+size = Vector3(2.08539, 2.98535, 1.67676)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx6gr"]
+size = Vector3(1, 1, 1.9848)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcob"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tfrmh"]
+material = SubResource("StandardMaterial3D_cmcob")
+size = Vector3(20, 20, 20)
+
+[node name="Main" type="Node3D"]
+
+[node name="Safebox" parent="." instance=ExtResource("5_b714i")]
+transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -0.168154, 8.03789, 14.012)
+
+[node name="Area3D" type="Area3D" parent="Safebox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Safebox/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0436401, -0.378357, 0.0379947)
+shape = SubResource("BoxShape3D_gxrok")
+
+[node name="DoorLock" parent="." instance=ExtResource("6_8av70")]
+transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 12.6212, 8.23108, -9.84949)
+
+[node name="Area3D" type="Area3D" parent="DoorLock"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLock/Area3D"]
+transform = Transform3D(30, 0, 6.82121e-12, 0, 30, 0, -6.82121e-12, 0, 30, 16.2809, 29.7803, 10.1514)
+shape = SubResource("BoxShape3D_d1eib")
+
+[node name="Board" parent="." instance=ExtResource("7_8av70")]
+transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -14.4564, 9.05873, -4.56962)
+
+[node name="Area3D" type="Area3D" parent="Board"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/Area3D"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -5.96046e-08, 0, 0.888397)
+shape = SubResource("BoxShape3D_gx6gr")
+
+[node name="Player" parent="." instance=ExtResource("8_cmcob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.913, 9.29831, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.05964, 0, 0, 0, 1.05964, 0, 0, 0, 1.05964, -26.6736, 5.31763, -14.6885)
+mesh = SubResource("BoxMesh_tfrmh")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("9_gx6gr")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 11.3455, 9.12105, -17.2959)
+
+[node name="RoomOnly" parent="." instance=ExtResource("6_cmcob")]
+
+[node name="Safebox2" parent="." instance=ExtResource("5_b714i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99718, 0, 0.355245)
+
+[node name="slider" parent="." instance=ExtResource("9_tfrmh")]
+transform = Transform3D(-15, 0, -2.26494e-06, 0, 15, 0, 2.26494e-06, 0, -15, -7.7656, 6.90308, 18.1689)
+
+[node name="tiraitertutup" parent="." instance=ExtResource("8_gxrok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, -0.026, -0.132)
+visible = false
+
+[node name="Tirai terbuka" type="Node3D" parent="."]
+
+[node name="tirai kanan" parent="Tirai terbuka" instance=ExtResource("7_tfrmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, 0.049, 7.34)
+
+[node name="tirai kiri" parent="Tirai terbuka" instance=ExtResource("8_gx6gr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, -0.026, -7.426)

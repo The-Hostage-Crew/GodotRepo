@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://iwv0xbgrb0cn"]
+
+[ext_resource type="Texture2D" uid="uid://dio578fbnudja" path="res://assets/TheHostage/2D/steel_component/steel_base.png" id="1_kiyoj"]
+[ext_resource type="PackedScene" uid="uid://g0gluywa44j2" path="res://scenes/rotator.tscn" id="2_s4whi"]
+
+[node name="Steel_and_Rotator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SteelBase" type="Sprite2D" parent="."]
+position = Vector2(572, 315)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_kiyoj")
+
+[node name="Rotator" parent="." instance=ExtResource("2_s4whi")]
+position = Vector2(842, 315)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjlx36o8fc4y6"]
+
+[ext_resource type="Texture2D" uid="uid://crl1ipytp8pam" path="res://assets/TheHostage/2D/healthgauge/background_inner_gauge.png" id="1_vu05s"]
+[ext_resource type="Texture2D" uid="uid://dbfp06qm0vp2k" path="res://assets/TheHostage/2D/healthgauge/main_gauge.png" id="2_yf4fb"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 10.0
+texture_under = ExtResource("1_vu05s")
+texture_progress = ExtResource("2_yf4fb")

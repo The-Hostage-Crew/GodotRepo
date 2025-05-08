@@ -1,0 +1,223 @@
+[gd_scene load_steps=34 format=3 uid="uid://brtt5h64vj4pk"]
+
+[ext_resource type="Texture2D" uid="uid://d4da05r37dn72" path="res://assets/TheHostage/Desktop/DesktopWelcomeScreen/an-old-abandoned-hallway-in-an-unused-building-2025-02-09-17-48-24-utc.jpg" id="1_oooa8"]
+[ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="2_jxv11"]
+[ext_resource type="Script" uid="uid://bnao1dbvc0ybx" path="res://Desktop/WelcomeDesktop/time_label.gd" id="3_pootv"]
+[ext_resource type="Script" uid="uid://bdi85yr68lkf5" path="res://Desktop/WelcomeDesktop/date&day.gd" id="4_scmvu"]
+[ext_resource type="Texture2D" uid="uid://cqluha0kvmin7" path="res://assets/TheHostage/Desktop/DesktopWelcomeScreen/ProfileIcon.png" id="5_jxv11"]
+[ext_resource type="Texture2D" uid="uid://cp7qf6suq6jdg" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0000.png" id="6_m1ids"]
+[ext_resource type="Texture2D" uid="uid://cwrf2kt0yxwmx" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0001.png" id="7_mxddv"]
+[ext_resource type="Texture2D" uid="uid://2ymhykucw1em" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0002.png" id="8_e81hn"]
+[ext_resource type="Texture2D" uid="uid://dmfigvdtfji5l" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0003.png" id="9_ib5fw"]
+[ext_resource type="Texture2D" uid="uid://b2pwl073qaiwo" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0004.png" id="10_qedqb"]
+[ext_resource type="Texture2D" uid="uid://d16tpneduufo0" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0005.png" id="11_ybqqt"]
+[ext_resource type="Texture2D" uid="uid://bmjesqp0l0lsr" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0006.png" id="12_lqky6"]
+[ext_resource type="Texture2D" uid="uid://b1iqap0julhea" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0007.png" id="13_enmo0"]
+[ext_resource type="Texture2D" uid="uid://d3dojpqa0h2uv" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0008.png" id="14_bd8th"]
+[ext_resource type="Texture2D" uid="uid://bqr26gmtc3t60" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0009.png" id="15_ni42g"]
+[ext_resource type="Texture2D" uid="uid://brx1et1noqrki" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0010.png" id="16_suujg"]
+[ext_resource type="Texture2D" uid="uid://dgcm7d77mgmh3" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0011.png" id="17_3eax4"]
+[ext_resource type="Texture2D" uid="uid://k7f11651eax5" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0012.png" id="18_ndhnu"]
+[ext_resource type="Texture2D" uid="uid://bs2pwtbjxnm05" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0013.png" id="19_3xmeo"]
+[ext_resource type="Texture2D" uid="uid://cd6kg23g5ypaw" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0014.png" id="20_x55iv"]
+[ext_resource type="Texture2D" uid="uid://dj8rumxmmi0jw" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0015.png" id="21_yhxmd"]
+[ext_resource type="Texture2D" uid="uid://pihnu4gcbfvt" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0016.png" id="22_ek2jo"]
+[ext_resource type="Texture2D" uid="uid://bqd61hpqppyxp" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0017.png" id="23_v6epb"]
+[ext_resource type="Texture2D" uid="uid://casxwmat7566d" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0018.png" id="24_gp1hk"]
+[ext_resource type="Texture2D" uid="uid://cy3dnkw2fgrik" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0019.png" id="25_h65d2"]
+[ext_resource type="Texture2D" uid="uid://dfrfiq6l01y02" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0020.png" id="26_qnivo"]
+[ext_resource type="Texture2D" uid="uid://b3us584g78f7q" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0021.png" id="27_c8ssu"]
+[ext_resource type="Texture2D" uid="uid://bq1wxsgfkkc76" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0022.png" id="28_elfd3"]
+[ext_resource type="Texture2D" uid="uid://g6pbiy3saq36" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0023.png" id="29_d4um8"]
+[ext_resource type="Texture2D" uid="uid://blpfnyy84ktwn" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0024.png" id="30_1ub7f"]
+[ext_resource type="Texture2D" uid="uid://dnphg30m5r0in" path="res://assets/TheHostage/Desktop/LoadingAnimation/Loading_0025.png" id="31_n8pah"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6m6lb"]
+dof_blur_far_enabled = true
+dof_blur_near_distance = 0.02
+dof_blur_near_transition = 330.68
+dof_blur_amount = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c4wj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_m1ids")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mxddv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e81hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ib5fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qedqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ybqqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lqky6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_enmo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bd8th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ni42g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_suujg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3eax4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ndhnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3xmeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_x55iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yhxmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ek2jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_v6epb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gp1hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h65d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qnivo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_c8ssu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_elfd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_d4um8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1ub7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_n8pah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
+[node name="Welcome" type="Node2D"]
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -79.0
+offset_top = -29.0
+offset_right = 1152.0
+offset_bottom = 658.0
+texture = ExtResource("1_oooa8")
+
+[node name="Date, time" type="Node2D" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Date, time"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 536.0
+offset_top = 100.0
+offset_right = 576.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="Date, time/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jxv11")
+theme_override_font_sizes/font_size = 80
+script = ExtResource("3_pootv")
+
+[node name="Date&Day" type="Label" parent="Date, time/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_jxv11")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("4_scmvu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+camera_attributes = SubResource("CameraAttributesPractical_6m6lb")
+
+[node name="WelcomeRena" type="Node2D" parent="."]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="WelcomeRena"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 511.0
+offset_top = 200.0
+offset_right = 641.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ProfilIcon" type="MarginContainer" parent="WelcomeRena/VBoxContainer2"]
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="WelcomeRena/VBoxContainer2/ProfilIcon"]
+layout_mode = 2
+texture = ExtResource("5_jxv11")
+
+[node name="Name" type="MarginContainer" parent="WelcomeRena/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="WelcomeRena/VBoxContainer2/Name"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jxv11")
+theme_override_font_sizes/font_size = 30
+text = "Rena"
+
+[node name="LoadingAnimation" type="MarginContainer" parent="WelcomeRena/VBoxContainer2"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="WelcomeRena/VBoxContainer2/LoadingAnimation"]
+sprite_frames = SubResource("SpriteFrames_0c4wj")
+frame_progress = 0.338646
+
+[node name="welcome" type="MarginContainer" parent="WelcomeRena/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="WelcomeRena/VBoxContainer2/welcome"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jxv11")
+theme_override_font_sizes/font_size = 20
+text = "Welcome"

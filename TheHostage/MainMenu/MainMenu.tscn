@@ -1,0 +1,101 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7hipxaoh3slu"]
+
+[ext_resource type="Texture2D" uid="uid://bt85f6agm88gc" path="res://assets/TheHostage/main menu/BG7.jpg" id="1_ir7by"]
+[ext_resource type="Script" uid="uid://buexnjflfnosr" path="res://TheHostage/MainMenu/main_menu.gd" id="1_xpqc3"]
+[ext_resource type="Texture2D" uid="uid://dnlbotaeyxkak" path="res://assets/TheHostage/main menu/BG1.jpg" id="2_myaeb"]
+[ext_resource type="Texture2D" uid="uid://blutsl4hnradq" path="res://assets/TheHostage/main menu/tittle.png" id="2_xpqc3"]
+[ext_resource type="Texture2D" uid="uid://lemduo8pxlss" path="res://assets/TheHostage/main menu/BG2.jpg" id="3_7vnfw"]
+[ext_resource type="Texture2D" uid="uid://c7blcw6ij823p" path="res://assets/TheHostage/main menu/start game.png" id="3_oy1v4"]
+[ext_resource type="Texture2D" uid="uid://d0bo5ld4ixy2c" path="res://assets/TheHostage/main menu/BG3.jpg" id="4_12bdq"]
+[ext_resource type="Texture2D" uid="uid://ctcf14iegl8if" path="res://assets/TheHostage/main menu/start game on.png" id="4_awpca"]
+[ext_resource type="Texture2D" uid="uid://bfm35dfqth1a6" path="res://assets/TheHostage/main menu/BG4.jpg" id="5_g8keu"]
+[ext_resource type="Texture2D" uid="uid://bfg5rnh4udj1q" path="res://assets/TheHostage/main menu/exit.png" id="5_grxmk"]
+[ext_resource type="Texture2D" uid="uid://djfrlw1xcokdv" path="res://assets/TheHostage/main menu/exit on.png" id="6_uedcc"]
+[ext_resource type="Texture2D" uid="uid://3qy3rrsmj2f0" path="res://assets/TheHostage/main menu/BG5.jpg" id="6_wlpi0"]
+[ext_resource type="Texture2D" uid="uid://lv8qjc0qm8o3" path="res://assets/TheHostage/main menu/BG6.jpg" id="7_8lrho"]
+[ext_resource type="Shader" uid="uid://cjntkchb0vew7" path="res://TheHostage/MainMenu/glitch.gdshader" id="8_ghmub"]
+[ext_resource type="Texture2D" uid="uid://dhubdres0mnwk" path="res://assets/TheHostage/main menu/BG8.jpg" id="9_mes8o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gl4k5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5gfnw"]
+shader = ExtResource("8_ghmub")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.06
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpqc3")
+backgrounds = Array[Texture2D]([ExtResource("2_myaeb"), ExtResource("3_7vnfw"), ExtResource("4_12bdq"), ExtResource("5_g8keu"), ExtResource("6_wlpi0"), ExtResource("7_8lrho"), ExtResource("1_ir7by"), ExtResource("9_mes8o")])
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_gl4k5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ir7by")
+
+[node name="TheHostageTitle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -265.0
+offset_top = 104.0
+offset_right = 265.0
+offset_bottom = 204.0
+grow_horizontal = 2
+texture = ExtResource("2_xpqc3")
+
+[node name="Glitch" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5gfnw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = 49.5
+offset_right = 82.5
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_oy1v4")
+texture_hover = ExtResource("4_awpca")
+
+[node name="ExitButton" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_grxmk")
+texture_hover = ExtResource("6_uedcc")
+
+[connection signal="mouse_entered" from="ButtonContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="pressed" from="ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

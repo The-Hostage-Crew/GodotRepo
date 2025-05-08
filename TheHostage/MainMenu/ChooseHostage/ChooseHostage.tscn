@@ -1,0 +1,295 @@
+[gd_scene load_steps=26 format=3 uid="uid://c544l05iff3y4"]
+
+[ext_resource type="Script" uid="uid://c3k50dxxcy6jm" path="res://TheHostage/MainMenu/ChooseHostage/choose_hostage.gd" id="1_srxst"]
+[ext_resource type="Texture2D" uid="uid://ddsjcmdlswlcp" path="res://assets/TheHostage/choose the hostage/off .png" id="2_54vod"]
+[ext_resource type="Texture2D" uid="uid://ds21b7m4dnu5m" path="res://assets/TheHostage/choose the hostage/on.png" id="2_ddokb"]
+[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCRAEXT.TTF" id="2_jn18d"]
+[ext_resource type="Texture2D" uid="uid://ihcpdqfiaaj1" path="res://assets/TheHostage/choose the hostage/animation text/1.png" id="3_q0qbp"]
+[ext_resource type="Texture2D" uid="uid://deim7xhgxss7m" path="res://assets/TheHostage/choose the hostage/animation text/2.png" id="4_suxuf"]
+[ext_resource type="Texture2D" uid="uid://cxf0lkinjqnwl" path="res://assets/TheHostage/choose the hostage/animation text/3.png" id="5_b0ffu"]
+[ext_resource type="Texture2D" uid="uid://cf0ldygwldd8" path="res://assets/TheHostage/choose the hostage/animation text/4.png" id="6_xfix7"]
+[ext_resource type="Texture2D" uid="uid://c5o4fqhp4xu03" path="res://assets/TheHostage/choose the hostage/animation text/5.png" id="7_advtt"]
+[ext_resource type="Texture2D" uid="uid://b0xirib7lsexw" path="res://assets/TheHostage/choose the hostage/animation text/6.png" id="8_uy5qe"]
+[ext_resource type="Texture2D" uid="uid://cifjgta8mbt51" path="res://assets/TheHostage/choose the hostage/animation text/7.png" id="9_05vwt"]
+[ext_resource type="Texture2D" uid="uid://dr61rtnja1v6i" path="res://assets/TheHostage/choose the hostage/animation text/8.png" id="10_is2ot"]
+[ext_resource type="Texture2D" uid="uid://bxi3c3ikp87yx" path="res://assets/TheHostage/choose the hostage/animation text/9.png" id="11_2dp4b"]
+[ext_resource type="Texture2D" uid="uid://1jnxkh1u6t53" path="res://assets/TheHostage/choose the hostage/animation text/10.png" id="12_ad2jw"]
+[ext_resource type="Texture2D" uid="uid://bjyg16p8g30jt" path="res://assets/TheHostage/choose the hostage/animation text/11.png" id="13_db7xt"]
+[ext_resource type="Texture2D" uid="uid://dcu5kan0for1w" path="res://assets/TheHostage/choose the hostage/animation text/12.png" id="14_djuyq"]
+[ext_resource type="Texture2D" uid="uid://dgruacriecbis" path="res://assets/TheHostage/choose the hostage/animation text/13.png" id="15_d0lqq"]
+[ext_resource type="Texture2D" uid="uid://2hauv52x72pt" path="res://assets/TheHostage/choose the hostage/animation text/14.png" id="16_j68s3"]
+[ext_resource type="Texture2D" uid="uid://c8x5t6fr4ur57" path="res://assets/TheHostage/choose the hostage/animation text/15.png" id="17_31xl0"]
+[ext_resource type="AudioStream" uid="uid://jxm4qksklpd5" path="res://assets/Sounds/SFX/Typing1.wav" id="19_0knme"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddokb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwods"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q0qbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_suxuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b0ffu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xfix7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_advtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uy5qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_05vwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_is2ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2dp4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ad2jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_db7xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_djuyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d0lqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j68s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_31xl0")
+}],
+"loop": true,
+"name": &"fuzzy",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2w6by"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TypewriterSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_54vod"]
+resource_name = "typewriter_1"
+length = 8.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 4.5, 5.74, 7.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.166667, 0.166667, 0.481481, 0.481481, 0.748518, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TypewriterSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xtehg"]
+_data = {
+&"RESET": SubResource("Animation_2w6by"),
+&"typewriter_1": SubResource("Animation_54vod")
+}
+
+[node name="ChooseHostage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srxst")
+
+[node name="BGBlack" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Hostages" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.5
+offset_top = -119.0
+offset_right = 362.5
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Hostage1" type="TextureButton" parent="Hostages"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_54vod")
+texture_pressed = SubResource("CompressedTexture2D_ddokb")
+texture_hover = ExtResource("2_ddokb")
+
+[node name="FuzzyTextAnimation" type="AnimatedSprite2D" parent="Hostages/Hostage1"]
+visible = false
+position = Vector2(119, 288)
+sprite_frames = SubResource("SpriteFrames_dwods")
+animation = &"fuzzy"
+
+[node name="Hostage2" type="TextureButton" parent="Hostages"]
+layout_mode = 2
+texture_normal = ExtResource("2_54vod")
+texture_pressed = SubResource("CompressedTexture2D_ddokb")
+texture_hover = ExtResource("2_ddokb")
+
+[node name="FuzzyTextAnimation" type="AnimatedSprite2D" parent="Hostages/Hostage2"]
+visible = false
+position = Vector2(119, 288)
+sprite_frames = SubResource("SpriteFrames_dwods")
+animation = &"fuzzy"
+
+[node name="Hostage3" type="TextureButton" parent="Hostages"]
+layout_mode = 2
+texture_normal = ExtResource("2_54vod")
+texture_pressed = SubResource("CompressedTexture2D_ddokb")
+texture_hover = ExtResource("2_ddokb")
+
+[node name="FuzzyTextAnimation" type="AnimatedSprite2D" parent="Hostages/Hostage3"]
+visible = false
+position = Vector2(119, 288)
+sprite_frames = SubResource("SpriteFrames_dwods")
+animation = &"fuzzy"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 81.0
+offset_right = 208.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_jn18d")
+theme_override_font_sizes/font_size = 32
+text = "CHOOSE WHICH HOSTAGE YOU WANT TO SAVE TODAY"
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 86.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.728822, 0.728822, 0.728822, 1)
+theme_override_fonts/font = ExtResource("2_jn18d")
+theme_override_font_sizes/font_size = 28
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -88.0
+offset_right = 289.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_jn18d")
+theme_override_font_sizes/normal_font_size = 28
+text = "Thanks... for choosing me
+
+You're controlling me now..."
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_xtehg")
+}
+autoplay = "typewriter_1"
+
+[node name="TypewriterSFX" type="AudioStreamPlayer" parent="ColorRect"]
+stream = ExtResource("19_0knme")
+volume_db = -3.0
+
+[connection signal="mouse_entered" from="Hostages/Hostage1" to="." method="_on_hostage_1_mouse_entered"]
+[connection signal="mouse_exited" from="Hostages/Hostage1" to="." method="_on_hostage_1_mouse_exited"]
+[connection signal="pressed" from="Hostages/Hostage1" to="." method="_on_hostage_pressed"]
+[connection signal="mouse_entered" from="Hostages/Hostage2" to="." method="_on_hostage_2_mouse_entered"]
+[connection signal="mouse_exited" from="Hostages/Hostage2" to="." method="_on_hostage_2_mouse_exited"]
+[connection signal="pressed" from="Hostages/Hostage2" to="." method="_on_hostage_pressed"]
+[connection signal="mouse_entered" from="Hostages/Hostage3" to="." method="_on_hostage_3_mouse_entered"]
+[connection signal="mouse_exited" from="Hostages/Hostage3" to="." method="_on_hostage_3_mouse_exited"]
+[connection signal="pressed" from="Hostages/Hostage3" to="." method="_on_hostage_pressed"]
+[connection signal="mouse_entered" from="Buttons/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,8 @@
+# Godot 4+ specific ignores
+.godot/
+*.clip
+*.blend
+*.blend1
+*.blend2
+/android/
+assets/

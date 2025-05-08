@@ -1,0 +1,91 @@
+[gd_scene load_steps=20 format=3 uid="uid://bkow40hnx21g3"]
+
+[ext_resource type="Texture2D" uid="uid://ds21b7m4dnu5m" path="res://assets/TheHostage/choose the hostage/on.png" id="1_hvdnb"]
+[ext_resource type="Texture2D" uid="uid://ihcpdqfiaaj1" path="res://assets/TheHostage/choose the hostage/animation text/1.png" id="2_kyeik"]
+[ext_resource type="Script" uid="uid://dldemfjui52im" path="res://TheHostage/MainMenu/ChooseHostage/hostage.gd" id="2_urmlh"]
+[ext_resource type="Texture2D" uid="uid://deim7xhgxss7m" path="res://assets/TheHostage/choose the hostage/animation text/2.png" id="3_urmlh"]
+[ext_resource type="Texture2D" uid="uid://cxf0lkinjqnwl" path="res://assets/TheHostage/choose the hostage/animation text/3.png" id="4_84rg7"]
+[ext_resource type="Texture2D" uid="uid://cf0ldygwldd8" path="res://assets/TheHostage/choose the hostage/animation text/4.png" id="5_ldm5g"]
+[ext_resource type="Texture2D" uid="uid://c5o4fqhp4xu03" path="res://assets/TheHostage/choose the hostage/animation text/5.png" id="6_urgey"]
+[ext_resource type="Texture2D" uid="uid://b0xirib7lsexw" path="res://assets/TheHostage/choose the hostage/animation text/6.png" id="7_evqmn"]
+[ext_resource type="Texture2D" uid="uid://cifjgta8mbt51" path="res://assets/TheHostage/choose the hostage/animation text/7.png" id="8_6iidi"]
+[ext_resource type="Texture2D" uid="uid://dr61rtnja1v6i" path="res://assets/TheHostage/choose the hostage/animation text/8.png" id="9_pbjma"]
+[ext_resource type="Texture2D" uid="uid://bxi3c3ikp87yx" path="res://assets/TheHostage/choose the hostage/animation text/9.png" id="10_11faq"]
+[ext_resource type="Texture2D" uid="uid://1jnxkh1u6t53" path="res://assets/TheHostage/choose the hostage/animation text/10.png" id="11_1kw0u"]
+[ext_resource type="Texture2D" uid="uid://bjyg16p8g30jt" path="res://assets/TheHostage/choose the hostage/animation text/11.png" id="12_2nttr"]
+[ext_resource type="Texture2D" uid="uid://dcu5kan0for1w" path="res://assets/TheHostage/choose the hostage/animation text/12.png" id="13_f3hmv"]
+[ext_resource type="Texture2D" uid="uid://dgruacriecbis" path="res://assets/TheHostage/choose the hostage/animation text/13.png" id="14_i8dwn"]
+[ext_resource type="Texture2D" uid="uid://2hauv52x72pt" path="res://assets/TheHostage/choose the hostage/animation text/14.png" id="15_o00no"]
+[ext_resource type="Texture2D" uid="uid://c8x5t6fr4ur57" path="res://assets/TheHostage/choose the hostage/animation text/15.png" id="16_b4idi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddokb"]
+load_path = "res://.godot/imported/off .png-15018508fe6dce4f148038fd60c911aa.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwods"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kyeik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urmlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_84rg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ldm5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_urgey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_evqmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6iidi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pbjma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_11faq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1kw0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2nttr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f3hmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i8dwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o00no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b4idi")
+}],
+"loop": true,
+"name": &"fuzzy",
+"speed": 5.0
+}]
+
+[node name="Hostage" type="TextureButton"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_ddokb")
+texture_pressed = SubResource("CompressedTexture2D_ddokb")
+texture_hover = ExtResource("1_hvdnb")
+script = ExtResource("2_urmlh")
+
+[node name="FuzzyTextAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(119, 288)
+sprite_frames = SubResource("SpriteFrames_dwods")
+animation = &"fuzzy"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
