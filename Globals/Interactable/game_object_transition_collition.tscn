@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2uccma8u6epq"]
+
+[ext_resource type="Script" uid="uid://be83uxp2jgkcq" path="res://Globals/Interactable/game_object_transition_collition.gd" id="1_myjn2"]
+
+[node name="GameObjectTransitionCollition" type="StaticBody3D"]
+script = ExtResource("1_myjn2")
