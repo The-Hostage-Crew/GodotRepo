@@ -7,6 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp38p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1peat"]
+height = 3.0
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_jasyr")
@@ -56,5 +57,8 @@ grow_vertical = 2
 texture = ExtResource("3_pmqa1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 5.49995, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_1peat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
