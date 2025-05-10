@@ -8,6 +8,8 @@ extends CharacterBody3D
 @export var jump_power: float = 5.0
 @export var mouse_sensitivity: float = 0.3
 @export var crouch_height: float = -0.5  # Penyesuaian ketinggian saat jongkok
+@export var follow_target: bool = false
+@export var target_position: Marker3D
 
 @onready var camera: Camera3D = $Head/Camera3D
 var camera_x_rotation: float = 0.0
@@ -17,6 +19,8 @@ var is_crouching: bool = false
 var is_sprinting: bool = false
 var default_camera_position: Vector3
 var current_speed: float
+
+@onready var nav: NavigationAgent3D = $NavigationAgent3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -55,19 +59,30 @@ func _input(event):
 func _physics_process(delta):
 	var movement_vector = Vector3.ZERO
 
-	if Input.is_action_pressed("movement_forward"):
-		movement_vector -= head.basis.z
-	if Input.is_action_pressed("movement_backward"):
-		movement_vector += head.basis.z
-	if Input.is_action_pressed("movement_left"):
-		movement_vector -= head.basis.x
-	if Input.is_action_pressed("movement_right"):
-		movement_vector += head.basis.x
+	if not follow_target:
+		if Input.is_action_pressed("movement_forward"):
+			movement_vector -= head.basis.z
+		if Input.is_action_pressed("movement_backward"):
+			movement_vector += head.basis.z
+		if Input.is_action_pressed("movement_left"):
+			movement_vector -= head.basis.x
+		if Input.is_action_pressed("movement_right"):
+			movement_vector += head.basis.x
 
-	movement_vector = movement_vector.normalized()
+		movement_vector = movement_vector.normalized()
+		velocity.x = lerp(velocity.x, movement_vector.x * current_speed, acceleration * delta)
+		velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
+	else: 
+		var direction = Vector3()
+		
+		nav.target_position = target_position.global_position
+		
+		direction = nav.get_next_path_position() - global_position
+		direction = direction.normalized()
+		
+		velocity = velocity.lerp(direction * speed, acceleration * delta)
 
-	velocity.x = lerp(velocity.x, movement_vector.x * current_speed, acceleration * delta)
-	velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
+
 
 	# Apply gravity
 	if not is_on_floor():

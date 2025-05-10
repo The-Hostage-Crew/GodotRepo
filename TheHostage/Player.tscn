@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dff2jbag28lnf"]
+[gd_scene load_steps=6 format=3 uid="uid://dff2jbag28lnf"]
 
 [ext_resource type="Script" uid="uid://7oax0ij5u8y8" path="res://TheHostage/player.gd" id="1_jasyr"]
+[ext_resource type="Script" uid="uid://bndo0270vhlhm" path="res://TheHostage/ray_cast_3d.gd" id="2_ppann"]
+[ext_resource type="Texture2D" uid="uid://cfwvgr48menfq" path="res://assets/TheHostage/interactSign.png" id="3_pmqa1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp38p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1peat"]
+height = 3.0
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_jasyr")
@@ -16,12 +19,46 @@ shape = SubResource("CapsuleShape3D_wp38p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87976, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0504, -0.00261128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296886, -0.00261128)
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(0.561, 3.06854e-08, 0, -4.90442e-08, 0.351, 0, 0, 0, 5, 0, 0, 0)
 target_position = Vector3(0, 0, -1)
+script = ExtResource("2_ppann")
+
+[node name="Prompt" type="Label" parent="Head/Camera3D/RayCast3D"]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Press F to Interact"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Head/Camera3D/RayCast3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = 54.0
+offset_right = 187.5
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pmqa1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_1peat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
