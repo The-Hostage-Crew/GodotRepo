@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
 [ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/TheHostage/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
-[ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="6_cmcob"]
 [ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/TheHostage/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
 [ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="8_cmcob"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://bisqa7tfdpuby" path="res://assets/TheHostage/STAGE 1/3D assets/slider/slider.gltf" id="9_tfrmh"]
+[ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcob"]
 albedo_color = Color(0, 0, 0, 1)
@@ -34,13 +34,6 @@ size = Vector3(28.7278, 1, 49.0774)
 size = Vector3(0.516979, 0.497467, 0.552139)
 
 [node name="Main" type="Node3D"]
-
-[node name="RoomOnly" parent="." instance=ExtResource("6_cmcob")]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="RoomOnly"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -1.79697)
-light_energy = 16.0
-omni_range = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.05964, 0, 0, 0, 1.05964, 0, 0, 0, 1.05964, -26.6736, 5.31763, -14.6885)
@@ -111,12 +104,14 @@ transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DoorLock/GameObjectTransitionCollition"]
-transform = Transform3D(30, 0, 9.09495e-12, 0, 30, 0, -9.09495e-12, 0, 30, -60.965, 15.282, -113.009)
+transform = Transform3D(30, 0, 1.00044e-11, 0, 30, 0, -1.00044e-11, 0, 30, -308.532, 15.282, -113.009)
 shape = SubResource("BoxShape3D_d1eib")
 
 [node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2422, 8.98247, 5.09589)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17761, 8.98247, -2.91632)
 target_position = NodePath("../InsanityTarget")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7785, 7.27145, -22.0962)
+
+[node name="RoomOnly" parent="." instance=ExtResource("12_d1eib")]
