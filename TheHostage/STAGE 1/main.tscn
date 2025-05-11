@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=17 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
-[ext_resource type="PackedScene" uid="uid://bisqa7tfdpuby" path="res://assets/TheHostage/STAGE 1/3D assets/slider/slider.gltf" id="9_tfrmh"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcob"]
@@ -39,14 +38,8 @@ size = Vector3(0.516979, 0.497467, 0.552139)
 transform = Transform3D(1.05964, 0, 0, 0, 1.05964, 0, 0, 0, 1.05964, -26.6736, 5.31763, -14.6885)
 mesh = SubResource("BoxMesh_tfrmh")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("9_gx6gr")]
+[node name="Medkit" parent="." instance=ExtResource("9_gx6gr")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 11.3455, 9.12105, -17.2959)
-
-[node name="Safebox2" parent="." instance=ExtResource("5_b714i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99718, 0, 0.355245)
-
-[node name="slider" parent="." instance=ExtResource("9_tfrmh")]
-transform = Transform3D(-15, 0, -2.26494e-06, 0, 15, 0, 2.26494e-06, 0, -15, -7.7656, 6.90308, 18.1689)
 
 [node name="tiraitertutup" parent="." instance=ExtResource("8_gxrok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, -0.026, -0.132)

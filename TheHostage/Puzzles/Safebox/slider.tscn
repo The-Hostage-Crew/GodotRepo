@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://btnawffjfgem4"]
+
+[ext_resource type="Script" uid="uid://daa5l7jd6nqyg" path="res://TheHostage/Puzzles/Safebox/slider.gd" id="1_ma6ou"]
+[ext_resource type="Texture2D" uid="uid://xgyr80cinicw" path="res://assets/TheHostage/2D/slider_components/slider/slider_base.png" id="2_f1eyu"]
+[ext_resource type="Texture2D" uid="uid://dvnfeulp8c4yt" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_base_ curved_Yellow.png" id="3_6vpvl"]
+[ext_resource type="Texture2D" uid="uid://dn22tet5uvpjj" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_expandable_Yellow.png" id="4_toyfl"]
+[ext_resource type="Texture2D" uid="uid://bk0olpyy3bddi" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_base.png" id="5_2ckys"]
+[ext_resource type="Texture2D" uid="uid://dbya1nj6eae83" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_expandable.png" id="6_dvxij"]
+[ext_resource type="Texture2D" uid="uid://djkt0gj72hi4j" path="res://assets/TheHostage/2D/slider_components/button/button_Yellow.png" id="7_vck1m"]
+
+[node name="Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(540, 540)
+script = ExtResource("1_ma6ou")
+
+[node name="SliderBase" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f1eyu")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+modulate = Color(0.941176, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+texture_under = ExtResource("3_6vpvl")
+texture_progress = ExtResource("4_toyfl")
+
+[node name="SliderShadowLower" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2ckys")
+
+[node name="SliderShadowUpper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_dvxij")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_vck1m")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
