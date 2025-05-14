@@ -1,5 +1,6 @@
-@tool
 extends Control
+
+signal value_changed(slider_name: String, value: int)
 
 @export var initial_step: Step = Step.STEP_25
 @export var slider_lower_texture: Texture2D
@@ -20,10 +21,10 @@ var step_values = [Step.STEP_25, Step.STEP_50, Step.STEP_75, Step.STEP_100]
 var current_step_index := 0
 
 var button_positions = {
-	Step.STEP_25: 510,
-	Step.STEP_50: 340,
-	Step.STEP_75: 170,
-	Step.STEP_100: 0
+	Step.STEP_25: 50.0,
+	Step.STEP_50: -137.5,
+	Step.STEP_75: -325.0,
+	Step.STEP_100: -450.0,
 }
 
 func _ready() -> void:
@@ -41,9 +42,19 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	current_step_index = (current_step_index + 1) % step_values.size()
 	update_slider()
+	
+	var step_value = step_values[current_step_index]
+	emit_signal("value_changed", name, step_value)
 
 
 func update_slider() -> void:
 	var step_value = step_values[current_step_index]
-	progress_bar.value = step_value
-	button.position.y = button_positions[step_value]
+	var target_y = button_positions[step_value]
+
+	var tween := create_tween()
+	tween.tween_property(button, "position:y", target_y, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel().tween_property(progress_bar, "value", step_value, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
+func get_current_value() -> int:
+	return initial_step
