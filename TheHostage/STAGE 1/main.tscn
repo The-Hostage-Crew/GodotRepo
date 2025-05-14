@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=18 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcob"]
@@ -94,11 +95,14 @@ debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 12.6212, 8.23108, -9.84949)
 
 [node name="GameObjectTransitionCollition" parent="NavigationRegion3D/DoorLock" instance=ExtResource("2_d1eib")]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 167.64, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DoorLock/GameObjectTransitionCollition"]
 transform = Transform3D(30, 0, 1.00044e-11, 0, 30, 0, -1.00044e-11, 0, 30, -308.532, 15.282, -113.009)
 shape = SubResource("BoxShape3D_d1eib")
+
+[node name="Door" parent="NavigationRegion3D/DoorLock/GameObjectTransitionCollition/CollisionShape3D" instance=ExtResource("9_gxrok")]
+visible = false
 
 [node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17761, 8.98247, -2.91632)
