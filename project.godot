@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AudioPlayer="*res://Globals/AudioPlayer/AudioPlayer.tscn"
 SceneTransition="*res://Globals/TransitionScene/scene_transition.tscn"
+CanvasTransition="*res://Globals/CanvasTransition/canvas_transition.tscn"
 
 [filesystem]
 

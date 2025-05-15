@@ -1,10 +1,21 @@
 extends Interactable
 
-@export var scene : PackedScene
+@export var modal: Node
 
-func _ready() -> void:
-	pass
+var showed := false
 
 func interact():
-	print("Changing to scene ", scene.to_string())
-	SceneTransition.change_scene(scene)
+	#print("Changing to scene ", scene.to_string())
+	#SceneTransition.change_scene(scene)
+	if modal:
+		if !showed:
+			modal.set_visible(true)
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			showed = true
+		else:
+			modal.set_visible(false)
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			showed = false
+	else:
+		print("MODAL NOT FOUND")
+		pass

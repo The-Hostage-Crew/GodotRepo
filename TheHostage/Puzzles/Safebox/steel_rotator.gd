@@ -1,6 +1,8 @@
 extends Control
 
 @onready var animation_rotator: AnimationPlayer = $AnimationRotator
+@onready var safebox_inside: TextureRect = $"../SafeboxInside"
+@onready var safebox_scissor_taken: TextureRect = $"../SafeboxScissorTaken"
 
 # the correct combination
 var correct_values := {
@@ -51,6 +53,7 @@ func _on_rotator_pressed() -> void:
 	print("Rotator pressed | opened? %s  pattern ok? %s" % [is_opened, is_pattern_correct])
 	if is_opened:
 		animation_rotator.play("rotator_spin")
+
 	elif is_pattern_correct:
 		unlock()
 	else:
@@ -59,7 +62,11 @@ func _on_rotator_pressed() -> void:
 func unlock() -> void:
 	is_opened = true
 	print("✅ Safe unlocked!")
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
 	animation_rotator.play("rotator_spin")
+	await animation_rotator.animation_finished
+	CanvasTransition.fade_in()
+	safebox_inside.set_visible(true)
 
 func lock() -> void:
 	is_opened = false
