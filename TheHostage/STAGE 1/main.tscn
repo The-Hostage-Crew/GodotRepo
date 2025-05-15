@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/TheHostage/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
 [ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="8_cmcob"]
+[ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="8_d1eib"]
 [ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
+[ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcob"]
@@ -129,7 +131,8 @@ shape = SubResource("BoxShape3D_d1eib")
 [node name="Safebox" parent="NavigationRegion3D" instance=ExtResource("5_b714i")]
 transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -0.168154, 8.03789, 14.012)
 
-[node name="GameObjectTransitionCollition" parent="NavigationRegion3D/Safebox" instance=ExtResource("2_d1eib")]
+[node name="GameObjectTransitionCollition" parent="NavigationRegion3D/Safebox" node_paths=PackedStringArray("modal") instance=ExtResource("2_d1eib")]
+modal = NodePath("../../../CanvasModal/CanvasSafebox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Safebox/GameObjectTransitionCollition"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00675507, -0.251996, -0.203811)
@@ -157,3 +160,11 @@ target_position = NodePath("../InsanityTarget")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7785, 7.27145, -22.0962)
 
 [node name="RoomOnly" parent="." instance=ExtResource("12_d1eib")]
+
+[node name="CanvasModal" type="CanvasLayer" parent="."]
+
+[node name="CanvasSafebox" parent="CanvasModal" instance=ExtResource("8_d1eib")]
+visible = false
+
+[node name="CanvasTransition" parent="." instance=ExtResource("11_d1eib")]
+visible = false

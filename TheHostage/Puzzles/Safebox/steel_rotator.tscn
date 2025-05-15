@@ -1,23 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8liro0ctgywv"]
+[gd_scene load_steps=8 format=3 uid="uid://b8liro0ctgywv"]
 
+[ext_resource type="Script" uid="uid://c78gx70e878hq" path="res://TheHostage/Puzzles/Safebox/steel_rotator.gd" id="1_ah67e"]
 [ext_resource type="Texture2D" uid="uid://dio578fbnudja" path="res://assets/TheHostage/2D/steel_component/steel_base.png" id="1_drmwg"]
-[ext_resource type="Texture2D" uid="uid://ctgxqdnq4qmi" path="res://assets/TheHostage/2D/steel_component/rotator_frame1.png" id="2_ah67e"]
-
-[sub_resource type="Animation" id="Animation_qtdgj"]
-resource_name = "rotator_spin"
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rotator:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.5708]
-}
+[ext_resource type="Texture2D" uid="uid://cvf4e6otwii76" path="res://assets/TheHostage/2D/steel_component/rotator_frame.png" id="3_ah67e"]
 
 [sub_resource type="Animation" id="Animation_lu6u1"]
 length = 0.001
@@ -34,9 +19,44 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_ah67e"]
+resource_name = "rotator_locked"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qtdgj"]
+resource_name = "rotator_spin"
+length = 1.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 1.5708]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xouo6"]
 _data = {
 &"RESET": SubResource("Animation_lu6u1"),
+&"rotator_locked": SubResource("Animation_ah67e"),
 &"rotator_spin": SubResource("Animation_qtdgj")
 }
 
@@ -47,22 +67,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1500.0
-offset_top = -600.0
-offset_right = 1500.0
-offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(1500, 600)
+size_flags_vertical = 4
+script = ExtResource("1_ah67e")
+metadata/_edit_use_anchors_ = true
 
 [node name="Steel" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -1500.0
 offset_top = -600.0
 offset_right = 1500.0
@@ -70,24 +83,27 @@ offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_drmwg")
+metadata/_edit_use_anchors_ = true
 
-[node name="Rotator" type="TextureRect" parent="."]
+[node name="Rotator" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1216.67
-offset_top = -600.0
-offset_right = -16.6665
-offset_bottom = 600.0
-grow_horizontal = 0
+offset_left = 776.667
+offset_top = -376.667
+offset_right = 967.667
+offset_bottom = 349.333
+grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(570, 600)
-texture = ExtResource("2_ah67e")
+pivot_offset = Vector2(95, 363)
+texture_normal = ExtResource("3_ah67e")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationRotator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xouo6")
 }
+
+[connection signal="pressed" from="Rotator" to="." method="_on_rotator_pressed"]
