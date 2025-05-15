@@ -1,47 +1,235 @@
-[gd_scene load_steps=6 format=3 uid="uid://daxkam6s32gac"]
+[gd_scene load_steps=23 format=3 uid="uid://daxkam6s32gac"]
 
 [ext_resource type="PackedScene" uid="uid://b8liro0ctgywv" path="res://TheHostage/Puzzles/Safebox/steel_rotator.tscn" id="1_mefdk"]
 [ext_resource type="PackedScene" uid="uid://btnawffjfgem4" path="res://TheHostage/Puzzles/Safebox/slider.tscn" id="2_6vvhr"]
 [ext_resource type="Texture2D" uid="uid://bkqr6sde8pxd4" path="res://assets/TheHostage/2D/slider_components/slider/Light Blue/slider_base_ curved_LightBlue.png" id="3_mkjvp"]
 [ext_resource type="Texture2D" uid="uid://dvqy23rqgba8i" path="res://assets/TheHostage/2D/slider_components/slider/Light Blue/slider_expandable_LightBlue.png" id="4_u4gdv"]
 [ext_resource type="Texture2D" uid="uid://cmimao6a8ggun" path="res://assets/TheHostage/2D/slider_components/button/button_LightBlue.png" id="5_mbv0o"]
+[ext_resource type="Texture2D" uid="uid://2sjimkmbuk4a" path="res://assets/TheHostage/2D/slider_components/slider/Green/slider_base_curved_Green.png" id="6_k0yyj"]
+[ext_resource type="Texture2D" uid="uid://fjrkcgtgi4g3" path="res://assets/TheHostage/2D/slider_components/slider/Green/slider_expandable_Green.png" id="7_j72g0"]
+[ext_resource type="Texture2D" uid="uid://cu7o0xu6vgvy3" path="res://assets/TheHostage/2D/slider_components/button/button_Green.png" id="8_3m673"]
+[ext_resource type="Texture2D" uid="uid://bvfhiv7xt5hvd" path="res://assets/TheHostage/2D/slider_components/slider/Purple/slider_base_curved_Purple.png" id="9_nq4i3"]
+[ext_resource type="Texture2D" uid="uid://lh1oxb33qob8" path="res://assets/TheHostage/2D/slider_components/slider/Purple/slider_expandable_Purple.png" id="10_mmkh7"]
+[ext_resource type="Texture2D" uid="uid://dugydhpcxkmie" path="res://assets/TheHostage/2D/slider_components/button/button_Purple.png" id="11_b4sn5"]
+[ext_resource type="Texture2D" uid="uid://dhl6tptvbkwyv" path="res://assets/TheHostage/2D/slider_components/slider/Red/slider_base_curved_Red.png" id="12_sdor3"]
+[ext_resource type="Texture2D" uid="uid://crrjdn17hg2ov" path="res://assets/TheHostage/2D/slider_components/slider/Red/slider_expandable_Red.png" id="13_qwohq"]
+[ext_resource type="Texture2D" uid="uid://ck8jbmkgg01bb" path="res://assets/TheHostage/2D/slider_components/button/button_Red.png" id="14_okfjx"]
+[ext_resource type="Texture2D" uid="uid://kwwah2suhhcq" path="res://assets/TheHostage/2D/slider_components/slider/Blue/slider_base_ curved_Blue.png" id="15_i602w"]
+[ext_resource type="Texture2D" uid="uid://duv3v7ee3sge8" path="res://assets/TheHostage/2D/slider_components/slider/Blue/slider_expandable_Blue.png" id="16_6abx1"]
+[ext_resource type="Texture2D" uid="uid://bvnq1vubybcna" path="res://assets/TheHostage/2D/slider_components/button/button_Blue.png" id="17_gfkm2"]
+[ext_resource type="Texture2D" uid="uid://cgir7n4uxha8v" path="res://assets/TheHostage/2D/safebox/opened_safebox.png" id="18_qwohq"]
+[ext_resource type="Texture2D" uid="uid://cfee34k0tes73" path="res://assets/TheHostage/2D/safebox/safebox_scissor_taken.png" id="19_okfjx"]
 
-[node name="SafeboxPuzzle" type="CanvasLayer"]
+[sub_resource type="Animation" id="Animation_qwohq"]
+resource_name = "scissor"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
 
-[node name="SteelRotator" parent="." instance=ExtResource("1_mefdk")]
+[sub_resource type="Animation" id="Animation_okfjx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i602w"]
+_data = {
+&"RESET": SubResource("Animation_okfjx"),
+&"scissor": SubResource("Animation_qwohq")
+}
+
+[node name="SafeboxPuzzle" type="Control"]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -402.0
-offset_right = 1338.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.3, 0.3)
-theme_override_constants/separation = 320
-alignment = 1
 
-[node name="Slider" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
+[node name="SteelRotator" parent="." instance=ExtResource("1_mefdk")]
+layout_mode = 1
 
-[node name="Slider2" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
-initial_step = 50
+[node name="Slider" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -378.0
+offset_right = -378.0
+grow_horizontal = 1
+grow_vertical = 1
+initial_step = 75
+
+[node name="Slider2" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -284.0
+offset_right = -284.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 1
 slider_lower_texture = ExtResource("3_mkjvp")
 slider_upper_texture = ExtResource("4_u4gdv")
 button_texture = ExtResource("5_mbv0o")
 
-[node name="Slider3" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
+[node name="Slider3" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -188.0
+offset_right = -188.0
+grow_horizontal = 1
+grow_vertical = 1
+initial_step = 50
+slider_lower_texture = ExtResource("6_k0yyj")
+slider_upper_texture = ExtResource("7_j72g0")
+button_texture = ExtResource("8_3m673")
 
-[node name="Slider4" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
+[node name="Slider4" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -93.0
+offset_right = -93.0
+grow_horizontal = 1
+grow_vertical = 1
+initial_step = 100
+slider_lower_texture = ExtResource("9_nq4i3")
+slider_upper_texture = ExtResource("10_mmkh7")
+button_texture = ExtResource("11_b4sn5")
 
-[node name="Slider5" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
+[node name="Slider5" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 1
+initial_step = 75
+slider_lower_texture = ExtResource("12_sdor3")
+slider_upper_texture = ExtResource("13_qwohq")
+button_texture = ExtResource("14_okfjx")
 
-[node name="Slider6" parent="HBoxContainer" instance=ExtResource("2_6vvhr")]
-layout_mode = 2
+[node name="Slider6" parent="." instance=ExtResource("2_6vvhr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 98.0
+offset_right = 98.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 1
+slider_lower_texture = ExtResource("15_i602w")
+slider_upper_texture = ExtResource("16_6abx1")
+button_texture = ExtResource("17_gfkm2")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i602w")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SafeboxInside" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_qwohq")
+
+[node name="SafeboxScissorTaken" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_okfjx")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
