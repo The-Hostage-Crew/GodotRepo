@@ -1,6 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyukhe86ytwdb"]
+[gd_scene load_steps=13 format=3 uid="uid://cyukhe86ytwdb"]
 
 [ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="1_h6nbf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
+size = Vector3(1, 11.8643, 39.4413)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h6nbf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brlln"]
 size = Vector3(41.0527, 20.7322, 34.506)
@@ -29,10 +34,49 @@ size = Vector3(20.2808, 90.2231, 57.9219)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2wlg3"]
 size = Vector3(0.356995, 0.755615, 3.20621)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
-size = Vector3(1, 11.8643, 39.4413)
-
 [node name="RoomOnly" instance=ExtResource("1_h6nbf")]
+
+[node name="CollisionAndLight" type="Node3D" parent="." index="0"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionAndLight" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -2.17527)
+light_energy = 16.0
+omni_range = 50.0
+
+[node name="TembokPanjang1" type="StaticBody3D" parent="CollisionAndLight" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1743, 13.0427, -0.378304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPanjang1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.4028)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPendek1" type="StaticBody3D" parent="CollisionAndLight" index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, 15.4757)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPendek1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPendek2" type="StaticBody3D" parent="CollisionAndLight" index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, -23.2969)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPendek2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPanjang2" type="StaticBody3D" parent="CollisionAndLight" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6281, 13.0427, -0.378304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPanjang2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.49941)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="Floor" type="StaticBody3D" parent="CollisionAndLight" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/Floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71008, 3.73791, -5.54382)
+shape = SubResource("WorldBoundaryShape3D_h6nbf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="床組（雙人）" index="4"]
 transform = Transform3D(1, 0, -1.13687e-13, 0, 1, 0, 1.13687e-13, 0, 1, -17.643, -22.1951, -21.6951)
@@ -88,36 +132,3 @@ shape = SubResource("BoxShape3D_styrj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="書櫃（大）002/StaticBody3D" index="0"]
 transform = Transform3D(100, 0, 4.60204e-10, 0, 100, 0, 7.27596e-12, 0, 100, -10.2203, -36.2671, 4.43279)
 shape = SubResource("BoxShape3D_2wlg3")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="36"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -2.17527)
-light_energy = 16.0
-omni_range = 50.0
-
-[node name="TembokPanjang1" type="StaticBody3D" parent="." index="37"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1743, 13.0427, -0.378304)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TembokPanjang1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.4028)
-shape = SubResource("BoxShape3D_h6nbf")
-
-[node name="TembokPendek1" type="StaticBody3D" parent="." index="38"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, 15.4757)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TembokPendek1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
-shape = SubResource("BoxShape3D_h6nbf")
-
-[node name="TembokPendek2" type="StaticBody3D" parent="." index="39"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, -23.2969)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TembokPendek2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
-shape = SubResource("BoxShape3D_h6nbf")
-
-[node name="TembokPanjang2" type="StaticBody3D" parent="." index="40"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6281, 13.0427, -0.378304)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TembokPanjang2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.49941)
-shape = SubResource("BoxShape3D_h6nbf")

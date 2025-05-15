@@ -4,6 +4,7 @@ extends Interactable
 @export var trauma_viewport: VideoStreamPlayer
 var showed := false
 
+
 func interact() -> void:
 	if modal:
 		var is_tirai: bool = modal.name == "tiraitertutup"
