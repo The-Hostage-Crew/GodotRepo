@@ -19,6 +19,7 @@ var is_crouching: bool = false
 var is_sprinting: bool = false
 var default_camera_position: Vector3
 var current_speed: float
+var movement_enabled: bool = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 

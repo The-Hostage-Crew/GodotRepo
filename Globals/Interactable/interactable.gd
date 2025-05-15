@@ -24,3 +24,7 @@ func get_prompt():
 func interact():
 	if not enabled:
 		return
+
+
+func get_enabled():
+	return enabled

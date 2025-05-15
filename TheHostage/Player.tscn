@@ -27,21 +27,6 @@ transform = Transform3D(0.561, 3.06854e-08, 0, -4.90442e-08, 0.351, 0, 0, 0, 5, 
 target_position = Vector3(0, 0, -1)
 script = ExtResource("2_ppann")
 
-[node name="Prompt" type="Label" parent="Head/Camera3D/RayCast3D"]
-visible = false
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "Press F to Interact"
-horizontal_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="Head/Camera3D/RayCast3D"]
 anchors_preset = 8
 anchor_left = 0.5
