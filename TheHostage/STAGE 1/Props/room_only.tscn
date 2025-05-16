@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyukhe86ytwdb"]
+[gd_scene load_steps=14 format=3 uid="uid://cyukhe86ytwdb"]
 
 [ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="1_h6nbf"]
+[ext_resource type="Texture2D" uid="uid://flwjwg68sbtv" path="res://assets/TheHostage/2D/photo/photo_clean.png" id="2_ngp47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
 size = Vector3(1, 11.8643, 39.4413)
@@ -77,6 +78,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/Floor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71008, 3.73791, -5.54382)
 shape = SubResource("WorldBoundaryShape3D_h6nbf")
+
+[node name="Photo" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(0.0123728, -0.048445, 2.1176e-09, 0, -2.18557e-09, -0.05, 0.048445, 0.0123728, -5.40831e-10, -12.4674, 8.8222, 8.6903)
+texture = ExtResource("2_ngp47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="床組（雙人）" index="4"]
 transform = Transform3D(1, 0, -1.13687e-13, 0, 1, 0, 1.13687e-13, 0, 1, -17.643, -22.1951, -21.6951)

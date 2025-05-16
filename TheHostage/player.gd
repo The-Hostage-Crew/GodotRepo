@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal toggle_inventory
+
 @export var speed: float = 10.0
 @export var crouch_speed: float = 5.0  # Kecepatan saat jongkok
 @export var sprint_speed: float = 15.0  # Kecepatan saat sprint
@@ -36,7 +38,11 @@ func _input(event):
 		camera.rotation_degrees.x = -camera_x_rotation
 
 	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 	# Toggle crouch
 	if Input.is_action_pressed("crouch"):
@@ -56,6 +62,11 @@ func _input(event):
 	elif Input.is_action_just_released("sprint"):
 		is_sprinting = false
 		current_speed = speed
+	
+	# Inventory
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory.emit()
+
 
 func _physics_process(delta):
 	var movement_vector = Vector3.ZERO
@@ -82,8 +93,6 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
-
-
 
 	# Apply gravity
 	if not is_on_floor():

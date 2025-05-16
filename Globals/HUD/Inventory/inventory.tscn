@@ -1,0 +1,370 @@
+[gd_scene load_steps=7 format=3 uid="uid://l61g8jokmiji"]
+
+[ext_resource type="Script" uid="uid://c8iu047ka3y5k" path="res://Globals/HUD/Inventory/inventory.gd" id="1_irej8"]
+[ext_resource type="Shader" uid="uid://cp7clbjg6lur7" path="res://Globals/HUD/Inventory/inventory_slot.gdshader" id="1_oy77i"]
+[ext_resource type="Texture2D" uid="uid://bcecuv348a63h" path="res://assets/TheHostage/2D/inventory/icon small.png" id="2_x51ap"]
+[ext_resource type="Script" uid="uid://chcrxle82dfjv" path="res://Globals/HUD/Inventory/slot.gd" id="3_sldac"]
+[ext_resource type="FontFile" uid="uid://0yjf5potu6ri" path="res://assets/Font/Sagoe/segoeuithisz.ttf" id="5_6ibqj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thmq6"]
+shader = ExtResource("1_oy77i")
+shader_parameter/rect_size = Vector2(0.1, 0.1)
+shader_parameter/bness = 1.0
+shader_parameter/fall_off_scale = 3.0
+shader_parameter/b_offset = 0.0
+
+[node name="InventoryFix" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_irej8")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="GridContainer" type="GridContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 10.0
+offset_right = 132.5
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="Slot" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot2" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot2"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot3" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot3"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot4" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot4"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot5" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot5"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot6" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot6"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot7" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot7"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot8" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot8"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot9" type="TextureButton" parent="Background/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x51ap")
+script = ExtResource("3_sldac")
+
+[node name="Glow" type="ColorRect" parent="Background/GridContainer/Slot9"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_thmq6")
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 94.0
+offset_bottom = 95.0
+mouse_filter = 2
+color = Color(0.752941, 0.666667, 0.54902, 1)
+
+[node name="Item" type="TextureRect" parent="Background/GridContainer/Slot9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -113.0
+offset_right = 20.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_6ibqj")
+theme_override_font_sizes/font_size = 26
+
+[node name="debug" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 160.0
+offset_right = 675.0
+offset_bottom = 263.0
+text = "ADD APOL"
+
+[node name="Button2" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 293.0
+offset_right = 693.0
+offset_bottom = 396.0
+text = "REMOVE APOL"
+
+[node name="Button3" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 154.0
+offset_right = 507.0
+offset_bottom = 257.0
+text = "ADD SCISSOR"
+
+[node name="Button4" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 301.0
+offset_right = 517.0
+offset_bottom = 404.0
+text = "REMOVE SCISSOR"
+
+[node name="Button5" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 151.0
+offset_right = 336.0
+offset_bottom = 254.0
+text = "ADD MEDKIT"
+
+[node name="Button6" type="Button" parent="debug"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 304.0
+offset_right = 334.0
+offset_bottom = 407.0
+text = "REMOVE MEDKIT"
+
+[connection signal="mouse_entered" from="Background/GridContainer/Slot" to="Background/GridContainer/Slot" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot" to="Background/GridContainer/Slot" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot2" to="Background/GridContainer/Slot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot2" to="Background/GridContainer/Slot2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot3" to="Background/GridContainer/Slot3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot3" to="Background/GridContainer/Slot3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot4" to="Background/GridContainer/Slot4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot4" to="Background/GridContainer/Slot4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot5" to="Background/GridContainer/Slot5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot5" to="Background/GridContainer/Slot5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot6" to="Background/GridContainer/Slot6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot6" to="Background/GridContainer/Slot6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot7" to="Background/GridContainer/Slot7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot7" to="Background/GridContainer/Slot7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot8" to="Background/GridContainer/Slot8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot8" to="Background/GridContainer/Slot8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/GridContainer/Slot9" to="Background/GridContainer/Slot9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/GridContainer/Slot9" to="Background/GridContainer/Slot9" method="_on_mouse_exited"]
+[connection signal="pressed" from="debug/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="debug/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="debug/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="debug/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="debug/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="debug/Button6" to="." method="_on_button_6_pressed"]
