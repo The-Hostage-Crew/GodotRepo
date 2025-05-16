@@ -68,6 +68,7 @@ func unlock() -> void:
 	
 	safebox_puzzle.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	InventoryManager.add_item("scissor")
 
 
 func lock() -> void:

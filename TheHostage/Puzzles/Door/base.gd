@@ -32,6 +32,8 @@ func handle_code_check() -> void:
 		$GlowingLampTrue.visible = true
 		await get_tree().create_timer(1.0).timeout 
 		show_correct_lamp()
+		await get_tree().create_timer(1.0).timeout 
+		Fade._in()
 	else:
 		$LampBase.visible = true
 		$GlowingLampFalse.visible = true

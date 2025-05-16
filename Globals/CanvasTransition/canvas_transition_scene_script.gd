@@ -11,7 +11,10 @@ func fade_in():
 	self.visible = true
 	animation_transition.play("fade_in")
 	await animation_transition.animation_finished
-	self.visible = false
+	self.queue_free()
 
 func fade_out():
+	self.visible = true
 	animation_transition.play("fade_out")
+	await animation_transition.animation_finished
+	self.queue_free()
