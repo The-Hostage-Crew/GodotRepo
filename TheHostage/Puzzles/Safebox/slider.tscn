@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://btnawffjfgem4"]
 
-[ext_resource type="Script" uid="uid://daa5l7jd6nqyg" path="res://TheHostage/Puzzles/Safebox/slider.gd" id="1_ma6ou"]
-[ext_resource type="Texture2D" uid="uid://xgyr80cinicw" path="res://assets/TheHostage/2D/slider_components/slider/slider_base.png" id="2_f1eyu"]
-[ext_resource type="Texture2D" uid="uid://dvnfeulp8c4yt" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_base_ curved_Yellow.png" id="3_6vpvl"]
-[ext_resource type="Texture2D" uid="uid://dn22tet5uvpjj" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_expandable_Yellow.png" id="4_toyfl"]
-[ext_resource type="Texture2D" uid="uid://bk0olpyy3bddi" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_base.png" id="5_2ckys"]
-[ext_resource type="Texture2D" uid="uid://dbya1nj6eae83" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_expandable.png" id="6_dvxij"]
-[ext_resource type="Texture2D" uid="uid://djkt0gj72hi4j" path="res://assets/TheHostage/2D/slider_components/button/button_Yellow.png" id="7_vck1m"]
+[ext_resource type="Script" path="res://TheHostage/Puzzles/Safebox/slider.gd" id="1_ma6ou"]
+[ext_resource type="Texture2D" uid="uid://xgyr80cinicw" path="res://assets/2D/slider_components/slider/slider_base.png" id="2_f1eyu"]
+[ext_resource type="Texture2D" uid="uid://dvnfeulp8c4yt" path="res://assets/2D/slider_components/slider/Yellow/slider_base_ curved_Yellow.png" id="3_6vpvl"]
+[ext_resource type="Texture2D" uid="uid://dn22tet5uvpjj" path="res://assets/2D/slider_components/slider/Yellow/slider_expandable_Yellow.png" id="4_toyfl"]
+[ext_resource type="Texture2D" uid="uid://bk0olpyy3bddi" path="res://assets/2D/slider_components/slider/slider_shadow_base.png" id="5_2ckys"]
+[ext_resource type="Texture2D" uid="uid://dbya1nj6eae83" path="res://assets/2D/slider_components/slider/slider_shadow_expandable.png" id="6_dvxij"]
+[ext_resource type="Texture2D" uid="uid://djkt0gj72hi4j" path="res://assets/2D/slider_components/button/button_Yellow.png" id="7_vck1m"]
 
 [node name="Slider" type="Control"]
 layout_mode = 3

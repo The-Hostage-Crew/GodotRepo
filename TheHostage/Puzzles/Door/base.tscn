@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://q51ynyhklo1u"]
 
-[ext_resource type="Texture2D" uid="uid://c2fh42awgduv8" path="res://assets/TheHostage/2D/doorlock_passcode/components/door_handle_base.png" id="1_pssbi"]
+[ext_resource type="Texture2D" uid="uid://c2fh42awgduv8" path="res://assets/2D/doorlock_passcode/components/door_handle_base.png" id="1_pssbi"]
 
 [node name="Base" type="Control"]
 layout_mode = 3

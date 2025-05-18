@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8liro0ctgywv"]
 
-[ext_resource type="Script" uid="uid://c78gx70e878hq" path="res://TheHostage/Puzzles/Safebox/steel_rotator.gd" id="1_ah67e"]
-[ext_resource type="Texture2D" uid="uid://dio578fbnudja" path="res://assets/TheHostage/2D/steel_component/steel_base.png" id="1_drmwg"]
-[ext_resource type="Texture2D" uid="uid://cvf4e6otwii76" path="res://assets/TheHostage/2D/steel_component/rotator_frame.png" id="3_ah67e"]
+[ext_resource type="Script" path="res://TheHostage/Puzzles/Safebox/steel_rotator.gd" id="1_ah67e"]
+[ext_resource type="Texture2D" uid="uid://dio578fbnudja" path="res://assets/2D/steel_component/steel_base.png" id="1_drmwg"]
+[ext_resource type="Texture2D" uid="uid://cvf4e6otwii76" path="res://assets/2D/steel_component/rotator_frame.png" id="3_ah67e"]
 
 [sub_resource type="Animation" id="Animation_lu6u1"]
 length = 0.001
@@ -55,9 +55,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xouo6"]
 _data = {
-&"RESET": SubResource("Animation_lu6u1"),
-&"rotator_locked": SubResource("Animation_ah67e"),
-&"rotator_spin": SubResource("Animation_qtdgj")
+"RESET": SubResource("Animation_lu6u1"),
+"rotator_locked": SubResource("Animation_ah67e"),
+"rotator_spin": SubResource("Animation_qtdgj")
 }
 
 [node name="SteelRotator" type="Control"]
@@ -103,7 +103,7 @@ texture_normal = ExtResource("3_ah67e")
 
 [node name="AnimationRotator" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_xouo6")
+"": SubResource("AnimationLibrary_xouo6")
 }
 
 [connection signal="pressed" from="Rotator" to="." method="_on_rotator_pressed"]
