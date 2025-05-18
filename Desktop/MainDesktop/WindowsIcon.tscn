@@ -1,0 +1,285 @@
+[gd_scene load_steps=56 format=3 uid="uid://bwvmqrky70st6"]
+
+[ext_resource type="Script" uid="uid://c3smqvecpgn0d" path="res://Desktop/MainDesktop/windows_icon.gd" id="1_dmyjp"]
+[ext_resource type="Texture2D" uid="uid://db61yfx1xewt4" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0000.png" id="3_hqt4s"]
+[ext_resource type="Texture2D" uid="uid://c3vfkyccehtpq" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0001.png" id="4_kx23b"]
+[ext_resource type="Texture2D" uid="uid://csav0axx5yayb" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0002.png" id="5_msjji"]
+[ext_resource type="Texture2D" uid="uid://b71mvi0o24qmo" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0003.png" id="6_agptj"]
+[ext_resource type="Texture2D" uid="uid://bwxcwwcfidhrs" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0004.png" id="7_pmlss"]
+[ext_resource type="Texture2D" uid="uid://bldrtknfagvco" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0005.png" id="8_ekedm"]
+[ext_resource type="Texture2D" uid="uid://c16vo6782gqxe" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0006.png" id="9_djutm"]
+[ext_resource type="Texture2D" uid="uid://ceixo25u7suk" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0007.png" id="10_muv1j"]
+[ext_resource type="Texture2D" uid="uid://jf4kfov7130i" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0008.png" id="11_mmm8s"]
+[ext_resource type="Texture2D" uid="uid://sb6r2o6ebgi4" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0009.png" id="12_aloq3"]
+[ext_resource type="Texture2D" uid="uid://buaxu76tqq13a" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0010.png" id="13_0ycd3"]
+[ext_resource type="Texture2D" uid="uid://ci5dhrq0k74vo" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0011.png" id="14_hf45k"]
+[ext_resource type="Texture2D" uid="uid://dcbm17mqqnv1w" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0012.png" id="15_2uw6l"]
+[ext_resource type="Texture2D" uid="uid://dfqiwjrho8doy" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0013.png" id="16_8gbiy"]
+[ext_resource type="Texture2D" uid="uid://cmh414e8jic5f" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0014.png" id="17_k3dnx"]
+[ext_resource type="Texture2D" uid="uid://7smagt5kasnw" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0015.png" id="18_wlo7x"]
+[ext_resource type="Texture2D" uid="uid://d2br4lv81x647" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0016.png" id="19_ii3kw"]
+[ext_resource type="Texture2D" uid="uid://bnk25pehav4d2" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0017.png" id="20_5igmi"]
+[ext_resource type="Texture2D" uid="uid://cfm5ov3uleaw0" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0018.png" id="21_4hw4m"]
+[ext_resource type="Texture2D" uid="uid://c6hcboyxb87d5" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0019.png" id="22_w66gw"]
+[ext_resource type="Texture2D" uid="uid://bm03ltheqvv00" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0020.png" id="23_vaema"]
+[ext_resource type="Texture2D" uid="uid://cp6ltd6wu5fga" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0021.png" id="24_ieitf"]
+[ext_resource type="Texture2D" uid="uid://bq82bmruj21c0" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0022.png" id="25_0bi0e"]
+[ext_resource type="Texture2D" uid="uid://btub636rh14gn" path="res://assets/Desktop/Taskbar/Windows/AnimationOut/Timeline 1_0023.png" id="26_34037"]
+[ext_resource type="Texture2D" uid="uid://dau28lpbkk7su" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0023.png" id="27_qnhim"]
+[ext_resource type="Texture2D" uid="uid://b573n1y1ois1q" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0000.png" id="28_gam6c"]
+[ext_resource type="Texture2D" uid="uid://cd2hx5ffmd8v3" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0001.png" id="29_f5v6t"]
+[ext_resource type="Texture2D" uid="uid://dfwx0be0xmsen" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0002.png" id="30_hbhca"]
+[ext_resource type="Texture2D" uid="uid://c4v77uqkffcs5" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0003.png" id="31_kgljw"]
+[ext_resource type="Texture2D" uid="uid://c7yswoyuv42dm" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0004.png" id="32_tlkh2"]
+[ext_resource type="Texture2D" uid="uid://dayodopfts4fs" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0005.png" id="33_2cfjf"]
+[ext_resource type="Texture2D" uid="uid://kuevymutheyc" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0006.png" id="34_j2vlc"]
+[ext_resource type="Texture2D" uid="uid://b4wog405totp" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0007.png" id="35_jx3uf"]
+[ext_resource type="Texture2D" uid="uid://cx85ryrc700mv" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0008.png" id="36_p2khe"]
+[ext_resource type="Texture2D" uid="uid://dimsi7s2paaff" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0009.png" id="37_gomof"]
+[ext_resource type="Texture2D" uid="uid://58w8mekhkeft" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0010.png" id="38_4sinc"]
+[ext_resource type="Texture2D" uid="uid://trmdumhbogay" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0011.png" id="39_nguxa"]
+[ext_resource type="Texture2D" uid="uid://c30j2v7lupxkr" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0012.png" id="40_8vpox"]
+[ext_resource type="Texture2D" uid="uid://baajugq88h7kb" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0013.png" id="41_15ko2"]
+[ext_resource type="Texture2D" uid="uid://cw566yopxx3vi" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0014.png" id="42_npxnu"]
+[ext_resource type="Texture2D" uid="uid://c805qc1umoq4u" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0015.png" id="43_j5can"]
+[ext_resource type="Texture2D" uid="uid://d3nb3vf6wx0w5" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0016.png" id="44_j0q7m"]
+[ext_resource type="Texture2D" uid="uid://djx8c2ss8mbuf" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0017.png" id="45_uaap1"]
+[ext_resource type="Texture2D" uid="uid://dn34ufnihlpnr" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0018.png" id="46_oksa8"]
+[ext_resource type="Texture2D" uid="uid://y1diedvqya1c" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0019.png" id="47_7n6sd"]
+[ext_resource type="Texture2D" uid="uid://cl3ukc2v8nspm" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0020.png" id="48_ea6jy"]
+[ext_resource type="Texture2D" uid="uid://cgdq5t55diodl" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0021.png" id="49_6oqa6"]
+[ext_resource type="Texture2D" uid="uid://46eeckowkmff" path="res://assets/Desktop/Taskbar/Windows/AnimationIn/Timeline 1_0022.png" id="50_15vqh"]
+[ext_resource type="Texture2D" uid="uid://bskwimwph28n5" path="res://assets/Desktop/Taskbar/Windows/shutdown button on.png" id="51_gmquw"]
+[ext_resource type="Texture2D" uid="uid://7b8k3w6f6hj6" path="res://assets/Desktop/Taskbar/Windows/shutdown_click.png" id="52_aneps"]
+[ext_resource type="Texture2D" uid="uid://ot32w08ibr4l" path="res://assets/Desktop/Taskbar/Windows/shutdown_clickOn.png" id="53_awshr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qutwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hqt4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kx23b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_msjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_agptj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pmlss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ekedm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_djutm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_muv1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mmm8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aloq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0ycd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hf45k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2uw6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8gbiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k3dnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wlo7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ii3kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5igmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4hw4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w66gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vaema")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ieitf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0bi0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_34037")
+}],
+"loop": false,
+"name": &"Out",
+"speed": 120.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_gam6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_f5v6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hbhca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kgljw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_tlkh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_2cfjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_j2vlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jx3uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_p2khe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gomof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4sinc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nguxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8vpox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_15ko2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_npxnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_j5can")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j0q7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_uaap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_oksa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7n6sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ea6jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_6oqa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_15vqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qnhim")
+}],
+"loop": false,
+"name": &"enter",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qnhim")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fps71"]
+size = Vector2(134, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14qr3"]
+size = Vector2(36, 35)
+
+[node name="WindowsIcon" type="Node2D"]
+script = ExtResource("1_dmyjp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(633, 392)
+sprite_frames = SubResource("SpriteFrames_qutwj")
+
+[node name="button_on" type="TextureRect" parent="."]
+visible = false
+offset_left = 787.0
+offset_top = 560.0
+offset_right = 827.0
+offset_bottom = 600.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("51_gmquw")
+
+[node name="Button_click" type="Node2D" parent="."]
+visible = false
+
+[node name="button_on_click" type="TextureRect" parent="Button_click"]
+offset_left = 755.0
+offset_top = 453.0
+offset_right = 904.0
+offset_bottom = 559.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("52_aneps")
+
+[node name="shutdown_on" type="TextureRect" parent="Button_click"]
+visible = false
+offset_left = 755.0
+offset_top = 453.0
+offset_right = 904.0
+offset_bottom = 490.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("53_awshr")
+
+[node name="Shutdown" type="Area2D" parent="Button_click"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_click/Shutdown"]
+position = Vector2(822, 469.5)
+shape = SubResource("RectangleShape2D_fps71")
+
+[node name="button" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
+position = Vector2(805, 577.5)
+shape = SubResource("RectangleShape2D_14qr3")
+
+[connection signal="input_event" from="Button_click/Shutdown" to="." method="_on_shutdown_input_event"]
+[connection signal="mouse_entered" from="Button_click/Shutdown" to="." method="_on_shutdown_mouse_entered"]
+[connection signal="mouse_exited" from="Button_click/Shutdown" to="." method="_on_shutdown_mouse_exited"]
+[connection signal="input_event" from="button" to="." method="_on_button_input_event"]
+[connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]

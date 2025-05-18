@@ -2,6 +2,8 @@ extends AudioStreamPlayer
 
 const bgm_menu = preload("uid://cpexcdf1b4cg5")
 const sfx_hover = preload("uid://cbebxjus0ojkt")
+const sfx_click = preload("uid://bwd4h21cpq1tg")
+const sfx_notif= preload("uid://632a4g3qsd50")
 
 func _play_sound(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -29,3 +31,9 @@ func _play_sfx(stream: AudioStream, volume = 0.0):
 
 func play_sfx_hover():
 	_play_sfx(sfx_hover)
+
+func play_click():
+	_play_sfx(sfx_click)
+	
+func play_notif():
+	_play_sfx(sfx_notif)

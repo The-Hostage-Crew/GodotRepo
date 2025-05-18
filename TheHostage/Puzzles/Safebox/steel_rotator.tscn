@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8liro0ctgywv"]
+[gd_scene load_steps=10 format=3 uid="uid://b8liro0ctgywv"]
 
 [ext_resource type="Script" uid="uid://c78gx70e878hq" path="res://TheHostage/Puzzles/Safebox/steel_rotator.gd" id="1_ah67e"]
 [ext_resource type="Texture2D" uid="uid://dio578fbnudja" path="res://assets/TheHostage/2D/steel_component/steel_base.png" id="1_drmwg"]
 [ext_resource type="Texture2D" uid="uid://cvf4e6otwii76" path="res://assets/TheHostage/2D/steel_component/rotator_frame.png" id="3_ah67e"]
+[ext_resource type="AudioStream" uid="uid://btklawec68qyv" path="res://assets/Sounds/SFX/Safebox/SafeboxOpen.wav" id="4_qtdgj"]
+[ext_resource type="AudioStream" uid="uid://c5usjmgch13s4" path="res://assets/Sounds/SFX/Safebox/SafeboxLocked.mp3" id="5_lu6u1"]
 
 [sub_resource type="Animation" id="Animation_lu6u1"]
 length = 0.001
@@ -105,5 +107,14 @@ texture_normal = ExtResource("3_ah67e")
 libraries = {
 &"": SubResource("AnimationLibrary_xouo6")
 }
+
+[node name="SoundOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qtdgj")
+volume_db = 1.975
+
+[node name="SoundLocked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lu6u1")
+volume_db = -15.797
+pitch_scale = 0.9
 
 [connection signal="pressed" from="Rotator" to="." method="_on_rotator_pressed"]

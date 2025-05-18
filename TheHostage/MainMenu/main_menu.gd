@@ -2,7 +2,6 @@ extends Control
 
 @export var backgrounds: Array[Texture2D] = []
 @onready var background: TextureRect = $Background
-@onready var hover_sound: AudioStreamPlayer = $Sounds/HoverSound
 
 # Variables for background cycling
 var current_bg_index: int = 0

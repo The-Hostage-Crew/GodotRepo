@@ -1,0 +1,497 @@
+[gd_scene load_steps=96 format=3 uid="uid://bry8hsi0yauan"]
+
+[ext_resource type="Texture2D" uid="uid://kmh1qd48tnxs" path="res://assets/Desktop/Taskbar/WindowsWallpaper.jpg" id="1_a2i5y"]
+[ext_resource type="Script" uid="uid://5knn6w3x4tqp" path="res://Desktop/MainDesktop/main_desktop.gd" id="1_ofp3r"]
+[ext_resource type="PackedScene" uid="uid://bg4qx12bju402" path="res://Desktop/MainDesktop/TaskBar.tscn" id="2_65dtp"]
+[ext_resource type="Texture2D" uid="uid://cwt2gsi3k2m1c" path="res://icon2.png" id="3_i1a2p"]
+[ext_resource type="Script" uid="uid://dlvusfyji3q86" path="res://Desktop/MainDesktop/the_hostage_icon.gd" id="3_ipoum"]
+[ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="4_tryaa"]
+[ext_resource type="Texture2D" uid="uid://cf1eqgr85oubf" path="res://icon2on.png" id="5_ipoum"]
+[ext_resource type="Texture2D" uid="uid://c7n478uaos78w" path="res://assets/Desktop/animation_connecting/connecting_0000.png" id="7_ihe3v"]
+[ext_resource type="Texture2D" uid="uid://dl5mewfs2jtwr" path="res://assets/Desktop/animation_connecting/connecting_0001.png" id="8_ct42i"]
+[ext_resource type="Texture2D" uid="uid://bx63on7bfej63" path="res://assets/Desktop/animation_connecting/connecting_0002.png" id="9_dh8ck"]
+[ext_resource type="Texture2D" uid="uid://bxitfkq51m8iu" path="res://assets/Desktop/animation_connecting/connecting_0003.png" id="10_xe27l"]
+[ext_resource type="Texture2D" uid="uid://brms0g8ee0q4u" path="res://assets/Desktop/animation_connecting/connecting_0004.png" id="11_oda3t"]
+[ext_resource type="Texture2D" uid="uid://46laws4li0p4" path="res://assets/Desktop/animation_connecting/connecting_0005.png" id="12_awdp3"]
+[ext_resource type="Texture2D" uid="uid://cbkfr7i5bg5ec" path="res://assets/Desktop/animation_connecting/connecting_0006.png" id="13_r7gwp"]
+[ext_resource type="Texture2D" uid="uid://c76fgcl3jcxxh" path="res://assets/Desktop/animation_connecting/connecting_0007.png" id="14_xhrdj"]
+[ext_resource type="Texture2D" uid="uid://bcp1jow4sdvoj" path="res://assets/Desktop/animation_connecting/connecting_0008.png" id="15_b24f1"]
+[ext_resource type="Texture2D" uid="uid://ct2uip4go5nd5" path="res://assets/Desktop/animation_connecting/connecting_0009.png" id="16_08cb7"]
+[ext_resource type="Texture2D" uid="uid://i8yb4q4gjvlo" path="res://assets/Desktop/animation_connecting/connecting_0010.png" id="17_k1jd2"]
+[ext_resource type="Texture2D" uid="uid://c6vkv0jgfag5b" path="res://assets/Desktop/animation_connecting/connecting_0011.png" id="18_a6g3w"]
+[ext_resource type="Texture2D" uid="uid://c5lgx8rc634q7" path="res://assets/Desktop/animation_connecting/connecting_0012.png" id="19_iays8"]
+[ext_resource type="Texture2D" uid="uid://ubock2sxegb8" path="res://assets/Desktop/animation_connecting/connecting_0013.png" id="20_qvscm"]
+[ext_resource type="Texture2D" uid="uid://b378r5y651ccg" path="res://assets/Desktop/animation_connecting/connecting_0014.png" id="21_4ol3r"]
+[ext_resource type="Texture2D" uid="uid://cv76gta1bvmne" path="res://assets/Desktop/animation_connecting/connecting_0015.png" id="22_30vqe"]
+[ext_resource type="Texture2D" uid="uid://crd50sdt0dyah" path="res://assets/Desktop/animation_connecting/connecting_0016.png" id="23_32no4"]
+[ext_resource type="Texture2D" uid="uid://cwm3xr0fxsmii" path="res://assets/Desktop/animation_connecting/connecting_0017.png" id="24_g438h"]
+[ext_resource type="Texture2D" uid="uid://bk75kc4ll0nde" path="res://assets/Desktop/animation_connecting/connecting_0018.png" id="25_cla44"]
+[ext_resource type="Texture2D" uid="uid://ckxbpwa6tmgkc" path="res://assets/Desktop/animation_connecting/connecting_0019.png" id="26_giyd8"]
+[ext_resource type="Texture2D" uid="uid://ec664xyaarcc" path="res://assets/Desktop/animation_connecting/connecting_0020.png" id="27_irej5"]
+[ext_resource type="Texture2D" uid="uid://b1yy2f1nwnsei" path="res://assets/Desktop/animation_connecting/connecting_0021.png" id="28_hot2w"]
+[ext_resource type="Texture2D" uid="uid://nwbcsr6isgy7" path="res://assets/Desktop/animation_connecting/connecting_0022.png" id="29_hxxis"]
+[ext_resource type="Texture2D" uid="uid://bspyio6nx8fmh" path="res://assets/Desktop/animation_connecting/connecting_0023.png" id="30_41pd0"]
+[ext_resource type="Texture2D" uid="uid://b550gxvgqdj20" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0023.png" id="32_r6xty"]
+[ext_resource type="Texture2D" uid="uid://cei5x3oeljgx6" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0000.png" id="33_oupad"]
+[ext_resource type="Texture2D" uid="uid://c7qs7bm1nmw6t" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0001.png" id="34_amtbk"]
+[ext_resource type="Texture2D" uid="uid://b5vu6mq2ctm2n" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0002.png" id="35_b2j8j"]
+[ext_resource type="Texture2D" uid="uid://d20hfc1sfawpn" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0003.png" id="36_o6itw"]
+[ext_resource type="Texture2D" uid="uid://c5v2xwtcjj7sf" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0004.png" id="37_w65lu"]
+[ext_resource type="Texture2D" uid="uid://g01vy0xot3ns" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0005.png" id="38_kfx88"]
+[ext_resource type="Texture2D" uid="uid://dvlw4laxj0ei" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0006.png" id="39_u0auy"]
+[ext_resource type="Texture2D" uid="uid://64xrfd2gidvp" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0007.png" id="40_cpsnl"]
+[ext_resource type="Texture2D" uid="uid://y7h0anl3q0u7" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0008.png" id="41_k7svx"]
+[ext_resource type="Texture2D" uid="uid://c5nk6foknox4g" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0009.png" id="42_hthb1"]
+[ext_resource type="Texture2D" uid="uid://c4sjsknem2x1i" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0010.png" id="43_ofp3r"]
+[ext_resource type="Texture2D" uid="uid://efso43xuk6tb" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0011.png" id="44_r1ubl"]
+[ext_resource type="Texture2D" uid="uid://ccec4p1qons3r" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0012.png" id="45_fy7w0"]
+[ext_resource type="Texture2D" uid="uid://b5mb3e627coje" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0013.png" id="46_o2rk0"]
+[ext_resource type="Texture2D" uid="uid://7o74g28o005r" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0014.png" id="47_iy5if"]
+[ext_resource type="Texture2D" uid="uid://bwou7nocpnyje" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0015.png" id="48_x2py6"]
+[ext_resource type="Texture2D" uid="uid://ci40rthu58fse" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0016.png" id="49_dhmlf"]
+[ext_resource type="Texture2D" uid="uid://bhyff13f6g62w" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0017.png" id="50_de5jr"]
+[ext_resource type="Texture2D" uid="uid://cpvs746q1phww" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0018.png" id="51_mgqf1"]
+[ext_resource type="Texture2D" uid="uid://u2lh1qtuegqp" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0019.png" id="52_hpojb"]
+[ext_resource type="Texture2D" uid="uid://h7386ritbp3f" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0020.png" id="53_1tq6y"]
+[ext_resource type="Texture2D" uid="uid://cjdlahrw0pp72" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0021.png" id="54_3hc1e"]
+[ext_resource type="Texture2D" uid="uid://cq3fdoq0s3i4k" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/Timeline 1_0022.png" id="55_jwnr7"]
+[ext_resource type="PackedScene" uid="uid://bkn7d3c3kvbot" path="res://Desktop/Application/MyEcho/main_stage1.tscn" id="57_r6xty"]
+[ext_resource type="Texture2D" uid="uid://c602l3wwiewtn" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0029.png" id="58_2rr2c"]
+[ext_resource type="AudioStream" uid="uid://bwd4h21cpq1tg" path="res://assets/Sounds/Desktop/mouse-click-290204.mp3" id="59_amtbk"]
+[ext_resource type="Texture2D" uid="uid://k5tj37w3mvvp" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0000.png" id="59_rma2j"]
+[ext_resource type="Texture2D" uid="uid://cu7jom4hiris5" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0001.png" id="60_1o4rj"]
+[ext_resource type="Texture2D" uid="uid://djp071i3jl3q2" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0002.png" id="61_mgctw"]
+[ext_resource type="Texture2D" uid="uid://dk8avhogp0ssa" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0003.png" id="62_25j2f"]
+[ext_resource type="Texture2D" uid="uid://dtac6kxra587m" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0004.png" id="63_uxyu2"]
+[ext_resource type="Texture2D" uid="uid://bhec8ky6phaqe" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0005.png" id="64_3infj"]
+[ext_resource type="Texture2D" uid="uid://dmcnrnnj2033s" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0006.png" id="65_vjk03"]
+[ext_resource type="Texture2D" uid="uid://i78p2ftjdhwr" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0007.png" id="66_jun5h"]
+[ext_resource type="Texture2D" uid="uid://ddi3eu5sbtgfa" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0008.png" id="67_q2eus"]
+[ext_resource type="Texture2D" uid="uid://csa36bv867wqa" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0009.png" id="68_e0yjk"]
+[ext_resource type="Texture2D" uid="uid://c2mhmb0mtrmtu" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0010.png" id="69_1ld3m"]
+[ext_resource type="Texture2D" uid="uid://cm40o58atr14r" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0011.png" id="70_q8b3x"]
+[ext_resource type="Texture2D" uid="uid://duee35rwe1qnt" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0012.png" id="71_r00nd"]
+[ext_resource type="Texture2D" uid="uid://cnbm7mjucornm" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0013.png" id="72_us4rl"]
+[ext_resource type="Texture2D" uid="uid://bvi75yok0crih" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0014.png" id="73_sluoj"]
+[ext_resource type="Texture2D" uid="uid://rlmv14tu4dft" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0015.png" id="74_lnm7i"]
+[ext_resource type="Texture2D" uid="uid://b8ko2l1tnyk86" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0016.png" id="75_cxdf3"]
+[ext_resource type="Texture2D" uid="uid://1wbihwpxvkyv" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0017.png" id="76_641pl"]
+[ext_resource type="Texture2D" uid="uid://cv6fwvp86xq2p" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0018.png" id="77_sap2s"]
+[ext_resource type="Texture2D" uid="uid://duj8exfmy5ije" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0019.png" id="78_3uoy1"]
+[ext_resource type="Texture2D" uid="uid://2hodfh3w3xe" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0020.png" id="79_gva5w"]
+[ext_resource type="Texture2D" uid="uid://gixeluobtf6v" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0021.png" id="80_5kl06"]
+[ext_resource type="Texture2D" uid="uid://dr6d6nr8q73kc" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0022.png" id="81_j7dhu"]
+[ext_resource type="Texture2D" uid="uid://7kybqdjhkbvo" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0023.png" id="82_mfk8v"]
+[ext_resource type="Texture2D" uid="uid://8ojm4r0j80t2" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0024.png" id="83_csdht"]
+[ext_resource type="Texture2D" uid="uid://skn8evv8un4u" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0025.png" id="84_rlyy8"]
+[ext_resource type="Texture2D" uid="uid://osi3u7kclt4b" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0026.png" id="85_dq5gp"]
+[ext_resource type="Texture2D" uid="uid://cy83oo1x8b81e" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0027.png" id="86_psp3y"]
+[ext_resource type="Texture2D" uid="uid://bk1jfg4jnvtpa" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/animation/Timeline 1_0028.png" id="87_yuw4u"]
+[ext_resource type="Texture2D" uid="uid://b5jyru07q3xt6" path="res://assets/Desktop/chat_animation/3. LunaFirsChat/0. notifOn.png" id="88_5sskw"]
+[ext_resource type="Shader" uid="uid://cjntkchb0vew7" path="res://TheHostage/MainMenu/glitch.gdshader" id="90_rma2j"]
+[ext_resource type="Texture2D" uid="uid://lo0kldd5j8u3" path="res://assets/Desktop/chat_animation/0. Chat Edgar/first_chat_notification/1.on.png" id="92_dq5gp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6rfx"]
+size = Vector2(61, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7macw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ihe3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ct42i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dh8ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xe27l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oda3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_awdp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r7gwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xhrdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b24f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_08cb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k1jd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a6g3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iays8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qvscm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4ol3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_30vqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_32no4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g438h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cla44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_giyd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_irej5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hot2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hxxis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_41pd0")
+}],
+"loop": true,
+"name": &"connect",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh8ck"]
+size = Vector2(275, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6io60"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_r6xty")
+}],
+"loop": true,
+"name": &"edgar_first_chat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_oupad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_amtbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_b2j8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_o6itw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_w65lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kfx88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_u0auy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cpsnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_k7svx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_hthb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ofp3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_r1ubl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fy7w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_o2rk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_iy5if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_x2py6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dhmlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_de5jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_mgqf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_hpojb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1tq6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_3hc1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jwnr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r6xty")
+}],
+"loop": false,
+"name": &"edgar_first_chat_animation",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92_dq5gp")
+}],
+"loop": true,
+"name": &"edgar_first_chat_on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_2rr2c")
+}],
+"loop": true,
+"name": &"luna_first_chat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_rma2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_1o4rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_mgctw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_25j2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_uxyu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_3infj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_vjk03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_jun5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_q2eus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_e0yjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_1ld3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_q8b3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_r00nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_us4rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_sluoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_lnm7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_cxdf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_641pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sap2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3uoy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_gva5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_5kl06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_j7dhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_mfk8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_csdht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_rlyy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_dq5gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_psp3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_yuw4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_2rr2c")
+}],
+"loop": false,
+"name": &"luna_first_chat_animation",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_5sskw")
+}],
+"loop": true,
+"name": &"luna_first_chat_on",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1o4rj"]
+shader = ExtResource("90_rma2j")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.5
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[node name="MainDesktop" type="Node2D"]
+script = ExtResource("1_ofp3r")
+
+[node name="Desktop" type="Node2D" parent="."]
+
+[node name="Wallpaper" type="TextureRect" parent="Desktop"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_a2i5y")
+
+[node name="TheHostage_Icon" type="Node2D" parent="Desktop"]
+visible = false
+script = ExtResource("3_ipoum")
+
+[node name="TextureRect" type="TextureRect" parent="Desktop/TheHostage_Icon"]
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 264.0
+offset_bottom = 255.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_i1a2p")
+
+[node name="Label" type="Label" parent="Desktop/TheHostage_Icon"]
+offset_left = 12.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("4_tryaa")
+theme_override_font_sizes/font_size = 10
+text = "The Hostage"
+
+[node name="icon_on" type="TextureRect" parent="Desktop/TheHostage_Icon"]
+visible = false
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 259.0
+offset_bottom = 257.0
+scale = Vector2(0.25, 0.24)
+texture = ExtResource("5_ipoum")
+
+[node name="Area2D" type="Area2D" parent="Desktop/TheHostage_Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktop/TheHostage_Icon/Area2D"]
+position = Vector2(40.5, 37)
+shape = SubResource("RectangleShape2D_s6rfx")
+
+[node name="connecting_animation" type="AnimatedSprite2D" parent="Desktop/TheHostage_Icon"]
+visible = false
+position = Vector2(581, 329)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_7macw")
+animation = &"connect"
+frame_progress = 0.391894
+
+[node name="Timer" type="Timer" parent="Desktop/TheHostage_Icon"]
+
+[node name="mouse_click2" type="AudioStreamPlayer2D" parent="Desktop/TheHostage_Icon"]
+stream = ExtResource("59_amtbk")
+
+[node name="Timer" type="Timer" parent="Desktop"]
+
+[node name="area_notification" type="Area2D" parent="Desktop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktop/area_notification"]
+position = Vector2(1010.5, 555.5)
+shape = SubResource("RectangleShape2D_dh8ck")
+
+[node name="myecho_stage1" parent="Desktop" instance=ExtResource("57_r6xty")]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Desktop"]
+position = Vector2(1011, 555)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_6io60")
+
+[node name="TaskBar" parent="." instance=ExtResource("2_65dtp")]
+
+[node name="Glitch" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_1o4rj")
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[connection signal="input_event" from="Desktop/TheHostage_Icon/Area2D" to="Desktop/TheHostage_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Desktop/TheHostage_Icon/Area2D" to="Desktop/TheHostage_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Desktop/TheHostage_Icon/Area2D" to="Desktop/TheHostage_Icon" method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Desktop/TheHostage_Icon/Timer" to="Desktop/TheHostage_Icon" method="_on_timer_timeout"]
+[connection signal="timeout" from="Desktop/Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="Desktop/area_notification" to="." method="_on_area_edgar_first_chat_input_event"]
+[connection signal="mouse_entered" from="Desktop/area_notification" to="." method="_on_area_edgar_first_chat_mouse_entered"]
+[connection signal="mouse_exited" from="Desktop/area_notification" to="." method="_on_area_edgar_first_chat_mouse_exited"]
+[connection signal="input_event" from="TaskBar/myecho" to="." method="_on_myecho_input_event"]
+
+[editable path="TaskBar"]
+[editable path="TaskBar/WindowsIcon"]

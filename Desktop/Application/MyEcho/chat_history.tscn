@@ -1,0 +1,504 @@
+[gd_scene load_steps=15 format=3 uid="uid://bi7uuptlnsdg7"]
+
+[ext_resource type="Script" uid="uid://ek6q76fd262a" path="res://Desktop/Application/MyEcho/chat_history.gd" id="1_l71cl"]
+[ext_resource type="Texture2D" uid="uid://do2mt8b6n6eps" path="res://assets/Desktop/Application/MyEcho/base.png" id="2_vwef2"]
+[ext_resource type="Texture2D" uid="uid://c6ngd3juwdfxj" path="res://assets/Desktop/Application/MyEcho/history_chat.png" id="3_sqta2"]
+[ext_resource type="Texture2D" uid="uid://c3ibwyvd2yu33" path="res://assets/Desktop/Application/MyEcho/global_chat_on.png" id="4_d6vml"]
+[ext_resource type="Texture2D" uid="uid://cxpmv8pmqct06" path="res://assets/Desktop/Application/MyEcho/history_chatON.png" id="4_u7dsl"]
+[ext_resource type="Texture2D" uid="uid://pvvbtdjho2v0" path="res://assets/Desktop/Application/MyEcho/profile_edgar.png" id="5_uwq58"]
+[ext_resource type="FontFile" uid="uid://cmv14x3rs0j8x" path="res://assets/Font/Poppins/Poppins-Medium.ttf" id="6_k3sa8"]
+[ext_resource type="FontFile" uid="uid://7yvgacx8qp41" path="res://assets/Font/Poppins/Poppins-Light.ttf" id="7_e4xij"]
+[ext_resource type="Texture2D" uid="uid://b4opa3ty4knqf" path="res://assets/Desktop/Application/MyEcho/new_chat.png" id="9_f3yee"]
+[ext_resource type="Texture2D" uid="uid://f6tygjhkq6c3" path="res://assets/Desktop/Application/MyEcho/profile_winda.png" id="9_gj8rg"]
+[ext_resource type="Texture2D" uid="uid://c2q8jc8r5p857" path="res://assets/Desktop/Application/MyEcho/profile_luna.png" id="11_d7lwf"]
+[ext_resource type="FontFile" uid="uid://cdeohk34b6fhn" path="res://assets/Font/Poppins/Poppins-Regular.ttf" id="11_pykx6"]
+[ext_resource type="Texture2D" uid="uid://2ymnoptf013q" path="res://assets/Desktop/Application/MyEcho/profile_xxx.png" id="12_m747g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wui3"]
+size = Vector2(395, 73)
+
+[node name="ChatHistory" type="Node2D"]
+script = ExtResource("1_l71cl")
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 630.0
+texture = ExtResource("2_vwef2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 13.0
+offset_top = 79.0
+offset_right = 413.0
+offset_bottom = 151.0
+
+[node name="Edgar" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="historychat" type="TextureRect" parent="VBoxContainer/Edgar"]
+layout_mode = 2
+texture = ExtResource("3_sqta2")
+
+[node name="edgar_global" type="TextureRect" parent="VBoxContainer/Edgar"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_d6vml")
+
+[node name="edgar" type="TextureRect" parent="VBoxContainer/Edgar"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_u7dsl")
+
+[node name="Control" type="Control" parent="VBoxContainer/Edgar"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="new chat_edgar" type="TextureRect" parent="VBoxContainer/Edgar/Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 9.0
+offset_right = 387.0
+offset_bottom = 71.0
+texture = ExtResource("9_f3yee")
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Edgar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Edgar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Edgar/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("5_uwq58")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Edgar/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Edgar/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Edgar"
+
+[node name="last_chat_edgar" type="Label" parent="VBoxContainer/Edgar/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "TESSSS"
+
+[node name="edgar2" type="Area2D" parent="VBoxContainer/Edgar"]
+position = Vector2(-3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Edgar/edgar2"]
+position = Vector2(202.5, 35.5)
+shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="Winda" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="historychat" type="TextureRect" parent="VBoxContainer/Winda"]
+layout_mode = 2
+texture = ExtResource("3_sqta2")
+
+[node name="winda_global" type="TextureRect" parent="VBoxContainer/Winda"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_d6vml")
+
+[node name="winda" type="TextureRect" parent="VBoxContainer/Winda"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_u7dsl")
+
+[node name="Control" type="Control" parent="VBoxContainer/Winda"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="new chat_winda" type="TextureRect" parent="VBoxContainer/Winda/Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 9.0
+offset_right = 387.0
+offset_bottom = 71.0
+texture = ExtResource("9_f3yee")
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Winda"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Winda/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Winda/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_gj8rg")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Winda/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Winda/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Winda"
+
+[node name="last_chat_winda" type="Label" parent="VBoxContainer/Winda/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "RENA??????"
+
+[node name="winda2" type="Area2D" parent="VBoxContainer/Winda"]
+position = Vector2(-3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Winda/winda2"]
+position = Vector2(202.5, 35.5)
+shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="Luna" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="historychat" type="TextureRect" parent="VBoxContainer/Luna"]
+layout_mode = 2
+texture = ExtResource("3_sqta2")
+
+[node name="luna_global" type="TextureRect" parent="VBoxContainer/Luna"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_d6vml")
+
+[node name="luna" type="TextureRect" parent="VBoxContainer/Luna"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_u7dsl")
+
+[node name="Control" type="Control" parent="VBoxContainer/Luna"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="new chat_luna" type="TextureRect" parent="VBoxContainer/Luna/Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 9.0
+offset_right = 387.0
+offset_bottom = 71.0
+texture = ExtResource("9_f3yee")
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Luna"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Luna/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Luna/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_d7lwf")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Luna/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Luna/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Luna"
+
+[node name="last_chat_luna" type="Label" parent="VBoxContainer/Luna/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Ren? Have you completed the new task?"
+
+[node name="luna2" type="Area2D" parent="VBoxContainer/Luna"]
+position = Vector2(-3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Luna/luna2"]
+position = Vector2(202.5, 35.5)
+shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="XXX" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="historychat" type="TextureRect" parent="VBoxContainer/XXX"]
+layout_mode = 2
+texture = ExtResource("3_sqta2")
+
+[node name="xxx_global" type="TextureRect" parent="VBoxContainer/XXX"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_d6vml")
+
+[node name="xxx" type="TextureRect" parent="VBoxContainer/XXX"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_u7dsl")
+
+[node name="Control" type="Control" parent="VBoxContainer/XXX"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="new chat_xxx" type="TextureRect" parent="VBoxContainer/XXX/Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 9.0
+offset_right = 387.0
+offset_bottom = 71.0
+texture = ExtResource("9_f3yee")
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/XXX"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/XXX/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/XXX/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("12_m747g")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/XXX/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/XXX/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "XXX666"
+
+[node name="last_chat_xxx" type="Label" parent="VBoxContainer/XXX/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Ren? Have you completed the new task?"
+
+[node name="xxx2" type="Area2D" parent="VBoxContainer/XXX"]
+position = Vector2(-3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/XXX/xxx2"]
+position = Vector2(202.5, 35.5)
+shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="chat_info" type="MarginContainer" parent="."]
+offset_left = 430.0
+offset_top = 11.0
+offset_right = 538.0
+offset_bottom = 61.0
+
+[node name="edgar_info" type="HBoxContainer" parent="chat_info"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="chat_info/edgar_info"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="chat_info/edgar_info/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_uwq58")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="chat_info/edgar_info"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="chat_info/edgar_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Edgar"
+
+[node name="edgar_writing" type="Label" parent="chat_info/edgar_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Sedang mengetik ..."
+
+[node name="winda_info" type="HBoxContainer" parent="chat_info"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="chat_info/winda_info"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="chat_info/winda_info/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_gj8rg")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="chat_info/winda_info"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="chat_info/winda_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Winda"
+
+[node name="winda_writing" type="Label" parent="chat_info/winda_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Sedang mengetik ..."
+
+[node name="luna_info" type="HBoxContainer" parent="chat_info"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="chat_info/luna_info"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="chat_info/luna_info/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_d7lwf")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="chat_info/luna_info"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="chat_info/luna_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "Luna"
+
+[node name="luna_writing" type="Label" parent="chat_info/luna_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Sedang mengetik ..."
+
+[node name="xxx_info" type="HBoxContainer" parent="chat_info"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="chat_info/xxx_info"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="TextureRect" type="TextureRect" parent="chat_info/xxx_info/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_d7lwf")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="chat_info/xxx_info"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="chat_info/xxx_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k3sa8")
+theme_override_font_sizes/font_size = 14
+text = "XXX666"
+
+[node name="xxx_writing" type="Label" parent="chat_info/xxx_info/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "Sedang mengetik ..."
+
+[node name="winda_reply" type="Label" parent="."]
+visible = false
+offset_left = 477.0
+offset_top = 560.0
+offset_right = 621.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0.501407, 0.501406, 0.501406, 1)
+theme_override_fonts/font = ExtResource("11_pykx6")
+theme_override_font_sizes/font_size = 15
+text = "Click here to reply!"
+
+[node name="edgar_reply" type="Label" parent="."]
+visible = false
+offset_left = 477.0
+offset_top = 560.0
+offset_right = 621.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0.501407, 0.501406, 0.501406, 1)
+theme_override_fonts/font = ExtResource("11_pykx6")
+theme_override_font_sizes/font_size = 15
+text = "Click here to reply!"
+
+[node name="luna_reply" type="Label" parent="."]
+visible = false
+offset_left = 477.0
+offset_top = 560.0
+offset_right = 621.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0.501407, 0.501406, 0.501406, 1)
+theme_override_fonts/font = ExtResource("11_pykx6")
+theme_override_font_sizes/font_size = 15
+text = "Click here to reply!"
+
+[node name="xxx_reply" type="Label" parent="."]
+visible = false
+offset_left = 477.0
+offset_top = 560.0
+offset_right = 621.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0.501407, 0.501406, 0.501406, 1)
+theme_override_fonts/font = ExtResource("11_pykx6")
+theme_override_font_sizes/font_size = 15
+text = "Click here to reply!"
+
+[connection signal="input_event" from="VBoxContainer/Edgar/edgar2" to="." method="_on_edgar_2_input_event"]
+[connection signal="mouse_entered" from="VBoxContainer/Edgar/edgar2" to="." method="_on_edgar_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Edgar/edgar2" to="." method="_on_edgar_2_mouse_exited"]
+[connection signal="input_event" from="VBoxContainer/Winda/winda2" to="." method="_on_winda_2_input_event"]
+[connection signal="mouse_entered" from="VBoxContainer/Winda/winda2" to="." method="_on_winda_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Winda/winda2" to="." method="_on_winda_2_mouse_exited"]
+[connection signal="input_event" from="VBoxContainer/Luna/luna2" to="." method="_on_luna_2_input_event"]
+[connection signal="mouse_entered" from="VBoxContainer/Luna/luna2" to="." method="_on_luna_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Luna/luna2" to="." method="_on_luna_2_mouse_exited"]
+[connection signal="input_event" from="VBoxContainer/XXX/xxx2" to="." method="_on_xxx_2_input_event"]
+[connection signal="mouse_entered" from="VBoxContainer/XXX/xxx2" to="." method="_on_xxx_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/XXX/xxx2" to="." method="_on_xxx_2_mouse_exited"]

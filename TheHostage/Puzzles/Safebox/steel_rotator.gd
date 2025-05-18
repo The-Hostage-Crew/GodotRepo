@@ -6,6 +6,9 @@ signal safebox_done
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var safebox_puzzle: Control = $".."
 
+@onready var sound_open: AudioStreamPlayer = $SoundOpen
+@onready var sound_locked: AudioStreamPlayer = $SoundLocked
+
 # the correct combination
 var correct_values := {
 	"Slider":  75,
@@ -56,12 +59,13 @@ func _on_rotator_pressed() -> void:
 		unlock()
 	else:
 		animation_rotator.play("rotator_locked")
+		sound_locked.play()
 
 func unlock() -> void:
 	is_opened = true
-	safebox_done.emit()
 	
 	animation_rotator.play("rotator_spin")
+	sound_open.play()
 	await animation_rotator.animation_finished
 	animation_player.play("scissor")
 	await animation_player.animation_finished
@@ -69,6 +73,8 @@ func unlock() -> void:
 	safebox_puzzle.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	InventoryManager.add_item("scissor")
+	
+	safebox_done.emit()
 
 
 func lock() -> void:

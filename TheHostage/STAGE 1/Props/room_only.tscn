@@ -1,12 +1,74 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyukhe86ytwdb"]
+[gd_scene load_steps=17 format=3 uid="uid://cyukhe86ytwdb"]
 
 [ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="1_h6nbf"]
-[ext_resource type="Texture2D" uid="uid://flwjwg68sbtv" path="res://assets/TheHostage/2D/photo/photo_clean.png" id="2_ngp47"]
+[ext_resource type="Texture2D" uid="uid://cyl3fuv3akrb7" path="res://assets/TheHostage/2D/photo/photo_clean.png" id="2_ngp47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
 size = Vector3(1, 11.8643, 39.4413)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h6nbf"]
+
+[sub_resource type="Animation" id="Animation_xaalt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ngp47"]
+resource_name = "flickering"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.5, 3.01, 3.16667, 3.26667, 3.36667, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [12.0, 3.0, 13.0, 2.0, 13.0, 12.0, 3.0, 13.0, 2.0, 13.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.86667, 3.02, 3.47),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.572669, 1.1792e-06, 3.36915e-07, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaalt"]
+_data = {
+&"RESET": SubResource("Animation_xaalt"),
+&"flickering": SubResource("Animation_ngp47")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brlln"]
 size = Vector3(41.0527, 20.7322, 34.506)
@@ -41,7 +103,7 @@ size = Vector3(0.356995, 0.755615, 3.20621)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CollisionAndLight" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -2.17527)
-light_energy = 16.0
+light_energy = 12.0
 omni_range = 50.0
 
 [node name="TembokPanjang1" type="StaticBody3D" parent="CollisionAndLight" index="1"]
@@ -78,6 +140,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/Floor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71008, 3.73791, -5.54382)
 shape = SubResource("WorldBoundaryShape3D_h6nbf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionAndLight" index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_xaalt")
+}
+autoplay = "flickering"
 
 [node name="Photo" type="Sprite3D" parent="." index="1"]
 transform = Transform3D(0.0123728, -0.048445, 2.1176e-09, 0, -2.18557e-09, -0.05, 0.048445, 0.0123728, -5.40831e-10, -12.4674, 8.8222, 8.6903)
