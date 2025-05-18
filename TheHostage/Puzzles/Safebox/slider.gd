@@ -9,6 +9,7 @@ signal value_changed(slider_name: String, value: int)
 
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var button: TextureButton = $Button
+@onready var slide_sound: AudioStreamPlayer = $SlideSound
 
 enum Step {
 	STEP_25 = 25,
@@ -40,6 +41,8 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
+	slide_sound.pitch_scale = randf_range(0.95, 1.05)  # Slight pitch variation
+	slide_sound.play()
 	current_step_index = (current_step_index + 1) % step_values.size()
 	update_slider()
 	

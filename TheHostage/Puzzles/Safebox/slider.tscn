@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btnawffjfgem4"]
+[gd_scene load_steps=9 format=3 uid="uid://btnawffjfgem4"]
 
 [ext_resource type="Script" uid="uid://daa5l7jd6nqyg" path="res://TheHostage/Puzzles/Safebox/slider.gd" id="1_ma6ou"]
 [ext_resource type="Texture2D" uid="uid://xgyr80cinicw" path="res://assets/TheHostage/2D/slider_components/slider/slider_base.png" id="2_f1eyu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bk0olpyy3bddi" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_base.png" id="5_2ckys"]
 [ext_resource type="Texture2D" uid="uid://dbya1nj6eae83" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_expandable.png" id="6_dvxij"]
 [ext_resource type="Texture2D" uid="uid://djkt0gj72hi4j" path="res://assets/TheHostage/2D/slider_components/button/button_Yellow.png" id="7_vck1m"]
+[ext_resource type="AudioStream" uid="uid://ccbwb44to6cgk" path="res://assets/Sounds/SFX/Safebox/Slider.wav" id="8_adpeq"]
 
 [node name="Slider" type="Control"]
 layout_mode = 3
@@ -99,5 +100,8 @@ offset_bottom = 137.5
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_vck1m")
+
+[node name="SlideSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_adpeq")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

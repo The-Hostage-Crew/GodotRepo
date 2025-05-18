@@ -2,6 +2,9 @@ extends Interactable
 
 @export var modal: Node
 @export var trauma_viewport: VideoStreamPlayer
+
+@onready var player: CharacterBody3D = %Player
+
 var showed := false
 
 
@@ -21,10 +24,12 @@ func interact() -> void:
 
 		# Logika untuk selain tirai
 		if !showed:
+			player.set_movement_enabled(false)
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			showed = true
 		else:
+			player.set_movement_enabled(true)
 			modal.set_visible(false)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			showed = false

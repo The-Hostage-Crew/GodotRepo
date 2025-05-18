@@ -23,6 +23,10 @@ var default_camera_position: Vector3
 var current_speed: float
 var movement_enabled: bool = true
 
+@onready var footstep_audio: AudioStreamPlayer3D = $Footstep
+var footstep_timer := 0.0
+var footstep_interval := 0.5  # seconds between steps
+
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
 func _ready():
@@ -31,7 +35,7 @@ func _ready():
 	current_speed = speed
 
 func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if movement_enabled and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		var x_delta = event.relative.y * mouse_sensitivity
 		camera_x_rotation = clamp(camera_x_rotation + x_delta, -90.0, 90.0)
@@ -69,6 +73,9 @@ func _input(event):
 
 
 func _physics_process(delta):
+	if not movement_enabled:
+		return
+
 	var movement_vector = Vector3.ZERO
 
 	if not follow_target:
@@ -103,3 +110,25 @@ func _physics_process(delta):
 		velocity.y = jump_power
 
 	move_and_slide()
+	
+	var moving_input = Input.is_action_pressed("movement_forward") || Input.is_action_pressed("movement_backward") || Input.is_action_pressed("movement_left")|| Input.is_action_pressed("movement_right")
+
+	var is_moving = moving_input and is_on_floor() and velocity.length() > 0.1
+
+	 
+#	Footstep Sound
+	if is_moving:
+		footstep_timer -= delta
+		if footstep_timer <= 0.0:
+			# Play footstep with randomized pitch
+			footstep_audio.pitch_scale = randf_range(0.85, 1.15)
+			footstep_audio.play()
+			footstep_timer = footstep_interval
+	else:
+		footstep_timer = 0.0  # Reset so it plays immediately on move
+
+
+
+func set_movement_enabled(enabled: bool) -> void:
+	movement_enabled = enabled
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if enabled else Input.MOUSE_MODE_VISIBLE)
