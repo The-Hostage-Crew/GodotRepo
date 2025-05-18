@@ -21,6 +21,7 @@ AudioPlayer="*res://Globals/AudioPlayer/AudioPlayer.tscn"
 SceneTransition="*res://Globals/TransitionScene/scene_transition.tscn"
 Fade="*res://Globals/CanvasTransition/fade.gd"
 InventoryManager="*res://Globals/HUD/Inventory/inventory_manager.gd"
+Global="*res://Globals/Global.gd"
 
 [filesystem]
 

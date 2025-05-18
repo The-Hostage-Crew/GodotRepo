@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://by5m8pjkthxjs"]
+
+[ext_resource type="FontFile" uid="uid://dmp6oo0wcqka3" path="res://assets/Font/CascadiaCode/CascadiaCode-VariableFont_wght.ttf" id="1_tt6uw"]
+
+[node name="InpuElse" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_tt6uw")
+theme_override_font_sizes/font_size = 15
+text = "Invalid input. Please try again."

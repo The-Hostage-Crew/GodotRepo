@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4qx12bju402"]
+
+[ext_resource type="Texture2D" uid="uid://kmh1qd48tnxs" path="res://assets/Desktop/WindowsWallpaper.jpg" id="1_tl8g4"]
+[ext_resource type="Script" uid="uid://y1338yikqbti" path="res://Desktop/MainDesktop/Time&Date.gd" id="2_rra7t"]
+
+[node name="TaskBar" type="Node2D"]
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_tl8g4")
+
+[node name="BaseColor" type="Node2D" parent="."]
+
+[node name="base" type="ColorRect" parent="BaseColor"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_vertical = 0
+color = Color(0.00784314, 0.0431373, 0.101961, 1)
+
+[node name="WhiteBorder" type="ColorRect" parent="BaseColor"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 608.5
+grow_vertical = 0
+color = Color(1, 1, 1, 0.364706)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_rra7t")

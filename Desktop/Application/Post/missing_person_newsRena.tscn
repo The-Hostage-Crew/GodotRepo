@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu4u16af35iqh"]
+
+[ext_resource type="Texture2D" uid="uid://dmptl0icrc1ld" path="res://assets/Desktop/Application/X/tweet_pic.png" id="1_3a57c"]
+
+[node name="MissingPersonNews" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_3a57c")

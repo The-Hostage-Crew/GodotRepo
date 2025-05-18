@@ -1,0 +1,204 @@
+[gd_scene load_steps=19 format=3 uid="uid://bg4qx12bju402"]
+
+[ext_resource type="Script" uid="uid://b5jk1qsedm8j4" path="res://Desktop/MainDesktop/task_bar.gd" id="1_vfvvl"]
+[ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="2_o4pbr"]
+[ext_resource type="Script" uid="uid://y1338yikqbti" path="res://Desktop/MainDesktop/Time&Date.gd" id="2_rra7t"]
+[ext_resource type="Texture2D" uid="uid://dih5fhan7ooa8" path="res://assets/Desktop/Taskbar/WindowsIcon.png" id="3_o4pbr"]
+[ext_resource type="Texture2D" uid="uid://dry64d08ksvyw" path="res://assets/Desktop/Taskbar/WindowsIcon_On.png" id="3_xxori"]
+[ext_resource type="Texture2D" uid="uid://byiqfix004o48" path="res://assets/Desktop/Taskbar/SearchBar.png" id="4_21pot"]
+[ext_resource type="Texture2D" uid="uid://ddr4jbxgsy8ww" path="res://assets/Desktop/Taskbar/SearchBar_On.png" id="4_xxori"]
+[ext_resource type="Texture2D" uid="uid://ctbpm24txbuen" path="res://assets/Desktop/Taskbar/folder.png" id="6_5b28e"]
+[ext_resource type="Texture2D" uid="uid://bb6oseigvxsqc" path="res://assets/Desktop/Taskbar/batteryIcon.png" id="6_pqchv"]
+[ext_resource type="Texture2D" uid="uid://dtdclpc4cwsmq" path="res://assets/Desktop/Taskbar/MyEcho.png" id="7_hd51w"]
+[ext_resource type="Texture2D" uid="uid://dvgdl6edvrq7k" path="res://assets/Desktop/Taskbar/moon.png" id="7_hsptj"]
+[ext_resource type="Texture2D" uid="uid://bwg4xrm0fy2hn" path="res://assets/Desktop/Taskbar/folderOn.png" id="7_jo63a"]
+[ext_resource type="Texture2D" uid="uid://dkvrhcc0lxnm2" path="res://assets/Desktop/Taskbar/MyEchoOn.png" id="9_e5s6i"]
+[ext_resource type="Texture2D" uid="uid://bnojjcxti5niu" path="res://assets/Desktop/Taskbar/MyEchoTrue.png" id="10_d736h"]
+[ext_resource type="Texture2D" uid="uid://82q72edgo0v5" path="res://assets/Desktop/Taskbar/Browser.png" id="10_e5s6i"]
+[ext_resource type="PackedScene" uid="uid://bwvmqrky70st6" path="res://Desktop/MainDesktop/WindowsIcon.tscn" id="16_cvd3f"]
+[ext_resource type="AudioStream" uid="uid://bwd4h21cpq1tg" path="res://assets/Sounds/Desktop/mouse-click-290204.mp3" id="17_raffr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5s6i"]
+size = Vector2(40, 39)
+
+[node name="TaskBar" type="Node2D"]
+position = Vector2(0, 648)
+script = ExtResource("1_vfvvl")
+
+[node name="BaseColor" type="Node2D" parent="."]
+
+[node name="base" type="ColorRect" parent="BaseColor"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 1152.0
+grow_vertical = 0
+color = Color(0.00784314, 0.0431373, 0.101961, 1)
+
+[node name="WhiteBorder" type="ColorRect" parent="BaseColor"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.5
+offset_right = 1152.0
+offset_bottom = -40.0
+grow_vertical = 0
+color = Color(1, 1, 1, 0.364706)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 1152.0
+grow_vertical = 0
+
+[node name="WindowsIcon" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 380
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/WindowsIcon"]
+layout_mode = 2
+texture = ExtResource("3_o4pbr")
+
+[node name="WindowsIcon_On" type="TextureRect" parent="HBoxContainer/WindowsIcon"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_xxori")
+
+[node name="SearchIcon" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/SearchIcon"]
+layout_mode = 2
+texture = ExtResource("4_21pot")
+
+[node name="Search_On" type="TextureRect" parent="HBoxContainer/SearchIcon"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_xxori")
+
+[node name="AeraSearch" type="Area2D" parent="HBoxContainer/SearchIcon"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HBoxContainer/SearchIcon/AeraSearch"]
+polygon = PackedVector2Array(9, 7, 181, 7, 186, 10, 191, 15, 191, 23, 190, 27, 184, 32, 179, 34, 11, 34, 4, 29, 0, 22, 1, 16, 5, 10)
+
+[node name="Folder" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Folder"]
+layout_mode = 2
+texture = ExtResource("6_5b28e")
+
+[node name="FolderOn" type="TextureRect" parent="HBoxContainer/Folder"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_jo63a")
+
+[node name="MyEcho" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MyEcho"]
+layout_mode = 2
+texture = ExtResource("7_hd51w")
+
+[node name="MyEchoOn" type="TextureRect" parent="HBoxContainer/MyEcho"]
+visible = false
+layout_mode = 2
+texture = ExtResource("9_e5s6i")
+
+[node name="myecho_true" type="TextureRect" parent="HBoxContainer/MyEcho"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_d736h")
+
+[node name="Browser" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Browser"]
+layout_mode = 2
+texture = ExtResource("10_e5s6i")
+
+[node name="BrowserOn" type="TextureRect" parent="HBoxContainer/Browser"]
+visible = false
+layout_mode = 2
+texture = ExtResource("9_e5s6i")
+
+[node name="Battery Icon" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 240
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Battery Icon"]
+layout_mode = 2
+texture = ExtResource("6_pqchv")
+
+[node name="Time&Date" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Time&Date"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o4pbr")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("2_rra7t")
+
+[node name="Time&Date_On" type="ColorRect" parent="HBoxContainer/Time&Date"]
+visible = false
+layout_mode = 2
+color = Color(1, 1, 1, 0.0392157)
+
+[node name="Moon" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Moon"]
+layout_mode = 2
+texture = ExtResource("7_hsptj")
+
+[node name="windows" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="windows"]
+position = Vector2(400, -19.5)
+shape = SubResource("RectangleShape2D_e5s6i")
+
+[node name="folder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="folder"]
+position = Vector2(640, -20)
+shape = SubResource("RectangleShape2D_e5s6i")
+
+[node name="myecho" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="myecho"]
+position = Vector2(684, -20)
+shape = SubResource("RectangleShape2D_e5s6i")
+
+[node name="browser" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="browser"]
+position = Vector2(728, -20)
+shape = SubResource("RectangleShape2D_e5s6i")
+
+[node name="WindowsIcon" parent="." instance=ExtResource("16_cvd3f")]
+position = Vector2(-65, -649)
+
+[node name="button" parent="WindowsIcon" index="3"]
+visible = false
+
+[node name="mouse_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_raffr")
+
+[connection signal="mouse_entered" from="HBoxContainer/SearchIcon/AeraSearch" to="." method="_on_aera_search_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/SearchIcon/AeraSearch" to="." method="_on_aera_search_mouse_exited"]
+[connection signal="input_event" from="windows" to="." method="_on_windows_input_event"]
+[connection signal="mouse_entered" from="windows" to="." method="_on_windows_mouse_entered"]
+[connection signal="mouse_exited" from="windows" to="." method="_on_windows_mouse_exited"]
+[connection signal="mouse_entered" from="folder" to="." method="_on_folder_mouse_entered"]
+[connection signal="mouse_exited" from="folder" to="." method="_on_folder_mouse_exited"]
+[connection signal="mouse_entered" from="myecho" to="." method="_on_myecho_mouse_entered"]
+[connection signal="mouse_exited" from="myecho" to="." method="_on_myecho_mouse_exited"]
+[connection signal="mouse_entered" from="browser" to="." method="_on_browser_mouse_entered"]
+[connection signal="mouse_exited" from="browser" to="." method="_on_browser_mouse_exited"]
+
+[editable path="WindowsIcon"]

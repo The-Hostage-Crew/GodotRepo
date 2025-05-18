@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddv3wwnoi8645"]
+
+[ext_resource type="FontFile" uid="uid://dmp6oo0wcqka3" path="res://assets/Font/CascadiaCode/CascadiaCode-VariableFont_wght.ttf" id="1_5y3ki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evw6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vx5ut"]
+
+[node name="Input" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1062.0
+offset_bottom = -630.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="Label" parent="."]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("1_5y3ki")
+theme_override_font_sizes/font_size = 15
+text = "C:\\Users\\>"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 92.0
+offset_right = 1092.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_5y3ki")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_evw6a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vx5ut")
+flat = true

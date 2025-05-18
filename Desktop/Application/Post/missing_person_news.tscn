@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bksqb826qv2ml"]
+
+[ext_resource type="Texture2D" uid="uid://bve0yxfp5w6dt" path="res://assets/Desktop/Application/X/tweet_picRena.png" id="1_aarip"]
+
+[node name="MissingPersonNews" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 224.0
+offset_bottom = 205.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_aarip")

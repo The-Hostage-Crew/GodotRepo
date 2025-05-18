@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm12bvb4tvcoo"]
+
+[ext_resource type="Texture2D" uid="uid://do2mt8b6n6eps" path="res://assets/Desktop/Application/MyEcho/base.png" id="1_1deu0"]
+[ext_resource type="Script" uid="uid://d2oj4ihntdjpi" path="res://Desktop/Application/MyEcho/chat_edgar.gd" id="1_2c4gi"]
+[ext_resource type="Texture2D" uid="uid://c5manejveh2gk" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/1.png" id="3_u6dg1"]
+[ext_resource type="Texture2D" uid="uid://br1fut0ee7bmt" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/2.png" id="4_fsjj2"]
+[ext_resource type="Texture2D" uid="uid://ciedq0u7vsdyy" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/3.png" id="5_gqjkp"]
+
+[node name="ChatEdgar" type="Node2D"]
+script = ExtResource("1_2c4gi")
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 630.0
+texture = ExtResource("1_1deu0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 433.0
+offset_top = 80.0
+offset_right = 1149.0
+offset_bottom = 543.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+texture = ExtResource("3_u6dg1")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+theme_override_constants/margin_left = 620
+
+[node name="2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/2"]
+layout_mode = 2
+texture = ExtResource("4_fsjj2")
+
+[node name="3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+visible = false
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/3"]
+layout_mode = 2
+texture = ExtResource("5_gqjkp")
+stretch_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

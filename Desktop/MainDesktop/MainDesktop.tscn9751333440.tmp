@@ -1,0 +1,177 @@
+[gd_scene load_steps=33 format=3 uid="uid://bry8hsi0yauan"]
+
+[ext_resource type="Texture2D" uid="uid://kmh1qd48tnxs" path="res://assets/Desktop/Taskbar/WindowsWallpaper.jpg" id="1_a2i5y"]
+[ext_resource type="PackedScene" uid="uid://bg4qx12bju402" path="res://Desktop/MainDesktop/TaskBar.tscn" id="2_65dtp"]
+[ext_resource type="Texture2D" uid="uid://cwt2gsi3k2m1c" path="res://icon2.png" id="3_i1a2p"]
+[ext_resource type="Script" uid="uid://dlvusfyji3q86" path="res://Desktop/MainDesktop/the_hostage_icon.gd" id="3_ipoum"]
+[ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="4_tryaa"]
+[ext_resource type="Texture2D" uid="uid://cf1eqgr85oubf" path="res://icon2on.png" id="5_ipoum"]
+[ext_resource type="Texture2D" uid="uid://c7n478uaos78w" path="res://assets/Desktop/animation_connecting/connecting_0000.png" id="7_ihe3v"]
+[ext_resource type="Texture2D" uid="uid://dl5mewfs2jtwr" path="res://assets/Desktop/animation_connecting/connecting_0001.png" id="8_ct42i"]
+[ext_resource type="Texture2D" uid="uid://bx63on7bfej63" path="res://assets/Desktop/animation_connecting/connecting_0002.png" id="9_dh8ck"]
+[ext_resource type="Texture2D" uid="uid://bxitfkq51m8iu" path="res://assets/Desktop/animation_connecting/connecting_0003.png" id="10_xe27l"]
+[ext_resource type="Texture2D" uid="uid://brms0g8ee0q4u" path="res://assets/Desktop/animation_connecting/connecting_0004.png" id="11_oda3t"]
+[ext_resource type="Texture2D" uid="uid://46laws4li0p4" path="res://assets/Desktop/animation_connecting/connecting_0005.png" id="12_awdp3"]
+[ext_resource type="Texture2D" uid="uid://cbkfr7i5bg5ec" path="res://assets/Desktop/animation_connecting/connecting_0006.png" id="13_r7gwp"]
+[ext_resource type="Texture2D" uid="uid://c76fgcl3jcxxh" path="res://assets/Desktop/animation_connecting/connecting_0007.png" id="14_xhrdj"]
+[ext_resource type="Texture2D" uid="uid://bcp1jow4sdvoj" path="res://assets/Desktop/animation_connecting/connecting_0008.png" id="15_b24f1"]
+[ext_resource type="Texture2D" uid="uid://ct2uip4go5nd5" path="res://assets/Desktop/animation_connecting/connecting_0009.png" id="16_08cb7"]
+[ext_resource type="Texture2D" uid="uid://i8yb4q4gjvlo" path="res://assets/Desktop/animation_connecting/connecting_0010.png" id="17_k1jd2"]
+[ext_resource type="Texture2D" uid="uid://c6vkv0jgfag5b" path="res://assets/Desktop/animation_connecting/connecting_0011.png" id="18_a6g3w"]
+[ext_resource type="Texture2D" uid="uid://c5lgx8rc634q7" path="res://assets/Desktop/animation_connecting/connecting_0012.png" id="19_iays8"]
+[ext_resource type="Texture2D" uid="uid://ubock2sxegb8" path="res://assets/Desktop/animation_connecting/connecting_0013.png" id="20_qvscm"]
+[ext_resource type="Texture2D" uid="uid://b378r5y651ccg" path="res://assets/Desktop/animation_connecting/connecting_0014.png" id="21_4ol3r"]
+[ext_resource type="Texture2D" uid="uid://cv76gta1bvmne" path="res://assets/Desktop/animation_connecting/connecting_0015.png" id="22_30vqe"]
+[ext_resource type="Texture2D" uid="uid://crd50sdt0dyah" path="res://assets/Desktop/animation_connecting/connecting_0016.png" id="23_32no4"]
+[ext_resource type="Texture2D" uid="uid://cwm3xr0fxsmii" path="res://assets/Desktop/animation_connecting/connecting_0017.png" id="24_g438h"]
+[ext_resource type="Texture2D" uid="uid://bk75kc4ll0nde" path="res://assets/Desktop/animation_connecting/connecting_0018.png" id="25_cla44"]
+[ext_resource type="Texture2D" uid="uid://ckxbpwa6tmgkc" path="res://assets/Desktop/animation_connecting/connecting_0019.png" id="26_giyd8"]
+[ext_resource type="Texture2D" uid="uid://ec664xyaarcc" path="res://assets/Desktop/animation_connecting/connecting_0020.png" id="27_irej5"]
+[ext_resource type="Texture2D" uid="uid://b1yy2f1nwnsei" path="res://assets/Desktop/animation_connecting/connecting_0021.png" id="28_hot2w"]
+[ext_resource type="Texture2D" uid="uid://nwbcsr6isgy7" path="res://assets/Desktop/animation_connecting/connecting_0022.png" id="29_hxxis"]
+[ext_resource type="Texture2D" uid="uid://bspyio6nx8fmh" path="res://assets/Desktop/animation_connecting/connecting_0023.png" id="30_41pd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6rfx"]
+size = Vector2(61, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7macw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ihe3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ct42i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dh8ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xe27l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oda3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_awdp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r7gwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xhrdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b24f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_08cb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k1jd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a6g3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iays8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qvscm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4ol3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_30vqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_32no4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g438h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cla44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_giyd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_irej5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hot2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hxxis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_41pd0")
+}],
+"loop": true,
+"name": &"connect",
+"speed": 20.0
+}]
+
+[node name="MainDesktop" type="Node2D"]
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_a2i5y")
+
+[node name="TaskBar" parent="." instance=ExtResource("2_65dtp")]
+position = Vector2(0, 648)
+
+[node name="TheHostage_Icon" type="Node2D" parent="."]
+script = ExtResource("3_ipoum")
+
+[node name="TextureRect" type="TextureRect" parent="TheHostage_Icon"]
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 264.0
+offset_bottom = 255.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_i1a2p")
+
+[node name="Label" type="Label" parent="TheHostage_Icon"]
+offset_left = 12.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("4_tryaa")
+theme_override_font_sizes/font_size = 10
+text = "The Hostage"
+
+[node name="icon_on" type="TextureRect" parent="TheHostage_Icon"]
+visible = false
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 259.0
+offset_bottom = 257.0
+scale = Vector2(0.25, 0.24)
+texture = ExtResource("5_ipoum")
+
+[node name="Area2D" type="Area2D" parent="TheHostage_Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheHostage_Icon/Area2D"]
+position = Vector2(40.5, 37)
+shape = SubResource("RectangleShape2D_s6rfx")
+
+[node name="connecting_animation" type="AnimatedSprite2D" parent="TheHostage_Icon"]
+visible = false
+position = Vector2(581, 329)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_7macw")
+animation = &"connect"
+frame_progress = 0.552615
+
+[node name="Timer" type="Timer" parent="TheHostage_Icon"]
+
+[connection signal="input_event" from="TheHostage_Icon/Area2D" to="TheHostage_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="TheHostage_Icon/Area2D" to="TheHostage_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TheHostage_Icon/Area2D" to="TheHostage_Icon" method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="TheHostage_Icon/Timer" to="TheHostage_Icon" method="_on_timer_timeout"]

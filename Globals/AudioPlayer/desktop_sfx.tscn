@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjf41eov75drb"]
 
-[ext_resource type="Script" uid="uid://cuij18dv8eyha" path="res://Globals/AudioPlayer/desktop_sfx.gd" id="1_cfdov"]
+[ext_resource type="Script" uid="uid://po17q2phbbxi" path="res://Globals/AudioPlayer/desktop_sfx.gd" id="1_cfdov"]
 [ext_resource type="AudioStream" uid="uid://bwd4h21cpq1tg" path="res://assets/Sounds/Desktop/mouse-click-290204.mp3" id="2_80pqd"]
 [ext_resource type="AudioStream" uid="uid://632a4g3qsd50" path="res://assets/Sounds/Desktop/notification-2-269292.mp3" id="3_pj0oh"]
 
