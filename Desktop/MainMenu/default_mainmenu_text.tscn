@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://t6o5hoinr2oi"]
+
+[ext_resource type="FontFile" uid="uid://dmp6oo0wcqka3" path="res://assets/Font/CascadiaCode/CascadiaCode-VariableFont_wght.ttf" id="1_kwftl"]
+
+[node name="DefaultMainmenuText" type="Label"]
+theme_override_fonts/font = ExtResource("1_kwftl")
+text = "Choose one!
+[1]. New Game
+[2]. Load Game
+[3]. Quit
+
+1/2/3? "

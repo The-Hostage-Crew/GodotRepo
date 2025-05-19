@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd6hn8t8kajpr"]
+
+[ext_resource type="VideoStream" uid="uid://c7ks2dcygsnl5" path="res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="1_3tf4j"]
+
+[node name="TraumaAnimation" type="CanvasLayer"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_3tf4j")
+autoplay = true

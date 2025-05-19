@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://btnawffjfgem4"]
+
+[ext_resource type="Script" uid="uid://daa5l7jd6nqyg" path="res://TheHostage/Puzzles/Safebox/slider.gd" id="1_ma6ou"]
+[ext_resource type="Texture2D" uid="uid://xgyr80cinicw" path="res://assets/TheHostage/2D/slider_components/slider/slider_base.png" id="2_f1eyu"]
+[ext_resource type="Texture2D" uid="uid://dvnfeulp8c4yt" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_base_ curved_Yellow.png" id="3_6vpvl"]
+[ext_resource type="Texture2D" uid="uid://dn22tet5uvpjj" path="res://assets/TheHostage/2D/slider_components/slider/Yellow/slider_expandable_Yellow.png" id="4_toyfl"]
+[ext_resource type="Texture2D" uid="uid://bk0olpyy3bddi" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_base.png" id="5_2ckys"]
+[ext_resource type="Texture2D" uid="uid://dbya1nj6eae83" path="res://assets/TheHostage/2D/slider_components/slider/slider_shadow_expandable.png" id="6_dvxij"]
+[ext_resource type="Texture2D" uid="uid://djkt0gj72hi4j" path="res://assets/TheHostage/2D/slider_components/button/button_Yellow.png" id="7_vck1m"]
+[ext_resource type="AudioStream" uid="uid://ccbwb44to6cgk" path="res://assets/Sounds/SFX/Safebox/Slider.wav" id="8_adpeq"]
+
+[node name="Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_ma6ou")
+
+[node name="SliderBase" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.5
+offset_top = -469.5
+offset_right = 97.5
+offset_bottom = 469.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f1eyu")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+modulate = Color(0.941176, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -440.5
+offset_right = 81.0
+offset_bottom = 440.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("3_6vpvl")
+texture_progress = ExtResource("4_toyfl")
+
+[node name="SliderShadowLower" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.5
+offset_top = -469.5
+offset_right = 97.5
+offset_bottom = 469.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2ckys")
+
+[node name="SliderShadowUpper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.5
+offset_top = -469.5
+offset_right = 97.5
+offset_bottom = 469.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02806, 1)
+texture = ExtResource("6_dvxij")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -137.5
+offset_right = 131.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_vck1m")
+
+[node name="SlideSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_adpeq")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

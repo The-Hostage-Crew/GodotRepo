@@ -1,0 +1,161 @@
+[gd_scene load_steps=18 format=3 uid="uid://bkn7d3c3kvbot"]
+
+[ext_resource type="Script" uid="uid://ckb7suyv02p82" path="res://Desktop/Application/MyEcho/main_stage_1.gd" id="1_ba7b4"]
+[ext_resource type="Texture2D" uid="uid://do2mt8b6n6eps" path="res://assets/Desktop/Application/MyEcho/base.png" id="2_d6tup"]
+[ext_resource type="PackedScene" uid="uid://bg4qx12bju402" path="res://Desktop/MainDesktop/TaskBar.tscn" id="3_rb7h0"]
+[ext_resource type="Script" uid="uid://c3omaaojq3c1n" path="res://Desktop/Application/MyEcho/icon.gd" id="4_fa1g5"]
+[ext_resource type="Texture2D" uid="uid://b16fmy3iix1uw" path="res://assets/Desktop/Application/MyEcho/button/seacrh_icon.png" id="5_q5ihr"]
+[ext_resource type="Texture2D" uid="uid://dk1cheryvbeh6" path="res://assets/Desktop/Application/MyEcho/button/icon_on.png" id="6_3fwy6"]
+[ext_resource type="Texture2D" uid="uid://c80plcpyar8xx" path="res://assets/Desktop/Application/MyEcho/button/call_icon.png" id="7_joc7y"]
+[ext_resource type="Texture2D" uid="uid://oh8j8jol1yil" path="res://assets/Desktop/Application/MyEcho/button/dot_icon.png" id="8_mh8vf"]
+[ext_resource type="Texture2D" uid="uid://tw2tvjknarcf" path="res://assets/Desktop/Application/MyEcho/chat_bar.png" id="9_putsq"]
+[ext_resource type="Texture2D" uid="uid://dpwj65yccvllp" path="res://assets/Desktop/Application/MyEcho/button/send_icon.png" id="10_cn4n4"]
+[ext_resource type="Texture2D" uid="uid://skgqnvw47t40" path="res://assets/Desktop/Application/MyEcho/chat_bar_on.png" id="11_p78o8"]
+[ext_resource type="PackedScene" uid="uid://bm12bvb4tvcoo" path="res://Desktop/Application/MyEcho/chat_edgar.tscn" id="12_d6tup"]
+[ext_resource type="PackedScene" uid="uid://bi7uuptlnsdg7" path="res://Desktop/Application/MyEcho/chat_history.tscn" id="13_rb7h0"]
+[ext_resource type="PackedScene" uid="uid://birkj5cs8mddg" path="res://Desktop/Application/MyEcho/chat_winda.tscn" id="14_fa1g5"]
+[ext_resource type="PackedScene" uid="uid://bm4r0o7xpgqln" path="res://Desktop/Application/MyEcho/chat_luna.tscn" id="17_joc7y"]
+[ext_resource type="PackedScene" uid="uid://bbgidfrq8qyhk" path="res://Desktop/Application/MyEcho/chat_TheXXX.tscn" id="18_mh8vf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bea1a"]
+radius = 20.0
+
+[node name="main_stage1" type="Node2D"]
+script = ExtResource("1_ba7b4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_d6tup")
+
+[node name="TaskBar" parent="." instance=ExtResource("3_rb7h0")]
+visible = false
+
+[node name="Icon" type="Node2D" parent="."]
+script = ExtResource("4_fa1g5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Icon"]
+offset_left = 1010.0
+offset_top = 16.0
+offset_right = 1145.0
+offset_bottom = 56.0
+scale = Vector2(0.9, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="Icon/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_q5ihr")
+
+[node name="search_on" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_3fwy6")
+
+[node name="search" type="Area2D" parent="Icon/HBoxContainer/MarginContainer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/HBoxContainer/MarginContainer/search"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_bea1a")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Icon/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("7_joc7y")
+
+[node name="call_on" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer2"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_3fwy6")
+
+[node name="call" type="Area2D" parent="Icon/HBoxContainer/MarginContainer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/HBoxContainer/MarginContainer2/call"]
+position = Vector2(24.7778, 18.8889)
+shape = SubResource("CircleShape2D_bea1a")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Icon/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+texture = ExtResource("8_mh8vf")
+
+[node name="dot_on" type="TextureRect" parent="Icon/HBoxContainer/MarginContainer3"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_3fwy6")
+
+[node name="dot" type="Area2D" parent="Icon/HBoxContainer/MarginContainer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/HBoxContainer/MarginContainer3/dot"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_bea1a")
+
+[node name="History_chat" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="message_bar" type="Node2D" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="message_bar"]
+offset_left = 453.0
+offset_top = 550.0
+offset_right = 1126.0
+offset_bottom = 594.0
+texture = ExtResource("9_putsq")
+
+[node name="send2" type="TextureRect" parent="message_bar"]
+offset_left = 1085.0
+offset_top = 556.0
+offset_right = 1125.0
+offset_bottom = 596.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_cn4n4")
+
+[node name="message_on" type="TextureRect" parent="message_bar"]
+visible = false
+offset_left = 453.0
+offset_top = 550.0
+offset_right = 1126.0
+offset_bottom = 594.0
+texture = ExtResource("11_p78o8")
+
+[node name="message" type="Area2D" parent="message_bar"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="message_bar/message"]
+polygon = PackedVector2Array(466, 552, 1109, 551, 1120, 558, 1124, 565, 1126, 575, 1120, 586, 1113, 592, 465, 591, 457, 584, 452, 572, 455, 560)
+
+[node name="ChatHistory" parent="." instance=ExtResource("13_rb7h0")]
+position = Vector2(-2, 1)
+
+[node name="ChatWinda" parent="." instance=ExtResource("14_fa1g5")]
+visible = false
+
+[node name="ChatEdgar" parent="." instance=ExtResource("12_d6tup")]
+visible = false
+
+[node name="ChatLuna" parent="." instance=ExtResource("17_joc7y")]
+visible = false
+
+[node name="ChatTheXXX" parent="." instance=ExtResource("18_mh8vf")]
+visible = false
+position = Vector2(-13, -8)
+
+[connection signal="mouse_entered" from="Icon/HBoxContainer/MarginContainer/search" to="Icon" method="_on_search_mouse_entered"]
+[connection signal="mouse_exited" from="Icon/HBoxContainer/MarginContainer/search" to="TaskBar" method="_on_search_mouse_exited"]
+[connection signal="mouse_exited" from="Icon/HBoxContainer/MarginContainer/search" to="Icon" method="_on_search_mouse_exited"]
+[connection signal="mouse_entered" from="Icon/HBoxContainer/MarginContainer2/call" to="Icon" method="_on_call_mouse_entered"]
+[connection signal="mouse_exited" from="Icon/HBoxContainer/MarginContainer2/call" to="Icon" method="_on_call_mouse_exited"]
+[connection signal="mouse_entered" from="Icon/HBoxContainer/MarginContainer3/dot" to="Icon" method="_on_dot_mouse_entered"]
+[connection signal="mouse_exited" from="Icon/HBoxContainer/MarginContainer3/dot" to="Icon" method="_on_dot_mouse_exited"]
+[connection signal="input_event" from="message_bar/message" to="." method="_on_message_input_event"]
+[connection signal="mouse_entered" from="message_bar/message" to="." method="_on_message_mouse_entered"]
+[connection signal="mouse_exited" from="message_bar/message" to="." method="_on_message_mouse_exited"]

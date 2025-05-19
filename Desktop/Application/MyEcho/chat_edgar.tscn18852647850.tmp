@@ -1,0 +1,350 @@
+[gd_scene load_steps=25 format=3 uid="uid://bm12bvb4tvcoo"]
+
+[ext_resource type="Texture2D" uid="uid://do2mt8b6n6eps" path="res://assets/Desktop/Application/MyEcho/base.png" id="1_1deu0"]
+[ext_resource type="Script" uid="uid://d2oj4ihntdjpi" path="res://Desktop/Application/MyEcho/chat_edgar.gd" id="1_2c4gi"]
+[ext_resource type="Texture2D" uid="uid://c5manejveh2gk" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/1.png" id="3_u6dg1"]
+[ext_resource type="Texture2D" uid="uid://br1fut0ee7bmt" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/2.png" id="4_fsjj2"]
+[ext_resource type="FontFile" uid="uid://cdeohk34b6fhn" path="res://assets/Font/Poppins/Poppins-Regular.ttf" id="4_yh0kg"]
+[ext_resource type="Texture2D" uid="uid://ciedq0u7vsdyy" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/3.png" id="5_gqjkp"]
+[ext_resource type="Texture2D" uid="uid://d1x8l74ch6x7v" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/4.png" id="6_2c4gi"]
+[ext_resource type="Texture2D" uid="uid://dmptl0icrc1ld" path="res://assets/Desktop/Application/X/tweet_pic.png" id="7_u6dg1"]
+[ext_resource type="Texture2D" uid="uid://bnd6fg6g82kwq" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/6.png" id="8_fsjj2"]
+[ext_resource type="Texture2D" uid="uid://1dvimw43buld" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/7.png" id="9_gqjkp"]
+[ext_resource type="Texture2D" uid="uid://hhewn1mheg7v" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/base.png" id="10_ruy4v"]
+[ext_resource type="Texture2D" uid="uid://ddmfldp7ny0f1" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/TheHostage_icon.jpg" id="11_1qbyk"]
+[ext_resource type="FontFile" uid="uid://qxqh30hu8gl7" path="res://assets/Font/Poppins/Poppins-SemiBold.ttf" id="12_on57o"]
+[ext_resource type="FontFile" uid="uid://7yvgacx8qp41" path="res://assets/Font/Poppins/Poppins-Light.ttf" id="13_lgrfw"]
+[ext_resource type="Texture2D" uid="uid://wboaugq5gfhv" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/download.png" id="14_4m8pv"]
+[ext_resource type="Texture2D" uid="uid://bvyaxqw1p5ebh" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/download_on.png" id="15_7ew21"]
+[ext_resource type="Texture2D" uid="uid://cnnne7nvrfvth" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/base_button.png" id="16_1qbyk"]
+[ext_resource type="Texture2D" uid="uid://dvhhf3l6dllem" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/show.png" id="17_lgrfw"]
+[ext_resource type="Texture2D" uid="uid://5xlraaf4swxh" path="res://assets/Desktop/Application/MyEcho/download_TheHostage/show_on.png" id="18_4m8pv"]
+[ext_resource type="AudioStream" uid="uid://632a4g3qsd50" path="res://assets/Sounds/Desktop/notification-2-269292.mp3" id="19_7ew21"]
+[ext_resource type="Texture2D" uid="uid://bo72qhgalgwxm" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/8.png" id="19_loc0a"]
+[ext_resource type="AudioStream" uid="uid://bwd4h21cpq1tg" path="res://assets/Sounds/Desktop/mouse-click-290204.mp3" id="20_csoyn"]
+[ext_resource type="Texture2D" uid="uid://c7l0y76j8a4c3" path="res://assets/Desktop/chat_animation/0. Chat Edgar/bubble/9.png" id="20_yh0kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csoyn"]
+size = Vector2(277, 43)
+
+[node name="ChatEdgar" type="Node2D"]
+script = ExtResource("1_2c4gi")
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 630.0
+texture = ExtResource("1_1deu0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 433.0
+offset_top = 80.0
+offset_right = 1154.0
+offset_bottom = 543.0
+vertical_scroll_mode = 2
+scroll_deadzone = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+texture = ExtResource("3_u6dg1")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+theme_override_constants/margin_left = 580
+
+[node name="2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/2"]
+layout_mode = 2
+texture = ExtResource("4_fsjj2")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/2"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/3"]
+layout_mode = 2
+texture = ExtResource("5_gqjkp")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/3"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/4"]
+layout_mode = 2
+texture = ExtResource("6_2c4gi")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/4"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/4/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/5"]
+layout_mode = 2
+texture = ExtResource("7_u6dg1")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/5"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/5/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/6"]
+layout_mode = 2
+texture = ExtResource("8_fsjj2")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/6"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/6/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/7"]
+layout_mode = 2
+texture = ExtResource("9_gqjkp")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/7"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/7/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="download" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/VBoxContainer/download"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("10_ruy4v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="file properties" type="MarginContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 21
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/file properties"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/file properties/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_1qbyk")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/file properties/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="file_name" type="Label" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/file properties/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_on57o")
+text = "TheHostage.exe"
+
+[node name="properties" type="Label" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/file properties/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_lgrfw")
+theme_override_font_sizes/font_size = 12
+text = "658MB, Application"
+
+[node name="download button" type="MarginContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="off" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+layout_mode = 2
+texture = ExtResource("14_4m8pv")
+stretch_mode = 5
+
+[node name="on" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+visible = false
+layout_mode = 2
+texture = ExtResource("15_7ew21")
+stretch_mode = 5
+
+[node name="downloading" type="MarginContainer" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+visible = false
+layout_mode = 2
+
+[node name="base button" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/downloading"]
+layout_mode = 2
+texture = ExtResource("16_1qbyk")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/downloading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_lgrfw")
+text = "58%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="show" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_lgrfw")
+stretch_mode = 5
+
+[node name="show_on" type="TextureRect" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+visible = false
+layout_mode = 2
+texture = ExtResource("18_4m8pv")
+stretch_mode = 5
+
+[node name="area_download" type="Area2D" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/area_download"]
+position = Vector2(156.5, 22.5)
+shape = SubResource("RectangleShape2D_csoyn")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/download"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/download/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/8"]
+layout_mode = 2
+texture = ExtResource("19_loc0a")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/8"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/8/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/9"]
+layout_mode = 2
+texture = ExtResource("20_yh0kg")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/9"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/9/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("4_yh0kg")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="notif" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_7ew21")
+
+[node name="mouse_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_csoyn")
+
+[connection signal="input_event" from="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/area_download" to="." method="_on_area_download_input_event"]
+[connection signal="mouse_entered" from="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/area_download" to="." method="_on_area_download_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/area_download" to="." method="_on_area_download_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs48utfwkxhh8"]
+
+[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="1_vu40f"]
+[ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_qoyra"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2h1g"]
+size = Vector3(0.516979, 0.497467, 0.552139)
+
+[node name="Safebox" instance=ExtResource("1_vu40f")]
+
+[node name="GameObjectTransitionCollition" parent="." index="0" instance=ExtResource("2_qoyra")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjectTransitionCollition" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00675507, -0.251996, -0.203811)
+shape = SubResource("BoxShape3D_h2h1g")
+debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)

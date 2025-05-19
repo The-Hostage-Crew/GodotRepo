@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://brtt5h64vj4pk"]
+
+[ext_resource type="Texture2D" uid="uid://d4da05r37dn72" path="res://assets/Desktop/DesktopWelcomeScreen/an-old-abandoned-hallway-in-an-unused-building-2025-02-09-17-48-24-utc.jpg" id="1_6bv3d"]
+[ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="2_6m6lb"]
+[ext_resource type="Script" uid="uid://bnao1dbvc0ybx" path="res://Desktop/WelcomeDesktop/time_label.gd" id="2_37kt8"]
+[ext_resource type="Script" uid="uid://bdi85yr68lkf5" path="res://Desktop/WelcomeDesktop/date&day.gd" id="4_6m6lb"]
+[ext_resource type="AudioStream" uid="uid://bwd4h21cpq1tg" path="res://assets/Sounds/Desktop/mouse-click-290204.mp3" id="5_rqd2q"]
+
+[sub_resource type="GDScript" id="GDScript_6m6lb"]
+script/source = "extends Node2D
+
+@onready var texture_rect := $BG
+const MAIN_SCENE := \"res://Desktop/WelcomeDesktop/main.tscn\"
+
+func _ready():
+	print(\"Nama pengguna:\", Global.user_name)
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	# Jika diklik, atau jika pengguna menekan Enter/Space, pindah ke scene main
+	if event is InputEventMouseButton and event.pressed:
+		$mouse_click.play()
+		get_tree().change_scene_to_file(MAIN_SCENE)
+	elif event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_SPACE:
+			get_tree().change_scene_to_file(MAIN_SCENE)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqd2q"]
+size = Vector2(1163, 667)
+
+[node name="Welcome" type="Node2D"]
+script = SubResource("GDScript_6m6lb")
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -79.0
+offset_top = -29.0
+offset_right = 1152.0
+offset_bottom = 658.0
+texture = ExtResource("1_6bv3d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 536.0
+offset_top = 100.0
+offset_right = 576.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6m6lb")
+theme_override_font_sizes/font_size = 80
+script = ExtResource("2_37kt8")
+
+[node name="Date&Day" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6m6lb")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("4_6m6lb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(571.5, 323.5)
+shape = SubResource("RectangleShape2D_rqd2q")
+
+[node name="mouse_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rqd2q")
+
+[connection signal="gui_input" from="BG" to="." method="_on_bg_gui_input"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

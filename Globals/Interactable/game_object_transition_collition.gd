@@ -1,10 +1,37 @@
 extends Interactable
 
-@export var scene : PackedScene
+@export var modal: Node
+@export var trauma_viewport: VideoStreamPlayer
 
-func _ready() -> void:
-	pass
+@onready var player: CharacterBody3D = %Player
 
-func interact():
-	print("Changing to scene ", scene.to_string())
-	SceneTransition.change_scene(scene)
+var showed := false
+
+
+func interact() -> void:
+	if modal:
+		var is_tirai: bool = modal.name == "tiraitertutup"
+
+		if is_tirai:
+			modal.set_visible(true)
+			showed = true
+			trauma_viewport.stream = load("res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyAngry.ogv")
+			trauma_viewport.play()
+			await get_tree().create_timer(1.5).timeout
+			modal.set_visible(false)
+			showed = false
+			return
+
+		# Logika untuk selain tirai
+		if !showed:
+			player.set_movement_enabled(false)
+			modal.set_visible(true)
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			showed = true
+		else:
+			player.set_movement_enabled(true)
+			modal.set_visible(false)
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			showed = false
+	else:
+		print("MODAL NOT FOUND")

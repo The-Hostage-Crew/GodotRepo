@@ -1,0 +1,188 @@
+[gd_scene load_steps=11 format=3 uid="uid://birkj5cs8mddg"]
+
+[ext_resource type="Texture2D" uid="uid://do2mt8b6n6eps" path="res://assets/Desktop/Application/MyEcho/base.png" id="1_5v1vn"]
+[ext_resource type="Script" uid="uid://dbusye3d87gs7" path="res://Desktop/Application/MyEcho/chat_winda.gd" id="1_83g2w"]
+[ext_resource type="Texture2D" uid="uid://cps6uae0hokx0" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/1.png" id="2_83g2w"]
+[ext_resource type="Texture2D" uid="uid://cqod5bxjkefxh" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/2.png" id="3_jcprt"]
+[ext_resource type="Texture2D" uid="uid://o3tvd1wc1dwf" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/3.png" id="4_hbqgt"]
+[ext_resource type="Texture2D" uid="uid://wuye6j6ynmrm" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/4.png" id="5_pjww1"]
+[ext_resource type="FontFile" uid="uid://cdeohk34b6fhn" path="res://assets/Font/Poppins/Poppins-Regular.ttf" id="7_hbqgt"]
+[ext_resource type="Texture2D" uid="uid://cgqs1lvah4710" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/5.png" id="8_pjww1"]
+[ext_resource type="Texture2D" uid="uid://dex7ac4ownqk0" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/6.png" id="9_yat1o"]
+[ext_resource type="Texture2D" uid="uid://btuq1nkoos60k" path="res://assets/Desktop/chat_animation/1. WindaFirstChat/bubble/7.png" id="10_1r6ap"]
+
+[node name="ChatWinda" type="Node2D"]
+script = ExtResource("1_83g2w")
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 630.0
+texture = ExtResource("1_5v1vn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 446.0
+offset_top = 87.0
+offset_right = 1162.0
+offset_bottom = 550.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+texture = ExtResource("2_83g2w")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/1"]
+layout_mode = 2
+theme_override_constants/margin_left = 530
+
+[node name="2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/2"]
+layout_mode = 2
+texture = ExtResource("3_jcprt")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/2"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/3"]
+layout_mode = 2
+texture = ExtResource("4_hbqgt")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/3"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/4"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/4/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_pjww1")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/4/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 14
+text = "   Kak ???????????"
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/4"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/4/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/5"]
+layout_mode = 2
+texture = ExtResource("8_pjww1")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/5"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/5/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/6"]
+layout_mode = 2
+texture = ExtResource("9_yat1o")
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/6"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/6/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/7"]
+layout_mode = 2
+texture = ExtResource("10_1r6ap")
+stretch_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/7"]
+layout_mode = 2
+alignment = 2
+
+[node name="time" type="Label" parent="ScrollContainer/VBoxContainer/7/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("7_hbqgt")
+theme_override_font_sizes/font_size = 12
+text = "10:03"
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]

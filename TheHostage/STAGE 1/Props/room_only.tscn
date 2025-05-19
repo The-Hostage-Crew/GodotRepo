@@ -1,100 +1,207 @@
-[gd_scene load_steps=12 format=3 uid="uid://bix0qgd3htfp3"]
+[gd_scene load_steps=17 format=3 uid="uid://cyukhe86ytwdb"]
 
-[ext_resource type="PackedScene" uid="uid://cc0nrk24387cp" path="res://assets/The Hostage - main game/STAGE 1/3D assets/Room/Room only.glb" id="1_h6nbf"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2wlg3"]
-size = Vector3(5.189, 1.91132, 3.86023)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qsv2q"]
-size = Vector3(0.329742, 0.384766, 0.34021)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qs575"]
-size = Vector3(0.612366, 0.526917, 0.392334)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ngp47"]
-size = Vector3(0.333771, 1, 0.785278)
+[ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="1_h6nbf"]
+[ext_resource type="Texture2D" uid="uid://cyl3fuv3akrb7" path="res://assets/TheHostage/2D/photo/photo_clean.png" id="2_ngp47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
-size = Vector3(0.225433, 0.509277, 0.235596)
+size = Vector3(1, 11.8643, 39.4413)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xaalt"]
-size = Vector3(0.524902, 0.543213, 0.429932)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h6nbf"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_styrj"]
-size = Vector3(0.189209, 0.27124, 0.249054)
+[sub_resource type="Animation" id="Animation_xaalt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ngp47"]
+resource_name = "flickering"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.5, 3.01, 3.16667, 3.26667, 3.36667, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [12.0, 3.0, 13.0, 2.0, 13.0, 12.0, 3.0, 13.0, 2.0, 13.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.86667, 3.02, 3.47),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.572669, 1.1792e-06, 3.36915e-07, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaalt"]
+_data = {
+&"RESET": SubResource("Animation_xaalt"),
+&"flickering": SubResource("Animation_ngp47")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brlln"]
-size = Vector3(2.87134, 8.48178, 6.77997)
+size = Vector3(41.0527, 20.7322, 34.506)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_um223"]
-size = Vector3(3.97906, 4.86377, 9.1972)
+size = Vector3(3.24133, 3.74561, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xaalt"]
+size = Vector3(0.593994, 1, 0.259399)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsv2q"]
+size = Vector3(3.13855, 1, 7.97217)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pscq6"]
-size = Vector3(3.14771, 9.0188, 32.295)
+size = Vector3(0.22522, 0.631012, 0.249191)
 
-[node name="Room only" instance=ExtResource("1_h6nbf")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngp47"]
+size = Vector3(0.459045, 0.434251, 0.531021)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qs575"]
+size = Vector3(1.61621, 2.36816, 1.74561)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_styrj"]
+size = Vector3(20.2808, 90.2231, 57.9219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wlg3"]
+size = Vector3(0.356995, 0.755615, 3.20621)
+
+[node name="RoomOnly" instance=ExtResource("1_h6nbf")]
+
+[node name="CollisionAndLight" type="Node3D" parent="." index="0"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionAndLight" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -2.17527)
+light_energy = 12.0
+omni_range = 50.0
+
+[node name="TembokPanjang1" type="StaticBody3D" parent="CollisionAndLight" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1743, 13.0427, -0.378304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPanjang1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.4028)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPendek1" type="StaticBody3D" parent="CollisionAndLight" index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, 15.4757)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPendek1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPendek2" type="StaticBody3D" parent="CollisionAndLight" index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.23871, 13.0427, -23.2969)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPendek2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, 1.51221)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="TembokPanjang2" type="StaticBody3D" parent="CollisionAndLight" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6281, 13.0427, -0.378304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/TembokPanjang2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43799, -3.49941)
+shape = SubResource("BoxShape3D_h6nbf")
+
+[node name="Floor" type="StaticBody3D" parent="CollisionAndLight" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionAndLight/Floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71008, 3.73791, -5.54382)
+shape = SubResource("WorldBoundaryShape3D_h6nbf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionAndLight" index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_xaalt")
+}
+autoplay = "flickering"
+
+[node name="Photo" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(0.0123728, -0.048445, 2.1176e-09, 0, -2.18557e-09, -0.05, 0.048445, 0.0123728, -5.40831e-10, -12.4674, 8.8222, 8.6903)
+texture = ExtResource("2_ngp47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="床組（雙人）" index="4"]
-transform = Transform3D(1, 0, -1.42109e-13, 0, 1, 0, 1.42109e-13, 0, 1, -39.7896, -52.6453, -43.8745)
+transform = Transform3D(1, 0, -1.13687e-13, 0, 1, 0, 1.13687e-13, 0, 1, -17.643, -22.1951, -21.6951)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="床組（雙人）/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, -4.29736e-11, 0, 10, 0, 4.29736e-11, 0, 10, 3.30919, 4.57076, 1.63174)
-shape = SubResource("BoxShape3D_2wlg3")
+transform = Transform3D(1, 0, -1.64277e-11, 0, 1.00004, 0, 1.64277e-11, 0, 1, -16.4776, -28.6621, -21.6011)
+shape = SubResource("BoxShape3D_brlln")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="茶几（小）002" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="茶几（小）002/StaticBody3D" index="0"]
-transform = Transform3D(9.99998, 0, 0, 0, 10, 0, 0, 0, 9.99998, -0.132902, -0.46875, 0.0653057)
-shape = SubResource("BoxShape3D_qsv2q")
+transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0.0418081, -0.316648, 0)
+shape = SubResource("BoxShape3D_um223")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meja" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meja/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.00366783, 1.18346, -0.156427)
-shape = SubResource("BoxShape3D_qs575")
+transform = Transform3D(10, 0, 1.13687e-12, 0, 10, 0, -1.13687e-12, 0, 10, 0.0427189, 0, -0.294798)
+shape = SubResource("BoxShape3D_xaalt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meja bangku/書桌002" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meja bangku/書桌002/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.325469, 0, -1.07361)
-shape = SubResource("BoxShape3D_ngp47")
-
-[node name="書桌椅002" parent="meja bangku" index="1"]
-transform = Transform3D(-0.949305, 0, -0.314357, 0, 1, 0, 0.314357, 0, -0.949305, -3.44773, -0.196852, -12.2308)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213433, 0, -0.995604)
+shape = SubResource("BoxShape3D_qsv2q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meja bangku/書桌椅002" index="0"]
-transform = Transform3D(0.999722, 0, -0.0235599, 0, 1, 0, 0.0235599, 0, 0.999722, 1.7124, 0, 1.11944)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meja bangku/書桌椅002/StaticBody3D" index="0"]
-transform = Transform3D(9.99985, 0, 0.0541055, 0, 10, 0, -0.0541055, 0, 9.99985, -1.67735, -0.759277, -0.93407)
-shape = SubResource("BoxShape3D_h6nbf")
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.380093, 0.0675044, -0.0169306)
+shape = SubResource("BoxShape3D_pscq6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="sofa" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sofa/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.251464, 0.186768, -0.601807)
-shape = SubResource("BoxShape3D_xaalt")
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.214663, 1.12845, -0.703661)
+shape = SubResource("BoxShape3D_ngp47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="古董陶瓷002" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="古董陶瓷002/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0646963, 0.687256, 0.494232)
-shape = SubResource("BoxShape3D_styrj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0317364, 1.00635, 0.0314941)
+shape = SubResource("BoxShape3D_qs575")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="衣櫃002" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="衣櫃002/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -4.11742, 26.9533, -1.08371)
-shape = SubResource("BoxShape3D_brlln")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="箱子002" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="箱子002/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 4.54747e-13, 0, 10, 0, -4.54747e-13, 0, 10, 2.9184, -19.3188, -0.97748)
-shape = SubResource("BoxShape3D_um223")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64037, 44.6116, 5.09544)
+shape = SubResource("BoxShape3D_styrj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="書櫃（大）002" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="書櫃（大）002/StaticBody3D" index="0"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10.7385, -40.094, -1.78613)
-shape = SubResource("BoxShape3D_pscq6")
+transform = Transform3D(100, 0, 4.60204e-10, 0, 100, 0, 7.27596e-12, 0, 100, -10.2203, -36.2671, 4.43279)
+shape = SubResource("BoxShape3D_2wlg3")
