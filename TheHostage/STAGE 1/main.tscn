@@ -15,13 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
-[ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
-[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
+[ext_resource type="PackedScene" uid="uid://bix0qgd3htfp3" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
+[ext_resource type="Texture2D" uid="uid://cm4xgf4gpaixw" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
-[ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
+[ext_resource type="Script" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
-[ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
-[ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
+[ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
+[ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dqq41"]
 
@@ -230,10 +230,11 @@ debug_color = Color(1, 1, 1, 1)
 [node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17761, 8.98247, -2.91632)
+follow_target = true
 target_position = NodePath("../InsanityTarget")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7785, 7.27145, -22.0962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 23.0634)
 
 [node name="RoomOnly" parent="." instance=ExtResource("12_d1eib")]
 

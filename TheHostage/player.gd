@@ -29,6 +29,16 @@ var footstep_interval := 0.5  # seconds between steps
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
+@onready var falling_camera: Camera3D = $Head/FallingCamera
+@onready var animation_player: AnimationPlayer = $Head/AnimationPlayer
+var has_fallen = false
+# Add these variables at the top of your script/class
+var has_stopped_at_waypoint = false
+var stop_distance = 15.0  # Distance from target where character stops
+var pause_duration = 2.0  # How long to pause (in seconds)
+var pause_timer = 0.0
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_camera_position = camera.position
@@ -93,13 +103,59 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
 	else: 
 		var direction = Vector3()
-		
-		nav.target_position = target_position.global_position
-		
-		direction = nav.get_next_path_position() - global_position
-		direction = direction.normalized()
-		
-		velocity = velocity.lerp(direction * speed, acceleration * delta)
+		var waiting_point = target_position.global_position - Vector3(0, 0, 15)
+
+		if not has_stopped_at_waypoint:
+			# Phase 1: Move to waiting point
+			nav.target_position = waiting_point
+			direction = nav.get_next_path_position() - global_position
+			direction = direction.normalized()
+			
+			# Keep cameras looking at the final destination
+			camera.look_at(target_position.global_position, Vector3(0,1,0))
+			falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
+			
+			# Check if reached waiting point
+			var waiting_pos_2d = Vector2(global_position.x, global_position.z)
+			var waiting_2d = Vector2(waiting_point.x, waiting_point.z)
+			var distance_to_waiting = waiting_pos_2d.distance_to(waiting_2d)
+			
+			if distance_to_waiting <= 1.0:  # Close enough to waiting point
+				# Stop and start pause timer
+				velocity = velocity.lerp(Vector3.ZERO, acceleration * delta)
+				pause_timer += delta
+				
+				# Reset camera to look at final target during pause
+				camera.look_at(target_position.global_position, Vector3(0,1,0))
+				falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
+				
+				# After pause, move to final phase
+				if pause_timer >= pause_duration:
+					has_stopped_at_waypoint = true
+					pause_timer = 0.0
+			else:
+				# Continue moving toward waiting point
+				velocity = velocity.lerp(direction * speed / 2, acceleration * delta / 2)
+		else:
+			# Phase 2: Move from waiting point to final target (straight line)
+			nav.target_position = target_position.global_position
+			direction = (target_position.global_position - global_position).normalized()
+			
+			# Keep cameras looking at final target for straight-line approach
+			camera.look_at(target_position.global_position, Vector3(0,1,0))
+			falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
+			
+			# Continue movement toward final target
+			velocity = velocity.lerp(direction * speed / 2, acceleration * delta / 2)
+
+		# Check final distance for fall sequence trigger
+		var final_pos_2d = Vector2(global_position.x, global_position.z)
+		var target_2d = Vector2(target_position.global_position.x, target_position.global_position.z)
+		var final_distance = final_pos_2d.distance_to(target_2d)
+
+		#print("Final Distance: ", final_distance)
+		if final_distance < 8.75:
+			trigger_fall_sequence()
 
 	# Apply gravity
 	if not is_on_floor():
@@ -127,7 +183,32 @@ func _physics_process(delta):
 	else:
 		footstep_timer = 0.0  # Reset so it plays immediately on move
 
+func trigger_fall_sequence():
+	if has_fallen:
+		return
 
+	has_fallen = true
+
+	falling_camera.make_current()
+	falling_camera.look_at(target_position.global_position, Vector3.UP)
+
+	var tween = get_tree().create_tween()
+	
+	var move_forward = falling_camera.global_transform.origin + Vector3(0, 0, 5)
+	tween.tween_property(
+		falling_camera, "global_transform:origin", move_forward, 3.0
+	).set_trans(Tween.TRANS_LINEAR)
+
+	tween.play()
+	
+	await tween.finished
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().paused = false  # Ensure game isn't paused
+
+	SceneTransition.change_scene(preload("res://TheHostage/MainMenu/MainMenu.tscn"))
+	
+	
 
 func set_movement_enabled(enabled: bool) -> void:
 	movement_enabled = enabled
