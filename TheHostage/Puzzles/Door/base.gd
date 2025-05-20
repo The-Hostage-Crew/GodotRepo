@@ -21,7 +21,12 @@ func _on_button_pressed(button_name: String) -> void:
 
 		_:
 			if input_text.length() < MAX_LENGTH:
-				input_text += button_name
+				var random_sanity = randi_range(0, 100)
+				var SANITY_PERCENTAGE = (SanitySystem.HOSTAGE_SANITY / SanitySystem.MAX_SANITY) * 100
+				if random_sanity > SANITY_PERCENTAGE:
+					input_text += str(randi_range(0,9))
+				else:
+					input_text += button_name
 
 	$Label.text = input_text
 
