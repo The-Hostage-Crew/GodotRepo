@@ -285,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120401, 8.2593, -5.07182)
 target_position = NodePath("../InsanityTarget")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 23.0634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 15.3356)
 
 [node name="CanvasModal" type="CanvasLayer" parent="."]
 

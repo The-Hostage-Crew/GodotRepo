@@ -229,7 +229,8 @@ func _physics_process(delta):
 		var target_2d = Vector2(target_position.global_position.x, target_position.global_position.z)
 		var final_distance = final_pos_2d.distance_to(target_2d)
 
-		if final_distance < 8.75:
+		#print(final_distance)
+		if final_distance < 1.5:
 			trigger_fall_sequence()
 
 	# Apply gravity

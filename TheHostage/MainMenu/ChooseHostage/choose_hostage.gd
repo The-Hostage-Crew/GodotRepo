@@ -46,4 +46,5 @@ func _on_button_pressed() -> void:
 
 func _on_hostage_pressed() -> void:
 	AudioPlayer.stop()
+	SanitySystem.reset_sanity()
 	get_tree().change_scene_to_packed(MAIN)
