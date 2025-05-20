@@ -269,20 +269,20 @@ func trigger_fall_sequence():
 
 	has_fallen = true
 
-	falling_camera.global_transform = camera.global_transform
-	falling_camera.make_current()
-	falling_camera.look_at(target_position.global_position, Vector3.UP)
+	# falling_camera.global_transform = camera.global_transform
+	# falling_camera.make_current()
+	# falling_camera.look_at(target_position.global_position, Vector3.UP)
 
-	var tween = get_tree().create_tween()
+	# var tween = get_tree().create_tween()
 	
-	var move_forward = falling_camera.global_transform.origin + Vector3(0, 0, 5)
-	tween.tween_property(
-		falling_camera, "global_transform:origin", move_forward, 3.0
-	).set_trans(Tween.TRANS_LINEAR)
+	# var move_forward = falling_camera.global_transform.origin + Vector3(0, 0, 5)
+	# tween.tween_property(
+	# 	falling_camera, "global_transform:origin", move_forward, 3.0
+	# ).set_trans(Tween.TRANS_LINEAR)
 
-	tween.play()
+	# tween.play()
 	
-	await tween.finished
+	# await tween.finished
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false  # Ensure game isn't paused
