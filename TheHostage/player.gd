@@ -41,11 +41,18 @@ var pause_duration = 2.0  # How long to pause (in seconds)
 var pause_timer = 0.0
 
 # Sanity
-@onready var sanity: RichTextLabel = $hud/sanity
 var time_since_last_sanity_check = 0.0
 var sanity_check_interval = 2.0
 var rng = RandomNumberGenerator.new()
 var last_camera_rotation: Vector3
+
+# HUD
+@onready var hp_bar: TextureProgressBar = $Hud/HpBar
+@onready var sanity_bar: TextureProgressBar = $Hud/SanityBar
+
+# Trauma Constraint
+@onready var low_trauma: TextureRect = $Hud/Trauma_Constraint/LowTrauma
+@onready var high_trauma: TextureRect = $Hud/Trauma_Constraint/HighTrauma
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -53,6 +60,9 @@ func _ready():
 	default_falling_camera_position = falling_camera.position
 	default_head_position = head.position
 	current_speed = speed
+	
+	hp_bar.value = 100
+	sanity_bar.value = 100
 
 func _input(event):
 	if movement_enabled and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -91,18 +101,19 @@ func _input(event):
 		toggle_inventory.emit()
 
 func _physics_process(delta):
-	sanity.text = str(SanitySystem.HOSTAGE_SANITY)
 	
 	time_since_last_sanity_check += delta
 	var SANITY_PERCENTAGE = (SanitySystem.HOSTAGE_SANITY / SanitySystem.MAX_SANITY) * 100
 
+	sanity_bar.value = SANITY_PERCENTAGE
+	
+	if SANITY_PERCENTAGE < 40.0:
+		high_trauma.visible = true
+	elif SANITY_PERCENTAGE < 60.0:
+		low_trauma.visible = true 
+
 	if time_since_last_sanity_check > sanity_check_interval:
-		print("checking sanity")
 		var random_sanity = rng.randf_range(0.0, 100.0)
-		print(random_sanity)
-		print(SanitySystem.HOSTAGE_SANITY)
-		print(SanitySystem.MAX_SANITY)
-		print(SANITY_PERCENTAGE)
 		if random_sanity > SANITY_PERCENTAGE:
 			last_camera_rotation = camera.rotation
 			follow_target = true
@@ -218,7 +229,6 @@ func _physics_process(delta):
 		var target_2d = Vector2(target_position.global_position.x, target_position.global_position.z)
 		var final_distance = final_pos_2d.distance_to(target_2d)
 
-		#print("Final Distance: ", final_distance)
 		if final_distance < 8.75:
 			trigger_fall_sequence()
 
