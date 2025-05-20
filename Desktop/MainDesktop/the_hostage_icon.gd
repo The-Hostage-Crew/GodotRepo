@@ -32,7 +32,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		else:
 			Global.stage1 = true
 			Global.TheHostage_icon = false
-			print("yeah")
 		last_click_time = current_time
 
 func _on_timer_timeout() -> void:

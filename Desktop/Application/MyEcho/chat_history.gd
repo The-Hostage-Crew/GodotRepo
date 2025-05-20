@@ -42,6 +42,19 @@ func _ready():
 
 	
 func _process(delta: float) -> void:
+	
+	if Global.edgar_new_chat:
+		$VBoxContainer.move_child($VBoxContainer/Edgar, 0)
+
+	if Global.winda_new_chat:
+		$VBoxContainer.move_child($VBoxContainer/Winda, 0)
+
+	if Global.luna_new_chat:
+		$VBoxContainer.move_child($VBoxContainer/Luna, 0)
+
+	if Global.xxx_new_chat:
+		$VBoxContainer.move_child($VBoxContainer/XXX, 0)
+
 
 	#sedang mengetik atau tidak
 	if Global.winda_writing :
@@ -76,6 +89,7 @@ func _process(delta: float) -> void:
 		$VBoxContainer/Luna/Control.visible = false
 		
 	if Global.edgar : #ada chat edgar masuk
+		$VBoxContainer/Edgar/Control2/last_time_edgar. text = Global.last_time_edgar
 		edgar_message.visible = true
 		edgar_last_chat.text = Global.last_chat_edgar  # Memperbarui teks label dengan nilai terbaru dari Global.last_chat_edgar
 		if Global.chat_edgar: #kalau cht edgar lgi di buka
@@ -92,6 +106,7 @@ func _process(delta: float) -> void:
 			edgar_info.visible = false
 			
 	if Global.winda : #ada chat luna yang masuk
+		$VBoxContainer/Winda/Control2/last_time_winda.text = Global.last_time_winda
 		winda_last_chat.text = Global.last_chat_winda  # Memperbarui teks label dengan nilai terbaru dari Global.last_chat_edgar
 		winda_message.visible = true
 		
@@ -110,6 +125,7 @@ func _process(delta: float) -> void:
 			winda_info.visible = false
 			
 	if Global.luna : #ada chat winda yang masuk
+		$VBoxContainer/Luna/Control2/last_time_luna.text = Global.last_time_luna
 		luna_last_chat.text = Global.last_chat_luna  # Memperbarui teks label dengan nilai terbaru dari Global.last_chat_luna
 		luna_message.visible = true
 
@@ -128,6 +144,7 @@ func _process(delta: float) -> void:
 			luna_info.visible = false
 			
 	if Global.xxx : #ada chat xxx yang masuk
+		$VBoxContainer/XXX/Control2/last_time_xxx.text = Global.last_time_xxx
 		xxx_last_chat.text = Global.last_chat_xxx  # Memperbarui teks label dengan nilai terbaru dari Global.last_chat_luna
 		xxx_message.visible = true
 

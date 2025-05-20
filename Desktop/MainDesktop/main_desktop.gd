@@ -19,6 +19,7 @@ func _ready():
 	
 func _process(delta: float) -> void:
 	
+	
 	if Global.glitch : 
 		$Glitch.visible = true
 	else :

@@ -18,7 +18,7 @@ func _ready():
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	# Jika diklik, atau jika pengguna menekan Enter/Space, pindah ke scene main
 	if event is InputEventMouseButton and event.pressed:
-		$mouse_click.play()
+		AudioPlayer.play_click()
 		get_tree().change_scene_to_file(MAIN_SCENE)
 	elif event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ENTER or event.keycode == KEY_SPACE:

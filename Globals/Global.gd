@@ -21,7 +21,8 @@ var edgar_writing : bool =  false # apakah edgar sedang mengetik?
 var edgar_new2 : bool = false
 var edgar_reply : bool = false # player bisa reply chat edgar ngga?
 var edgar_count : int = 0 #hitung ini lg baris chat kebeara buat memperkirakan baris chat
-
+var last_time_edgar : String = ""
+var edgar_new_chat : bool = false
 
 #chat Winda
 var last_chat_winda: String = "RENA??????" #last chat untuk ditampilin di history
@@ -32,6 +33,8 @@ var winda_new : bool = false #apakah ada chat baru dri winda?
 var winda_writing : bool =  false # apakah winda  sedang mengetik?
 var winda_reply : bool = false # player bisa reply chat edgar ngga?
 var winda_count : int = 0
+var last_time_winda : String = ""
+var winda_new_chat : bool = false
 
 #chat Luna
 var last_chat_luna: String = "Ren? Have you completed the new task?" #last chat untuk ditampilin di history
@@ -42,6 +45,8 @@ var luna_writing : bool =  false # apakah luna sedang mengetik?
 var luna_count : int = 1 # base nya 1
 var luna_reply : bool = false # player bisa reply chat luna ngga?
 var chat_luna: bool = false #ini chat nya lg dibuka atau ngga?
+var last_time_luna : String = ""
+var luna_new_chat : bool = false
 
 #chat xxx
 var last_chat_xxx: String = "" #last chat untuk ditampilin di history
@@ -52,7 +57,8 @@ var xxx_writing : bool =  false # apakah xxx sedang mengetik?
 var xxx_count : int = 0 # base nya 1
 var xxx_reply : bool = false # player bisa reply chat xxx ngga?
 var chat_xxx: bool = false #ini chat nya lg dibuka atau ngga?
-
+var last_time_xxx : String = ""
+var xxx_new_chat : bool = false
 
 #ambil timestamp
 var timestamp: String = get_current_time_string()
