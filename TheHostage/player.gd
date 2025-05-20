@@ -20,6 +20,8 @@ var camera_x_rotation: float = 0.0
 var is_crouching: bool = false
 var is_sprinting: bool = false
 var default_camera_position: Vector3
+var default_falling_camera_position: Vector3
+var default_head_position: Vector3
 var current_speed: float
 var movement_enabled: bool = true
 
@@ -29,19 +31,27 @@ var footstep_interval := 0.5  # seconds between steps
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
+# Falling animation
 @onready var falling_camera: Camera3D = $Head/FallingCamera
 @onready var animation_player: AnimationPlayer = $Head/AnimationPlayer
 var has_fallen = false
-# Add these variables at the top of your script/class
 var has_stopped_at_waypoint = false
 var stop_distance = 15.0  # Distance from target where character stops
 var pause_duration = 2.0  # How long to pause (in seconds)
 var pause_timer = 0.0
 
+# Sanity
+@onready var sanity: RichTextLabel = $hud/sanity
+var time_since_last_sanity_check = 0.0
+var sanity_check_interval = 2.0
+var rng = RandomNumberGenerator.new()
+var last_camera_rotation: Vector3
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_camera_position = camera.position
+	default_falling_camera_position = falling_camera.position
+	default_head_position = head.position
 	current_speed = speed
 
 func _input(event):
@@ -56,7 +66,6 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
 
 	# Toggle crouch
 	if Input.is_action_pressed("crouch"):
@@ -81,8 +90,24 @@ func _input(event):
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
 
-
 func _physics_process(delta):
+	sanity.text = str(SanitySystem.HOSTAGE_SANITY)
+	
+	time_since_last_sanity_check += delta
+	var SANITY_PERCENTAGE = (SanitySystem.HOSTAGE_SANITY / SanitySystem.MAX_SANITY) * 100
+
+	if time_since_last_sanity_check > sanity_check_interval:
+		print("checking sanity")
+		var random_sanity = rng.randf_range(0.0, 100.0)
+		print(random_sanity)
+		print(SanitySystem.HOSTAGE_SANITY)
+		print(SanitySystem.MAX_SANITY)
+		print(SANITY_PERCENTAGE)
+		if random_sanity > SANITY_PERCENTAGE:
+			last_camera_rotation = camera.rotation
+			follow_target = true
+		time_since_last_sanity_check = 0
+	
 	if not movement_enabled:
 		return
 
@@ -101,7 +126,44 @@ func _physics_process(delta):
 		movement_vector = movement_vector.normalized()
 		velocity.x = lerp(velocity.x, movement_vector.x * current_speed, acceleration * delta)
 		velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
-	else: 
+	else:
+		# Check for any input to potentially escape fall sequence
+		var has_input = Input.is_action_pressed("movement_forward") || Input.is_action_pressed("movement_backward") || Input.is_action_pressed("movement_left") || Input.is_action_pressed("movement_right")
+		
+		if has_input:
+			var random_safe_bad_end_check = rng.randf_range(0.0, 100.0)
+			if random_safe_bad_end_check < SANITY_PERCENTAGE:
+				# Cancel fall sequence
+				follow_target = false
+				has_fallen = false
+				has_stopped_at_waypoint = false  # Reset waypoint state
+				pause_timer = 0.0  # Reset pause timer
+				
+				# Make main camera current first
+				falling_camera.global_transform = camera.global_transform
+				camera.make_current()
+				
+				# Reset camera position relative to character (adjust these values to match your setup)
+				camera.position = default_camera_position
+				camera.rotation = Vector3.ZERO  # Reset rotation only, not full transform
+				
+				# Reset falling camera to default position
+				falling_camera.position = default_falling_camera_position
+				falling_camera.rotation = Vector3.ZERO
+				
+				# Reset character rotation (keep position)
+				rotation = Vector3.ZERO
+				
+				# Reset head rotation (this is crucial for movement controls)
+				head.position = default_head_position
+				head.rotation = Vector3.ZERO
+				
+				# Optional: Stop any active tweens
+				var all_tweens = get_tree().get_nodes_in_group("active_tweens")
+				for tween in all_tweens:
+					if tween:
+						tween.kill()
+
 		var direction = Vector3()
 		var waiting_point = target_position.global_position - Vector3(0, 0, 15)
 
@@ -112,6 +174,7 @@ func _physics_process(delta):
 			direction = direction.normalized()
 			
 			# Keep cameras looking at the final destination
+			head.look_at(target_position.global_position, Vector3(0,1,0))
 			camera.look_at(target_position.global_position, Vector3(0,1,0))
 			falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
 			
@@ -126,6 +189,7 @@ func _physics_process(delta):
 				pause_timer += delta
 				
 				# Reset camera to look at final target during pause
+				head.look_at(target_position.global_position, Vector3(0,1,0))
 				camera.look_at(target_position.global_position, Vector3(0,1,0))
 				falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
 				
@@ -142,6 +206,7 @@ func _physics_process(delta):
 			direction = (target_position.global_position - global_position).normalized()
 			
 			# Keep cameras looking at final target for straight-line approach
+			head.look_at(target_position.global_position, Vector3(0,1,0))
 			camera.look_at(target_position.global_position, Vector3(0,1,0))
 			falling_camera.look_at(target_position.global_position, Vector3(0,1,0))
 			
@@ -171,7 +236,6 @@ func _physics_process(delta):
 
 	var is_moving = moving_input and is_on_floor() and velocity.length() > 0.1
 
-	 
 #	Footstep Sound
 	if is_moving:
 		footstep_timer -= delta
@@ -189,6 +253,7 @@ func trigger_fall_sequence():
 
 	has_fallen = true
 
+	falling_camera.global_transform = camera.global_transform
 	falling_camera.make_current()
 	falling_camera.look_at(target_position.global_position, Vector3.UP)
 

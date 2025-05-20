@@ -55,3 +55,9 @@ mesh = SubResource("CapsuleMesh_1peat")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.46227, 0)
 stream = ExtResource("4_o6fek")
 volume_db = -5.263
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="sanity" type="RichTextLabel" parent="hud"]
+offset_right = 40.0
+offset_bottom = 40.0
