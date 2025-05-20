@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvq2ikpxy1aaj"]
+
+[ext_resource type="Script" uid="uid://j3exxiqn8ehn" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white_1.gd" id="1_g57vq"]
+[ext_resource type="Texture2D" uid="uid://2iu47wbbscll" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/mouse_entered_white/1.png" id="2_pgvdb"]
+[ext_resource type="Texture2D" uid="uid://bje2fdk7odtl" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/click_white/2.png" id="3_wd3ha"]
+
+[node name="White1" type="Node2D"]
+script = ExtResource("1_g57vq")
+
+[node name="enter" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_pgvdb")
+
+[node name="click" type="TextureRect" parent="."]
+offset_right = 46.0
+offset_bottom = 389.0
+texture = ExtResource("3_wd3ha")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area"]
+position = Vector2(0.575001, -2.00001)
+scale = Vector2(0.908654, 1)
+polygon = PackedVector2Array(-0.632805, 206, 14.7746, 206, 14.7746, 2.00001, 49.9915, 2.00001, 49.9915, 391, -0.632805, 391)
+
+[connection signal="input_event" from="area" to="." method="_on_area_input_event"]
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]
