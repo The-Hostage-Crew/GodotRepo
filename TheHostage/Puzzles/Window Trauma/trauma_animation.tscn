@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cd6hn8t8kajpr"]
 
-[ext_resource type="VideoStream" uid="uid://c7ks2dcygsnl5" path="res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="1_3tf4j"]
+[ext_resource type="VideoStream" path="res://assets/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="1_3tf4j"]
 
 [node name="TraumaAnimation" type="CanvasLayer"]
 

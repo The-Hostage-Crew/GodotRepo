@@ -1,16 +1,18 @@
 [gd_scene load_steps=45 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
-[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/The Hostage - main game/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
-[ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/The Hostage - main game/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
-[ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/The Hostage - main game/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
-[ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/The Hostage - main game/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
+[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
+[ext_resource type="Texture2D" uid="uid://b4c03lqe3kbmd" path="res://assets/constraint_[trauma]/Window Enemy/v1/by frames/constraint_enemy_default.png" id="5_d1eib"]
+[ext_resource type="VideoStream" path="res://assets/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="6_2lav0"]
+[ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
+[ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
+[ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="8_cmcob"]
 [ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="8_d1eib"]
-[ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/The Hostage - main game/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
-[ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/The Hostage - main game/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
-[ext_resource type="Script" uid="uid://be83uxp2jgkcq" path="res://Globals/Interactable/game_object_transition_collition.gd" id="9_dqq41"]
-[ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/The Hostage - main game/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
+[ext_resource type="Script" path="res://Globals/Interactable/game_object_transition_collition.gd" id="9_dqq41"]
+[ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
@@ -249,7 +251,6 @@ modal = NodePath("../../../CanvasModal/CanvasSafebox")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Safebox/SafeboxCollision"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00675507, -0.251996, -0.203811)
 shape = SubResource("BoxShape3D_gxrok")
-debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 
 [node name="DoorLock" parent="NavigationRegion3D" instance=ExtResource("6_8av70")]
 transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 12.6212, 8.23108, -9.84949)
