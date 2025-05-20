@@ -54,6 +54,9 @@ var last_camera_rotation: Vector3
 @onready var low_trauma: TextureRect = $Hud/Trauma_Constraint/LowTrauma
 @onready var high_trauma: TextureRect = $Hud/Trauma_Constraint/HighTrauma
 
+# Bad End Window
+@onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_camera_position = camera.position
@@ -125,6 +128,7 @@ func _physics_process(delta):
 	var movement_vector = Vector3.ZERO
 
 	if not follow_target:
+		ray_cast_3d.enabled = true
 		if Input.is_action_pressed("movement_forward"):
 			movement_vector -= head.basis.z
 		if Input.is_action_pressed("movement_backward"):
@@ -138,6 +142,7 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, movement_vector.x * current_speed, acceleration * delta)
 		velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
 	else:
+		ray_cast_3d.enabled = false
 		# Check for any input to potentially escape fall sequence
 		var has_input = Input.is_action_pressed("movement_forward") || Input.is_action_pressed("movement_backward") || Input.is_action_pressed("movement_left") || Input.is_action_pressed("movement_right")
 		
@@ -176,7 +181,7 @@ func _physics_process(delta):
 						tween.kill()
 
 		var direction = Vector3()
-		var waiting_point = target_position.global_position - Vector3(0, 0, 15)
+		var waiting_point = target_position.global_position - Vector3(0, 0, 5)
 
 		if not has_stopped_at_waypoint:
 			# Phase 1: Move to waiting point

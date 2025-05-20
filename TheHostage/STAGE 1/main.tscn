@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=45 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
+[ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
 [ext_resource type="Texture2D" uid="uid://cm4xgf4gpaixw" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
@@ -76,6 +77,9 @@ size = Vector3(0.516979, 0.497467, 0.552139)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ncsou"]
 size = Vector3(1.90894, 2.14186, 1.76869)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0wdm"]
+size = Vector3(2.10718, 3.29968, 0.841797)
 
 [sub_resource type="Animation" id="Animation_stdhf"]
 length = 0.001
@@ -278,6 +282,16 @@ modal = NodePath("../../../CanvasModal/Photo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302476, -0.851524, -0.15374)
 shape = SubResource("BoxShape3D_ncsou")
 debug_color = Color(1, 1, 1, 1)
+
+[node name="BadEndWindow" type="Node3D" parent="."]
+
+[node name="BadEndWindowCollision" type="StaticBody3D" parent="BadEndWindow"]
+script = ExtResource("13_7ff7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BadEndWindow/BadEndWindowCollision"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.70115, 10.8835, 15.7464)
+shape = SubResource("BoxShape3D_h0wdm")
+debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 
 [node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
 unique_name_in_owner = true
