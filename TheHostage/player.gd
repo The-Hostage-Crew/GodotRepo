@@ -103,18 +103,18 @@ func _input(event):
 func _physics_process(delta):
 	
 	time_since_last_sanity_check += delta
-	var SANITY_PERCENTAGE = (SanitySystem.HOSTAGE_SANITY / SanitySystem.MAX_SANITY) * 100
+	var sanity_percentage = SanitySystem.HOSTAGE_SANITY
 
-	sanity_bar.value = SANITY_PERCENTAGE
+	sanity_bar.value = 10 + sanity_percentage * 0.8
 	
-	if SANITY_PERCENTAGE < 40.0:
+	if sanity_percentage < 40.0:
 		high_trauma.visible = true
-	elif SANITY_PERCENTAGE < 60.0:
+	elif sanity_percentage < 60.0:
 		low_trauma.visible = true 
 
 	if time_since_last_sanity_check > sanity_check_interval:
 		var random_sanity = rng.randf_range(0.0, 100.0)
-		if random_sanity > SANITY_PERCENTAGE:
+		if random_sanity > sanity_percentage:
 			last_camera_rotation = camera.rotation
 			follow_target = true
 		time_since_last_sanity_check = 0
@@ -143,7 +143,7 @@ func _physics_process(delta):
 		
 		if has_input:
 			var random_safe_bad_end_check = rng.randf_range(0.0, 100.0)
-			if random_safe_bad_end_check < SANITY_PERCENTAGE:
+			if random_safe_bad_end_check < sanity_percentage:
 				# Cancel fall sequence
 				follow_target = false
 				has_fallen = false
