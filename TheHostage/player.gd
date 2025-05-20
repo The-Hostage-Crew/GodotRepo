@@ -107,7 +107,9 @@ func _physics_process(delta):
 	
 	time_since_last_sanity_check += delta
 	var sanity_percentage = SanitySystem.HOSTAGE_SANITY
+	var hp_percentage = HpSystem.HOSTAGE_HP
 
+	hp_bar.value = hp_percentage
 	sanity_bar.value = 10 + sanity_percentage * 0.8
 	
 	if sanity_percentage < 40.0:
@@ -122,6 +124,9 @@ func _physics_process(delta):
 			follow_target = true
 		time_since_last_sanity_check = 0
 	
+	if hp_percentage <= 0:
+		follow_target = true
+
 	if not movement_enabled:
 		return
 
@@ -148,7 +153,7 @@ func _physics_process(delta):
 		
 		if has_input:
 			var random_safe_bad_end_check = rng.randf_range(0.0, 100.0)
-			if random_safe_bad_end_check < sanity_percentage:
+			if random_safe_bad_end_check < sanity_percentage and hp_percentage > 0:
 				# Cancel fall sequence
 				follow_target = false
 				has_fallen = false
