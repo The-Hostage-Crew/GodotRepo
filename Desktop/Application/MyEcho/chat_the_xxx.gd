@@ -41,10 +41,15 @@ func _process(delta):
 			$"ScrollContainer/VBoxContainer/1/MarginContainer2/TextureRect/Control/Label".text = "Hi, " + Global.user_name + "!"
 			Global.last_chat_xxx = "Hi, " + Global.user_name + "!"
 			var time_now = timestamp
+			Global.xxx_new_chat = true
+			await get_tree().process_frame
+			
 			Global.xxx_new = true
 			$"ScrollContainer/VBoxContainer/1/Vbox/time".text = time_now
+			Global.last_time_winda = time_now
 			Global.xxx = true
 			if Global.chat_xxx :
+				Global.xxx_new_chat = false
 				timer_bool = true
 				notif1 = false
 			
@@ -81,32 +86,48 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/2".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/2/Vbox/time".text = time_now
+		Global.last_time_winda = time_now
 		AudioPlayer.play_notif()
 		Global.last_chat_xxx= "There's a new stage in The Hostage!"
+		Global.xxx_new_chat = true
+		await get_tree().process_frame
+		Global.xxx_new_chat = false
 		timer_bool = true
 		Global.xxx_count +=1
 	elif num == 1:
 		$"ScrollContainer/VBoxContainer/3".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/3/Vbox/time".text = time_now
+		Global.last_time_winda = time_now
 		AudioPlayer.play_notif()
 		Global.last_chat_xxx= "The XXX send a file"
+		Global.xxx_new_chat = true
+		await get_tree().process_frame
+		Global.xxx_new_chat = false
 		Global.xxx_count +=1
 		timer_bool = true
 	elif num == 2:
 		$"ScrollContainer/VBoxContainer/4".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/4/Vbox/time".text = time_now
+		Global.last_time_winda = time_now
 		AudioPlayer.play_notif()
 		Global.last_chat_xxx= "or die :)"
+		Global.xxx_new_chat = true
+		await get_tree().process_frame
+		Global.xxx_new_chat = false
 		Global.xxx_count +=1
 		timer_bool = true
 	elif num == 3:
 		$"ScrollContainer/VBoxContainer/5".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/5/Vbox/time".text = time_now
+		Global.last_time_winda = time_now
 		AudioPlayer.play_notif()
 		Global.last_chat_xxx= "You have one hour from now before the file expires :)"
+		Global.xxx_new_chat = true
+		await get_tree().process_frame
+		Global.xxx_new_chat = false
 		Global.xxx_count +=1
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
@@ -147,7 +168,11 @@ func _on_area_download_input_event(viewport: Node, event: InputEvent, shape_idx:
 				$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 				var time_now = timestamp
 				$"ScrollContainer/VBoxContainer/7/Vbox/time".text = time_now
+				Global.last_time_winda = time_now
 				Global.last_chat_xxx = "Good luck!!!"
+				Global.xxx_new_chat = true
+				await get_tree().process_frame
+				Global.xxx_new_chat = false
 				AudioPlayer.play_notif()
 				Global.glitch = false
 			await get_tree().create_timer(0.05).timeout  # jeda 0.05 detik antar angka

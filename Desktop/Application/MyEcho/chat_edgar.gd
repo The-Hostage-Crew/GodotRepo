@@ -73,6 +73,7 @@ func _process(delta):
 			var time_now = timestamp
 			$"ScrollContainer/VBoxContainer/1".visible = true
 			$"ScrollContainer/VBoxContainer/1/Vbox/time".text = time_now
+			Global.last_time_edgar = time_now
 			if Global.chat_edgar :
 				timer_bool = true
 				notif1 = false
@@ -91,6 +92,7 @@ func _process(delta):
 				AudioPlayer.play_notif()
 				notif_sfx = false
 			Global.last_chat_edgar =  "Cuyy, " + Global.user_name +"!"
+			Global.edgar_new_chat = true
 			if Global.chat_edgar :
 				print("edgar Global.luna_count: ", Global.luna_count)
 				print("edgar Global.chat_luna_count: ", Global.chat_luna_count)
@@ -107,6 +109,9 @@ func _process(delta):
 			AudioPlayer.play_notif()
 			notif_sfx = false
 			Global.last_chat_edgar =  "Lu dapet chat dari XXX666?"
+			Global.edgar_new_chat = true
+			await get_tree().process_frame
+			Global.edgar_new_chat = false
 			timer_bool = true
 			notif4 = false
 				
@@ -189,7 +194,7 @@ func _process(delta):
 				$"ScrollContainer/VBoxContainer/21/Vbox/time".text = time_now
 				Global.edgar_new2 = false
 				Global.edgar_reply = false
-			elif Global.edgar_count == 14 && Global.chat_edgar_count == 9 :
+			elif Global.edgar_count == 14 && ( Global.chat_edgar_count == 9 or Global.chat_edgar_count == 8 ) :
 				$"ScrollContainer/VBoxContainer/24".visible = true #gw dpt info klo rena abis main game
 				Global.last_chat_edgar = "Iya, gw juga dapet"
 				await get_tree().process_frame
@@ -216,17 +221,22 @@ func _on_timer_timeout() -> void:
 		Global.edgar_count +=1
 		$"ScrollContainer/VBoxContainer/2/Vbox/time".text = time_now
 		Global.edgar_reply = true
+		Global.last_time_edgar = time_now
 	elif num == 1 :
 		$"ScrollContainer/VBoxContainer/4".visible = true
 		AudioPlayer.play_notif()
 		Global.last_chat_edgar = "Ada berita orang hilang lagi nih"
+		Global.edgar_new_chat = true
 		Global.edgar_new2 = true
 		var time_now = timestamp
 		Global.edgar_count +=1
 		$"ScrollContainer/VBoxContainer/4/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		timer_bool= true
 		Global.edgar_new = true
+		
 	elif num == 2 :
+		Global.edgar_new_chat = false
 		Global.edgar_count +=1
 		$"ScrollContainer/VBoxContainer/5".visible = true
 		Global.last_chat_edgar = "Edgar send a picture"
@@ -234,6 +244,7 @@ func _on_timer_timeout() -> void:
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		Global.edgar_new2 = true
 		var time_now = timestamp
+		Global.last_time_edgar = time_now
 		$"ScrollContainer/VBoxContainer/5/Vbox/time".text = time_now
 		AudioPlayer.play_notif()
 		Global.reply = true
@@ -248,12 +259,14 @@ func _on_timer_timeout() -> void:
 		Global.edgar_new2 = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/7/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		timer_bool = true
 	elif num == 4: 
 		Global.edgar_count +=1
 		$ScrollContainer/VBoxContainer/download.visible = true
 		var time_now = timestamp
 		$ScrollContainer/VBoxContainer/download/Vbox/time.text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -264,10 +277,12 @@ func _on_timer_timeout() -> void:
 			$"ScrollContainer/VBoxContainer/12".visible = true
 			var time_now = timestamp
 			$"ScrollContainer/VBoxContainer/12/Vbox/time".text = time_now
+			Global.last_time_edgar = time_now
 			await get_tree().process_frame
 			$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 			AudioPlayer.play_notif()
 			Global.last_chat_edgar = "Ini nama adek lo kok disebut dalem game?"
+			Global.edgar_new_chat = false
 			timer.wait_time = 1.0
 			timer_bool = true
 	elif num == 6 :
@@ -275,6 +290,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/12-foto2".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/12-foto2/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -285,6 +301,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/13".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/13/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -296,6 +313,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/15".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/15/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -320,6 +338,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/17".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/17/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -331,6 +350,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/19".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/19/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -342,6 +362,7 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/20".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/20/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
@@ -353,10 +374,14 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/23".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/23/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 		AudioPlayer.play_notif()
 		Global.last_chat_edgar = "dpt  kontak gw darimana anjr"
+		Global.edgar_new_chat = true
+		await get_tree().process_frame
+		Global.edgar_new_chat = false
 		Global.edgar_reply = true
 	elif num == 14 :
 		Global.edgar_new2 = true
@@ -364,8 +389,12 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/25".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/25/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
+		Global.edgar_new_chat = true
+		await get_tree().process_frame
+		Global.edgar_new_chat = false
 		AudioPlayer.play_notif()
 		Global.last_chat_edgar = "Berdasarkan chat temennya adek lo, kalau berhenti"
 		timer_bool = true
@@ -375,8 +404,12 @@ func _on_timer_timeout() -> void:
 		$"ScrollContainer/VBoxContainer/26".visible = true
 		var time_now = timestamp
 		$"ScrollContainer/VBoxContainer/26/Vbox/time".text = time_now
+		Global.last_time_edgar = time_now
 		await get_tree().process_frame
 		$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
+		Global.edgar_new_chat = true
+		await get_tree().process_frame
+		Global.edgar_new_chat = false
 		AudioPlayer.play_notif()
 		Global.last_chat_edgar = "Gw download dan main lg deh klo gitu."
 		timer_bool = true
@@ -414,6 +447,7 @@ func _on_area_download_input_event(viewport: Node, event: InputEvent, shape_idx:
 				var time_now = timestamp
 				$"ScrollContainer/VBoxContainer/8/Vbox/time".text = time_now
 				$"ScrollContainer/VBoxContainer/8".visible = true
+				Global.last_time_edgar = time_now
 				await get_tree().process_frame
 				$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 				Global.edgar_new2 = true
@@ -427,6 +461,7 @@ func _on_area_download_input_event(viewport: Node, event: InputEvent, shape_idx:
 				var time_now = timestamp
 				$"ScrollContainer/VBoxContainer/9/Vbox/time".text = time_now
 				Global.last_chat_edgar = "Gw coba deh"
+				Global.last_time_edgar = time_now
 				AudioPlayer.play_notif()
 			await get_tree().create_timer(0.05).timeout  # jeda 0.05 detik antar angka
 		download = true

@@ -102,6 +102,21 @@ position = Vector2(-3, 0)
 position = Vector2(202.5, 35.5)
 shape = SubResource("RectangleShape2D_2wui3")
 
+[node name="Control2" type="Control" parent="VBoxContainer/Edgar"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="last_time_edgar" type="Label" parent="VBoxContainer/Edgar/Control2"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 45.0
+offset_right = 390.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "TESSSS"
+
 [node name="Winda" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -170,6 +185,21 @@ position = Vector2(-3, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Winda/winda2"]
 position = Vector2(202.5, 35.5)
 shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="Control2" type="Control" parent="VBoxContainer/Winda"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="last_time_winda" type="Label" parent="VBoxContainer/Winda/Control2"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 45.0
+offset_right = 390.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "TESSSS"
 
 [node name="Luna" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -240,6 +270,21 @@ position = Vector2(-3, 0)
 position = Vector2(202.5, 35.5)
 shape = SubResource("RectangleShape2D_2wui3")
 
+[node name="Control2" type="Control" parent="VBoxContainer/Luna"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="last_time_luna" type="Label" parent="VBoxContainer/Luna/Control2"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 45.0
+offset_right = 390.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "TESSSS"
+
 [node name="XXX" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -308,6 +353,21 @@ position = Vector2(-3, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/XXX/xxx2"]
 position = Vector2(202.5, 35.5)
 shape = SubResource("RectangleShape2D_2wui3")
+
+[node name="Control2" type="Control" parent="VBoxContainer/XXX"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="last_time_xxx" type="Label" parent="VBoxContainer/XXX/Control2"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 45.0
+offset_right = 390.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_fonts/font = ExtResource("7_e4xij")
+theme_override_font_sizes/font_size = 12
+text = "TESSSS"
 
 [node name="chat_info" type="MarginContainer" parent="."]
 offset_left = 430.0
