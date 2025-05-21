@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal canvas_finished
+
 @onready var animation_transition: AnimationPlayer = $AnimationTransition
 @onready var color_rect: ColorRect = $ColorRect
 
@@ -11,10 +13,10 @@ func fade_in():
 	self.visible = true
 	animation_transition.play("fade_in")
 	await animation_transition.animation_finished
-	self.queue_free()
+	canvas_finished.emit()
 
 func fade_out():
 	self.visible = true
 	animation_transition.play("fade_out")
 	await animation_transition.animation_finished
-	self.queue_free()
+	canvas_finished.emit()

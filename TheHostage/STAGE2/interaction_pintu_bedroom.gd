@@ -10,3 +10,6 @@ func interact() -> void:
 	collision_shape_3d.disabled = true
 	statue_2.pause_chase = false
 	player.look_at_target(true)
+
+	# TODO: REMOVE AFTER DEBUG
+	#statue_2.enable_modal = true

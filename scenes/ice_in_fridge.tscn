@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://duwc2856vj28e"]
+
+[ext_resource type="PackedScene" uid="uid://dl5n8ty75e8ae" path="res://scenes/remote_ice.tscn" id="1_wgmcu"]
+[ext_resource type="PackedScene" uid="uid://cn4nrmp2p40rt" path="res://scenes/battery_ice.tscn" id="2_x8a6x"]
+
+[node name="IceInFridge" type="Node2D"]
+
+[node name="RemoteIce" parent="." instance=ExtResource("1_wgmcu")]
+position = Vector2(168, 8)
+scale = Vector2(0.75, 0.75)
+
+[node name="BatteryIce" parent="." instance=ExtResource("2_x8a6x")]
+position = Vector2(-72, -8)
+scale = Vector2(0.75, 0.75)

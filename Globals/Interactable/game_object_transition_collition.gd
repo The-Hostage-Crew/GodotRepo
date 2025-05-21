@@ -5,6 +5,9 @@ extends Interactable
 
 @onready var player: CharacterBody3D = %Player
 
+# Nullable use if player not found
+@export var player_ref: CharacterBody3D
+
 var showed := false
 var tirai_timer := Timer.new()
 
@@ -36,12 +39,20 @@ func interact() -> void:
 			return
 
 		if !showed:
-			player.set_movement_enabled(false)
+			if player_ref:
+				player_ref.set_movement_enabled(false)
+			else:
+				player.set_movement_enabled(false)
+				
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			showed = true
 		else:
-			player.set_movement_enabled(true)
+			if player_ref:
+				player_ref.set_movement_enabled(true)
+			else:
+				player.set_movement_enabled(true)
+				
 			modal.set_visible(false)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			showed = false
