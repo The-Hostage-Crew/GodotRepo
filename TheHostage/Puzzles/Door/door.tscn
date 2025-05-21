@@ -19,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_3khd3")
 
 [node name="Darken" parent="." instance=ExtResource("1_4qhr8")]
 layout_mode = 0
@@ -43,7 +44,6 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_3khd3")
 
 [node name="Label" type="Label" parent="Base"]
 layout_mode = 0
