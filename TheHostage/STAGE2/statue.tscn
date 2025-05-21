@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwfy1w0fyjqug"]
+
+[ext_resource type="PackedScene" uid="uid://c1fkb2scsg4ti" path="res://assets/TheHostage/STAGE2/3D/Statue/Statue.glb" id="1_0qbkn"]
+
+[node name="Statue" instance=ExtResource("1_0qbkn")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.03125, 0, 0, 0, -1.11759e-08, 0.03125, 0, -0.03125, -1.11759e-08, 0.535061, 0.212742, 0.986723)

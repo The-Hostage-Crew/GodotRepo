@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=43 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
 [ext_resource type="PackedScene" uid="uid://dj762tnqj3jk3" path="res://assets/TheHostage/STAGE2/3D/Room2/Room.glb" id="1_vd53x"]
@@ -21,25 +21,25 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 agent_height = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y3a08"]
-size = Vector3(2.75884, 3.3888, 8.7966)
+size = Vector3(2.75884, 6.85181, 8.7966)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqwok"]
 size = Vector3(2.9519, 3.6416, 6.19455)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv5wy"]
-size = Vector3(2.31482, 2.37341, 3.77009)
+size = Vector3(2.31482, 8.03882, 3.77009)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oemjf"]
-size = Vector3(7.75195, 1.83801, 3.08582)
+size = Vector3(7.75195, 3.81665, 3.08582)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h8xhn"]
 size = Vector3(8.41919, 5.75281, 5.87033)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xtuis"]
-size = Vector3(2.33057, 2.47519, 7.36813)
+size = Vector3(2.33057, 3.99921, 7.36813)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1njn"]
-size = Vector3(1.53638, 3.17172, 4.07166)
+size = Vector3(1.53638, 5.07489, 4.07166)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_adxra"]
 size = Vector3(13.1505, 5.74719, 1.63037)
@@ -57,22 +57,19 @@ size = Vector3(2.94299, 6.60693, 18.02)
 size = Vector3(1.96399, 2.70313, 7.99918)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0t58k"]
-size = Vector3(8.54568, 3.1254, 6.22483)
+size = Vector3(8.54568, 4.65729, 6.22483)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ljuru"]
 size = Vector3(1.51074, 2.73633, 4.24469)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ngtc"]
-size = Vector3(2.56982, 2.98807, 1.76947)
+size = Vector3(2.56982, 4.51227, 1.76947)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aomdf"]
-size = Vector3(2.6814, 3.04962, 8.09326)
+size = Vector3(2.6814, 4.34924, 8.09326)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_34ckl"]
 size = Vector3(2.86902, 0.0642759, 2.06766)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tnoi2"]
-size = Vector3(0.235474, 0.247864, 0.1707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_apein"]
 size = Vector3(0.0597534, 0.446777, 1.62266)
@@ -106,11 +103,10 @@ size = Vector3(3.88477, 6.91562, 1)
 
 [node name="Main2" type="Node3D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("target_position", "statue") instance=ExtResource("1_o41f8")]
+[node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("1_o41f8")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -10.1348, 0.9564, -2.84785)
 visible = false
 target_position = NodePath("../InsanityTarget")
-statue = NodePath("../Room+ACC/Statue2")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_y3a08")
@@ -120,7 +116,7 @@ navigation_mesh = SubResource("NavigationMesh_y3a08")
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Obstacles"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00644, -1.65149, -8.37127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00644, 0.0800192, -8.37127)
 shape = SubResource("BoxShape3D_y3a08")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
@@ -130,12 +126,12 @@ shape = SubResource("BoxShape3D_fqwok")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09229, -1.62182, -13.9804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09229, 1.21088, -13.9804)
 shape = SubResource("BoxShape3D_uv5wy")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2125, -2.35205, -17.3676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2125, -1.36273, -17.3676)
 shape = SubResource("BoxShape3D_oemjf")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
@@ -145,12 +141,12 @@ shape = SubResource("BoxShape3D_h8xhn")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.815, -1.89992, -7.9435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.815, -1.13791, -7.9435)
 shape = SubResource("BoxShape3D_xtuis")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5585, -2.19364, -7.41513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5585, -1.24206, -7.41513)
 shape = SubResource("BoxShape3D_b1njn")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
@@ -180,7 +176,7 @@ shape = SubResource("BoxShape3D_7y5a0")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61531, -1.80625, -28.0231)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61531, -1.0403, -28.0231)
 shape = SubResource("BoxShape3D_0t58k")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
@@ -190,22 +186,18 @@ shape = SubResource("BoxShape3D_ljuru")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41617, -1.81231, -27.9637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41617, -1.05021, -27.9637)
 shape = SubResource("BoxShape3D_1ngtc")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55807, -1.42581, -15.4014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55807, -0.775999, -15.4014)
 shape = SubResource("BoxShape3D_aomdf")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 2.58296, -3.87702, -17.7816)
 shape = SubResource("BoxShape3D_34ckl")
-
-[node name="CollisionShape3D18" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -5.0623, -2.11127, 0.786362)
-shape = SubResource("BoxShape3D_tnoi2")
 
 [node name="Walls" type="StaticBody3D" parent="NavigationRegion3D/Obstacles"]
 
@@ -253,14 +245,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6293, -0.141228, -36.9436)
 [node name="Room" parent="Room+ACC" instance=ExtResource("1_vd53x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8133, -23.8981, -5.14472)
 
-[node name="Statue2" parent="Room+ACC" node_paths=PackedStringArray("player", "player_camera") instance=ExtResource("3_fqwok")]
+[node name="Statue2" parent="Room+ACC" node_paths=PackedStringArray("player") instance=ExtResource("3_fqwok")]
 transform = Transform3D(0.946684, 0, 1.16352, 0, 1.5, 0, -1.16352, 0, 0.946684, -20.297, -3.08341, -14.9074)
 script = ExtResource("4_fqwok")
-pause_chase = true
 player = NodePath("../../Player")
-speed = 10.0
-acceleration = 5.0
-player_camera = NodePath("../../Player/Head/Camera3D")
+speed = 3.0
+acceleration = 2.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Room+ACC/Statue2"]
 
@@ -323,8 +313,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9869, -23.8168, -4.96262)
 [node name="ruangan besar2" parent="AtapRumah" instance=ExtResource("9_35cjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9801, -23.8168, -4.96262)
 
-[connection signal="screen_exited" from="Room+ACC/Statue2/VisibleOnScreenNotifier3D" to="Room+ACC/Statue2" method="_on_visible_on_screen_notifier_3d_screen_exited"]
-
-[editable path="Player"]
-[editable path="Player/Hud/Trauma_Constraint"]
 [editable path="pintu"]
