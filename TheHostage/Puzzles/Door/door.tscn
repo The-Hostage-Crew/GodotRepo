@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://x8mrs6fw4jbm"]
+[gd_scene load_steps=11 format=3 uid="uid://x8mrs6fw4jbm"]
 
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_4qhr8"]
 [ext_resource type="PackedScene" uid="uid://q51ynyhklo1u" path="res://TheHostage/Puzzles/Door/base.tscn" id="1_urg35"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bwnebqpculq7g" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/doorlock_lamp_default_cropped.png" id="3_3khd3"]
 [ext_resource type="Texture2D" uid="uid://ng7jkq7ya8tt" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_base_cropped.png" id="4_gf7u5"]
 [ext_resource type="Texture2D" uid="uid://ddlih4e62rvei" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/incorrect_answer/doorlock_lamp_red_glow_cropped.png" id="4_gqyqj"]
+[ext_resource type="AudioStream" uid="uid://ccvwruf5rqs2f" path="res://assets/Sounds/SFX/Doorlock/microwave-button-82493.wav" id="4_lt5ri"]
+[ext_resource type="AudioStream" uid="uid://8mg4uti1gqwp" path="res://assets/Sounds/SFX/Doorlock/489486__lilmati__access-denied.wav" id="5_3mfdn"]
 [ext_resource type="Texture2D" uid="uid://deqq13jfs2lim" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_glow_cropped.png" id="5_4qhr8"]
+[ext_resource type="AudioStream" uid="uid://cqhgqis05q0b0" path="res://assets/Sounds/SFX/Doorlock/262858__deleted_user_2906614__blip-1.wav" id="6_7tg6x"]
 
 [node name="DoorLock" type="Control"]
 layout_mode = 3
@@ -118,6 +121,16 @@ flat = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 flat = true
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="Base"]
+stream = ExtResource("4_lt5ri")
+
+[node name="FailAudio" type="AudioStreamPlayer2D" parent="Base"]
+stream = ExtResource("5_3mfdn")
+volume_db = 24.0
+
+[node name="SuccessAudio" type="AudioStreamPlayer2D" parent="Base"]
+stream = ExtResource("6_7tg6x")
 
 [node name="LampBase" type="TextureRect" parent="Base"]
 z_index = 1
