@@ -11,6 +11,7 @@ func _ready():
 			child.pressed.connect(func(): _on_button_pressed(button_name))
 
 func _on_button_pressed(button_name: String) -> void:
+	$ClickAudio.play()
 	match button_name:
 		"Delete":
 			if input_text.length() > 0:
@@ -38,11 +39,13 @@ func handle_code_check() -> void:
 		show_correct_lamp()
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
+		$SuccessAudio.play()
 	else:
 		$LampBase.visible = true
 		$GlowingLampFalse.visible = true
 		await get_tree().create_timer(1.0).timeout 
 		show_wrong_lamp()
+		$FailAudio.play()
 
 	input_text = ""  
 	$Label.text = input_text 
