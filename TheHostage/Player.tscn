@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dff2jbag28lnf"]
+[gd_scene load_steps=13 format=3 uid="uid://dff2jbag28lnf"]
 
 [ext_resource type="Script" uid="uid://7oax0ij5u8y8" path="res://TheHostage/player.gd" id="1_jasyr"]
 [ext_resource type="Script" uid="uid://bndo0270vhlhm" path="res://TheHostage/ray_cast_3d.gd" id="2_ppann"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bccrem4pdkd8r" path="res://assets/TheHostage/2D/healthgauge/new_gauge_guide-removebg.png" id="6_c5w34"]
 [ext_resource type="Texture2D" uid="uid://pg72ck38jxea" path="res://assets/TheHostage/2D/healthgauge/new_gauge_health-removebg.png" id="7_63yt8"]
 [ext_resource type="Texture2D" uid="uid://um8jabrllkvl" path="res://assets/TheHostage/2D/healthgauge/new_gauge_sanity-removebg.png" id="8_83200"]
+[ext_resource type="PackedScene" uid="uid://dttft4ngfl7ye" path="res://scenes/pause_scene.tscn" id="10_83200"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp38p"]
 
@@ -34,17 +35,17 @@ target_position = Vector3(0, 0, -1)
 script = ExtResource("2_ppann")
 
 [node name="TextureRect" type="TextureRect" parent="Head/Camera3D/RayCast3D"]
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -187.5
-offset_top = -296.0
+offset_top = -157.0
 offset_right = 187.5
-offset_bottom = -191.0
+offset_bottom = -52.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 texture = ExtResource("3_pmqa1")
 
 [node name="FallingCamera" type="Camera3D" parent="Head"]
@@ -91,5 +92,11 @@ offset_bottom = 40.0
 scale = Vector2(0.6, 0.6)
 value = 50.0
 texture_progress = ExtResource("8_83200")
+
+[node name="CanvasPauseModal" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseScene" parent="CanvasPauseModal" instance=ExtResource("10_83200")]
+visible = false
 
 [editable path="Hud/Trauma_Constraint"]
