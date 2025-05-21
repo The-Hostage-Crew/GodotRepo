@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyukhe86ytwdb"]
+[gd_scene load_steps=18 format=3 uid="uid://cyukhe86ytwdb"]
 
 [ext_resource type="PackedScene" uid="uid://cspycwn037qbk" path="res://assets/TheHostage/STAGE 1/3D assets/Room/RoomOnly.glb" id="1_h6nbf"]
 [ext_resource type="Texture2D" uid="uid://cyl3fuv3akrb7" path="res://assets/TheHostage/2D/photo/photo_clean.png" id="2_ngp47"]
+[ext_resource type="PackedScene" uid="uid://cxjwvio3gvac8" path="res://assets/TheHostage/STAGE 1/3D assets/Atap/atap.glb" id="3_xaalt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6nbf"]
 size = Vector3(1, 11.8643, 39.4413)
@@ -102,7 +103,7 @@ size = Vector3(0.356995, 0.755615, 3.20621)
 [node name="CollisionAndLight" type="Node3D" parent="." index="0"]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CollisionAndLight" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5839, -2.17527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.5229, -2.17527)
 light_energy = 12.0
 omni_range = 50.0
 
@@ -205,3 +206,6 @@ shape = SubResource("BoxShape3D_styrj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="書櫃（大）002/StaticBody3D" index="0"]
 transform = Transform3D(100, 0, 4.60204e-10, 0, 100, 0, 7.27596e-12, 0, 100, -10.2203, -36.2671, 4.43279)
 shape = SubResource("BoxShape3D_2wlg3")
+
+[node name="atap" parent="." index="38" instance=ExtResource("3_xaalt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.6187, 0)

@@ -24,6 +24,7 @@ InventoryManager="*res://Globals/HUD/Inventory/inventory_manager.gd"
 Global="*res://Globals/Global.gd"
 SanitySystem="*res://Globals/HUD/PlayerResource/sanity_system.gd"
 HpSystem="*res://Globals/HUD/PlayerResource/hp_system.gd"
+Notify="*res://Globals/NotifyPlayer/notify.tscn"
 
 [filesystem]
 
