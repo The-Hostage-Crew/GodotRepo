@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://u0rts3v83vh"]
+
+[ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_njbmw"]
+[ext_resource type="Texture2D" uid="uid://l147reu0ciyb" path="res://assets/TheHostage/2D/Stove/Stove_Water_Base.png" id="2_3yh4m"]
+[ext_resource type="Script" uid="uid://b16f3i4nmuy28" path="res://scripts/stove.gd" id="3_3yh4m"]
+[ext_resource type="Texture2D" uid="uid://x5sheuktn2kv" path="res://assets/TheHostage/2D/Stove/Stove_Remote_and_Battery_Base.png" id="4_78dlu"]
+[ext_resource type="Texture2D" uid="uid://dt007geacaokt" path="res://assets/TheHostage/2D/Stove/Stove_Thawed_Base.png" id="6_jcnjo"]
+[ext_resource type="Texture2D" uid="uid://dxq0ohgemw0v6" path="res://assets/TheHostage/2D/Stove/Stove_Thawing_1_Base.png" id="7_xud5c"]
+[ext_resource type="Texture2D" uid="uid://c3n3p6tfe585" path="res://assets/TheHostage/2D/Stove/Stove_Thawing_2_Base.png" id="8_3ttk6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ma0o8"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_78dlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xud5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ttk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jcnjo")
+}],
+"loop": false,
+"name": &"remote_first",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yh4m"]
+size = Vector2(1165, 667)
+
+[node name="StovePuzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darken" parent="." instance=ExtResource("1_njbmw")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_3yh4m")
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3yh4m")
+expand_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.599306, 0.6)
+sprite_frames = SubResource("SpriteFrames_ma0o8")
+animation = &"remote_first"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(572.5, 323.5)
+shape = SubResource("RectangleShape2D_3yh4m")

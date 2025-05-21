@@ -2,10 +2,10 @@ extends CharacterBody3D
 
 signal toggle_inventory
 
-@export var speed: float = 10.0
+@export var speed: float = 6.0
 @export var crouch_speed: float = 5.0  # Kecepatan saat jongkok
-@export var sprint_speed: float = 15.0  # Kecepatan saat sprint
-@export var acceleration: float = 5.0
+@export var sprint_speed: float = 10.0  # Kecepatan saat sprint
+@export var acceleration: float = 10.0
 @export var gravity: float = 9.8
 @export var jump_power: float = 5.0
 @export var mouse_sensitivity: float = 0.3
@@ -24,6 +24,7 @@ var default_falling_camera_position: Vector3
 var default_head_position: Vector3
 var current_speed: float
 var movement_enabled: bool = true
+const LOSE_SCREEN = preload("res://TheHostage/LoseScreen.tscn")
 
 @onready var footstep_audio: AudioStreamPlayer3D = $Footstep
 var footstep_timer := 0.0
@@ -67,6 +68,9 @@ func _ready():
 	default_falling_camera_position = falling_camera.position
 	default_head_position = head.position
 	current_speed = speed
+	
+	HpSystem.reset_hp()
+	SanitySystem.reset_sanity()
 	
 	hp_bar.value = 100
 	sanity_bar.value = 100
@@ -137,6 +141,15 @@ func _physics_process(delta):
 		follow_target = true
 
 	if not movement_enabled:
+		# Tetap aplikasikan gravitasi
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		# Setel kecepatan horizontal ke nol agar tidak ada "sisa momentum"
+		velocity.x = 0
+		velocity.z = 0
+
+		move_and_slide()
 		return
 
 	var movement_vector = Vector3.ZERO
@@ -301,7 +314,7 @@ func trigger_fall_sequence():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false  # Ensure game isn't paused
 
-	SceneTransition.change_scene(preload("res://TheHostage/MainMenu/MainMenu.tscn"))
+	SceneTransition.change_scene(LOSE_SCREEN)
 	
 	
 

@@ -10,5 +10,5 @@ func decrease_hp(amount):
 func increase_sanity(amount):
 	HOSTAGE_HP += amount
 
-func reset_sanity():
+func reset_hp():
 	HOSTAGE_HP = MAX_HP

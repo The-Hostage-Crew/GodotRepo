@@ -12,6 +12,10 @@ var item_data := {
 	"coffee": preload("uid://cijol7feymbu0"),
 	"scissor": preload("uid://kbkk3f48yx56"),
 	"medkit": preload("uid://c6kd2ckhvrjb8"),
+	"remote_ice": preload("res://assets/TheHostage/2D/inventoryitem/Remote_Ice_Inventory.png"),
+	"battery_ice": preload("res://assets/TheHostage/2D/inventoryitem/Battery_Ice_Inventory.png"),
+	"remote": preload("res://assets/TheHostage/2D/inventoryitem/Remote_Inventory.png"),
+	"battery": preload("res://assets/TheHostage/2D/inventoryitem/Battery_Inventory.png"),
 }
 
 
@@ -65,6 +69,7 @@ func _rebuild_inventory():
 		var item_name = items[i]
 		var texture = item_data[item_name]
 		inventory_slots[i].set_item(texture, item_name)
+	
 
 
 func register_hover_label(label_node: Label):

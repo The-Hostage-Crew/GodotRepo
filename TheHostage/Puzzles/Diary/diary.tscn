@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=3 uid="uid://pboa0gjytsgj"]
+
+[ext_resource type="Script" uid="uid://phmpqeyhm6l2" path="res://TheHostage/Puzzles/Diary/diary.gd" id="1_jioq7"]
+[ext_resource type="Texture2D" uid="uid://cewg1ny5a1guv" path="res://assets/TheHostage/2D/diary/inside cover.png" id="2_a7phn"]
+[ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="2_c1718"]
+[ext_resource type="Texture2D" uid="uid://c7uqghwsmx1tu" path="res://assets/TheHostage/2D/diary/pages/1.PNG" id="3_c1718"]
+[ext_resource type="Texture2D" uid="uid://clwl51sj4coq0" path="res://assets/TheHostage/2D/diary/pages/2.PNG" id="4_rwmwq"]
+[ext_resource type="Texture2D" uid="uid://8jw3c7blcn04" path="res://assets/TheHostage/2D/diary/pages/3.PNG" id="5_bkev7"]
+[ext_resource type="Texture2D" uid="uid://pq2gnrw1e15e" path="res://assets/TheHostage/2D/diary/pages/4.PNG" id="6_axjgd"]
+[ext_resource type="Texture2D" uid="uid://bga0x4f7td7pm" path="res://assets/TheHostage/2D/diary/pages/5.PNG" id="7_fqukt"]
+[ext_resource type="Texture2D" uid="uid://btxew6hjlveim" path="res://assets/TheHostage/2D/diary/pages/6.PNG" id="8_jhl1w"]
+
+[node name="Diary" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jioq7")
+
+[node name="Darken" parent="." instance=ExtResource("2_c1718")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="DiaryBook" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(576, 350)
+texture = ExtResource("2_a7phn")
+
+[node name="Page12" type="Control" parent="DiaryBook"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1284.0
+offset_top = -1000.0
+offset_right = 1284.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+pivot_offset = Vector2(1284, 1000)
+
+[node name="1" type="TextureRect" parent="DiaryBook/Page12"]
+layout_mode = 2
+offset_right = 1285.0
+offset_bottom = 2000.0
+texture = ExtResource("3_c1718")
+
+[node name="2" type="TextureRect" parent="DiaryBook/Page12"]
+layout_mode = 2
+offset_left = 1289.0
+offset_right = 2568.0
+offset_bottom = 2000.0
+texture = ExtResource("4_rwmwq")
+
+[node name="Page34" type="Control" parent="DiaryBook"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1284.29
+offset_top = -1000.0
+offset_right = 1306.71
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+pivot_offset = Vector2(1284, 1000)
+
+[node name="3" type="TextureRect" parent="DiaryBook/Page34"]
+layout_mode = 2
+offset_left = -5.572
+offset_top = -0.299
+offset_right = 1285.43
+offset_bottom = 1999.7
+texture = ExtResource("5_bkev7")
+
+[node name="4" type="TextureRect" parent="DiaryBook/Page34"]
+layout_mode = 2
+offset_left = 1276.59
+offset_top = 0.00021553
+offset_right = 2572.59
+offset_bottom = 2000.0
+texture = ExtResource("6_axjgd")
+
+[node name="Page56" type="Control" parent="DiaryBook"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1284.29
+offset_top = -1000.0
+offset_right = 1294.71
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+pivot_offset = Vector2(1284, 1000)
+
+[node name="5" type="TextureRect" parent="DiaryBook/Page56"]
+layout_mode = 2
+offset_right = 1279.0
+offset_bottom = 2000.0
+texture = ExtResource("7_fqukt")
+
+[node name="6" type="TextureRect" parent="DiaryBook/Page56"]
+layout_mode = 2
+offset_left = 1276.21
+offset_top = 0.000198364
+offset_right = 2572.21
+offset_bottom = 2000.0
+texture = ExtResource("8_jhl1w")
+
+[node name="ButtonRight" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -233.0
+offset_top = -68.0
+offset_right = -223.0
+offset_bottom = -59.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.27255, 3.27255)
+
+[node name="ButtonLeft" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 199.0
+offset_top = -60.0
+offset_right = 207.0
+offset_bottom = -52.0
+grow_vertical = 0
+scale = Vector2(3.27255, 3.27255)
+
+[node name="DarkerRight" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(939, 596)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(11, -16, -19, 14, 11, 14)
+
+[node name="DarkerLeft" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(213, 602)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-14, -14, -14, 12, 13, 12)
+
+[connection signal="mouse_entered" from="ButtonRight" to="." method="_on_button_right_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonRight" to="." method="_on_button_right_mouse_exited"]
+[connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]
+[connection signal="mouse_entered" from="ButtonLeft" to="." method="_on_button_left_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonLeft" to="." method="_on_button_left_mouse_exited"]
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]

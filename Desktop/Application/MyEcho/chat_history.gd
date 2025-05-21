@@ -39,6 +39,10 @@ func _ready():
 	
 	xxx_info.visible = false
 	xxx_message.visible = false
+	
+	if Global.stage1:
+		print("SS")
+		Global.edgar_new2 = false
 
 	
 func _process(delta: float) -> void:

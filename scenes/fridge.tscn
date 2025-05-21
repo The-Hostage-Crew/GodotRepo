@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://crjb1su8fqmo"]
+[gd_scene load_steps=4 format=3 uid="uid://crjb1su8fqmo"]
 
+[ext_resource type="Script" uid="uid://cw6bykmul7vd3" path="res://scripts/fridge.gd" id="1_buvrw"]
 [ext_resource type="PackedScene" uid="uid://du5gg4i1hsaae" path="res://scenes/fridge_background.tscn" id="1_sp1gv"]
 [ext_resource type="PackedScene" uid="uid://duwc2856vj28e" path="res://scenes/ice_in_fridge.tscn" id="2_buvrw"]
 
 [node name="Fridge" type="Node2D"]
+script = ExtResource("1_buvrw")
 
 [node name="FridgeBackground" parent="." instance=ExtResource("1_sp1gv")]
 anchors_preset = 2
@@ -23,3 +25,5 @@ size_flags_vertical = 0
 [node name="IceInFridge" parent="." instance=ExtResource("2_buvrw")]
 position = Vector2(489, 372)
 scale = Vector2(2, 2)
+
+[editable path="IceInFridge"]
