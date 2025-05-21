@@ -315,6 +315,7 @@ func look_at_target(animate: bool):
 	var up = Vector3.UP
 
 	if animate:
+		movement_enabled = false
 		# Animate the head
 		var head_look_dir = (target_pos - head.global_position + Vector3(0,5,0)).normalized()
 		var head_target_basis = Basis().looking_at(head_look_dir, up)
@@ -329,6 +330,9 @@ func look_at_target(animate: bool):
 		var fall_look_dir = (target_pos - falling_camera.global_position + Vector3(0,5,0)).normalized()
 		var fall_target_basis = Basis().looking_at(fall_look_dir, up)
 		create_tween().tween_property(falling_camera, "global_transform:basis", fall_target_basis, 3)
+
+		await get_tree().create_timer(3).timeout
+		movement_enabled = true
 	else:
 		head.look_at(target_pos, up)
 		camera.look_at(target_pos, up)
