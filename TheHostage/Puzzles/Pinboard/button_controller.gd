@@ -1,5 +1,7 @@
 extends Control
 
+signal pinboard_done
+
 var red_texture_controller
 var correct_result_controller
 var incorrect_result_controller
@@ -13,6 +15,7 @@ var scissor_sound_player  # Reference to the AudioStreamPlayer
 const correct_answer = ["C","D", "E1", "E2", "E3", "N1", "N2", "A", "H"] 
 const correct_answer_num = 32348243  # For evaluation
 var cut_combination_answer = []  # Tracks which letters are currently cut
+var have_scissor := false
 
 func _ready() -> void:
 	# Connect button signals when scene loads
@@ -48,6 +51,12 @@ func _ready() -> void:
 		child.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			
 func _on_button_pressed(button_name: String):
+	if not check_scissor_equipped():
+		if !Notify.get_is_notifying():
+			Notify.show_notification("Need to something to cut it with..")
+		print("Scissors not equipped!")
+		return
+		
 	# Find the corresponding letter node in RedTextureController
 	var letter_node = null
 	for child in red_texture_controller.get_children():
@@ -197,12 +206,13 @@ func check_solution():
 func reveal_correct_result():
 	# Show the correct result
 	pinboard.get_node("White_correct_result").visible = true
-	pinboard.get_node("White_peritilan").visible = true
+	#pinboard.get_node("White_peritilan").visible = true
 	pinboard.get_node("White_glow").visible = true
 	pinboard.get_node("Peritilan").visible = false
 	red_texture_controller.visible=false
 	correct_result_controller.visible=false
 	incorrect_result_controller.visible=false
+	pinboard_done.emit()
 	#if correct_result_controller:
 		#for child in correct_result_controller.get_children():
 			#child.visible = true
@@ -212,5 +222,11 @@ func deal_damage_to_HUD():
 	pass
 
 func check_scissor_equipped():
-	# TO DO: check global inventory
-	return true
+	if have_scissor:
+		return true
+	else:
+		return false
+
+func set_scissor_true():
+	have_scissor = true
+	

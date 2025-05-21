@@ -1,13 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://da0muxixi846s"]
+[gd_scene load_steps=3 format=3 uid="uid://da0muxixi846s"]
 
-[ext_resource type="Texture2D" uid="uid://clagmie30w3or" path="res://assets/2D/stage_1/Pinboard/base_pinboard.png" id="1_x1tf0"]
+[ext_resource type="Texture2D" uid="uid://clagmie30w3or" path="res://assets/TheHostage/2D/stage_1/Pinboard/base_pinboard.png" id="1_x1tf0"]
+[ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="2_usrut"]
 
 [node name="Base" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 116.0
+offset_top = 13.0
+offset_right = 996.0
+offset_bottom = 634.0
 texture = ExtResource("1_x1tf0")
+
+[node name="Darken" parent="." instance=ExtResource("2_usrut")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+color = Color(0, 0, 0, 0.647059)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://du5gg4i1hsaae"]
+
+[ext_resource type="Texture2D" uid="uid://dew65t5jkwrfv" path="res://assets/TheHostage/2D/fridge/Background.png" id="1_q3qfr"]
+[ext_resource type="Texture2D" uid="uid://bvcn4e3rlul7r" path="res://assets/TheHostage/2D/fridge/Effect_Ice.png" id="2_ajxfs"]
+
+[node name="FridgeBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_q3qfr")
+
+[node name="EffectIce" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ajxfs")
