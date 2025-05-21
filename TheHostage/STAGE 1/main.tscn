@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=47 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -19,12 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://cu8gf2kpgwont" path="res://assets/TheHostage/2D/stage_1/Pinboard/black-background.png" id="12_8hstr"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 [ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
-[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
-[ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
 [ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
 [ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
+[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="21_urtpd"]
 [ext_resource type="PackedScene" uid="uid://c7ouvrx66ctr7" path="res://TheHostage/Puzzles/Pinboard/with_scissor.tscn" id="21_yj8jh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dqq41"]
@@ -364,6 +363,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(1225, 540)
+texture = ExtResource("21_urtpd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModal/Photo"]
 libraries = {
@@ -380,11 +380,6 @@ visible = false
 [node name="CanvasTransition" parent="." instance=ExtResource("11_d1eib")]
 visible = false
 
-[node name="CanvasInventory" type="CanvasLayer" parent="."]
-
-[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("17_ncsou")]
-visible = false
-
 [node name="Sounds" type="Node3D" parent="."]
 
 [node name="RoomAmbience" type="AudioStreamPlayer" parent="Sounds"]
@@ -392,7 +387,6 @@ stream = ExtResource("21_stdhf")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="toggle_inventory" from="Player" to="CanvasInventory/InventoryFix" method="_on_player_toggle_inventory"]
 [connection signal="safebox_to_pinboard" from="CanvasModal/CanvasSafebox" to="CanvasModal/Pinboard" method="have_scissor"]
 [connection signal="visibility_changed" from="CanvasModal/Photo" to="CanvasModal/Photo" method="_on_visibility_changed"]
 [connection signal="pinboard_to_3d" from="CanvasModal/Pinboard" to="NavigationRegion3D/Board/Constraint Instruction" method="pinboard_done_3d"]
