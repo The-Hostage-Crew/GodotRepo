@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://da0muxixi846s"]
+
+[ext_resource type="Texture2D" uid="uid://clagmie30w3or" path="res://assets/2D/stage_1/Pinboard/base_pinboard.png" id="1_x1tf0"]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_x1tf0")
