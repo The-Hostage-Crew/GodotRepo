@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://bglswyt7apam2"]
 
 [ext_resource type="Script" uid="uid://bpakfkdc34mwi" path="res://TheHostage/STAGE2/Puzzle/Piano/main.gd" id="1_gxuey"]
-[ext_resource type="Texture2D" uid="uid://dpg4tt0rj78e2" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/Illustration.png" id="1_k26ff"]
+[ext_resource type="Texture2D" uid="uid://dpg4tt0rj78e2" path="res://assets/TheHostage/2D/piano/Illustration.png" id="1_k26ff"]
 [ext_resource type="PackedScene" uid="uid://defm74foxh1ps" path="res://TheHostage/STAGE2/Puzzle/Piano/black/black1.tscn" id="2_v8j0b"]
 [ext_resource type="PackedScene" uid="uid://cvq2ikpxy1aaj" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white1.tscn" id="3_4folb"]
 [ext_resource type="PackedScene" uid="uid://nxd473444gs2" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white2.tscn" id="4_gxuey"]

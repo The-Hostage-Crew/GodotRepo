@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://crjb1su8fqmo"]
+
+[ext_resource type="PackedScene" uid="uid://du5gg4i1hsaae" path="res://scenes/fridge_background.tscn" id="1_sp1gv"]
+[ext_resource type="PackedScene" uid="uid://duwc2856vj28e" path="res://scenes/ice_in_fridge.tscn" id="2_buvrw"]
+
+[node name="Fridge" type="Node2D"]
+
+[node name="FridgeBackground" parent="." instance=ExtResource("1_sp1gv")]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 575.0
+offset_top = 324.0
+offset_right = 575.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IceInFridge" parent="." instance=ExtResource("2_buvrw")]
+position = Vector2(489, 372)
+scale = Vector2(2, 2)
