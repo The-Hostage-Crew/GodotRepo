@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c8x5t6fr4ur57" path="res://assets/TheHostage/choose the hostage/animation text/15.png" id="16_b4idi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddokb"]
-load_path = "res://.godot/imported/off .png-15018508fe6dce4f148038fd60c911aa.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dwods"]
 animations = [{
