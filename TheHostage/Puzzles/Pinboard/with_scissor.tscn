@@ -1,0 +1,598 @@
+[gd_scene load_steps=54 format=3 uid="uid://c7ouvrx66ctr7"]
+
+[ext_resource type="PackedScene" uid="uid://da0muxixi846s" path="res://TheHostage/Puzzles/Pinboard/base.tscn" id="1_nnqmj"]
+[ext_resource type="Texture2D" uid="uid://b41er6uoy6xdg" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/C.png" id="2_8uug5"]
+[ext_resource type="Texture2D" uid="uid://ca3e7xnlmcnev" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/O1.png" id="3_15oih"]
+[ext_resource type="Texture2D" uid="uid://ci2jcpoiomyp4" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/O2.png" id="4_wr1ew"]
+[ext_resource type="Texture2D" uid="uid://qy04x8tg1q3h" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/O3.png" id="5_b1clg"]
+[ext_resource type="Texture2D" uid="uid://dccykm3wryios" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/O4.png" id="6_2xnt6"]
+[ext_resource type="Texture2D" uid="uid://ceqpx2mgwdvuu" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/M1.png" id="7_aryt8"]
+[ext_resource type="Texture2D" uid="uid://crc3bsa545atg" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/M2.png" id="8_p3vd6"]
+[ext_resource type="Texture2D" uid="uid://tvjyjud0g55g" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/E1.png" id="9_cujcw"]
+[ext_resource type="Texture2D" uid="uid://dfllwmjhm4pyd" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/E2.png" id="10_sag5t"]
+[ext_resource type="Texture2D" uid="uid://b5nq13qn3yxgs" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/E3.png" id="11_xpfkk"]
+[ext_resource type="Texture2D" uid="uid://bxsp32y2r5a5o" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/N1.png" id="12_7inp4"]
+[ext_resource type="Texture2D" uid="uid://csivdu80wadyf" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/N2.png" id="13_dn57i"]
+[ext_resource type="Texture2D" uid="uid://cvoq5tpkakx6e" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/L1.png" id="14_6f6ia"]
+[ext_resource type="Texture2D" uid="uid://5epqxeqjx8w2" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/L2.png" id="15_cnniu"]
+[ext_resource type="Texture2D" uid="uid://cen3bvrbp6dfy" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/T1.png" id="16_ybg6v"]
+[ext_resource type="Texture2D" uid="uid://blo7pp7sgljgt" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/T2.png" id="17_ddxvw"]
+[ext_resource type="Texture2D" uid="uid://cor3g4eht18rb" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/T3.png" id="18_poa1n"]
+[ext_resource type="Texture2D" uid="uid://dhgyupdfjhhhr" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/T4.png" id="19_5ikp6"]
+[ext_resource type="Texture2D" uid="uid://hrxprwxlg2d8" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/T5.png" id="20_6ic3v"]
+[ext_resource type="Texture2D" uid="uid://d1oxhiqjc3hxn" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/S1.png" id="21_b87px"]
+[ext_resource type="Texture2D" uid="uid://d21n0phyxckjc" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/S2.png" id="22_tf4mi"]
+[ext_resource type="Texture2D" uid="uid://8nv0lhjh1nvo" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/A.png" id="23_lekrf"]
+[ext_resource type="Texture2D" uid="uid://5cuk3xtfs14j" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/D.png" id="24_kb1h6"]
+[ext_resource type="Texture2D" uid="uid://c0a0qhd4fwnwx" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/U1.png" id="25_13n45"]
+[ext_resource type="Texture2D" uid="uid://026cywy52abe" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/U2.png" id="26_nl3m5"]
+[ext_resource type="Texture2D" uid="uid://bm4ucn2oaii7a" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/H.png" id="27_gnddm"]
+[ext_resource type="Texture2D" uid="uid://cbwqmp6lw3o4j" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/K.png" id="28_8n1m1"]
+[ext_resource type="Texture2D" uid="uid://bbg26crpgub6s" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/Peritilan.png" id="29_tkp8n"]
+[ext_resource type="Script" uid="uid://dkaxi57iw5mxp" path="res://TheHostage/Puzzles/Pinboard/button_controller.gd" id="30_kudi0"]
+[ext_resource type="Texture2D" uid="uid://4v5pvfbx4ryx" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/2A.png" id="31_q7jwq"]
+[ext_resource type="Texture2D" uid="uid://cklwuh5p35ans" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/2B.png" id="32_emvvb"]
+[ext_resource type="Texture2D" uid="uid://bo04bsydyci80" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/3C.png" id="33_02ygb"]
+[ext_resource type="Texture2D" uid="uid://blr1euvrknnm6" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/3D.png" id="34_ra2e2"]
+[ext_resource type="Texture2D" uid="uid://je3ixr3qsebo" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/3E.png" id="35_hkq0c"]
+[ext_resource type="Texture2D" uid="uid://bg8v2sk867uy0" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/4A.png" id="36_umo0x"]
+[ext_resource type="Texture2D" uid="uid://dhk7rd3j0601r" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/4B.png" id="37_jic86"]
+[ext_resource type="Texture2D" uid="uid://xty43mvyxb40" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/8.png" id="38_aix5h"]
+[ext_resource type="Texture2D" uid="uid://cbbpc5vgo367b" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/3A.png" id="39_h2a1a"]
+[ext_resource type="Texture2D" uid="uid://bfqh7b8tw4gxi" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/3B.png" id="40_nqdhu"]
+[ext_resource type="Texture2D" uid="uid://vopdbhoakfin" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/5A.png" id="41_fcc1a"]
+[ext_resource type="Texture2D" uid="uid://ixxcge6bs6an" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/5B.png" id="42_v6nq5"]
+[ext_resource type="Texture2D" uid="uid://txdlk4pyo86t" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/6A.png" id="43_gts71"]
+[ext_resource type="Texture2D" uid="uid://c02v4jimtjrvl" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/6B.png" id="44_bs0io"]
+[ext_resource type="Texture2D" uid="uid://qq5oxjhiceh5" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/7A.png" id="45_avfn6"]
+[ext_resource type="Texture2D" uid="uid://oek5mic3kyel" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/7B.png" id="46_xmnfy"]
+[ext_resource type="Texture2D" uid="uid://g7wyq0mq466p" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/7C.png" id="47_jr6gg"]
+[ext_resource type="Texture2D" uid="uid://bwug7tgrn742o" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/7D.png" id="48_1v857"]
+[ext_resource type="Texture2D" uid="uid://diqhvc2knvob0" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/incorrect_answer/7E.png" id="49_y8rca"]
+[ext_resource type="Texture2D" uid="uid://de633b3os7snk" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/white_correct_answer.png" id="50_tb4sa"]
+[ext_resource type="Texture2D" uid="uid://d3bs4go161k66" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/white_peritilan.png" id="51_rv2jq"]
+[ext_resource type="Texture2D" uid="uid://b0hvix72qvtwx" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/white_glow.png" id="52_hxfog"]
+[ext_resource type="AudioStream" uid="uid://dkyqrbns055bc" path="res://assets/Sounds/SFX/scissor-cut.mp3" id="53_h6hij"]
+
+[node name="WithScissor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Pinboard" parent="." instance=ExtResource("1_nnqmj")]
+
+[node name="ScissorCut" type="AudioStreamPlayer" parent="Pinboard"]
+stream = ExtResource("53_h6hij")
+
+[node name="Peritilan" type="TextureRect" parent="Pinboard"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("29_tkp8n")
+
+[node name="RedTextureController" type="Control" parent="Pinboard"]
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="C" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("2_8uug5")
+
+[node name="O1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("3_15oih")
+
+[node name="O2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("4_wr1ew")
+
+[node name="O3" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("5_b1clg")
+
+[node name="O4" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("6_2xnt6")
+
+[node name="M1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("7_aryt8")
+
+[node name="M2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("8_p3vd6")
+
+[node name="E1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("9_cujcw")
+
+[node name="E2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("10_sag5t")
+
+[node name="E3" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("11_xpfkk")
+
+[node name="N1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("12_7inp4")
+
+[node name="N2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("13_dn57i")
+
+[node name="L1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("14_6f6ia")
+
+[node name="L2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("15_cnniu")
+
+[node name="T1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("16_ybg6v")
+
+[node name="T2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("17_ddxvw")
+
+[node name="T3" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("18_poa1n")
+
+[node name="T4" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("19_5ikp6")
+
+[node name="T5" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("20_6ic3v")
+
+[node name="S1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("21_b87px")
+
+[node name="S2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("22_tf4mi")
+
+[node name="A" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("23_lekrf")
+
+[node name="D" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("24_kb1h6")
+
+[node name="U1" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("25_13n45")
+
+[node name="U2" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 880.0
+offset_bottom = 623.0
+texture = ExtResource("26_nl3m5")
+
+[node name="H" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("27_gnddm")
+
+[node name="K" type="TextureRect" parent="Pinboard/RedTextureController"]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 621.0
+texture = ExtResource("28_8n1m1")
+
+[node name="ButtonContainer" type="Control" parent="Pinboard"]
+modulate = Color(1, 1, 1, 0.211765)
+anchors_preset = 0
+offset_left = 34.0
+offset_top = 116.0
+offset_right = 783.0
+offset_bottom = 302.0
+script = ExtResource("30_kudi0")
+
+[node name="C" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 2
+offset_left = 43.0
+offset_top = 8.0
+offset_right = 79.0
+offset_bottom = 60.0
+
+[node name="O1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 3.0
+offset_right = 123.0
+offset_bottom = 67.0
+
+[node name="O2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = -1.0
+offset_right = 265.0
+offset_bottom = 63.0
+
+[node name="O3" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 92.0
+offset_right = 105.0
+offset_bottom = 159.0
+
+[node name="O4" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 74.0
+offset_right = 625.0
+offset_bottom = 159.0
+
+[node name="M1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 2.0
+offset_right = 162.0
+offset_bottom = 66.0
+
+[node name="M2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 87.0
+offset_right = 503.0
+offset_bottom = 169.0
+
+[node name="E1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = -2.0
+offset_right = 212.0
+offset_bottom = 68.0
+
+[node name="E2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 449.0
+offset_right = 484.0
+offset_bottom = 60.0
+
+[node name="E3" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 89.0
+offset_right = 558.0
+offset_bottom = 169.0
+
+[node name="N1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = -1.0
+offset_right = 310.0
+offset_bottom = 66.0
+
+[node name="N2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 89.0
+offset_right = 157.0
+offset_bottom = 157.0
+
+[node name="L1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 3.0
+offset_right = 445.0
+offset_bottom = 57.0
+
+[node name="L2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 5.0
+offset_right = 646.0
+offset_bottom = 60.0
+
+[node name="T1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 4.0
+offset_right = 519.0
+offset_bottom = 55.0
+
+[node name="T2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 4.0
+offset_right = 591.0
+offset_bottom = 67.0
+
+[node name="T3" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 93.0
+offset_right = 220.0
+offset_bottom = 175.0
+
+[node name="T4" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 91.0
+offset_right = 428.0
+offset_bottom = 181.0
+
+[node name="T5" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 78.0
+offset_right = 726.0
+offset_bottom = 178.0
+
+[node name="S1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 1.0
+offset_right = 552.0
+offset_bottom = 59.0
+
+[node name="S2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 95.0
+offset_right = 279.0
+offset_bottom = 169.0
+
+[node name="A" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 5.0
+offset_right = 618.0
+offset_bottom = 59.0
+
+[node name="D" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 84.0
+offset_right = 59.0
+offset_bottom = 160.0
+
+[node name="U1" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 90.0
+offset_right = 374.0
+offset_bottom = 171.0
+
+[node name="U2" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 81.0
+offset_right = 673.0
+offset_bottom = 161.0
+
+[node name="H" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 93.0
+offset_right = 326.0
+offset_bottom = 161.0
+
+[node name="K" type="Button" parent="Pinboard/ButtonContainer"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 8.0
+offset_right = 683.0
+offset_bottom = 55.0
+
+[node name="CorrectResultController" type="Control" parent="Pinboard"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="N1" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("31_q7jwq")
+
+[node name="N2" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("32_emvvb")
+
+[node name="E1" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("33_02ygb")
+
+[node name="E2" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("34_ra2e2")
+
+[node name="E3" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("35_hkq0c")
+
+[node name="A" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("36_umo0x")
+
+[node name="H" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("37_jic86")
+
+[node name="8" type="TextureRect" parent="Pinboard/CorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("38_aix5h")
+
+[node name="IncorrectResultController" type="Control" parent="Pinboard"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="M1" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("39_h2a1a")
+
+[node name="M2" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("40_nqdhu")
+
+[node name="S1" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("41_fcc1a")
+
+[node name="S2" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("42_v6nq5")
+
+[node name="6A" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("43_gts71")
+
+[node name="6B" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("44_bs0io")
+
+[node name="L1" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("45_avfn6")
+
+[node name="T1" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("46_xmnfy")
+
+[node name="T2" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("47_jr6gg")
+
+[node name="L2" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("48_1v857")
+
+[node name="T3" type="TextureRect" parent="Pinboard/IncorrectResultController"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("49_y8rca")
+
+[node name="White_correct_result" type="TextureRect" parent="Pinboard"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("50_tb4sa")
+
+[node name="White_peritilan" type="TextureRect" parent="Pinboard"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("51_rv2jq")
+
+[node name="White_glow" type="TextureRect" parent="Pinboard"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("52_hxfog")
