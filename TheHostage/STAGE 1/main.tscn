@@ -1,24 +1,28 @@
 [gd_scene load_steps=45 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
-[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
-[ext_resource type="Texture2D" uid="uid://b4c03lqe3kbmd" path="res://assets/constraint_[trauma]/Window Enemy/v1/by frames/constraint_enemy_default.png" id="5_d1eib"]
-[ext_resource type="VideoStream" path="res://assets/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="6_2lav0"]
-[ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
-[ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
-[ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
+[ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
+[ext_resource type="Texture2D" uid="uid://b4c03lqe3kbmd" path="res://assets/TheHostage/2D/constraint_[trauma]/Window Enemy/v1/by frames/constraint_enemy_default.png" id="5_d1eib"]
+[ext_resource type="VideoStream" uid="uid://c7ks2dcygsnl5" path="res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyDefault.ogv" id="6_2lav0"]
+[ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/TheHostage/STAGE 1/3D assets/door lock.glb" id="6_8av70"]
+[ext_resource type="PackedScene" uid="uid://c4kqeqg5mdgbx" path="res://assets/TheHostage/STAGE 1/3D assets/board/bulletin_board.glb" id="7_8av70"]
+[ext_resource type="PackedScene" uid="uid://bqm0561sl2gu3" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kanan.fbx" id="7_tfrmh"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="8_cmcob"]
 [ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="8_d1eib"]
-[ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
-[ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
-[ext_resource type="Script" path="res://Globals/Interactable/game_object_transition_collition.gd" id="9_dqq41"]
-[ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://n4uus6hh1q6o" path="res://assets/TheHostage/STAGE 1/3D assets/tirai/tirai kiri.fbx" id="8_gx6gr"]
+[ext_resource type="PackedScene" uid="uid://8ovb34cb8x2x" path="res://assets/TheHostage/STAGE 1/3D assets/closedTirai/tiraitertutup.glb" id="8_gxrok"]
+[ext_resource type="Script" uid="uid://be83uxp2jgkcq" path="res://Globals/Interactable/game_object_transition_collition.gd" id="9_dqq41"]
+[ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
+[ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
+[ext_resource type="Texture2D" uid="uid://cm4xgf4gpaixw" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
+[ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
+[ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dqq41"]
 
@@ -163,6 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, -0.026, -7.426)
 
 [node name="Trauma" type="Sprite3D" parent="Tirai terbuka"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -83.7494, 14.4969, -19.8827)
+texture = ExtResource("5_d1eib")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tirai terbuka"]
 transform = Transform3D(-1.31134e-07, 3, 0, 0.026389, 1.15351e-09, -2.99988, -2.99988, -1.31129e-07, -0.026389, -15.0002, 12.1565, -16.9281)
@@ -176,6 +181,7 @@ size = Vector2i(1124, 1080)
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Tirai terbuka/SubViewport"]
 offset_right = 1124.0
 offset_bottom = 1080.0
+stream = ExtResource("6_2lav0")
 autoplay = true
 loop = true
 
@@ -251,6 +257,7 @@ modal = NodePath("../../../CanvasModal/CanvasSafebox")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Safebox/SafeboxCollision"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00675507, -0.251996, -0.203811)
 shape = SubResource("BoxShape3D_gxrok")
+debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 
 [node name="DoorLock" parent="NavigationRegion3D" instance=ExtResource("6_8av70")]
 transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 12.6212, 8.23108, -9.84949)
@@ -289,15 +296,6 @@ debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 [node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120401, 8.2593, -5.07182)
-speed = null
-crouch_speed = null
-sprint_speed = null
-acceleration = null
-gravity = null
-jump_power = null
-mouse_sensitivity = null
-crouch_height = null
-follow_target = null
 target_position = NodePath("../InsanityTarget")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
@@ -349,6 +347,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(1225, 540)
+texture = ExtResource("16_4l1pw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModal/Photo"]
 libraries = {
@@ -356,6 +355,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasModal/Photo"]
+stream = ExtResource("19_fmbob")
 volume_db = 6.0
 
 [node name="CanvasTransition" parent="." instance=ExtResource("11_d1eib")]
@@ -369,7 +369,9 @@ visible = false
 [node name="Sounds" type="Node3D" parent="."]
 
 [node name="RoomAmbience" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_stdhf")
 volume_db = -10.0
 autoplay = true
 
+[connection signal="toggle_inventory" from="Player" to="CanvasInventory/InventoryFix" method="_on_player_toggle_inventory"]
 [connection signal="visibility_changed" from="CanvasModal/Photo" to="CanvasModal/Photo" method="_on_visibility_changed"]
