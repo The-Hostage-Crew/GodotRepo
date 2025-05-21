@@ -35,17 +35,25 @@ func handle_code_check() -> void:
 	if input_text == correct_code:
 		$Base/LampBase.visible = true
 		$Base/GlowingLampTrue.visible = true
+		$Base/SuccessAudio.play()
 		await get_tree().create_timer(1.0).timeout 
 		show_correct_lamp()
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
-		$Base/SuccessAudio.play()
 	else:
 		$Base/LampBase.visible = true
 		$Base/GlowingLampFalse.visible = true
 		await get_tree().create_timer(1.0).timeout 
 		show_wrong_lamp()
 		$Base/FailAudio.play()
+		await Fade.transition_finished
+		$Base/WinScreen.visible = true
+		Fade._out()
+		await Fade.transition_finished
+		await get_tree().create_timer(3.0).timeout 
+		Fade._in()
+		await Fade.transition_finished
+		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
 
 	input_text = ""  
 	$Base/Label.text = input_text 

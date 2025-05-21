@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://x8mrs6fw4jbm"]
+[gd_scene load_steps=12 format=3 uid="uid://x8mrs6fw4jbm"]
 
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_4qhr8"]
 [ext_resource type="PackedScene" uid="uid://q51ynyhklo1u" path="res://TheHostage/Puzzles/Door/base.tscn" id="1_urg35"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://8mg4uti1gqwp" path="res://assets/Sounds/SFX/Doorlock/489486__lilmati__access-denied.wav" id="5_3mfdn"]
 [ext_resource type="Texture2D" uid="uid://deqq13jfs2lim" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_glow_cropped.png" id="5_4qhr8"]
 [ext_resource type="AudioStream" uid="uid://cqhgqis05q0b0" path="res://assets/Sounds/SFX/Doorlock/262858__deleted_user_2906614__blip-1.wav" id="6_7tg6x"]
+[ext_resource type="Texture2D" uid="uid://cy2iobni5ydy" path="res://assets/TheHostage/WinScreen.png" id="11_3tfj2"]
 
 [node name="DoorLock" type="Control"]
 layout_mode = 3
@@ -181,3 +182,20 @@ offset_bottom = 723.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("4_gqyqj")
 expand_mode = 1
+
+[node name="WinScreen" type="TextureRect" parent="Base"]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_3tfj2")
