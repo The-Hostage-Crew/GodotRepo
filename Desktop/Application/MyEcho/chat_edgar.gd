@@ -52,6 +52,18 @@ func _ready() :
 	$"ScrollContainer/VBoxContainer/25".visible = false
 	$"ScrollContainer/VBoxContainer/26".visible = false
 	$"ScrollContainer/VBoxContainer/screen-rusak".visible = false
+	
+	if Global.stage1:
+		$"ScrollContainer/VBoxContainer/1".visible = true
+		$"ScrollContainer/VBoxContainer/2".visible = true
+		$"ScrollContainer/VBoxContainer/3".visible = true
+		$"ScrollContainer/VBoxContainer/4".visible = true
+		$"ScrollContainer/VBoxContainer/5".visible = true
+		$"ScrollContainer/VBoxContainer/6".visible = true
+		$"ScrollContainer/VBoxContainer/7".visible = true
+		$"ScrollContainer/VBoxContainer/download".visible = true
+		$"ScrollContainer/VBoxContainer/8".visible = true
+		$"ScrollContainer/VBoxContainer/9".visible = true
 	#inisiasi timer
 	timer.wait_time = 1.0
 	timer.one_shot = true  # Pastikan hanya sekali
@@ -68,7 +80,7 @@ func _process(delta):
 	timestamp =  "%s:%s" % [hour, minute]
 	
 	if Global.edgar : #jika edgar sudah menghubungi player
-		if notif1 :
+		if notif1 and !Global.stage1:
 			Global.edgar_new2 = true #simbol chat baru dari edgar
 			var time_now = timestamp
 			$"ScrollContainer/VBoxContainer/1".visible = true
@@ -272,7 +284,7 @@ func _on_timer_timeout() -> void:
 		AudioPlayer.play_notif()
 		Global.last_chat_edgar = "file"
 	elif num == 5 :
-		if Global.chat_edgar :
+		if Global.chat_edgar && Global.edgar_new:
 			Global.edgar_count +=1
 			$"ScrollContainer/VBoxContainer/12".visible = true
 			var time_now = timestamp

@@ -22,6 +22,7 @@ func interact() -> void:
 		if is_tirai:
 			print(tirai_timer)
 			modal.set_visible(true)
+			Notify.show_notification("GET OFF OF ME!!!")
 			showed = true
 			trauma_viewport.stream = load("res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyAngryAudio.ogv")
 			trauma_viewport.custom_minimum_size = Vector2(1920, 1080)  # ✅

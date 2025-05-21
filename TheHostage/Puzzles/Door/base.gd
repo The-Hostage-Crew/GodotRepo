@@ -16,10 +16,8 @@ func _on_button_pressed(button_name: String) -> void:
 		"Delete":
 			if input_text.length() > 0:
 				input_text = input_text.substr(0, input_text.length() - 1)
-
 		"OK":
 			handle_code_check()
-
 		_:
 			if input_text.length() < MAX_LENGTH:
 				var random_sanity_check = randi_range(0, 100)
@@ -32,28 +30,29 @@ func _on_button_pressed(button_name: String) -> void:
 
 # Show glowing first, then resolve result
 func handle_code_check() -> void:
-	if input_text == correct_code:
-		$Base/LampBase.visible = true
-		$Base/GlowingLampTrue.visible = true
-		$Base/SuccessAudio.play()
+	if input_text == CORRECT_CODE:
+		$LampBase.visible = true
+		$GlowingLampTrue.visible = true
+		$SuccessAudio.play()
 		await get_tree().create_timer(1.0).timeout 
 		show_correct_lamp()
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
-	else:
-		$Base/LampBase.visible = true
-		$Base/GlowingLampFalse.visible = true
-		await get_tree().create_timer(1.0).timeout 
-		show_wrong_lamp()
-		$Base/FailAudio.play()
 		await Fade.transition_finished
-		$Base/WinScreen.visible = true
+		$WinScreen.visible = true
 		Fade._out()
 		await Fade.transition_finished
 		await get_tree().create_timer(3.0).timeout 
 		Fade._in()
 		await Fade.transition_finished
 		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
+	else:
+		$LampBase.visible = true
+		$GlowingLampFalse.visible = true
+		$FailAudio.play()
+		await get_tree().create_timer(1.0).timeout 
+		show_wrong_lamp()
+		SanitySystem.decrease_sanity(10)
 
 	input_text = ""  
 	$Base/Label.text = input_text 
