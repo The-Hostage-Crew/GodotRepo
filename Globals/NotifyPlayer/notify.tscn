@@ -151,6 +151,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="DEBUGGING"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 217.0
 offset_right = 487.0
@@ -158,6 +159,7 @@ offset_bottom = 248.0
 text = "DAPAT GUNTING COY"
 
 [node name="Button2" type="Button" parent="DEBUGGING"]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 319.0
 offset_right = 904.0

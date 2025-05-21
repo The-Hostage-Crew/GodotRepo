@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=47 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://cu8gf2kpgwont" path="res://assets/TheHostage/2D/stage_1/Pinboard/black-background.png" id="12_8hstr"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 [ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
-[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]

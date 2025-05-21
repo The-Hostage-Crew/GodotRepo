@@ -2,7 +2,7 @@ extends Control
 
 var input_text := ""
 const MAX_LENGTH := 8
-const CORRECT_CODE := "80732243"
+const CORRECT_CODE := "32348243"
 
 func _ready():
 	for child in $GridContainer.get_children():
@@ -35,17 +35,25 @@ func handle_code_check() -> void:
 	if input_text == CORRECT_CODE:
 		$LampBase.visible = true
 		$GlowingLampTrue.visible = true
+		$SuccessAudio.play()
 		await get_tree().create_timer(1.0).timeout 
 		show_correct_lamp()
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
-		$SuccessAudio.play()
+		await Fade.transition_finished
+		$WinScreen.visible = true
+		Fade._out()
+		await Fade.transition_finished
+		await get_tree().create_timer(3.0).timeout 
+		Fade._in()
+		await Fade.transition_finished
+		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
 	else:
 		$LampBase.visible = true
 		$GlowingLampFalse.visible = true
+		$FailAudio.play()
 		await get_tree().create_timer(1.0).timeout 
 		show_wrong_lamp()
-		$FailAudio.play()
 
 	input_text = ""  
 	$Label.text = input_text 
