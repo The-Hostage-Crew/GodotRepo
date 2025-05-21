@@ -16,10 +16,8 @@ func _on_button_pressed(button_name: String) -> void:
 		"Delete":
 			if input_text.length() > 0:
 				input_text = input_text.substr(0, input_text.length() - 1)
-
 		"OK":
 			handle_code_check()
-
 		_:
 			if input_text.length() < MAX_LENGTH:
 				var random_sanity_check = randi_range(0, 100)
@@ -54,6 +52,7 @@ func handle_code_check() -> void:
 		$FailAudio.play()
 		await get_tree().create_timer(1.0).timeout 
 		show_wrong_lamp()
+		SanitySystem.decrease_sanity(10)
 
 	input_text = ""  
 	$Label.text = input_text 

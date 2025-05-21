@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=50 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="Script" uid="uid://dhcl7kvsflw68" path="res://TheHostage/STAGE 1/main.gd" id="1_in4p6"]
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
 [ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
+[ext_resource type="Script" uid="uid://du02w2s8u4a3g" path="res://TheHostage/Puzzles/Door/door.gd" id="19_h0wdm"]
 [ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="21_in4p6"]
 [ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
 [ext_resource type="PackedScene" uid="uid://c7ouvrx66ctr7" path="res://TheHostage/Puzzles/Pinboard/with_scissor.tscn" id="21_yj8jh"]
@@ -65,7 +66,7 @@ size = Vector3(2.98975, 10.9536, 6.92859)
 size = Vector3(49.0472, 1.82288, 65.998)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1eib"]
-size = Vector3(11.7847, 11.1598, 18.3309)
+size = Vector3(11.7847, 8.61811, 18.3309)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxrok"]
 size = Vector3(0.516979, 0.497467, 0.552139)
@@ -138,6 +139,33 @@ _data = {
 &"show": SubResource("Animation_l4k33")
 }
 
+[sub_resource type="Animation" id="Animation_in4p6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_urtpd"]
 resource_name = "get_in_room"
 length = 3.0
@@ -164,33 +192,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_in4p6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8hstr"]
@@ -242,7 +243,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("5_stdhf")
-volume_db = 5.0
+volume_db = -5.0
 autoplay = true
 loop = true
 
@@ -297,7 +298,7 @@ script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/Pinboard")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Board/BoardCollision"]
-transform = Transform3D(30, 0, 3.31966e-10, 0, 30, 0, -3.31966e-10, 0, 30, 21.7611, -37.5616, -77.066)
+transform = Transform3D(30, 0, 3.3333e-10, 0, 30, 0, -3.3333e-10, 0, 30, 21.761, 33.0254, -77.0661)
 shape = SubResource("BoxShape3D_d1eib")
 
 [node name="Constraint Instruction" parent="NavigationRegion3D/Board" instance=ExtResource("11_in4p6")]
@@ -315,7 +316,7 @@ transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0
 modal = NodePath("../../../CanvasModal/Diary")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Table/TableInteraction"]
-transform = Transform3D(30, 0, 2.33285e-10, 0, 30, 0, -2.33285e-10, 0, 30, -98.3089, -0.898407, -102.23)
+transform = Transform3D(30, 0, 2.35559e-10, 0, 30, 0, -2.35559e-10, 0, 30, -99.2294, -6.54245, -102.23)
 shape = SubResource("BoxShape3D_d1eib")
 
 [node name="Safebox" parent="NavigationRegion3D" instance=ExtResource("5_b714i")]
@@ -376,6 +377,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 15.3356)
 
 [node name="Door" parent="CanvasModal" instance=ExtResource("9_gxrok")]
 visible = false
+script = ExtResource("19_h0wdm")
 
 [node name="CanvasSafebox" parent="CanvasModal" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("8_d1eib")]
 visible = false
@@ -462,6 +464,10 @@ volume_db = 10.0
 autoplay = true
 
 [connection signal="toggle_inventory" from="Player" to="CanvasInventory/InventoryFix" method="_on_player_toggle_inventory"]
+[connection signal="visibility_changed" from="CanvasModal/Door" to="CanvasModal/Door" method="_on_visibility_changed"]
 [connection signal="safebox_to_pinboard" from="CanvasModal/CanvasSafebox" to="CanvasModal/Pinboard" method="have_scissor"]
+[connection signal="visibility_changed" from="CanvasModal/CanvasSafebox" to="CanvasModal/CanvasSafebox" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="CanvasModal/Photo" to="CanvasModal/Photo" method="_on_visibility_changed"]
 [connection signal="pinboard_to_3d" from="CanvasModal/Pinboard" to="NavigationRegion3D/Board/Constraint Instruction" method="pinboard_done_3d"]
+[connection signal="visibility_changed" from="CanvasModal/Pinboard" to="CanvasModal/Pinboard" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasModal/Diary" to="CanvasModal/Diary" method="_on_visibility_changed"]

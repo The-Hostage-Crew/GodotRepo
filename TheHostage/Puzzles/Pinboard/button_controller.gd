@@ -53,7 +53,7 @@ func _ready() -> void:
 func _on_button_pressed(button_name: String):
 	if not check_scissor_equipped():
 		if !Notify.get_is_notifying():
-			Notify.show_notification("Need to something to cut it with..")
+			Notify.show_notification("Need something to cut these out...")
 		print("Scissors not equipped!")
 		return
 		
@@ -218,8 +218,7 @@ func reveal_correct_result():
 			#child.visible = true
 
 func deal_damage_to_HUD():
-	#TO DO: call interface for HUD
-	pass
+	SanitySystem.decrease_sanity(2)
 
 func check_scissor_equipped():
 	if have_scissor:

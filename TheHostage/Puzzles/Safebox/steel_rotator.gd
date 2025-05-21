@@ -60,6 +60,7 @@ func _on_rotator_pressed() -> void:
 	else:
 		animation_rotator.play("rotator_locked")
 		sound_locked.play()
+		SanitySystem.decrease_sanity(5)
 
 func unlock() -> void:
 	is_opened = true

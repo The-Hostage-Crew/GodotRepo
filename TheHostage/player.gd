@@ -24,6 +24,7 @@ var default_falling_camera_position: Vector3
 var default_head_position: Vector3
 var current_speed: float
 var movement_enabled: bool = true
+const LOSE_SCREEN = preload("res://TheHostage/LoseScreen.tscn")
 
 @onready var footstep_audio: AudioStreamPlayer3D = $Footstep
 var footstep_timer := 0.0
@@ -310,7 +311,7 @@ func trigger_fall_sequence():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false  # Ensure game isn't paused
 
-	SceneTransition.change_scene(preload("res://TheHostage/MainMenu/MainMenu.tscn"))
+	SceneTransition.change_scene(LOSE_SCREEN)
 	
 	
 

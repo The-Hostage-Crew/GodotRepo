@@ -22,6 +22,12 @@ script = ExtResource("1_jioq7")
 [node name="Darken" parent="." instance=ExtResource("2_c1718")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="DiaryBook" type="TextureRect" parent="."]
 layout_mode = 1
