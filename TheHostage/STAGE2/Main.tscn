@@ -284,6 +284,7 @@ aabb = AABB(-0.41848, -2.03499, -0.519833, 0.978562, 4.15495, 1.03967)
 
 [node name="Interaction" type="StaticBody3D" parent="Room+ACC/Statue2" node_paths=PackedStringArray("modal", "player_ref")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.366454)
+visible = false
 script = ExtResource("5_xtuis")
 modal = NodePath("../../../CanvasModal/Statue")
 player_ref = NodePath("../../../Player")
@@ -292,7 +293,6 @@ enabled = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room+ACC/Statue2/Interaction"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.498244, 2.3456, 0.597474)
 shape = SubResource("BoxShape3D_4efr7")
-disabled = true
 
 [node name="panci" parent="Room+ACC" instance=ExtResource("3_o41f8")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 26.7382, -0.494048, -22.639)
@@ -367,6 +367,7 @@ visible = false
 
 [node name="DoorLock" parent="CanvasModal" instance=ExtResource("17_b1njn")]
 visible = false
+correct_code = "45071352"
 
 [node name="Statue" type="Control" parent="CanvasModal"]
 visible = false
