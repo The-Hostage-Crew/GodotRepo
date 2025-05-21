@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://defm74foxh1ps"]
 
 [ext_resource type="Script" uid="uid://yxkyqhkvxpf7" path="res://TheHostage/STAGE2/Puzzle/Piano/black/black_1.gd" id="1_2g6rv"]
-[ext_resource type="Texture2D" uid="uid://de3h66qt8qp34" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/enter_black/1.png" id="2_ahq0s"]
-[ext_resource type="Texture2D" uid="uid://bshppleijy73q" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/click_black/1.png" id="3_wc5x8"]
+[ext_resource type="Texture2D" uid="uid://de3h66qt8qp34" path="res://assets/TheHostage/2D/Piano/enter_black/1.png" id="2_ahq0s"]
+[ext_resource type="Texture2D" uid="uid://bshppleijy73q" path="res://assets/TheHostage/2D/Piano/click_black/1.png" id="3_wc5x8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7llke"]
 size = Vector2(40, 202)

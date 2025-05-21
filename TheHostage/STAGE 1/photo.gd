@@ -14,4 +14,4 @@ func _on_visibility_changed() -> void:
 		animation_player.play("show")
 		
 		# Debug Sanity System, remove later
-		SanitySystem.decrease_sanity(10.0)
+		#SanitySystem.decrease_sanity(10.0)

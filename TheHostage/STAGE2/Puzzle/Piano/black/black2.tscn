@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgxll3g3jbkgt"]
 
-[ext_resource type="Texture2D" uid="uid://gj4ehyjlrxu5" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/enter_black/2.png" id="1_j2t5j"]
-[ext_resource type="Texture2D" uid="uid://bbv1mrvyas3sc" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/click_black/2.png" id="2_aspp8"]
+[ext_resource type="Texture2D" uid="uid://gj4ehyjlrxu5" path="res://assets/TheHostage/2D/Piano/enter_black/2.png" id="1_j2t5j"]
+[ext_resource type="Texture2D" uid="uid://bbv1mrvyas3sc" path="res://assets/TheHostage/2D/Piano/click_black/2.png" id="2_aspp8"]
 
 [node name="Black2" type="Node2D"]
 
