@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=3 uid="uid://db76vujjb517b"]
+
+[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCR/OCRAEXT.TTF" id="1_0xn5d"]
+[ext_resource type="Script" uid="uid://cldrnra3vk44n" path="res://Globals/NotifyPlayer/notify.gd" id="1_nh3ao"]
+[ext_resource type="AudioStream" uid="uid://5xxh80vkkhgq" path="res://assets/Sounds/SFX/Typewriter.mp3" id="2_o2xg2"]
+
+[sub_resource type="Animation" id="Animation_nh3ao"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:stream_paused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_o2xg2"]
+resource_name = "notify"
+length = 5.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:stream_paused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.99, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxqn8"]
+_data = {
+&"RESET": SubResource("Animation_nh3ao"),
+&"notify": SubResource("Animation_o2xg2")
+}
+
+[node name="Notify" type="CanvasLayer"]
+layer = 99
+script = ExtResource("1_nh3ao")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = -93.0
+offset_right = 350.0
+offset_bottom = -70.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0xn5d")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationLabel" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vxqn8")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(12, 636)
+stream = ExtResource("2_o2xg2")
+volume_db = 3.0
+
+[node name="DEBUGGING" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="DEBUGGING"]
+offset_left = 312.0
+offset_top = 217.0
+offset_right = 487.0
+offset_bottom = 248.0
+text = "DAPAT GUNTING COY"
+
+[node name="Button2" type="Button" parent="DEBUGGING"]
+offset_left = 729.0
+offset_top = 319.0
+offset_right = 904.0
+offset_bottom = 350.0
+text = "YAMIIIIIII"
+
+[connection signal="animation_finished" from="AnimationLabel" to="." method="_on_animation_finished"]
+[connection signal="pressed" from="DEBUGGING/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="DEBUGGING/Button2" to="." method="_on_button_2_pressed"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgbur83k6lwhl"]
+[gd_scene load_steps=9 format=3 uid="uid://bgbur83k6lwhl"]
 
+[ext_resource type="Script" uid="uid://cdlr2qmik75gt" path="res://scenes/pinboard.gd" id="1_8bo1d"]
 [ext_resource type="Texture2D" uid="uid://inimy8b0fycc" path="res://assets/TheHostage/2D/stage_1/Pinboard/base_constraint_instruction.png" id="1_wgyoi"]
 [ext_resource type="Texture2D" uid="uid://dyc37h8awcnr4" path="res://assets/TheHostage/2D/stage_1/Pinboard/glow_constraint_instruction.png" id="2_2a04v"]
 [ext_resource type="Texture2D" uid="uid://b0hvix72qvtwx" path="res://assets/TheHostage/2D/stage_1/Pinboard/by_letter/correct_answer/white_glow.png" id="3_3e3cy"]
@@ -15,6 +16,7 @@ _data = {
 }
 
 [node name="Constraint Instruction" type="Sprite3D"]
+script = ExtResource("1_8bo1d")
 
 [node name="Base" type="Sprite3D" parent="."]
 texture = ExtResource("1_wgyoi")
