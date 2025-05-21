@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://btcdnop40t70s"]
 
-[ext_resource type="Texture2D" uid="uid://l147reu0ciyb" path="res://assets/TheHostage/2D/stove/Stove_Water_Base.png" id="1_0ib8w"]
-[ext_resource type="Texture2D" uid="uid://3ol3gq7li2wi" path="res://assets/TheHostage/2D/stove/Stove_Battery_Ice_First.png" id="1_3no07"]
-[ext_resource type="Script" path="res://scripts/stove.gd" id="1_537de"]
-[ext_resource type="Texture2D" uid="uid://dmbc30i0h5rny" path="res://assets/TheHostage/2D/stove/Stove_Remote_Ice_First.png" id="3_2x50f"]
-[ext_resource type="Texture2D" uid="uid://x5sheuktn2kv" path="res://assets/TheHostage/2D/stove/Stove_Remote_and_Battery_Base.png" id="3_r5ddu"]
-[ext_resource type="Texture2D" uid="uid://dt007geacaokt" path="res://assets/TheHostage/2D/stove/Stove_Thawed_Base.png" id="5_x0so1"]
-[ext_resource type="Texture2D" uid="uid://dxq0ohgemw0v6" path="res://assets/TheHostage/2D/stove/Stove_Thawing_1_Base.png" id="6_fak4m"]
-[ext_resource type="Texture2D" uid="uid://c3n3p6tfe585" path="res://assets/TheHostage/2D/stove/Stove_Thawing_2_Base.png" id="7_scwy2"]
+[ext_resource type="Texture2D" uid="uid://l147reu0ciyb" path="res://assets/TheHostage/2D/Stove/Stove_Water_Base.png" id="1_0ib8w"]
+[ext_resource type="Texture2D" uid="uid://3ol3gq7li2wi" path="res://assets/TheHostage/2D/Stove/Stove_Battery_Ice_First.png" id="1_3no07"]
+[ext_resource type="Script" uid="uid://b16f3i4nmuy28" path="res://scripts/stove.gd" id="1_537de"]
+[ext_resource type="Texture2D" uid="uid://dmbc30i0h5rny" path="res://assets/TheHostage/2D/Stove/Stove_Remote_Ice_First.png" id="3_2x50f"]
+[ext_resource type="Texture2D" uid="uid://x5sheuktn2kv" path="res://assets/TheHostage/2D/Stove/Stove_Remote_and_Battery_Base.png" id="3_r5ddu"]
+[ext_resource type="Texture2D" uid="uid://dt007geacaokt" path="res://assets/TheHostage/2D/Stove/Stove_Thawed_Base.png" id="5_x0so1"]
+[ext_resource type="Texture2D" uid="uid://dxq0ohgemw0v6" path="res://assets/TheHostage/2D/Stove/Stove_Thawing_1_Base.png" id="6_fak4m"]
+[ext_resource type="Texture2D" uid="uid://c3n3p6tfe585" path="res://assets/TheHostage/2D/Stove/Stove_Thawing_2_Base.png" id="7_scwy2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kj06x"]
 animations = [{
@@ -124,12 +124,12 @@ animations = [{
 radius = 327.768
 
 [node name="Stove_Interface" type="Node2D"]
+script = ExtResource("1_537de")
 
 [node name="Stove" type="Node2D" parent="."]
 
 [node name="Stove" type="Area2D" parent="Stove"]
 position = Vector2(586, 422)
-script = ExtResource("1_537de")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stove/Stove"]
 position = Vector2(-5.99994, -95)

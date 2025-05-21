@@ -2,16 +2,16 @@ extends Control
 
 var input_text := ""
 const MAX_LENGTH := 8
-const CORRECT_CODE := "32348243"
+@export var correct_code := "80732243"
 
 func _ready():
-	for child in $GridContainer.get_children():
+	for child in $Base/GridContainer.get_children():
 		if child is Button:
 			var button_name := child.name
 			child.pressed.connect(func(): _on_button_pressed(button_name))
 
 func _on_button_pressed(button_name: String) -> void:
-	$ClickAudio.play()
+	$Base/ClickAudio.play()
 	match button_name:
 		"Delete":
 			if input_text.length() > 0:
@@ -26,7 +26,7 @@ func _on_button_pressed(button_name: String) -> void:
 				else:
 					input_text += button_name
 
-	$Label.text = input_text
+	$Base/Label.text = input_text
 
 # Show glowing first, then resolve result
 func handle_code_check() -> void:
@@ -55,17 +55,17 @@ func handle_code_check() -> void:
 		SanitySystem.decrease_sanity(10)
 
 	input_text = ""  
-	$Label.text = input_text 
+	$Base/Label.text = input_text 
 
 
 func show_correct_lamp():
-	$GlowingLampTrue.visible = false
-	$GlowingLampFalse.visible = false
-	$LampBase.visible = false
-	$LampBaseTrue.visible = true
+	$Base/GlowingLampTrue.visible = false
+	$Base/GlowingLampFalse.visible = false
+	$Base/LampBase.visible = false
+	$Base/LampBaseTrue.visible = true
 
 func show_wrong_lamp():
-	$GlowingLampTrue.visible = false
-	$GlowingLampFalse.visible = false
-	$LampBase.visible = true
-	$LampBaseTrue.visible = false
+	$Base/GlowingLampTrue.visible = false
+	$Base/GlowingLampFalse.visible = false
+	$Base/LampBase.visible = true
+	$Base/LampBaseTrue.visible = false

@@ -69,6 +69,9 @@ func _ready():
 	default_head_position = head.position
 	current_speed = speed
 	
+	HpSystem.reset_hp()
+	SanitySystem.reset_sanity()
+	
 	hp_bar.value = 100
 	sanity_bar.value = 100
 

@@ -34,7 +34,7 @@ func _on_start_button_pressed() -> void:
 	
 	
 func _on_exit_button_pressed() -> void:
-	return
+	Notify.show_notification("Can't complete your request. You can't go outside yet")
 
 
 func _on_start_button_mouse_entered() -> void:
