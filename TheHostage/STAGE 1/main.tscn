@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=48 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -15,14 +15,18 @@
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="9_gx6gr"]
 [ext_resource type="PackedScene" uid="uid://x8mrs6fw4jbm" path="res://TheHostage/Puzzles/Door/door.tscn" id="9_gxrok"]
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
+[ext_resource type="PackedScene" uid="uid://bgbur83k6lwhl" path="res://scenes/pinboard.tscn" id="11_in4p6"]
+[ext_resource type="Texture2D" uid="uid://cu8gf2kpgwont" path="res://assets/TheHostage/2D/stage_1/Pinboard/black-background.png" id="12_8hstr"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 [ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
+[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
 [ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
 [ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
+[ext_resource type="PackedScene" uid="uid://c7ouvrx66ctr7" path="res://TheHostage/Puzzles/Pinboard/with_scissor.tscn" id="21_yj8jh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dqq41"]
 
@@ -238,6 +242,14 @@ script = ExtResource("9_dqq41")
 transform = Transform3D(30, 0, 3.31966e-10, 0, 30, 0, -3.31966e-10, 0, 30, 21.7611, -37.5616, -77.066)
 shape = SubResource("BoxShape3D_d1eib")
 
+[node name="Constraint Instruction" parent="NavigationRegion3D/Board" instance=ExtResource("11_in4p6")]
+transform = Transform3D(0.056, 0, 8.88178e-16, 0, 0.056, 0, -8.88178e-16, 0, 0.056, 0.00673765, 0.45065, 0.071703)
+
+[node name="Darken" type="Sprite3D" parent="NavigationRegion3D/Board"]
+transform = Transform3D(0.06, 0, 0, 0, 0.07, 0, 0, 0, 0.061, 0, 0.388762, 0.0307932)
+modulate = Color(1, 1, 1, 0.717647)
+texture = ExtResource("12_8hstr")
+
 [node name="Table" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="TableInteraction" parent="NavigationRegion3D/Table" instance=ExtResource("2_d1eib")]
@@ -357,6 +369,8 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasModal/Photo"]
 stream = ExtResource("19_fmbob")
 volume_db = 6.0
+
+[node name="Pinboard" parent="CanvasModal" instance=ExtResource("21_yj8jh")]
 
 [node name="CanvasTransition" parent="." instance=ExtResource("11_d1eib")]
 visible = false
