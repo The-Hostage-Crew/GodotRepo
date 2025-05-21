@@ -122,6 +122,9 @@ size = Vector3(3.88477, 6.91562, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r7ikk"]
 size = Vector3(7.09735, 19.4235, 19.2634)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wq2rp"]
+size = Vector3(0.102732, 0.158142, 0.0884476)
+
 [node name="Main2" type="Node3D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("target_position", "statue") instance=ExtResource("1_o41f8")]
