@@ -59,6 +59,7 @@ var last_camera_rotation: Vector3
 # Statue relation - Stage 2
 @export var statue: CharacterBody3D
 
+@onready var pause_overlay: Control = $CanvasPauseModal/PauseScene
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -71,6 +72,11 @@ func _ready():
 	sanity_bar.value = 100
 
 func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		pause_overlay.show()
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 	if movement_enabled and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		var x_delta = event.relative.y * mouse_sensitivity
@@ -309,6 +315,7 @@ func look_at_target(animate: bool):
 	var up = Vector3.UP
 
 	if animate:
+		movement_enabled = false
 		# Animate the head
 		var head_look_dir = (target_pos - head.global_position + Vector3(0,5,0)).normalized()
 		var head_target_basis = Basis().looking_at(head_look_dir, up)
@@ -323,6 +330,9 @@ func look_at_target(animate: bool):
 		var fall_look_dir = (target_pos - falling_camera.global_position + Vector3(0,5,0)).normalized()
 		var fall_target_basis = Basis().looking_at(fall_look_dir, up)
 		create_tween().tween_property(falling_camera, "global_transform:basis", fall_target_basis, 3)
+
+		await get_tree().create_timer(3).timeout
+		movement_enabled = true
 	else:
 		head.look_at(target_pos, up)
 		camera.look_at(target_pos, up)
