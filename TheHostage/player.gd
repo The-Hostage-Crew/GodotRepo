@@ -2,10 +2,10 @@ extends CharacterBody3D
 
 signal toggle_inventory
 
-@export var speed: float = 10.0
+@export var speed: float = 6.0
 @export var crouch_speed: float = 5.0  # Kecepatan saat jongkok
-@export var sprint_speed: float = 15.0  # Kecepatan saat sprint
-@export var acceleration: float = 5.0
+@export var sprint_speed: float = 10.0  # Kecepatan saat sprint
+@export var acceleration: float = 10.0
 @export var gravity: float = 9.8
 @export var jump_power: float = 5.0
 @export var mouse_sensitivity: float = 0.3
@@ -137,6 +137,15 @@ func _physics_process(delta):
 		follow_target = true
 
 	if not movement_enabled:
+		# Tetap aplikasikan gravitasi
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		# Setel kecepatan horizontal ke nol agar tidak ada "sisa momentum"
+		velocity.x = 0
+		velocity.z = 0
+
+		move_and_slide()
 		return
 
 	var movement_vector = Vector3.ZERO
