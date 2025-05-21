@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://byo80m6qkrx64"]
+
+[ext_resource type="Script" path="res://scripts/statue_code.gd" id="1_ckl5b"]
+[ext_resource type="Texture2D" uid="uid://cvdgiwvei5loj" path="res://assets/TheHostage/2D/statue/Statue_Code.png" id="2_ckl5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckl5b"]
+size = Vector2(1150.5, 641)
+
+[node name="Statue_Code" type="Area2D"]
+script = ExtResource("1_ckl5b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ckl5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(578.75, 322.5)
+shape = SubResource("RectangleShape2D_ckl5b")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

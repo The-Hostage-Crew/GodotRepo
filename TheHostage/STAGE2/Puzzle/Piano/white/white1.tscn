@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvq2ikpxy1aaj"]
 
 [ext_resource type="Script" uid="uid://j3exxiqn8ehn" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white_1.gd" id="1_g57vq"]
-[ext_resource type="Texture2D" uid="uid://2iu47wbbscll" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/mouse_entered_white/1.png" id="2_pgvdb"]
-[ext_resource type="Texture2D" uid="uid://bje2fdk7odtl" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/click_white/2.png" id="3_wd3ha"]
+[ext_resource type="Texture2D" uid="uid://2iu47wbbscll" path="res://assets/TheHostage/2D/piano/mouse_entered_white/1.png" id="2_pgvdb"]
+[ext_resource type="Texture2D" uid="uid://bje2fdk7odtl" path="res://assets/TheHostage/2D/piano/click_white/2.png" id="3_wd3ha"]
 
 [node name="White1" type="Node2D"]
 script = ExtResource("1_g57vq")
