@@ -4,20 +4,29 @@ extends CharacterBody3D
 @onready var statue: Node3D = $"."
 
 @export var chase_player = false
-@export var pause_chase = false
+var pause_chase_distance = false
+@export var pause_chase = true
+@export var enable_modal = false
 @export var player: CharacterBody3D
 @export var speed: float
 @export var acceleration: float
+
+@onready var interaction: StaticBody3D = $Interaction
 
 @export var player_camera: Camera3D
 
 func _ready() -> void:
 	nav.target_position = player.global_position
+	interaction.enabled = false
 
 func _physics_process(delta: float) -> void:
 	var statue_pos = Vector2(global_position.x, global_position.z)
 	var player_pos = Vector2(player.global_position.x, player.global_position.z)
 	var distance_to_player = statue_pos.distance_to(player_pos)
+	
+	if enable_modal:
+		interaction.enabled = true
+		pause_chase = true
 	
 	if is_statue_visible():
 		#print("statue is visible")
@@ -47,13 +56,13 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			if collision.get_collider().name == "Player":
-				pause_chase = true
+				pause_chase_distance = true
 				HpSystem.decrease_hp(10)
 				SanitySystem.decrease_sanity(5)
 				break
 	else:
 		if distance_to_player > 10:
-			pause_chase = false
+			pause_chase_distance = false
 
 #
 #func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
