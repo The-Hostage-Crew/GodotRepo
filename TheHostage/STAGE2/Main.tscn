@@ -1,11 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=45 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
 [ext_resource type="PackedScene" uid="uid://dj762tnqj3jk3" path="res://assets/TheHostage/STAGE2/3D/Room2/Room.glb" id="1_vd53x"]
 [ext_resource type="PackedScene" uid="uid://cwfy1w0fyjqug" path="res://TheHostage/STAGE2/statue.tscn" id="3_fqwok"]
 [ext_resource type="PackedScene" uid="uid://ch4yrbgp8scjc" path="res://assets/TheHostage/STAGE2/3D/pan2/pot.glb" id="3_o41f8"]
 [ext_resource type="PackedScene" uid="uid://oxaeuj0vqiid" path="res://assets/TheHostage/STAGE2/3D/pan2/pan3d.glb" id="4_fn4ko"]
-[ext_resource type="Script" uid="uid://ctls24hx0w1aa" path="res://TheHostage/STAGE2/statue.gd" id="4_fqwok"]
+[ext_resource type="Script" path="res://TheHostage/STAGE2/statue.gd" id="4_fqwok"]
 [ext_resource type="PackedScene" uid="uid://5uosncbr5206" path="res://assets/TheHostage/STAGE2/3D/Pan/pan3d.glb" id="5_1repq"]
 [ext_resource type="PackedScene" uid="uid://bvb83nqnhqw8s" path="res://assets/TheHostage/STAGE2/3D/TV/TVglb.glb" id="7_fn4ko"]
 [ext_resource type="PackedScene" uid="uid://ckweqk8ydymuf" path="res://assets/TheHostage/STAGE2/3D/Kulkas/old_fridge.glb" id="8_y3a08"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dkmcw1bnmm0wh" path="res://assets/TheHostage/STAGE 1/3D assets/door lock.glb" id="10_6u1m3"]
 [ext_resource type="PackedScene" uid="uid://c1w8gt2yt3kca" path="res://assets/TheHostage/STAGE2/3D/pintu.glb" id="10_35cjv"]
 [ext_resource type="PackedScene" uid="uid://shaltxxj3a5l" path="res://assets/TheHostage/medicine/old_medicine_cabinet.glb" id="11_6u1m3"]
-[ext_resource type="Script" uid="uid://d7vojbsstgsl" path="res://TheHostage/STAGE2/interaction_pintu_bedroom.gd" id="11_uv5wy"]
+[ext_resource type="Script" path="res://TheHostage/STAGE2/interaction_pintu_bedroom.gd" id="11_uv5wy"]
 [ext_resource type="PackedScene" uid="uid://dg6bbxwufv523" path="res://TheHostage/Puzzles/Television/with_remote.tscn" id="13_fqwok"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_y3a08"]

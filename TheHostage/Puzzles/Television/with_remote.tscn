@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cthwgflaqryy3" path="res://TheHostage/Puzzles/Television/base.tscn" id="1_hgape"]
 [ext_resource type="Texture2D" uid="uid://ytcj5g6dnb7x" path="res://assets/TheHostage/2D/stage_2/TV/ads_1.png" id="2_4oynw"]
-[ext_resource type="Script" uid="uid://bs76wkvf32if6" path="res://TheHostage/Puzzles/Television/base.gd" id="2_x38lc"]
+[ext_resource type="Script" uid="uid://crxtiadqtba54" path="res://TheHostage/Puzzles/Television/base.gd" id="2_x38lc"]
 [ext_resource type="Texture2D" uid="uid://b3e64xeu5j85k" path="res://assets/TheHostage/2D/stage_2/TV/ads_2.png" id="3_ritgu"]
 [ext_resource type="Texture2D" uid="uid://rmkitiv2jhoa" path="res://assets/TheHostage/2D/stage_2/TV/ads_3.png" id="4_01h2r"]
 [ext_resource type="Texture2D" uid="uid://bcuiv1vv8xndo" path="res://assets/TheHostage/2D/stage_2/TV/talk_show.png" id="5_c5n6b"]
