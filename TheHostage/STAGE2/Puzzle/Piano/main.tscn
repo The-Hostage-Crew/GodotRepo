@@ -1,0 +1,306 @@
+[gd_scene load_steps=35 format=3 uid="uid://bglswyt7apam2"]
+
+[ext_resource type="Script" uid="uid://bpakfkdc34mwi" path="res://TheHostage/STAGE2/Puzzle/Piano/main.gd" id="1_gxuey"]
+[ext_resource type="Texture2D" uid="uid://dpg4tt0rj78e2" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/Illustration.png" id="1_k26ff"]
+[ext_resource type="PackedScene" uid="uid://defm74foxh1ps" path="res://TheHostage/STAGE2/Puzzle/Piano/black/black1.tscn" id="2_v8j0b"]
+[ext_resource type="PackedScene" uid="uid://cvq2ikpxy1aaj" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white1.tscn" id="3_4folb"]
+[ext_resource type="PackedScene" uid="uid://nxd473444gs2" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white2.tscn" id="4_gxuey"]
+[ext_resource type="PackedScene" uid="uid://h0x6qp0eevva" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white3.tscn" id="5_bhs16"]
+[ext_resource type="AudioStream" uid="uid://yrnbep4f70wx" path="res://assets/Sounds/piano/white/16.mp3" id="7_p7ylf"]
+[ext_resource type="AudioStream" uid="uid://crglehr348xfj" path="res://assets/Sounds/piano/black/1.mp3" id="8_shq8q"]
+[ext_resource type="AudioStream" uid="uid://cwmh4sngw48n" path="res://assets/Sounds/piano/black/2.mp3" id="9_iwcgw"]
+[ext_resource type="AudioStream" uid="uid://lxretw1h8dgi" path="res://assets/Sounds/piano/black/3.mp3" id="10_5fgi8"]
+[ext_resource type="AudioStream" uid="uid://c1yb3rkhe8f0k" path="res://assets/Sounds/piano/black/4.mp3" id="11_60gfl"]
+[ext_resource type="AudioStream" uid="uid://buu8q7nynfyyy" path="res://assets/Sounds/piano/black/5.mp3" id="12_5nnyw"]
+[ext_resource type="AudioStream" uid="uid://borduv56d00uy" path="res://assets/Sounds/piano/black/6.mp3" id="13_n2hwj"]
+[ext_resource type="AudioStream" uid="uid://cksmcqhli5wah" path="res://assets/Sounds/piano/black/7.mp3" id="14_dtff8"]
+[ext_resource type="AudioStream" uid="uid://boprv7y80kfnt" path="res://assets/Sounds/piano/black/8.mp3" id="15_te067"]
+[ext_resource type="AudioStream" uid="uid://265367w5i20d" path="res://assets/Sounds/piano/black/9.mp3" id="16_jntvx"]
+[ext_resource type="AudioStream" uid="uid://d2rj67hc8uwvq" path="res://assets/Sounds/piano/black/10.mp3" id="17_c2tl0"]
+[ext_resource type="AudioStream" uid="uid://c532cw4wcy0cu" path="res://assets/Sounds/piano/black/11.mp3" id="18_tjji4"]
+[ext_resource type="AudioStream" uid="uid://q30152jmewaa" path="res://assets/Sounds/piano/black/12.mp3" id="19_06oky"]
+[ext_resource type="AudioStream" uid="uid://c5xs58eb4al76" path="res://assets/Sounds/piano/white/1.mp3" id="20_7anf6"]
+[ext_resource type="AudioStream" uid="uid://bokr04fkpoo6k" path="res://assets/Sounds/piano/white/2.mp3" id="21_5psuo"]
+[ext_resource type="AudioStream" uid="uid://bu87n8omtf1gv" path="res://assets/Sounds/piano/white/3.mp3" id="22_1atne"]
+[ext_resource type="AudioStream" uid="uid://by0mw2wlur2qk" path="res://assets/Sounds/piano/white/4.mp3" id="23_iq07w"]
+[ext_resource type="AudioStream" uid="uid://kxr80y16bnnt" path="res://assets/Sounds/piano/white/5.mp3" id="24_qpy7g"]
+[ext_resource type="AudioStream" uid="uid://ho4koherh8ys" path="res://assets/Sounds/piano/white/6.mp3" id="25_dkkbr"]
+[ext_resource type="AudioStream" uid="uid://b30cvyls2khyb" path="res://assets/Sounds/piano/white/7.mp3" id="26_aijog"]
+[ext_resource type="AudioStream" uid="uid://mfcr0kmol5sv" path="res://assets/Sounds/piano/white/8.mp3" id="27_l24ec"]
+[ext_resource type="AudioStream" uid="uid://pybuubkfbabi" path="res://assets/Sounds/piano/white/9.mp3" id="28_8myh2"]
+[ext_resource type="AudioStream" uid="uid://6ls850py7y2y" path="res://assets/Sounds/piano/white/10.mp3" id="29_05rxk"]
+[ext_resource type="AudioStream" uid="uid://c1vo3mfisaut5" path="res://assets/Sounds/piano/white/11.mp3" id="30_6fcir"]
+[ext_resource type="AudioStream" uid="uid://pqmmo6afd4yc" path="res://assets/Sounds/piano/white/12.mp3" id="31_bmx5l"]
+[ext_resource type="AudioStream" uid="uid://mfeh7a2wrumv" path="res://assets/Sounds/piano/white/13.mp3" id="32_ij6k2"]
+[ext_resource type="AudioStream" uid="uid://bpyg5m8d2uc6c" path="res://assets/Sounds/piano/white/14.mp3" id="33_fbxog"]
+[ext_resource type="AudioStream" uid="uid://dp78gmlhcbph1" path="res://assets/Sounds/piano/white/15.mp3" id="34_xi1sf"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gxuey")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_k26ff")
+
+[node name="Node_black" type="Node2D" parent="."]
+
+[node name="Black1" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(164, 171)
+scale = Vector2(0.458883, 1.00946)
+
+[node name="Black2" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(248, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black3" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(300, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black4" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(351, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black5" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(454, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black6" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(505, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black7" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(608, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black8" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(660, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black9" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(711, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black10" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(814, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black11" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(865, 171)
+scale = Vector2(0.96943, 1.00461)
+
+[node name="Black12" parent="Node_black" instance=ExtResource("2_v8j0b")]
+position = Vector2(970, 170)
+scale = Vector2(0.458883, 1.00946)
+
+[node name="Node_white" type="Node2D" parent="."]
+
+[node name="White1" parent="Node_white" instance=ExtResource("3_4folb")]
+position = Vector2(167, 170)
+scale = Vector2(1.03808, 1.00144)
+
+[node name="White2" parent="Node_white" instance=ExtResource("4_gxuey")]
+position = Vector2(218, 168)
+scale = Vector2(1.05729, 0.988681)
+
+[node name="White3" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(270, 169)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White4" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(322, 169)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White5" parent="Node_white" instance=ExtResource("3_4folb")]
+position = Vector2(372, 169)
+scale = Vector2(1.03808, 1.00144)
+
+[node name="White6" parent="Node_white" instance=ExtResource("4_gxuey")]
+position = Vector2(422, 169)
+scale = Vector2(1.05729, 0.988681)
+
+[node name="White7" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(476, 169)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White8" parent="Node_white" instance=ExtResource("3_4folb")]
+position = Vector2(527, 169)
+scale = Vector2(1.03808, 1.00144)
+
+[node name="White9" parent="Node_white" instance=ExtResource("4_gxuey")]
+position = Vector2(578, 167)
+scale = Vector2(1.05729, 0.988681)
+
+[node name="White10" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(630, 168)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White11" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(682, 168)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White12" parent="Node_white" instance=ExtResource("3_4folb")]
+position = Vector2(732, 168)
+scale = Vector2(1.03808, 1.00144)
+
+[node name="White13" parent="Node_white" instance=ExtResource("4_gxuey")]
+position = Vector2(782, 168)
+scale = Vector2(1.05729, 0.988681)
+
+[node name="White14" parent="Node_white" instance=ExtResource("5_bhs16")]
+position = Vector2(836, 168)
+scale = Vector2(1.02838, 1.00132)
+
+[node name="White15" parent="Node_white" instance=ExtResource("3_4folb")]
+position = Vector2(887, 169)
+scale = Vector2(1.03808, 1.00144)
+
+[node name="White16" parent="Node_white" instance=ExtResource("4_gxuey")]
+position = Vector2(938, 167)
+scale = Vector2(1.05729, 0.988681)
+
+[node name="sound_black" type="Node2D" parent="."]
+
+[node name="1" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("8_shq8q")
+
+[node name="2" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("9_iwcgw")
+
+[node name="3" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("10_5fgi8")
+
+[node name="4" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("11_60gfl")
+
+[node name="5" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("12_5nnyw")
+
+[node name="6" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("13_n2hwj")
+
+[node name="7" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("14_dtff8")
+
+[node name="8" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("15_te067")
+
+[node name="9" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("16_jntvx")
+
+[node name="10" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("17_c2tl0")
+
+[node name="11" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("18_tjji4")
+
+[node name="12" type="AudioStreamPlayer2D" parent="sound_black"]
+stream = ExtResource("19_06oky")
+
+[node name="sound_white" type="Node2D" parent="."]
+
+[node name="1" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("20_7anf6")
+
+[node name="2" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("21_5psuo")
+
+[node name="3" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("22_1atne")
+
+[node name="4" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("23_iq07w")
+
+[node name="5" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("24_qpy7g")
+
+[node name="6" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("25_dkkbr")
+
+[node name="7" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("26_aijog")
+
+[node name="8" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("27_l24ec")
+
+[node name="9" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("28_8myh2")
+
+[node name="10" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("29_05rxk")
+
+[node name="11" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("30_6fcir")
+
+[node name="12" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("31_bmx5l")
+
+[node name="13" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("32_ij6k2")
+
+[node name="14" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("33_fbxog")
+
+[node name="15" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("34_xi1sf")
+
+[node name="16" type="AudioStreamPlayer2D" parent="sound_white"]
+stream = ExtResource("7_p7ylf")
+
+[connection signal="input_event" from="Node_black/Black1/area" to="." method="_on_black1_input_event"]
+[connection signal="input_event" from="Node_black/Black2/area" to="." method="_on_black2_input_event"]
+[connection signal="input_event" from="Node_black/Black3/area" to="." method="_on_black3_input_event"]
+[connection signal="input_event" from="Node_black/Black4/area" to="." method="_on_black4_input_event"]
+[connection signal="input_event" from="Node_black/Black5/area" to="." method="_on_black5_input_event"]
+[connection signal="input_event" from="Node_black/Black6/area" to="." method="_on_black6_input_event"]
+[connection signal="input_event" from="Node_black/Black7/area" to="." method="_on_black7_input_event"]
+[connection signal="input_event" from="Node_black/Black8/area" to="." method="_on_black8_input_event"]
+[connection signal="input_event" from="Node_black/Black9/area" to="." method="_on_black9_input_event"]
+[connection signal="input_event" from="Node_black/Black10/area" to="." method="_on_black10_input_event"]
+[connection signal="input_event" from="Node_black/Black11/area" to="." method="_on_black11_input_event"]
+[connection signal="input_event" from="Node_black/Black12/area" to="." method="_on_black12_input_event"]
+[connection signal="input_event" from="Node_white/White1/area" to="." method="_on_white1_input_event"]
+[connection signal="input_event" from="Node_white/White2/area" to="." method="_on_white2_input_event"]
+[connection signal="input_event" from="Node_white/White3/area" to="." method="_on_white3_input_event"]
+[connection signal="input_event" from="Node_white/White4/area" to="." method="_on_white4_input_event"]
+[connection signal="input_event" from="Node_white/White5/area" to="." method="_on_white5_input_event"]
+[connection signal="input_event" from="Node_white/White6/area" to="." method="_on_white6_input_event"]
+[connection signal="input_event" from="Node_white/White7/area" to="." method="_on_white7_input_event"]
+[connection signal="input_event" from="Node_white/White8/area" to="." method="_on_white8_input_event"]
+[connection signal="input_event" from="Node_white/White9/area" to="." method="_on_white9_input_event"]
+[connection signal="input_event" from="Node_white/White10/area" to="." method="_on_white10_input_event"]
+[connection signal="input_event" from="Node_white/White11/area" to="." method="_on_white11_input_event"]
+[connection signal="input_event" from="Node_white/White12/area" to="." method="_on_white12_input_event"]
+[connection signal="input_event" from="Node_white/White13/area" to="." method="_on_white13_input_event"]
+[connection signal="input_event" from="Node_white/White14/area" to="." method="_on_white14_input_event"]
+[connection signal="input_event" from="Node_white/White15/area" to="." method="_on_white15_input_event"]
+[connection signal="input_event" from="Node_white/White16/area" to="." method="_on_white16_input_event"]
+
+[editable path="Node_black/Black1"]
+[editable path="Node_black/Black2"]
+[editable path="Node_black/Black3"]
+[editable path="Node_black/Black4"]
+[editable path="Node_black/Black5"]
+[editable path="Node_black/Black6"]
+[editable path="Node_black/Black7"]
+[editable path="Node_black/Black8"]
+[editable path="Node_black/Black9"]
+[editable path="Node_black/Black10"]
+[editable path="Node_black/Black11"]
+[editable path="Node_black/Black12"]
+[editable path="Node_white/White1"]
+[editable path="Node_white/White2"]
+[editable path="Node_white/White3"]
+[editable path="Node_white/White4"]
+[editable path="Node_white/White5"]
+[editable path="Node_white/White6"]
+[editable path="Node_white/White7"]
+[editable path="Node_white/White8"]
+[editable path="Node_white/White9"]
+[editable path="Node_white/White10"]
+[editable path="Node_white/White11"]
+[editable path="Node_white/White12"]
+[editable path="Node_white/White13"]
+[editable path="Node_white/White14"]
+[editable path="Node_white/White15"]
+[editable path="Node_white/White16"]

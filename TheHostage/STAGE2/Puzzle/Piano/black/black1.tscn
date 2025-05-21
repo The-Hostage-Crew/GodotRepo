@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://defm74foxh1ps"]
+
+[ext_resource type="Script" uid="uid://yxkyqhkvxpf7" path="res://TheHostage/STAGE2/Puzzle/Piano/black/black_1.gd" id="1_2g6rv"]
+[ext_resource type="Texture2D" uid="uid://de3h66qt8qp34" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/enter_black/1.png" id="2_ahq0s"]
+[ext_resource type="Texture2D" uid="uid://bshppleijy73q" path="res://assets/The Hostage - main game/STAGE2/minigame/Piano/click_black/1.png" id="3_wc5x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7llke"]
+size = Vector2(40, 202)
+
+[node name="Black" type="Node2D"]
+script = ExtResource("1_2g6rv")
+
+[node name="enter" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.989849, 0.998348)
+texture = ExtResource("2_ahq0s")
+
+[node name="click" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.989849, 0.998348)
+texture = ExtResource("3_wc5x8")
+
+[node name="area" type="Area2D" parent="."]
+scale = Vector2(0.989849, 0.998348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2(20, 101)
+shape = SubResource("RectangleShape2D_7llke")
+
+[connection signal="input_event" from="area" to="." method="_on_area_input_event"]
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

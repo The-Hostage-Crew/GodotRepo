@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://1ljhl1rndwm1"]
-
-[ext_resource type="Texture2D" uid="uid://cqluha0kvmin7" path="res://assets/Desktop/DesktopWelcomeScreen/ProfileIcon.png" id="1_ksr42"]
-
-[node name="ProfileIcon" type="TextureRect"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_ksr42")

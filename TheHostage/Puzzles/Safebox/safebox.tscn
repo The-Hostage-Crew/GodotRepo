@@ -152,8 +152,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i602w"]
 _data = {
-&"RESET": SubResource("Animation_okfjx"),
-&"scissor": SubResource("Animation_qwohq")
+"RESET": SubResource("Animation_okfjx"),
+"scissor": SubResource("Animation_qwohq")
 }
 
 [node name="SafeboxPuzzle" type="Control"]
@@ -292,7 +292,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_i602w")
+"": SubResource("AnimationLibrary_i602w")
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

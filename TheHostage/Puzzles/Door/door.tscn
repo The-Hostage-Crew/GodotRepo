@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_4qhr8"]
 [ext_resource type="PackedScene" uid="uid://q51ynyhklo1u" path="res://TheHostage/Puzzles/Door/base.tscn" id="1_urg35"]
-[ext_resource type="Script" uid="uid://cm5648nix5kn" path="res://TheHostage/Puzzles/Door/base.gd" id="2_3khd3"]
-[ext_resource type="Texture2D" uid="uid://bwnebqpculq7g" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/doorlock_lamp_default_cropped.png" id="3_3khd3"]
-[ext_resource type="Texture2D" uid="uid://ng7jkq7ya8tt" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_base_cropped.png" id="4_gf7u5"]
-[ext_resource type="Texture2D" uid="uid://ddlih4e62rvei" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/incorrect_answer/doorlock_lamp_red_glow_cropped.png" id="4_gqyqj"]
-[ext_resource type="Texture2D" uid="uid://deqq13jfs2lim" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_glow_cropped.png" id="5_4qhr8"]
+[ext_resource type="Script" path="res://TheHostage/Puzzles/Door/base.gd" id="2_3khd3"]
+[ext_resource type="Texture2D" uid="uid://bwnebqpculq7g" path="res://assets/2D/doorlock_passcode/components/lamp/doorlock_lamp_default_cropped.png" id="3_3khd3"]
+[ext_resource type="Texture2D" uid="uid://ng7jkq7ya8tt" path="res://assets/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_base_cropped.png" id="4_gf7u5"]
+[ext_resource type="Texture2D" uid="uid://ddlih4e62rvei" path="res://assets/2D/doorlock_passcode/components/lamp/incorrect_answer/doorlock_lamp_red_glow_cropped.png" id="4_gqyqj"]
+[ext_resource type="Texture2D" uid="uid://deqq13jfs2lim" path="res://assets/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_glow_cropped.png" id="5_4qhr8"]
 
 [node name="DoorLock" type="Control"]
 layout_mode = 3
@@ -132,7 +132,6 @@ texture = ExtResource("3_3khd3")
 expand_mode = 1
 
 [node name="LampBaseTrue" type="TextureRect" parent="Base"]
-visible = false
 z_index = 1
 clip_contents = true
 layout_mode = 0
