@@ -17,12 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://sft20a8t2caf" path="res://Globals/CanvasTransition/canvas_transition.tscn" id="11_d1eib"]
 [ext_resource type="PackedScene" uid="uid://cyukhe86ytwdb" path="res://TheHostage/STAGE 1/Props/room_only.tscn" id="12_d1eib"]
 [ext_resource type="Script" uid="uid://dkhpmiu2f0b26" path="res://TheHostage/STAGE 1/bad_end_window_collision.gd" id="13_7ff7p"]
-[ext_resource type="Texture2D" uid="uid://cm4xgf4gpaixw" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
+[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="16_4l1pw"]
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="17_ncsou"]
-[ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
-[ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
+[ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
+[ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dqq41"]
 
