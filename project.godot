@@ -22,8 +22,8 @@ SceneTransition="*res://Globals/TransitionScene/scene_transition.tscn"
 Fade="*res://Globals/CanvasTransition/fade.gd"
 InventoryManager="*res://Globals/HUD/Inventory/inventory_manager.gd"
 Global="*res://Globals/Global.gd"
-HpSystem="*res://Globals/HUD/PlayerResource/hp_system.gd"
 SanitySystem="*res://Globals/HUD/PlayerResource/sanity_system.gd"
+HpSystem="*res://Globals/HUD/PlayerResource/hp_system.gd"
 
 [filesystem]
 

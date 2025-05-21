@@ -56,6 +56,10 @@ var last_camera_rotation: Vector3
 # Bad End Window
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
 
+# Statue relation - Stage 2
+@export var statue: CharacterBody3D
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_camera_position = camera.position
@@ -298,3 +302,28 @@ func trigger_fall_sequence():
 func set_movement_enabled(enabled: bool) -> void:
 	movement_enabled = enabled
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if enabled else Input.MOUSE_MODE_VISIBLE)
+
+
+func look_at_target(animate: bool):
+	var target_pos = statue.global_position
+	var up = Vector3.UP
+
+	if animate:
+		# Animate the head
+		var head_look_dir = (target_pos - head.global_position + Vector3(0,5,0)).normalized()
+		var head_target_basis = Basis().looking_at(head_look_dir, up)
+		create_tween().tween_property(head, "global_transform:basis", head_target_basis, 3)
+
+		# Animate the main camera
+		var cam_look_dir = (target_pos - camera.global_position + Vector3(0,5,0)).normalized()
+		var cam_target_basis = Basis().looking_at(cam_look_dir, up)
+		create_tween().tween_property(camera, "global_transform:basis", cam_target_basis, 3)
+
+		# Animate the falling camera
+		var fall_look_dir = (target_pos - falling_camera.global_position + Vector3(0,5,0)).normalized()
+		var fall_target_basis = Basis().looking_at(fall_look_dir, up)
+		create_tween().tween_property(falling_camera, "global_transform:basis", fall_target_basis, 3)
+	else:
+		head.look_at(target_pos, up)
+		camera.look_at(target_pos, up)
+		falling_camera.look_at(target_pos, up)
