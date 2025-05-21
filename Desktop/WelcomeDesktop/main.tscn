@@ -1,9 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://brtt5h64vj4pk"]
+[gd_scene load_steps=7 format=3 uid="uid://brtt5h64vj4pk"]
 
-[ext_resource type="Texture2D" uid="uid://d4da05r37dn72" path="res://assets/Desktop/DesktopWelcomeScreen/an-old-abandoned-hallway-in-an-unused-building-2025-02-09-17-48-24-utc.jpg" id="1_oooa8"]
 [ext_resource type="FontFile" uid="uid://fo3j1x3eeb1b" path="res://assets/Font/Sagoe/segoeuithis.ttf" id="2_jxv11"]
-[ext_resource type="Script" uid="uid://bnao1dbvc0ybx" path="res://Desktop/WelcomeDesktop/time_label.gd" id="3_pootv"]
-[ext_resource type="Script" uid="uid://bdi85yr68lkf5" path="res://Desktop/WelcomeDesktop/date&day.gd" id="4_scmvu"]
 [ext_resource type="Texture2D" uid="uid://cqluha0kvmin7" path="res://assets/Desktop/DesktopWelcomeScreen/ProfileIcon.png" id="5_jxv11"]
 [ext_resource type="Script" uid="uid://dyi2qvrhhne41" path="res://Desktop/WelcomeDesktop/welcome_rena.gd" id="5_odhkm"]
 [ext_resource type="Texture2D" uid="uid://bv38or4fdsi06" path="res://assets/Desktop/DesktopWelcomeScreen/blur_BG.jpg" id="5_pootv"]
@@ -11,41 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bcfsk3now2a34" path="res://assets/Desktop/DesktopWelcomeScreen/SignIn_On.png" id="8_scmvu"]
 
 [node name="main" type="Node2D"]
-
-[node name="Date&time" type="Node2D" parent="."]
-
-[node name="BG" type="TextureRect" parent="Date&time"]
-offset_left = -79.0
-offset_top = -29.0
-offset_right = 1152.0
-offset_bottom = 658.0
-texture = ExtResource("1_oooa8")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Date&time"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 536.0
-offset_top = 100.0
-offset_right = 576.0
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Time" type="Label" parent="Date&time/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jxv11")
-theme_override_font_sizes/font_size = 80
-script = ExtResource("3_pootv")
-
-[node name="Date&Day" type="Label" parent="Date&time/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_jxv11")
-theme_override_font_sizes/font_size = 20
-script = ExtResource("4_scmvu")
 
 [node name="WelcomeRena" type="Node2D" parent="."]
 script = ExtResource("5_odhkm")

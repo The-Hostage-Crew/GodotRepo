@@ -446,6 +446,7 @@ position = Vector2(40.5, 37)
 shape = SubResource("RectangleShape2D_s6rfx")
 
 [node name="connecting_animation" type="AnimatedSprite2D" parent="Desktop/TheHostage_Icon"]
+visible = false
 position = Vector2(581, 329)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_7macw")

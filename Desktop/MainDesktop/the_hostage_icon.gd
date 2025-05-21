@@ -29,9 +29,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			connecting_animation.visible = true
 			connecting_animation.play("connect")  # pastikan animasi "connect" ada di AnimatedSprite2D
 			timer.start(2.0)  # Timer akan hitung mundur 3 detik
-		else:
-			Global.stage1 = true
-			Global.TheHostage_icon = false
+		#else:
+			#Global.stage1 = true
+			#Global.TheHostage_icon = false
 		last_click_time = current_time
 
 func _on_timer_timeout() -> void:

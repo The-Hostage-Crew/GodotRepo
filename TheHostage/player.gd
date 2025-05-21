@@ -33,7 +33,6 @@ var footstep_interval := 0.5  # seconds between steps
 
 # Falling animation
 @onready var falling_camera: Camera3D = $Head/FallingCamera
-@onready var animation_player: AnimationPlayer = $Head/AnimationPlayer
 var has_fallen = false
 var has_stopped_at_waypoint = false
 var stop_distance = 15.0  # Distance from target where character stops

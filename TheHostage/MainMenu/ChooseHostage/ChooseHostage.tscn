@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3k50dxxcy6jm" path="res://TheHostage/MainMenu/ChooseHostage/choose_hostage.gd" id="1_srxst"]
 [ext_resource type="Texture2D" uid="uid://ddsjcmdlswlcp" path="res://assets/TheHostage/choose the hostage/off .png" id="2_54vod"]
 [ext_resource type="Texture2D" uid="uid://ds21b7m4dnu5m" path="res://assets/TheHostage/choose the hostage/on.png" id="2_ddokb"]
-[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCRAEXT.TTF" id="2_jn18d"]
+[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCR/OCRAEXT.TTF" id="2_jn18d"]
 [ext_resource type="Texture2D" uid="uid://ihcpdqfiaaj1" path="res://assets/TheHostage/choose the hostage/animation text/1.png" id="3_q0qbp"]
 [ext_resource type="Texture2D" uid="uid://deim7xhgxss7m" path="res://assets/TheHostage/choose the hostage/animation text/2.png" id="4_suxuf"]
 [ext_resource type="Texture2D" uid="uid://cxf0lkinjqnwl" path="res://assets/TheHostage/choose the hostage/animation text/3.png" id="5_b0ffu"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dgruacriecbis" path="res://assets/TheHostage/choose the hostage/animation text/13.png" id="15_d0lqq"]
 [ext_resource type="Texture2D" uid="uid://2hauv52x72pt" path="res://assets/TheHostage/choose the hostage/animation text/14.png" id="16_j68s3"]
 [ext_resource type="Texture2D" uid="uid://c8x5t6fr4ur57" path="res://assets/TheHostage/choose the hostage/animation text/15.png" id="17_31xl0"]
-[ext_resource type="AudioStream" uid="uid://jxm4qksklpd5" path="res://assets/Sounds/SFX/Typing1.wav" id="19_0knme"]
+[ext_resource type="AudioStream" uid="uid://5xxh80vkkhgq" path="res://assets/Sounds/SFX/Typewriter.mp3" id="20_54vod"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddokb"]
 
@@ -100,13 +100,39 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Thanks... for choosing me
+
+You're controlling me now..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TypewriterSFX:stream_paused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_54vod"]
-resource_name = "typewriter_1"
-length = 8.0
-step = 0.5
+resource_name = "typewriter"
+length = 18.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,10 +140,10 @@ tracks/0/path = NodePath("RichTextLabel:visible_ratio")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 4, 4.5, 5.74, 7.96667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 4, 4.5, 5.74, 8, 9.99167, 10.9817, 12.0017, 12.4917, 13.0217, 14.4917, 16.4917, 17.9917),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.166667, 0.166667, 0.481481, 0.481481, 0.748518, 1.0]
+"values": [0.0, 0.166667, 0.166667, 0.481481, 0.481481, 0.748518, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -126,16 +152,42 @@ tracks/1/path = NodePath("TypewriterSFX:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.3, 16.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 12.5017),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Thanks... for choosing me
+
+You're controlling me now...", "Please...", "Please help me escape..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TypewriterSFX:stream_paused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 2.37, 4, 4.78, 6.71, 8.1, 10.2917, 10.9917, 13.1717, 14.7117),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, true, false, true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xtehg"]
 _data = {
 &"RESET": SubResource("Animation_2w6by"),
-&"typewriter_1": SubResource("Animation_54vod")
+&"typewriter": SubResource("Animation_54vod")
 }
 
 [node name="ChooseHostage" type="Control"]
@@ -240,7 +292,7 @@ theme_override_fonts/font = ExtResource("2_jn18d")
 theme_override_font_sizes/font_size = 28
 text = "Back"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="IntroTyping" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -250,7 +302,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="IntroTyping"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -264,7 +316,7 @@ offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_jn18d")
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 20
 text = "Thanks... for choosing me
 
 You're controlling me now..."
@@ -272,15 +324,13 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+[node name="AnimationTyping" type="AnimationPlayer" parent="IntroTyping"]
 libraries = {
 &"": SubResource("AnimationLibrary_xtehg")
 }
-autoplay = "typewriter_1"
 
-[node name="TypewriterSFX" type="AudioStreamPlayer" parent="ColorRect"]
-stream = ExtResource("19_0knme")
-volume_db = -3.0
+[node name="TypewriterSFX" type="AudioStreamPlayer" parent="IntroTyping"]
+stream = ExtResource("20_54vod")
 
 [connection signal="mouse_entered" from="Hostages/Hostage1" to="." method="_on_hostage_1_mouse_entered"]
 [connection signal="mouse_exited" from="Hostages/Hostage1" to="." method="_on_hostage_1_mouse_exited"]
@@ -293,3 +343,4 @@ volume_db = -3.0
 [connection signal="pressed" from="Hostages/Hostage3" to="." method="_on_hostage_pressed"]
 [connection signal="mouse_entered" from="Buttons/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="IntroTyping/AnimationTyping" to="." method="_on_animation_player_animation_finished"]
