@@ -4,26 +4,23 @@ extends Interactable
 @export var trauma_viewport: VideoStreamPlayer
 
 @onready var player: CharacterBody3D = %Player
-@onready var knock_timer := $DoorKnockAudio/DoorTimer
-@onready var knock_audio := $DoorKnockAudio
 
 # Nullable use if player not found
 @export var player_ref: CharacterBody3D
 
 var showed := false
+var tirai_timer := Timer.new()
 
-
-func _on_knock_timer_timeout():
-	# Only play if audio isn't already playing (prevent overlap)
-	print("KNOCK")
-	knock_audio.play()
-	#knock_timer.start()
+func _ready() -> void:
+	add_child(tirai_timer)
+	tirai_timer.timeout.connect(_on_tirai_timer_timeout)
 
 func interact() -> void:
 	if modal:
 		var is_tirai: bool = modal.name == "tiraitertutup"
 
 		if is_tirai:
+			print(tirai_timer)
 			modal.set_visible(true)
 			showed = true
 			trauma_viewport.stream = load("res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyAngryAudio.ogv")
@@ -33,6 +30,12 @@ func interact() -> void:
 			await get_tree().create_timer(1.5).timeout
 			modal.set_visible(false)
 			showed = false
+			
+			# Start sanity decrease timer
+			tirai_timer.wait_time = 5.0
+			tirai_timer.one_shot = false
+			tirai_timer.start()
+			
 			return
 
 		if !showed:
@@ -54,8 +57,8 @@ func interact() -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			showed = false
 	else:
+		print(modal)
 		print("MODAL NOT FOUND")
 
-
-func _on_door_knock_audio_finished() -> void:
-	knock_timer.start()
+func _on_tirai_timer_timeout():
+	SanitySystem.decrease_sanity(5.0)

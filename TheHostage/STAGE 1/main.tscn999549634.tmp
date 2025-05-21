@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=48 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
 [ext_resource type="PackedScene" uid="uid://7334scod2ic4" path="res://assets/TheHostage/STAGE 1/3D assets/Safebox.glb" id="5_b714i"]
@@ -33,6 +33,7 @@
 sky_material = SubResource("PanoramaSkyMaterial_dqq41")
 
 [sub_resource type="Environment" id="Environment_dqq41"]
+background_mode = 1
 sky = SubResource("Sky_ncsou")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v0u8m"]
@@ -238,10 +239,9 @@ shape = SubResource("BoxShape3D_8hstr")
 [node name="Board" parent="NavigationRegion3D" instance=ExtResource("7_8av70")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -14.4564, 9.05873, -4.56962)
 
-[node name="BoardCollision" type="StaticBody3D" parent="NavigationRegion3D/Board" node_paths=PackedStringArray("modal")]
+[node name="BoardCollision" type="StaticBody3D" parent="NavigationRegion3D/Board"]
 transform = Transform3D(-2.68212e-10, 0, 0.0025, 0, 0.0025, 0, -0.0025, 0, -2.68212e-10, 0.18627, 0.476602, -0.0614891)
 script = ExtResource("9_dqq41")
-modal = NodePath("../../../CanvasModal/Pinboard")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Board/BoardCollision"]
 transform = Transform3D(30, 0, 3.31966e-10, 0, 30, 0, -3.31966e-10, 0, 30, 21.7611, -37.5616, -77.066)
@@ -394,6 +394,4 @@ volume_db = -10.0
 autoplay = true
 
 [connection signal="toggle_inventory" from="Player" to="CanvasInventory/InventoryFix" method="_on_player_toggle_inventory"]
-[connection signal="safebox_to_pinboard" from="CanvasModal/CanvasSafebox" to="CanvasModal/Pinboard" method="have_scissor"]
 [connection signal="visibility_changed" from="CanvasModal/Photo" to="CanvasModal/Photo" method="_on_visibility_changed"]
-[connection signal="pinboard_to_3d" from="CanvasModal/Pinboard" to="NavigationRegion3D/Board/Constraint Instruction" method="pinboard_done_3d"]
