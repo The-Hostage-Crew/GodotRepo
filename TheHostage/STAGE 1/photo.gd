@@ -17,6 +17,3 @@ func _on_visibility_changed() -> void:
 			showed = true
 		audio_stream_player.play()
 		animation_player.play("show")
-		
-		# Debug Sanity System, remove later
-		SanitySystem.decrease_sanity(10.0)
