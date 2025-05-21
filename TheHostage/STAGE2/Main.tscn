@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=56 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
 [ext_resource type="PackedScene" uid="uid://dj762tnqj3jk3" path="res://assets/TheHostage/STAGE2/3D/Room2/Room.glb" id="1_vd53x"]
@@ -57,7 +57,7 @@ size = Vector3(13.1505, 5.74719, 1.63037)
 size = Vector3(5.99231, 6.73828, 2.66882)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r7ikk"]
-size = Vector3(7.26451, 3.76965, 4.71942)
+size = Vector3(5.64384, 11.5341, 4.40716)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o2o4d"]
 size = Vector3(2.7157, 2.41504, 1.97241)
@@ -118,9 +118,6 @@ size = Vector3(1.09665, 4.30388, 1.16312)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hjbay"]
 size = Vector3(3.88477, 6.91562, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r7ikk"]
-size = Vector3(7.09735, 19.4235, 19.2634)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wq2rp"]
 size = Vector3(0.102732, 0.158142, 0.0884476)
@@ -184,11 +181,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6787, -0.317686, -18.1145)
 shape = SubResource("BoxShape3D_du68g")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
-[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal") instance=ExtResource("2_h8xhn")]
+[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_h8xhn")]
 modal = NodePath("../../../../../CanvasLayer")
+player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11/Piano"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100935, 1.38483, 1.46487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11788, -2.55985, 0.957512)
 shape = SubResource("BoxShape3D_r7ikk")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
@@ -442,18 +440,15 @@ grow_vertical = 2
 texture = ExtResource("20_o2o4d")
 expand_mode = 1
 visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Main" parent="CanvasLayer" instance=ExtResource("17_xtuis")]
-
 [node name="Fridge" parent="CanvasModal" instance=ExtResource("21_o2o4d")]
 visible = false
 
 [node name="Stove_Interface" parent="CanvasModal" node_paths=PackedStringArray("puzzle_container") instance=ExtResource("22_o2o4d")]
 visible = false
 puzzle_container = NodePath("../../Stove/PuzzleCollision")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [connection signal="screen_exited" from="Room+ACC/Statue2/VisibleOnScreenNotifier3D" to="Room+ACC/Statue2" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 
