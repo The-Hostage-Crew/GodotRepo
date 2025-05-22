@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=49 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="Script" uid="uid://dhcl7kvsflw68" path="res://TheHostage/STAGE 1/main.gd" id="1_in4p6"]
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
