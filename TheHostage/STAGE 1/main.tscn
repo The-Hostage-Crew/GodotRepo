@@ -364,10 +364,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.70115, 10.8835, 15.7464)
 shape = SubResource("BoxShape3D_h0wdm")
 debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 
-[node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
+[node name="Player" parent="." node_paths=PackedStringArray("target_position", "inventory") instance=ExtResource("8_cmcob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42697, 9.7647, -14.1434)
 target_position = NodePath("../InsanityTarget")
+inventory = NodePath("../CanvasInventory/InventoryFix")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 15.3356)
