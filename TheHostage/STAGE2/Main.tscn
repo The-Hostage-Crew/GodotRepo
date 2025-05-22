@@ -191,7 +191,7 @@ modal = NodePath("../../../../../CanvasLayer2/Main")
 player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11/Piano"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100935, 1.38483, 0.762127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11788, -2.55985, 0.957512)
 shape = SubResource("BoxShape3D_r7ikk")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
