@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://x8mrs6fw4jbm"]
+[gd_scene load_steps=13 format=3 uid="uid://x8mrs6fw4jbm"]
 
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_4qhr8"]
 [ext_resource type="PackedScene" uid="uid://q51ynyhklo1u" path="res://TheHostage/Puzzles/Door/base.tscn" id="1_urg35"]
+[ext_resource type="Script" uid="uid://du02w2s8u4a3g" path="res://TheHostage/Puzzles/Door/door.gd" id="1_yev7s"]
 [ext_resource type="Script" uid="uid://cm5648nix5kn" path="res://TheHostage/Puzzles/Door/base.gd" id="2_3khd3"]
 [ext_resource type="Texture2D" uid="uid://bwnebqpculq7g" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/doorlock_lamp_default_cropped.png" id="3_3khd3"]
 [ext_resource type="Texture2D" uid="uid://ng7jkq7ya8tt" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_base_cropped.png" id="4_gf7u5"]
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_3khd3")
+script = ExtResource("1_yev7s")
 
 [node name="Darken" parent="." instance=ExtResource("1_4qhr8")]
 layout_mode = 0
@@ -44,6 +45,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_3khd3")
 
 [node name="Label" type="Label" parent="Base"]
 layout_mode = 0

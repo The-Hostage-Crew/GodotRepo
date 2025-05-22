@@ -1,7 +1,7 @@
 extends Control
 
 const MAIN_MENU = preload("res://TheHostage/MainMenu/MainMenu.tscn")
-const MAIN = preload("uid://cqeuxvexway52")
+const MAIN = preload("res://TheHostage/STAGE 1/main.tscn")
 const MAIN2 = preload("res://TheHostage/STAGE2/Main.tscn")
 
 @onready var fuzzy_text_animation: AnimatedSprite2D = $Hostages/Hostage1/FuzzyTextAnimation

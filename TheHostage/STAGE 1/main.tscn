@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cqeuxvexway52"]
+[gd_scene load_steps=49 format=3 uid="uid://cqeuxvexway52"]
 
 [ext_resource type="Script" uid="uid://dhcl7kvsflw68" path="res://TheHostage/STAGE 1/main.gd" id="1_in4p6"]
 [ext_resource type="PackedScene" uid="uid://d2uccma8u6epq" path="res://Globals/Interactable/game_object_transition_collition.tscn" id="2_d1eib"]
@@ -22,12 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="16_jcehw"]
 [ext_resource type="Script" uid="uid://sdg7500s73yi" path="res://TheHostage/STAGE 1/photo.gd" id="16_l4k33"]
 [ext_resource type="AudioStream" uid="uid://cqmpuv5rse7oq" path="res://assets/Sounds/SFX/ViewPicture.mp3" id="19_fmbob"]
-[ext_resource type="Script" uid="uid://du02w2s8u4a3g" path="res://TheHostage/Puzzles/Door/door.gd" id="19_h0wdm"]
 [ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="21_in4p6"]
 [ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
-[ext_resource type="Texture2D" uid="uid://c30wgtcptg183" path="res://assets/TheHostage/2D/photo/photo_dirty.png" id="21_urtpd"]
 [ext_resource type="PackedScene" uid="uid://c7ouvrx66ctr7" path="res://TheHostage/Puzzles/Pinboard/with_scissor.tscn" id="21_yj8jh"]
 [ext_resource type="PackedScene" uid="uid://pboa0gjytsgj" path="res://TheHostage/Puzzles/Diary/diary.tscn" id="23_in4p6"]
+[ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="27_h0wdm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v0u8m"]
 size = Vector2(3, 1.68)
@@ -377,7 +376,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 15.3356)
 
 [node name="Door" parent="CanvasModal" instance=ExtResource("9_gxrok")]
 visible = false
-script = ExtResource("19_h0wdm")
 
 [node name="CanvasSafebox" parent="CanvasModal" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("8_d1eib")]
 visible = false
@@ -453,7 +451,7 @@ autoplay = "get_in_room"
 
 [node name="CanvasInventory" type="CanvasLayer" parent="."]
 
-[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("17_ncsou")]
+[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("27_h0wdm")]
 visible = false
 
 [node name="Sounds" type="Node3D" parent="."]
@@ -463,7 +461,6 @@ stream = ExtResource("21_stdhf")
 volume_db = 10.0
 autoplay = true
 
-[connection signal="toggle_inventory" from="Player" to="CanvasInventory/InventoryFix" method="_on_player_toggle_inventory"]
 [connection signal="visibility_changed" from="CanvasModal/Door" to="CanvasModal/Door" method="_on_visibility_changed"]
 [connection signal="safebox_to_pinboard" from="CanvasModal/CanvasSafebox" to="CanvasModal/Pinboard" method="have_scissor"]
 [connection signal="visibility_changed" from="CanvasModal/CanvasSafebox" to="CanvasModal/CanvasSafebox" method="_on_visibility_changed"]
