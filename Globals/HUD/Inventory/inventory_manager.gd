@@ -53,13 +53,13 @@ func remove_item(item_name: String) -> void:
 			slot.clear()
 			items.erase(item_name)
 			print("🗑 Removed:", item_name)
-			_rebuild_inventory()
+			rebuild_inventory()
 			return
 
 	print("❌ Item not found in inventory:", item_name)
 
 
-func _rebuild_inventory():
+func rebuild_inventory():
 	# Clear all slots first
 	for slot in inventory_slots:
 		slot.clear()

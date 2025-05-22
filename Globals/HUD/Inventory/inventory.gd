@@ -3,8 +3,18 @@ extends Control
 @onready var label: Label = %Label
 
 func _ready():
+	InventoryManager.items = []
+	InventoryManager.inventory_slots = []
 	InventoryManager.register_hover_label(label)
-
+	$Background/GridContainer/Slot.reset_slot()
+	$Background/GridContainer/Slot2.reset_slot()
+	$Background/GridContainer/Slot3.reset_slot()
+	$Background/GridContainer/Slot4.reset_slot()
+	$Background/GridContainer/Slot5.reset_slot()
+	$Background/GridContainer/Slot6.reset_slot()
+	$Background/GridContainer/Slot7.reset_slot()
+	$Background/GridContainer/Slot8.reset_slot()
+	$Background/GridContainer/Slot9.reset_slot()
 
 func _on_button_pressed() -> void:
 	InventoryManager.add_item("apple")
