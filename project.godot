@@ -26,6 +26,10 @@ SanitySystem="*res://Globals/HUD/PlayerResource/sanity_system.gd"
 HpSystem="*res://Globals/HUD/PlayerResource/hp_system.gd"
 Notify="*res://Globals/NotifyPlayer/notify.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [filesystem]
 
 import/blender/enabled=false

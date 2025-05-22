@@ -9,6 +9,9 @@ func _ready() -> void:
 	InventoryManager.register_slot(self)
 
 
+func reset_slot() -> void:
+	InventoryManager.register_slot(self)
+
 func _on_mouse_entered() -> void:
 	glow.visible = true
 	if item.texture != null:
