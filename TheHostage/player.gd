@@ -77,10 +77,10 @@ func _ready():
 	sanity_bar.value = 100
 
 func _input(event):
-	if Input.is_action_just_pressed("pause"):
-		pause_overlay.show()
-		get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#if Input.is_action_just_pressed("pause"):
+		#pause_overlay.show()
+		#get_tree().paused = true
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if movement_enabled and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))

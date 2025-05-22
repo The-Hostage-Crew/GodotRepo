@@ -3,13 +3,15 @@ extends Node2D
 @onready var icon_on: TextureRect = $icon_on
 @onready var connecting_animation: AnimatedSprite2D = $connecting_animation
 @onready var timer: Timer = $Timer
-
+var condition1 = true
 const MAIN_MENU_SCENE = "res://TheHostage/MainMenu/MainMenu.tscn"
 
 var last_click_time := 0.0
 const DOUBLE_CLICK_THRESHOLD := 0.3  # detik
 
 var is_transitioning := false
+
+
 
 func _on_area_2d_mouse_entered() -> void:
 	icon_on.visible = true

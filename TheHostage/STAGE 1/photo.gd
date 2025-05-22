@@ -11,5 +11,6 @@ func _on_visibility_changed() -> void:
 		animation_player.play("show")
 		if !showed:
 			await get_tree().create_timer(1.0).timeout
-			Notify.show_notification("Hmm.. an old photo")
+			Notify.show_notification("Hmm.. an old photo.")
+			Notify.show_notification("The heights of these people seem peculiar. Would that be useful?")
 			showed = true

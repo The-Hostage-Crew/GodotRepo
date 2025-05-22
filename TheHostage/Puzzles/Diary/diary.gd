@@ -61,4 +61,5 @@ func _on_button_left_mouse_exited() -> void:
 func _on_visibility_changed() -> void:
 	if !showed:
 		Notify.show_notification("Whose diary is this?")
+		Notify.show_notification("What's with the colored initial letter? Would that be useful for the pin board?")
 		showed = true

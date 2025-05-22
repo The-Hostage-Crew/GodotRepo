@@ -24,10 +24,12 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	InventoryManager.add_item("scissor")
+	return
+	#InventoryManager.add_item("scissor")
 
 func _on_button_4_pressed() -> void:
-	InventoryManager.remove_item("scissor")
+	return
+	#InventoryManager.remove_item("scissor")
 
 
 func _on_button_5_pressed() -> void:

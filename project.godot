@@ -28,7 +28,8 @@ Notify="*res://Globals/NotifyPlayer/notify.tscn"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [filesystem]
 

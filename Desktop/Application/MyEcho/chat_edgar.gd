@@ -459,7 +459,6 @@ func _on_area_download_input_event(viewport: Node, event: InputEvent, shape_idx:
 				var time_now = timestamp
 				$"ScrollContainer/VBoxContainer/8/Vbox/time".text = time_now
 				$"ScrollContainer/VBoxContainer/8".visible = true
-				Global.last_time_edgar = time_now
 				await get_tree().process_frame
 				$ScrollContainer.scroll_vertical = $ScrollContainer.get_v_scroll_bar().max_value
 				Global.edgar_new2 = true
@@ -473,7 +472,6 @@ func _on_area_download_input_event(viewport: Node, event: InputEvent, shape_idx:
 				var time_now = timestamp
 				$"ScrollContainer/VBoxContainer/9/Vbox/time".text = time_now
 				Global.last_chat_edgar = "Gw coba deh"
-				Global.last_time_edgar = time_now
 				AudioPlayer.play_notif()
 			await get_tree().create_timer(0.05).timeout  # jeda 0.05 detik antar angka
 		download = true
