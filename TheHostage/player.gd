@@ -173,7 +173,8 @@ func _physics_process(delta):
 		ray_cast_3d.enabled = false
 		# Check for any input to potentially escape fall sequence
 		var has_input = Input.is_action_pressed("movement_forward") || Input.is_action_pressed("movement_backward") || Input.is_action_pressed("movement_left") || Input.is_action_pressed("movement_right")
-		
+		Notify.show_notification("You: WAIT!!! WHERE ARE YOU GOING!?")
+		Notify.show_notification("You: No, please! Don't give up on yourself just yet!")
 		if has_input:
 			var random_safe_bad_end_check = rng.randf_range(0.0, 100.0)
 			if random_safe_bad_end_check < sanity_percentage and hp_percentage > 0:
