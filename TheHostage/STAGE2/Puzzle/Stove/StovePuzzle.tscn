@@ -45,6 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Darken" parent="." instance=ExtResource("1_njbmw")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -69,7 +70,6 @@ expand_mode = 1
 position = Vector2(576, 324)
 scale = Vector2(0.599306, 0.6)
 sprite_frames = SubResource("SpriteFrames_ma0o8")
-animation = &"remote_first"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(572.5, 323.5)

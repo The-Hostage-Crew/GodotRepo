@@ -2,9 +2,13 @@ extends Interactable
 
 @export var modal: Node
 @export var trauma_viewport: VideoStreamPlayer
+@export var music_button: Button
 
 # Nullable use if player not found
 @export var player_ref: CharacterBody3D
+
+@export var tv_with_remote_modal: Node
+@export var tv_without_remote_modal: Node
 
 var showed := false
 var tirai_timer := Timer.new()
@@ -40,6 +44,9 @@ func interact() -> void:
 		if !showed:
 			if player_ref:
 				player_ref.set_movement_enabled(false)
+				if Global.is_stage2_safebox_done == true:
+					music_button.visible = true
+			
 			Global.in_modal = true
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

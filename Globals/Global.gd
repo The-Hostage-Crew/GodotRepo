@@ -74,7 +74,10 @@ var stage2 = false #klo stage1 menang ganti jadi True
 
 var is_stage1_safebox = true
 var is_stage2_safebox = false
+var is_stage2_safebox_done = false
 
+
+var is_remote = false
 func get_current_time_string() -> String:
 	var time_dict = Time.get_time_dict_from_system()
 	var hour = "%02d" % time_dict.hour
