@@ -89,5 +89,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_bsruo")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rjhb5")
 max_length = 10
 
+[node name="level" type="Label" parent="ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Choose your difficulty :
+[1]. Easy
+[2]. Hard
+
+1/2? "
+
 [connection signal="text_submitted" from="ScrollContainer/VBoxContainer/input/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="text_submitted" from="ScrollContainer/VBoxContainer/name_input/HBoxContainer/name_input" to="." method="_on_name_input_text_submitted"]

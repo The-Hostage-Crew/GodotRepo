@@ -79,6 +79,10 @@ func _process(delta):
 	var minute = "%02d" % time_dict.minute
 	timestamp =  "%s:%s" % [hour, minute]
 	
+	if Global.stage1 :
+		$"ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/show".visible = true
+		$"ScrollContainer/VBoxContainer/download/MarginContainer2/VBoxContainer/download button/area_download".visible = false
+	
 	if Global.edgar : #jika edgar sudah menghubungi player
 		if notif1 and !Global.stage1:
 			Global.edgar_new2 = true #simbol chat baru dari edgar
@@ -106,9 +110,9 @@ func _process(delta):
 			Global.last_chat_edgar =  "Cuyy, " + Global.user_name +"!"
 			Global.edgar_new_chat = true
 			if Global.chat_edgar :
-				print("edgar Global.luna_count: ", Global.luna_count)
-				print("edgar Global.chat_luna_count: ", Global.chat_luna_count)
-				print("edgar Global.edgar_count: ", Global.edgar_count)
+				#print("edgar Global.luna_count: ", Global.luna_count)
+				#print("edgar Global.chat_luna_count: ", Global.chat_luna_count)
+				#print("edgar Global.edgar_count: ", Global.edgar_count)
 				timer_bool = true
 				notif3 = false
 		elif notif4 && Global.xxx_count == 1 : # cuy lu dapet chat dari
@@ -131,7 +135,7 @@ func _process(delta):
 			Global.edgar_writing = true #aktifkan edgar sedang mengetik
 			timer.start()
 			timer_bool= false
-			print("error di timer_bool edgar")
+			#print("error di timer_bool edgar")
 
 			
 	if Global.chat_edgar : #chat edgar lagi di buka
@@ -216,9 +220,9 @@ func _process(delta):
 				Global.edgar_new2 = false
 				Global.edgar_reply = false
 				timer_bool = true
-			else:
-				print("error di reply edgar " + str(Global.edgar_count) + " " +str(Global.chat_edgar_count))
-				
+			#else:
+				#print("error di reply edgar " + str(Global.edgar_count) + " " +str(Global.chat_edgar_count))
+				#
 
 func _on_timer_timeout() -> void:
 	Global.edgar_writing = false

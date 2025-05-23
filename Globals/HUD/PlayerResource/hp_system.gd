@@ -5,7 +5,10 @@ var HOSTAGE_HP = 100.0
 var MAX_HP = 100.0
 
 func decrease_hp(amount):
-	HOSTAGE_HP -= amount
+	if Global.level == 1:
+		return
+	else:
+		HOSTAGE_HP -= amount
 
 func increase_sanity(amount):
 	HOSTAGE_HP += amount

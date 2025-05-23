@@ -57,7 +57,7 @@ func _ready() -> void:
 	hide_all_textures()
 	
 	# Connect input handling if remote is equipped
-	if check_remote_equipped():
+	if true:
 		# Connect to the TVArea for input instead of the Channels container
 		if !tv_area.is_connected("gui_input", Callable(self, "click_input_process")):
 			tv_area.connect("gui_input", Callable(self, "click_input_process"))
@@ -70,7 +70,7 @@ func _ready() -> void:
 	print("TV initialized. On: ", tv_on_state, " Channel: ", current_channel)
 
 func click_input_process(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and check_remote_equipped():
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			print("Click detected. Current channel: ", current_channel, " TV state: ", tv_on_state)
 			
@@ -103,11 +103,12 @@ func click_input_process(event):
 	
 func check_remote_equipped():
 	#TO DO: WRITE LOGIC OF GLOBAL CHECKING REMOTE STATUS HERE
-	
+	if InventoryManager.items.has("battery") and InventoryManager.items.has("remote"):
+		return true
 	# For testing, always return true
-	isRemote = true
-	print("Remote check: ", isRemote)
-	return isRemote
+	isRemote = InventoryManager.items.has("battery") and InventoryManager.items.has("remote")
+	#print("Remote check: ", isRemote)
+	return false
 	
 func show_channel():
 	print("Show channel called for channel: ", current_channel)
@@ -203,6 +204,10 @@ func hide_all_textures():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Handle the glitch effect timing and channel changes
+	if check_remote_equipped():
+		$TVArea/Channels.visible = true
+	else:
+		$TVArea/Channels.visible = false
 	if is_glitching:
 		glitch_timer += delta
 		
@@ -238,8 +243,8 @@ func _process(delta: float) -> void:
 				glitch_effect.visible = false
 				
 			# Make sure sound stops if it's still playing (for very short sounds)
-			if switch_sound and switch_sound.is_playing() and switch_sound.get_playback_position() > 0.2:
-				switch_sound.stop()
+			# if switch_sound and switch_sound.is_playing() and switch_sound.get_playback_position() > 0.2:
+			# 	switch_sound.stop()
 	
 	# Handle animation for multiple textures if TV is on and we have textures to animate
 	elif tv_on_state and textures_to_animate.size() > 0 and (current_channel == 2 or current_channel == 4):
@@ -274,7 +279,7 @@ func show_current_texture():
 
 # Helper function to show the glitch effect
 func show_glitch_effect():
-	if glitch_effect:
+	if glitch_effect and $".".visible == true:
 		# Hide all regular textures
 		for child in tv_channels.get_children():
 			if child is TextureRect and child.name != "GlitchEffect":
@@ -284,8 +289,10 @@ func show_glitch_effect():
 		glitch_effect.visible = true
 		
 		# Play the channel switch sound
-		if switch_sound and switch_sound.stream:
+		if switch_sound and switch_sound.stream and Global.in_modal:
 			switch_sound.play()
+			await get_tree().create_timer(0.2).timeout
+			switch_sound.stop()
 			print("Playing switch sound effect")
 		
 		print("Showing glitch effect")

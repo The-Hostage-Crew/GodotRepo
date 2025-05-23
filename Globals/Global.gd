@@ -14,6 +14,7 @@ var TheHostage_icon: bool = false
 var TheHostage: bool = false
 
 var glitch : bool = false
+var level : int = 0 #klo 1 berarti easy ( sanity off ), 2 = hard ( sanity on )
 
 #chat edgar
 var last_chat_edgar: String = "TESSSS" #ini buat last chat yang ditampilin di histori
@@ -73,9 +74,69 @@ var stage2 = false #klo stage1 menang ganti jadi True
 
 var is_stage1_safebox = true
 var is_stage2_safebox = false
+var is_stage2_safebox_done = false
 
+
+var is_remote = false
 func get_current_time_string() -> String:
 	var time_dict = Time.get_time_dict_from_system()
 	var hour = "%02d" % time_dict.hour
 	var minute = "%02d" % time_dict.minute
 	return "%s:%s" % [hour, minute]
+
+func reset():
+	cursor_enabled = false
+	in_modal = false
+	user_name = "lizi"
+	my_echo = false
+	reply = false
+	TheHostage_icon = false
+	TheHostage = false
+	glitch = false
+	last_chat_edgar = "TESSSS"
+	chat_edgar_count = 0
+	chat_edgar = false
+	edgar = false
+	edgar_new = false
+	edgar_writing = false
+	edgar_new2 = false
+	edgar_reply = false
+	edgar_count = 0
+	last_time_edgar = ""
+	edgar_new_chat = false
+	last_chat_winda = "RENA??????"
+	chat_winda_count = 0
+	chat_winda = false
+	winda = false
+	winda_new = false
+	winda_writing = false
+	winda_reply = false
+	winda_count = 0
+	last_time_winda = ""
+	winda_new_chat = false
+	last_chat_luna = "Ren? Have you completed the new task?"
+	chat_luna_count = 0
+	luna = false
+	luna_new = false
+	luna_writing = false
+	luna_count = 1
+	luna_reply = false
+	chat_luna = false
+	last_time_luna = ""
+	luna_new_chat = false
+	last_chat_xxx = ""
+	chat_xxx_count = 0
+	xxx = false
+	xxx_new = false
+	xxx_writing = false
+	xxx_count = 0
+	xxx_reply = false
+	chat_xxx = false
+	last_time_xxx = ""
+	xxx_new_chat = false
+	timestamp = get_current_time_string()
+	my_echo_app = false
+	stage1 = false
+	stage2 = false
+	is_stage1_safebox = true
+	is_stage2_safebox = false

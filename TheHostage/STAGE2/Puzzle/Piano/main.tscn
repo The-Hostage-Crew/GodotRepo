@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://bglswyt7apam2"]
+[gd_scene load_steps=36 format=3 uid="uid://bglswyt7apam2"]
 
 [ext_resource type="Script" uid="uid://bpakfkdc34mwi" path="res://TheHostage/STAGE2/Puzzle/Piano/main.gd" id="1_gxuey"]
 [ext_resource type="Texture2D" uid="uid://dpg4tt0rj78e2" path="res://assets/TheHostage/2D/Piano/Illustration.png" id="1_k26ff"]
 [ext_resource type="PackedScene" uid="uid://defm74foxh1ps" path="res://TheHostage/STAGE2/Puzzle/Piano/black/black1.tscn" id="2_v8j0b"]
 [ext_resource type="PackedScene" uid="uid://cvq2ikpxy1aaj" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white1.tscn" id="3_4folb"]
 [ext_resource type="PackedScene" uid="uid://nxd473444gs2" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white2.tscn" id="4_gxuey"]
-[ext_resource type="AudioStream" uid="uid://b7xitgecqw4e0" path="res://assets/Sounds/piano/Scary2Piano.wav" id="5_5nnyw"]
 [ext_resource type="PackedScene" uid="uid://h0x6qp0eevva" path="res://TheHostage/STAGE2/Puzzle/Piano/white/white3.tscn" id="5_bhs16"]
 [ext_resource type="AudioStream" uid="uid://yrnbep4f70wx" path="res://assets/Sounds/piano/white/16.mp3" id="7_p7ylf"]
 [ext_resource type="AudioStream" uid="uid://crglehr348xfj" path="res://assets/Sounds/piano/black/1.mp3" id="8_shq8q"]
@@ -106,7 +105,6 @@ position = Vector2(970, 170)
 scale = Vector2(0.458883, 1.00946)
 
 [node name="Scary2Audio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_5nnyw")
 
 [node name="Node_white" type="Node2D" parent="."]
 

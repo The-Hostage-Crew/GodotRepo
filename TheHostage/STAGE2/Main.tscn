@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=73 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="Script" uid="uid://ivwpmg2571oi" path="res://TheHostage/STAGE2/main.gd" id="1_0t58k"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
@@ -26,7 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://btcdnop40t70s" path="res://scenes/stove_interface.tscn" id="22_o2o4d"]
 [ext_resource type="PackedScene" uid="uid://bglswyt7apam2" path="res://TheHostage/STAGE2/Puzzle/Piano/main.tscn" id="24_7y5a0"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="26_ljuru"]
-[ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="27_1ngtc"]
+[ext_resource type="AudioStream" uid="uid://blhd6hiqjulbx" path="res://assets/Sounds/piano/NormalPiano.wav" id="26_pel5l"]
+[ext_resource type="PackedScene" uid="uid://c52358r0jgs17" path="res://assets/TheHostage/lamp/lamp2.glb" id="27_1ngtc"]
+[ext_resource type="AudioStream" uid="uid://c6tswlrqkuw7f" path="res://assets/Sounds/piano/Scary1Piano.wav" id="27_cte0j"]
+[ext_resource type="AudioStream" uid="uid://omjxudk43lql" path="res://assets/Sounds/piano/Scary2Piano.wav" id="28_ij6h0"]
+[ext_resource type="Script" uid="uid://dgfbmrxc407ke" path="res://TheHostage/STAGE2/button_music.gd" id="29_ij6h0"]
+[ext_resource type="Texture2D" uid="uid://cut4pyem4bwna" path="res://assets/TheHostage/2D/inventoryitem/piano-clue.png" id="30_5qdqm"]
+[ext_resource type="Script" uid="uid://bjyxa7jauctid" path="res://TheHostage/STAGE2/close_button.gd" id="31_5qdqm"]
+[ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="69_1ngtc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_y3a08"]
 vertices = PackedVector3Array(-25.1427, -2.78831, -37.6668, -25.1427, -2.78831, -21.9168, -24.3927, -2.78831, -21.4168, -6.89265, -2.78831, -20.6668, -6.89265, -2.78831, -37.6668, -24.3927, -2.78831, -20.6668, 18.3573, -2.78831, -35.9168, 17.6073, -2.78831, -35.1668, 17.8573, -2.78831, -33.4168, 20.3573, -2.78831, -33.4168, 23.1073, -2.78831, -34.9168, 22.3573, -2.78831, -35.9168, 20.3573, -2.78831, -23.1668, 18.8573, -2.78831, -23.1668, 18.8573, -2.78831, -20.6668, 21.1073, -2.78831, -32.6668, 21.1073, -2.78831, -23.9168, 23.8573, -2.78831, -20.6668, 23.8573, -2.78831, -34.9168, -3.64265, -2.78831, -30.4168, -2.89265, -2.78831, -30.4168, -2.89265, -2.78831, -31.4168, -3.64265, -2.78831, -35.1668, -2.14265, -2.78831, -32.1668, 7.10735, -2.78831, -32.1668, 7.10735, -2.78831, -35.1668, 8.60735, -2.78831, -31.1668, 9.35735, -2.78831, -29.9168, 10.1073, -2.78831, -29.9168, 16.8573, -2.78831, -32.6668, 10.8573, -2.78831, -29.1668, 10.8573, -2.78831, -27.9168, 16.8573, -2.78831, -27.9168, 29.3573, -2.78831, 1.33317, 29.6073, -2.78831, 2.08317, 30.3573, -2.78831, 2.08317, 30.3573, -2.78831, -34.9168, 29.3573, -2.78831, -34.9168, -2.89265, -2.78831, -24.4168, -3.64265, -2.78831, -20.6668, 7.10735, -2.78831, -20.6668, 7.10735, -2.78831, -23.6668, -2.14265, -2.78831, -23.6668, 6.60735, 0.21169, -27.6668, 8.10735, -0.0383101, -27.6668, 7.85735, -0.0383101, -28.4168, 6.60735, 0.21169, -28.1668, 6.10735, 0.21169, -28.6668, 6.10735, 0.21169, -30.1668, -0.892651, 0.21169, -30.1668, 6.10735, 0.21169, -27.1668, -0.892651, 0.21169, -25.6668, 6.10735, 0.21169, -25.6668, 10.1073, -2.78831, -25.9168, 9.35735, -2.78831, -25.9168, 8.60735, -2.78831, -24.6668, 8.10735, -2.78831, -19.4168, 17.6073, -2.78831, -23.1668, 14.8573, -2.78831, -20.6668, 16.8573, -2.78831, -23.9168, 14.1073, -2.78831, -19.4168, 10.8573, -2.78831, -26.6668, 20.1073, -2.78831, -13.9168, 19.3573, -2.78831, -14.4168, 17.6073, -2.78831, -14.4168, 17.1073, -2.78831, -11.9168, 17.1073, -2.78831, -10.4168, 19.6073, -2.78831, -10.6668, 6.35735, -2.78831, -13.4168, 6.60735, -2.78831, -9.91683, 12.6073, -2.78831, -11.9168, 13.3573, -2.78831, -12.6668, 14.1073, -2.78831, -18.6668, 20.1073, -2.78831, -10.1668, 16.8573, -2.78831, -15.1668, 16.8573, -2.78831, -17.9168, 14.8573, -2.78831, -17.9168, 7.35735, -2.78831, -18.1668, 16.3573, -2.78831, -12.6668, 6.35735, -2.78831, -18.1668, 12.6073, -2.78831, -9.91683, 18.8573, 11.2117, -18.4168, 18.8573, 11.2117, -16.4168, 24.3573, 11.2117, -16.4168, 24.3573, 11.2117, -18.4168, -18.3927, -2.78831, -12.1668, -18.3927, -2.78831, -14.6668, -19.3927, -2.78831, -14.6668, -20.1427, -2.78831, -15.4168, -24.3927, -2.78831, -18.1668, -24.3927, -2.78831, -12.1668, -20.1427, -2.78831, -18.1668, -7.64265, -2.78831, -16.9168, -6.89265, -2.78831, -16.9168, -6.89265, -2.78831, -18.1668, -8.39265, -2.78831, -16.1668, -10.1427, -2.78831, -18.1668, -10.1427, -2.78831, -15.4168, -17.6427, -2.78831, -12.1668, -16.8927, -2.78831, -11.4168, -10.8927, -2.78831, -14.6668, -9.39265, -2.78831, -12.1668, -16.8927, -2.78831, -7.16683, -9.39265, -2.78831, -7.16683, -8.39265, -2.78831, -12.9168, -3.64265, 0.46169, -18.1668, -3.64265, 0.46169, -12.1668, -3.14265, 0.46169, -12.1668, -3.14265, 0.46169, -18.1668, -1.14265, -2.78831, -12.1668, 1.60735, -2.78831, -11.9168, 1.60735, -2.78831, -13.1668, 2.35735, -2.78831, -13.9168, -1.14265, -2.78831, -18.1668, 5.85735, -2.78831, -13.9168, -18.1427, -1.03831, -17.9168, -18.1427, -1.03831, -16.6668, -12.1427, -1.03831, -16.6668, -12.1427, -1.03831, -17.9168, 25.6073, -2.78831, -14.4168, 23.3573, -2.78831, -14.4168, 23.1073, -2.78831, -13.9168, 19.6073, -2.78831, -4.16683, 18.1073, -2.78831, -4.16683, 18.3573, -2.78831, -0.916832, 20.3573, -2.78831, -4.91683, 26.1073, -2.78831, -0.916832, 26.1073, -2.78831, -14.9168, -4.39265, -2.78831, -3.66683, -5.39265, -2.78831, -3.66683, -5.39265, -2.78831, -2.16683, -2.39265, -2.78831, -2.16683, -3.64265, -2.78831, -4.41683, -1.89265, -2.78831, -10.1668, -3.64265, -2.78831, -10.1668, -1.14265, -2.78831, -10.9168, -1.64265, -2.78831, -1.41683, 4.10735, -2.78831, 0.583168, 4.10735, -2.78831, -2.91683, 2.35735, -2.78831, -2.91683, 1.60735, -2.78831, -3.66683, -1.64265, -2.78831, 0.583168, 3.60735, 0.46169, -11.9168, 3.60735, 0.46169, -4.91683, 4.60735, 0.46169, -4.91683, 4.60735, 0.46169, -11.9168, 3.85735, -2.78831, -11.6668, 3.85735, -2.78831, -5.16683, 4.35735, -2.78831, -5.16683, 4.35735, -2.78831, -11.6668, -7.39265, 0.96169, -10.9168, -7.39265, 0.96169, -6.41683, -6.89265, 0.96169, -6.41683, -6.89265, 0.96169, -10.9168, 14.6073, -0.28831, -10.6668, 14.6073, -0.28831, -5.16683, 15.1073, -0.28831, -5.16683, 15.1073, -0.28831, -10.6668, -24.3927, 2.46169, -10.1668, -24.3927, 2.46169, -6.16683, -18.8927, 2.46169, -6.16683, -18.8927, 2.46169, -10.1668, -24.3927, -2.78831, -9.91683, -24.3927, -2.78831, -6.41683, -19.1427, -2.78831, -6.41683, -19.1427, -2.78831, -9.91683, 17.1073, -2.78831, -4.41683, 16.3573, -2.78831, -3.16683, 5.85735, -2.78831, -2.91683, 13.6073, -2.78831, -0.916832, 13.3573, -2.78831, -3.16683, 12.6073, -2.78831, -3.91683, 6.60735, -2.78831, -3.66683, 12.8573, -2.78831, -0.166832, 12.8573, -2.78831, 0.583168, -6.14265, -2.78831, -3.66683, -7.89265, -2.78831, -2.16683, -6.64265, -2.78831, -4.41683, -8.64265, -2.78831, -4.41683, -17.6427, -2.78831, -4.16683, -19.1427, -2.78831, -4.16683, -18.8927, -2.78831, 0.583168, -8.64265, -2.78831, 0.583168, -8.64265, -2.78831, -1.41683, -9.39265, -2.78831, -5.16683, -16.8927, -2.78831, -4.91683, -24.3927, -2.78831, -4.16683, -24.3927, -2.78831, 0.583168)
@@ -40,8 +47,8 @@ size = Vector3(2.75884, 3.3888, 8.7966)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqwok"]
 size = Vector3(2.9519, 3.6416, 6.19455)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_usegj"]
-size = Vector3(4.05029, 5.47467, 3.65318)
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgb0o"]
+size = Vector3(4.5531, 1.91052, 3.08795)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv5wy"]
 size = Vector3(2.31482, 2.37341, 3.77009)
@@ -130,11 +137,19 @@ size = Vector3(0.702194, 2.60961, 0.671814)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4efr7"]
 size = Vector3(1.09665, 4.30388, 1.16312)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_84uqf"]
+size = Vector3(2.58838, 1, 2.28076)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hjbay"]
 size = Vector3(3.88477, 6.91562, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wq2rp"]
 size = Vector3(0.102732, 0.158142, 0.0884476)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljuru"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ngtc"]
 
 [node name="Main2" type="Node3D"]
 script = ExtResource("1_0t58k")
@@ -167,8 +182,8 @@ modal = NodePath("../../../../../CanvasSafeBox/SafeboxPuzzle")
 player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D4/Safebox Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52515, 2.23734, -0.155926)
-shape = SubResource("BoxShape3D_usegj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654248, 1.83315, 0.179779)
+shape = SubResource("BoxShape3D_jgb0o")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09229, -1.62182, -13.9804)
@@ -205,8 +220,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6787, -0.317686, -18.1145)
 shape = SubResource("BoxShape3D_du68g")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
-[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_h8xhn")]
+[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal", "music_button", "player_ref") instance=ExtResource("2_h8xhn")]
 modal = NodePath("../../../../../CanvasLayer2/Main")
+music_button = NodePath("../../../../../CanvasLayer2/Main/MusicButton")
 player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11/Piano"]
@@ -354,21 +370,19 @@ transform = Transform3D(-0.590885, 0, -0.104189, 0, 0.6, 0, 0.104189, 0, -0.5908
 [node name="TVglb" parent="Room+ACC" instance=ExtResource("7_fn4ko")]
 transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 13.3291, 0.208611, -8.38504)
 
+[node name="TVCollision" parent="Room+ACC/TVglb" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_h8xhn")]
+modal = NodePath("../../../WithRemote")
+player_ref = NodePath("../../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room+ACC/TVglb/TVCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229249, 0, 0.640381)
+shape = SubResource("BoxShape3D_84uqf")
+
 [node name="Sketchfab_Scene" parent="Room+ACC" instance=ExtResource("8_y3a08")]
 transform = Transform3D(-1.5299e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5299e-07, 26.5149, -3.10072, -34.7162)
 
 [node name="Safebox" parent="Room+ACC" instance=ExtResource("16_h8xhn")]
 transform = Transform3D(-3.0598e-07, 0, -7, 0, 7, 0, 7, 0, -3.0598e-07, -6.63023, -0.456004, -8.55774)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151941, 2.42385, 0.0225496)
-light_energy = 16.0
-omni_range = 49.736
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860993, -7.18774, -27.0843)
-light_energy = 16.0
-omni_range = 49.736
 
 [node name="pintu" parent="." instance=ExtResource("10_35cjv")]
 transform = Transform3D(-4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -5.12541, -3.7763, -1.03522)
@@ -427,7 +441,6 @@ transform = Transform3D(30, 0, 1.01181e-11, 0, 30, 0, -1.01181e-11, 0, 30, 3.392
 shape = SubResource("BoxShape3D_wq2rp")
 
 [node name="AtapRumah" type="Node3D" parent="."]
-visible = false
 
 [node name="ruangan besar" parent="AtapRumah" instance=ExtResource("9_35cjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9869, -23.8168, -4.96262)
@@ -492,15 +505,55 @@ player_ref = NodePath("../../Player")
 
 [node name="NormalAudio2" type="AudioStreamPlayer3D" parent="CanvasLayer2/Main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5542, 0, -16.688)
+stream = ExtResource("26_pel5l")
 volume_db = -20.0
 
 [node name="Scary1Audio2" type="AudioStreamPlayer3D" parent="CanvasLayer2/Main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5542, 0, -16.688)
+stream = ExtResource("27_cte0j")
 volume_db = -10.0
 
 [node name="Scary2Audio2" type="AudioStreamPlayer3D" parent="CanvasLayer2/Main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5542, 0, -16.688)
+stream = ExtResource("28_ij6h0")
 volume_db = -15.0
+
+[node name="MusicButton" type="Button" parent="CanvasLayer2/Main"]
+visible = false
+offset_left = 1036.0
+offset_top = 13.0
+offset_right = 1137.0
+offset_bottom = 44.0
+text = "music sheet"
+script = ExtResource("29_ij6h0")
+
+[node name="Darken" parent="CanvasLayer2/Main/MusicButton" instance=ExtResource("19_du68g")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1036.0
+offset_top = -13.0
+offset_right = 15.0
+offset_bottom = 604.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Main/MusicButton/Darken"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("30_5qdqm")
+
+[node name="CloseButton" type="Button" parent="CanvasLayer2/Main/MusicButton/Darken"]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 26.0
+offset_right = 836.0
+offset_bottom = 57.0
+text = "X"
+script = ExtResource("31_5qdqm")
 
 [node name="CanvasInventory" type="CanvasLayer" parent="."]
 
@@ -509,12 +562,56 @@ visible = false
 
 [node name="CanvasSafeBox" type="CanvasLayer" parent="."]
 
-[node name="SafeboxPuzzle" parent="CanvasSafeBox" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("27_1ngtc")]
+[node name="SafeboxPuzzle" parent="CanvasSafeBox" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("69_1ngtc")]
 visible = false
 safebox_collision = NodePath("../../NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D4/Safebox Collision")
 player = NodePath("../../Player")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, -14.8901, 1.16799, 4.36118)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, 3.48675, 1.16799, -38.8829)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, 19.7346, 1.16799, -38.8829)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="lamp2" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, -23.9663, 4.82731, -8.49565)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1555, 3.57162, -8.46034)
+light_energy = 16.0
+omni_range = 54.095
+
+[node name="lamp3" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, 3.07479, 4.82731, -10.0978)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.88566, 3.57162, -10.0624)
+light_energy = 16.0
+omni_range = 54.095
+
+[node name="lamp4" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, 4.73136, 4.82731, -31.4899)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5422, 3.57162, -31.4546)
+light_energy = 16.0
+omni_range = 54.095
+
+[node name="WithRemote" parent="." instance=ExtResource("13_fqwok")]
+visible = false
+
 [connection signal="screen_exited" from="Room+ACC/Statue2/VisibleOnScreenNotifier3D" to="Room+ACC/Statue2" method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="pressed" from="CanvasLayer2/Main/MusicButton" to="CanvasLayer2/Main/MusicButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Main/MusicButton/Darken/CloseButton" to="CanvasLayer2/Main/MusicButton/Darken/CloseButton" method="_on_pressed"]
 
 [editable path="Player"]
 [editable path="Player/Hud/Trauma_Constraint"]

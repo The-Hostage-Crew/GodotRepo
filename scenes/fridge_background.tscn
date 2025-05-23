@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://du5gg4i1hsaae"]
 
-[ext_resource type="Texture2D" uid="uid://dew65t5jkwrfv" path="res://assets/TheHostage/2D/fridge/Background.png" id="1_q3qfr"]
-[ext_resource type="Texture2D" uid="uid://bvcn4e3rlul7r" path="res://assets/TheHostage/2D/fridge/Effect_Ice.png" id="2_ajxfs"]
+[ext_resource type="Texture2D" uid="uid://dew65t5jkwrfv" path="res://assets/TheHostage/2D/Fridge/Background.png" id="1_q3qfr"]
+[ext_resource type="Texture2D" uid="uid://bvcn4e3rlul7r" path="res://assets/TheHostage/2D/Fridge/Effect_Ice.png" id="2_ajxfs"]
 
 [node name="FridgeBackground" type="Control"]
 layout_mode = 3

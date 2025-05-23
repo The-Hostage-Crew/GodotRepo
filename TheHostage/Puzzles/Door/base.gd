@@ -10,6 +10,10 @@ func _ready():
 			var button_name := child.name
 			child.pressed.connect(func(): _on_button_pressed(button_name))
 
+func _process(delta: float) -> void:
+	if Global.is_stage2_safebox:
+		CORRECT_CODE = "45071352"
+
 func _on_button_pressed(button_name: String) -> void:
 	$ClickAudio.play()
 	match button_name:
@@ -31,7 +35,7 @@ func _on_button_pressed(button_name: String) -> void:
 # Show glowing first, then resolve result
 func handle_code_check() -> void:
 	if input_text == CORRECT_CODE:
-		$LampBase.visible = true
+		$LampBaseTrue.visible = true
 		$GlowingLampTrue.visible = true
 		$SuccessAudio.play()
 		await get_tree().create_timer(1.0).timeout 
@@ -39,15 +43,24 @@ func handle_code_check() -> void:
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
 		await Fade.transition_finished
-		$WinScreen.visible = true
+		if !Global.is_stage2_safebox:
+			$WinScreen.visible = true
+		else:
+			$WinScreenLuna.visible = true
 		Fade._out()
 		await Fade.transition_finished
 		await get_tree().create_timer(3.0).timeout 
 		Fade._in()
 		await Fade.transition_finished
 		Global.stage1 = true
-		Global.is_stage2_safebox = true
-		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
+		Global.TheHostage_icon = false
+		if !Global.is_stage2_safebox:
+			Global.is_stage2_safebox = true
+			get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
+		else:
+			$"EndScreen".visible = true
+			Fade._out()
+			await Fade.transition_finished
 	else:
 		$LampBase.visible = true
 		$GlowingLampFalse.visible = true

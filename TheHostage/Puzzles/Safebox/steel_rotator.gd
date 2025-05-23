@@ -20,11 +20,11 @@ var correct_values := {
 }
 
 var correct_values_stage2 := {
-	"Slider":  25,
-	"Slider2": 25,
-	"Slider3": 25,
-	"Slider4": 25,
-	"Slider5": 25,
+	"Slider":  50,
+	"Slider2": 50,
+	"Slider3": 100,
+	"Slider4": 75,
+	"Slider5": 100,
 	"Slider6": 25,
 }
 
@@ -90,14 +90,14 @@ func unlock() -> void:
 		await animation_player.animation_finished
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		InventoryManager.add_item("scissor")
-		print("line 92")
+		
 		safebox_done.emit()
 	else:
 		animation_player.play("music-sheet")
 		await animation_player.animation_finished
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		InventoryManager.add_item("music-sheet")
-		print("Line 99")	
+			
 		safebox_done.emit()
 
 
