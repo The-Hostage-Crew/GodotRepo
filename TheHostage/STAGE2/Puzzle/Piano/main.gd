@@ -20,6 +20,7 @@ func register_click(color: String, number: int) -> void:
 		if expected_index == correct_sequence.size():
 			self.visible = false
 			player_ref.set_movement_enabled(true)
+			Global.in_modal = false
 			$NormalAudio2.stop()
 			$Scary1Audio2.stop()
 			$Scary2Audio2.stop()
@@ -58,6 +59,7 @@ func lose() -> void:
 		SanitySystem.decrease_sanity(30.0)
 		self.visible = false
 		player_ref.set_movement_enabled(true)
+		Global.in_modal = false
 		lose_counter = 0
 		$NormalAudio2.play()
 

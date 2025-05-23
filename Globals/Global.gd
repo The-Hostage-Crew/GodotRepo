@@ -1,6 +1,10 @@
 # Global.gd
 extends Node
 
+# Pause Menu
+var cursor_enabled : bool = false
+var in_modal: bool = false
+
 var user_name: String = "lizi"
 var my_echo: bool = false
 var reply: bool = false

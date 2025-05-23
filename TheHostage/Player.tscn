@@ -95,6 +95,7 @@ texture_progress = ExtResource("8_83200")
 
 [node name="CanvasPauseModal" type="CanvasLayer" parent="."]
 process_mode = 2
+layer = 100
 
 [node name="PauseScene" parent="CanvasPauseModal" instance=ExtResource("10_83200")]
 visible = false

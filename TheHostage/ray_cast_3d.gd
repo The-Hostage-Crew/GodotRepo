@@ -3,8 +3,8 @@ extends RayCast3D
 var current_collider
 @onready var texture_rect: TextureRect = $TextureRect
 
-var curtain_interacted := false  # Flag khusus untuk CurtainInteraction
-var safebox_interacted := false  
+var curtain_interacted := false # Flag khusus untuk CurtainInteraction
+var safebox_interacted := false
 
 #func _ready() -> void:
 	#self.connect("safe")
@@ -24,7 +24,7 @@ func _process(delta):
 				return
 
 			texture_rect.show()
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("interact") or (Input.is_action_just_pressed("pause") and Global.in_modal):
 				collider.interact()
 
 				# Tandai CurtainInteraction sebagai sudah diinteract
