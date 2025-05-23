@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://8psph2703d1g"]
+
+[ext_resource type="Texture2D" uid="uid://bkorvaw10q20q" path="res://assets/TheHostage/LoseScreen.png" id="1_p47yu"]
+[ext_resource type="Script" uid="uid://cj8q62xlitf75" path="res://TheHostage/lose_screen.gd" id="2_2h3f0"]
+[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCR/OCRAEXT.TTF" id="3_2hh8j"]
+
+[node name="LoseScreen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p47yu")
+script = ExtResource("2_2h3f0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -55.0
+offset_right = 48.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2hh8j")
+text = "Try Again"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

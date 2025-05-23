@@ -1,7 +1,8 @@
 extends Control
 
 const MAIN_MENU = preload("res://TheHostage/MainMenu/MainMenu.tscn")
-const MAIN = preload("uid://cqeuxvexway52")
+const MAIN = preload("res://TheHostage/STAGE 1/main.tscn")
+const MAIN2 = preload("res://TheHostage/STAGE2/Main.tscn")
 
 @onready var fuzzy_text_animation: AnimatedSprite2D = $Hostages/Hostage1/FuzzyTextAnimation
 @onready var fuzzy_text_animation2: AnimatedSprite2D = $Hostages/Hostage2/FuzzyTextAnimation
@@ -54,4 +55,7 @@ func _on_hostage_pressed() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_packed(MAIN)
+	if !Global.stage1:
+		get_tree().change_scene_to_packed(MAIN)
+	else:
+		get_tree().change_scene_to_packed(MAIN2)

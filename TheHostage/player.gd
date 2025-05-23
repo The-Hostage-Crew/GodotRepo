@@ -24,6 +24,7 @@ var default_falling_camera_position: Vector3
 var default_head_position: Vector3
 var current_speed: float
 var movement_enabled: bool = true
+const LOSE_SCREEN = preload("res://TheHostage/LoseScreen.tscn")
 
 @onready var footstep_audio: AudioStreamPlayer3D = $Footstep
 var footstep_timer := 0.0
@@ -61,6 +62,7 @@ var last_camera_rotation: Vector3
 
 @onready var pause_overlay: Control = $CanvasPauseModal/PauseScene
 
+@export var inventory: Control
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	default_camera_position = camera.position
@@ -113,7 +115,7 @@ func _input(event):
 	
 	# Inventory
 	if Input.is_action_just_pressed("inventory"):
-		toggle_inventory.emit()
+		inventory.visible = not inventory.visible
 
 func _physics_process(delta):
 	
@@ -313,7 +315,7 @@ func trigger_fall_sequence():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false  # Ensure game isn't paused
 
-	SceneTransition.change_scene(preload("res://TheHostage/MainMenu/MainMenu.tscn"))
+	SceneTransition.change_scene(LOSE_SCREEN)
 	
 	
 

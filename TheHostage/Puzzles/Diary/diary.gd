@@ -8,6 +8,7 @@ extends Control
 @onready var darker_left: Polygon2D = $DarkerLeft
 
 var current_page := 1
+var showed = false
 
 func _on_button_right_pressed() -> void:
 	if current_page < 3:
@@ -55,3 +56,9 @@ func _on_button_left_mouse_entered() -> void:
 func _on_button_left_mouse_exited() -> void:
 	if current_page == 2 or current_page == 3:
 		darker_left.set_visible(false)
+
+
+func _on_visibility_changed() -> void:
+	if !showed:
+		Notify.show_notification("Whose diary is this?")
+		showed = true

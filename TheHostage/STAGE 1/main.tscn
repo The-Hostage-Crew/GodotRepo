@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://coryqkyiubnuj" path="res://assets/Sounds/Background/RoomAmbience.mp3" id="21_stdhf"]
 [ext_resource type="PackedScene" uid="uid://c7ouvrx66ctr7" path="res://TheHostage/Puzzles/Pinboard/with_scissor.tscn" id="21_yj8jh"]
 [ext_resource type="PackedScene" uid="uid://pboa0gjytsgj" path="res://TheHostage/Puzzles/Diary/diary.tscn" id="23_in4p6"]
+[ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="27_h0wdm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v0u8m"]
 size = Vector2(3, 1.68)
@@ -64,7 +65,7 @@ size = Vector3(2.98975, 10.9536, 6.92859)
 size = Vector3(49.0472, 1.82288, 65.998)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1eib"]
-size = Vector3(11.7847, 11.1598, 18.3309)
+size = Vector3(11.7847, 8.61811, 18.3309)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxrok"]
 size = Vector3(0.516979, 0.497467, 0.552139)
@@ -241,7 +242,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("5_stdhf")
-volume_db = 5.0
+volume_db = -5.0
 autoplay = true
 loop = true
 
@@ -296,7 +297,7 @@ script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/Pinboard")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Board/BoardCollision"]
-transform = Transform3D(30, 0, 3.31966e-10, 0, 30, 0, -3.31966e-10, 0, 30, 21.7611, -37.5616, -77.066)
+transform = Transform3D(30, 0, 3.3333e-10, 0, 30, 0, -3.3333e-10, 0, 30, 21.761, 33.0254, -77.0661)
 shape = SubResource("BoxShape3D_d1eib")
 
 [node name="Constraint Instruction" parent="NavigationRegion3D/Board" instance=ExtResource("11_in4p6")]
@@ -314,7 +315,7 @@ transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0
 modal = NodePath("../../../CanvasModal/Diary")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Table/TableInteraction"]
-transform = Transform3D(30, 0, 2.33285e-10, 0, 30, 0, -2.33285e-10, 0, 30, -98.3089, -0.898407, -102.23)
+transform = Transform3D(30, 0, 2.35559e-10, 0, 30, 0, -2.35559e-10, 0, 30, -99.2294, -6.54245, -102.23)
 shape = SubResource("BoxShape3D_d1eib")
 
 [node name="Safebox" parent="NavigationRegion3D" instance=ExtResource("5_b714i")]
@@ -363,10 +364,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.70115, 10.8835, 15.7464)
 shape = SubResource("BoxShape3D_h0wdm")
 debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 
-[node name="Player" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("8_cmcob")]
+[node name="Player" parent="." node_paths=PackedStringArray("target_position", "inventory") instance=ExtResource("8_cmcob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42697, 9.7647, -14.1434)
 target_position = NodePath("../InsanityTarget")
+inventory = NodePath("../CanvasInventory/InventoryFix")
 
 [node name="InsanityTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80985, 9.96206, 15.3356)
@@ -448,6 +450,11 @@ libraries = {
 }
 autoplay = "get_in_room"
 
+[node name="CanvasInventory" type="CanvasLayer" parent="."]
+
+[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("17_ncsou")]
+visible = false
+
 [node name="Sounds" type="Node3D" parent="."]
 
 [node name="RoomAmbience" type="AudioStreamPlayer" parent="Sounds"]
@@ -455,6 +462,10 @@ stream = ExtResource("21_stdhf")
 volume_db = 10.0
 autoplay = true
 
+[connection signal="visibility_changed" from="CanvasModal/Door" to="CanvasModal/Door" method="_on_visibility_changed"]
 [connection signal="safebox_to_pinboard" from="CanvasModal/CanvasSafebox" to="CanvasModal/Pinboard" method="have_scissor"]
+[connection signal="visibility_changed" from="CanvasModal/CanvasSafebox" to="CanvasModal/CanvasSafebox" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="CanvasModal/Photo" to="CanvasModal/Photo" method="_on_visibility_changed"]
 [connection signal="pinboard_to_3d" from="CanvasModal/Pinboard" to="NavigationRegion3D/Board/Constraint Instruction" method="pinboard_done_3d"]
+[connection signal="visibility_changed" from="CanvasModal/Pinboard" to="CanvasModal/Pinboard" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasModal/Diary" to="CanvasModal/Diary" method="_on_visibility_changed"]

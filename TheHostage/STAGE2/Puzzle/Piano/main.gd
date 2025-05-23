@@ -1,4 +1,5 @@
 extends Node2D
+@export var player_ref: CharacterBody3D
 
 var correct_sequence = [
 	"black 8", "black 9", "white 13", "black 8",
@@ -15,8 +16,13 @@ func register_click(color: String, number: int) -> void:
 
 	if entry == correct_sequence[expected_index]:
 		expected_index += 1
+		# Player can play piano pattern correctly
 		if expected_index == correct_sequence.size():
-			#print("win")
+			self.visible = false
+			player_ref.set_movement_enabled(true)
+			$NormalAudio2.stop()
+			$Scary1Audio2.stop()
+			$Scary2Audio2.stop()
 			expected_index = 0
 	else:
 		lose()
@@ -24,30 +30,36 @@ func register_click(color: String, number: int) -> void:
 
 func lose() -> void:
 	# Always stop and reset all audio first
-	$NormalAudio.stop()
-	$Scary1Audio.stop()
-	$Scary2Audio.stop()
-	$NormalAudio.seek(0)
-	$Scary1Audio.seek(0)
-	$Scary2Audio.seek(0)
+	$NormalAudio2.stop()
+	$Scary1Audio2.stop()
+	$Scary2Audio2.stop()
+	$NormalAudio2.seek(0)
+	$Scary1Audio2.seek(0)
+	$Scary2Audio2.seek(0)
 
 	# Play audio based on current lose counter
 	lose_counter += 1
 	match lose_counter:
 		0:
-			$NormalAudio.play()
+			$NormalAudio2.play()
 		1:
-			$Scary1Audio.play()
+			$Scary1Audio2.play()
+			SanitySystem.decrease_sanity(10.0)
 		2:
-			$Scary2Audio.play()
+			$Scary2Audio2.play()
+			SanitySystem.decrease_sanity(10.0)
+
 
 	# Increment and reset if necessary
 	#print("lose count:", lose_counter)
 
 	if lose_counter > 2:
 		print("RESET!")
+		SanitySystem.decrease_sanity(30.0)
+		self.visible = false
+		player_ref.set_movement_enabled(true)
 		lose_counter = 0
-		$NormalAudio.play()
+		$NormalAudio2.play()
 
 	expected_index = 0
 
