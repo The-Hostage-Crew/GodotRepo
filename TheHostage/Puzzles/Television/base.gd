@@ -279,7 +279,7 @@ func show_current_texture():
 
 # Helper function to show the glitch effect
 func show_glitch_effect():
-	if glitch_effect:
+	if glitch_effect and $".".visible == true:
 		# Hide all regular textures
 		for child in tv_channels.get_children():
 			if child is TextureRect and child.name != "GlitchEffect":
