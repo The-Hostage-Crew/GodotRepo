@@ -12,11 +12,22 @@ func _ready():
 
 # Call this function from other scenes to show a notification
 func show_notification(message_text: String):
+	# Jangan tambahkan ke queue kalau sudah aktif dan pesan sama dengan yang sedang tampil
+	if is_currently_showing and message_text == label.text:
+		print("Notification ignored (duplicate while showing): '", message_text, "'")
+		return
+	
+	# Cek jika message sudah ada di queue, skip
+	if message_text in notification_queue:
+		print("Notification ignored (duplicate in queue): '", message_text, "'")
+		return
+
 	if is_currently_showing:
 		notification_queue.append(message_text)
 		print("Notification queued: '", message_text, "'")
 	else:
 		_display_message(message_text)
+
 
 func _display_message(message_text: String):
 	is_currently_showing = true
