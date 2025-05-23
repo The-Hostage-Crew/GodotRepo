@@ -14,5 +14,7 @@ func have_scissor():
 
 func _on_visibility_changed() -> void:
 	if !showed:
-		Notify.show_notification("What are they trying to say?")
+		Notify.show_notification("Daniel: Uggh!!! I...")
+		Notify.show_notification("You: Daniel, what's wrong?")
+		Notify.show_notification("Daniel: I... I don't feel good about this...")
 		showed = true
