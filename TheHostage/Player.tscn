@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://pg72ck38jxea" path="res://assets/TheHostage/2D/healthgauge/new_gauge_health-removebg.png" id="7_63yt8"]
 [ext_resource type="Texture2D" uid="uid://um8jabrllkvl" path="res://assets/TheHostage/2D/healthgauge/new_gauge_sanity-removebg.png" id="8_83200"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="11_sjk4p"]
+[ext_resource type="PackedScene" uid="uid://dttft4ngfl7ye" path="res://scenes/pause_scene.tscn" id="10_83200"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp38p"]
 
