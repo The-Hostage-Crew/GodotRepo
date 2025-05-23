@@ -40,7 +40,7 @@ func interact() -> void:
 		if !showed:
 			if player_ref:
 				player_ref.set_movement_enabled(false)
-				
+			Global.in_modal = true
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			showed = true
@@ -48,6 +48,7 @@ func interact() -> void:
 			if player_ref:
 				player_ref.set_movement_enabled(true)
 				
+			Global.in_modal = false
 			modal.set_visible(false)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			showed = false

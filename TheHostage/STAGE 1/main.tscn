@@ -458,7 +458,7 @@ autoplay = "get_in_room"
 
 [node name="CanvasInventory" type="CanvasLayer" parent="."]
 
-[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("27_h0wdm")]
+[node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("17_ncsou")]
 visible = false
 
 [node name="Sounds" type="Node3D" parent="."]

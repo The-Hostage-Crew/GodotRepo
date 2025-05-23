@@ -12,6 +12,3 @@ func interact() -> void:
 	statue_2.pause_chase = false
 	player.look_at_target(true)
 	normal_audio_2.play()
-
-	# TODO: REMOVE AFTER DEBUG
-	#statue_2.enable_modal = true

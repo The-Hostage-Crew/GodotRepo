@@ -93,7 +93,14 @@ scale = Vector2(0.6, 0.6)
 value = 50.0
 texture_progress = ExtResource("8_83200")
 
+[node name="CanvasPauseModal" type="CanvasLayer" parent="."]
+process_mode = 2
+layer = 100
+
 [node name="CanvasInventory" type="CanvasLayer" parent="."]
+
+[node name="PauseScene" parent="CanvasPauseModal" instance=ExtResource("10_83200")]
+visible = false
 
 [node name="InventoryFix" parent="CanvasInventory" instance=ExtResource("11_sjk4p")]
 visible = false

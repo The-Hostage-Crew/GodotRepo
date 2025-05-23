@@ -77,6 +77,10 @@ func _ready():
 	sanity_bar.value = 100
 
 func _input(event):
+	if Input.is_action_just_pressed("pause") and not Global.in_modal:
+		pause_overlay.show()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
 		
 	if movement_enabled and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -84,11 +88,13 @@ func _input(event):
 		camera_x_rotation = clamp(camera_x_rotation + x_delta, -90.0, 90.0)
 		camera.rotation_degrees.x = -camera_x_rotation
 
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# Uncomment this if you need ESC key to show cursor
+
+	# if Input.is_action_just_pressed("ui_cancel"):
+	# 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	# 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# 	else:
+	# 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	# Toggle crouch
 	if Input.is_action_pressed("crouch"):
@@ -318,6 +324,10 @@ func trigger_fall_sequence():
 func set_movement_enabled(enabled: bool) -> void:
 	movement_enabled = enabled
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if enabled else Input.MOUSE_MODE_VISIBLE)
+	if not enabled:
+		Global.cursor_enabled = true
+	else:
+		Global.cursor_enabled = false
 
 
 func look_at_target(animate: bool):
