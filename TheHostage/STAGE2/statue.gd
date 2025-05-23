@@ -25,17 +25,19 @@ func _physics_process(delta: float) -> void:
 	var distance_to_player = statue_pos.distance_to(player_pos)
 	
 	if enable_modal:
-		interaction.enabled = true
 		pause_chase = true
+		interaction.enabled = true
+		$CollisionShape3D.disabled = true
+		$Interaction/CollisionShape3D.disabled = false
 	
-	if is_statue_visible():
+	if is_statue_visible() or enable_modal:
 		#print("statue is visible")
 		chase_player = false
 	else:
 		#print("statue is not visible")
 		chase_player = true
 	
-	if chase_player and not pause_chase:
+	if chase_player and not pause_chase and not pause_chase_distance:
 		nav.target_position = player.global_position
 		var direction = Vector3()
 		direction = nav.get_next_path_position() - global_position
@@ -88,8 +90,8 @@ func is_statue_visible() -> bool:
 
 	var result = space_state.intersect_ray(ray_params)
 	
-	#print(result)
+	# print(result)
 	
-	if result.is_empty():
+	if result.is_empty() or (result.has("collider") and result["collider"] == statue ):
 		return true
 	return false

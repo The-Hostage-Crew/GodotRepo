@@ -24,6 +24,7 @@ func register_click(color: String, number: int) -> void:
 			$NormalAudio2.stop()
 			$Scary1Audio2.stop()
 			$Scary2Audio2.stop()
+			%Statue2.enable_modal = true
 			expected_index = 0
 	else:
 		lose()
