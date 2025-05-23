@@ -1,3 +1,5 @@
+@tool
+
 extends Control
 
 signal value_changed(slider_name: String, value: int)

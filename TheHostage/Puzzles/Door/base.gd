@@ -46,6 +46,7 @@ func handle_code_check() -> void:
 		Fade._in()
 		await Fade.transition_finished
 		Global.stage1 = true
+		Global.is_stage2_safebox = true
 		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
 	else:
 		$LampBase.visible = true
