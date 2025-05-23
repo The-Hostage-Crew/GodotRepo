@@ -33,7 +33,6 @@
 [ext_resource type="Script" uid="uid://dgfbmrxc407ke" path="res://TheHostage/STAGE2/button_music.gd" id="29_ij6h0"]
 [ext_resource type="Texture2D" uid="uid://cut4pyem4bwna" path="res://assets/TheHostage/2D/inventoryitem/piano-clue.png" id="30_5qdqm"]
 [ext_resource type="Script" uid="uid://bjyxa7jauctid" path="res://TheHostage/STAGE2/close_button.gd" id="31_5qdqm"]
-[ext_resource type="PackedScene" uid="uid://cthwgflaqryy3" path="res://TheHostage/Puzzles/Television/base.tscn" id="34_dcpj7"]
 [ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="69_1ngtc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_y3a08"]
@@ -48,8 +47,8 @@ size = Vector3(2.75884, 3.3888, 8.7966)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqwok"]
 size = Vector3(2.9519, 3.6416, 6.19455)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_usegj"]
-size = Vector3(0.386505, 1, 0.0815125)
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgb0o"]
+size = Vector3(4.5531, 1.91052, 3.08795)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv5wy"]
 size = Vector3(2.31482, 2.37341, 3.77009)
@@ -113,6 +112,9 @@ size = Vector3(0.0412598, 0.65625, 1.96043)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cte0j"]
 size = Vector3(1.1582, 0.529785, 0.0220947)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usegj"]
+size = Vector3(0.386505, 1, 0.0815125)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyx5j"]
 size = Vector3(0.378616, 0.742676, 0.0801392)
@@ -180,8 +182,8 @@ modal = NodePath("../../../../../CanvasSafeBox/SafeboxPuzzle")
 player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D4/Safebox Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52515, 2.23734, -0.155926)
-shape = SubResource("BoxShape3D_usegj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654248, 1.83315, 0.179779)
+shape = SubResource("BoxShape3D_jgb0o")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09229, -1.62182, -13.9804)
@@ -439,7 +441,6 @@ transform = Transform3D(30, 0, 1.01181e-11, 0, 30, 0, -1.01181e-11, 0, 30, 3.392
 shape = SubResource("BoxShape3D_wq2rp")
 
 [node name="AtapRumah" type="Node3D" parent="."]
-visible = false
 
 [node name="ruangan besar" parent="AtapRumah" instance=ExtResource("9_35cjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9869, -23.8168, -4.96262)

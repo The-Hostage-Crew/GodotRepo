@@ -247,10 +247,11 @@ volume_db = -5.0
 autoplay = true
 loop = true
 
-[node name="CurtainInteraction" parent="Tirai terbuka" node_paths=PackedStringArray("modal", "trauma_viewport", "player_ref") instance=ExtResource("2_d1eib")]
+[node name="CurtainInteraction" parent="Tirai terbuka" node_paths=PackedStringArray("modal", "trauma_viewport", "mesh", "player_ref") instance=ExtResource("2_d1eib")]
 visible = false
 modal = NodePath("../tiraitertutup")
 trauma_viewport = NodePath("../SubViewport/VideoStreamPlayer")
+mesh = NodePath("../MeshInstance3D")
 player_ref = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tirai terbuka/CurtainInteraction"]

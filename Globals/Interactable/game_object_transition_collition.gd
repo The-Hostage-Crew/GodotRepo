@@ -3,12 +3,14 @@ extends Interactable
 @export var modal: Node
 @export var trauma_viewport: VideoStreamPlayer
 @export var music_button: Button
+@export var mesh: MeshInstance3D
 
 # Nullable use if player not found
 @export var player_ref: CharacterBody3D
 
 var showed := false
 var tirai_timer := Timer.new()
+var confirm_curtain := false
 
 func _ready() -> void:
 	add_child(tirai_timer)
@@ -19,10 +21,10 @@ func interact() -> void:
 		var is_tirai: bool = modal.name == "tiraitertutup"
 
 		if is_tirai:
-			print(tirai_timer)
+			mesh.position.z = -19
 			modal.set_visible(true)
+			showed = false
 			Notify.show_notification("GET OFF OF ME!!!")
-			showed = true
 			trauma_viewport.stream = load("res://assets/TheHostage/2D/constraint_[trauma]/ConstraintTraumaEnemyAngryAudio.ogv")
 			trauma_viewport.custom_minimum_size = Vector2(1920, 1080)  # ✅
 
@@ -35,7 +37,7 @@ func interact() -> void:
 			tirai_timer.wait_time = 5.0
 			tirai_timer.one_shot = false
 			tirai_timer.start()
-			
+
 			return
 
 		if !showed:
