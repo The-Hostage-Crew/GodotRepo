@@ -56,7 +56,8 @@ func _is_correct_pattern() -> bool:
 func _on_rotator_pressed() -> void:
 	print("Rotator pressed | opened? %s  pattern ok? %s" % [is_opened, is_pattern_correct])
 	if is_pattern_correct:
-		unlock()
+		if not is_opened:
+			unlock()
 	else:
 		animation_rotator.play("rotator_locked")
 		sound_locked.play()
