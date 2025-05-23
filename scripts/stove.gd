@@ -24,6 +24,10 @@ func _input(event: InputEvent) -> void:
 		if thawing_finish:
 			$Stove/Stove/AnimatedSprite2D.play("base")
 			thawing_finish = false
+			InventoryManager.remove_item("remote_ice")
+			InventoryManager.remove_item("battery_ice")
+			InventoryManager.add_item("remote")
+			InventoryManager.add_item("battery")
 			return
 
 		num_clicks += 1
@@ -39,10 +43,6 @@ func _input(event: InputEvent) -> void:
 			2:
 				start_thawing()
 			3:
-				InventoryManager.remove_item("remote_ice")
-				InventoryManager.remove_item("battery_ice")
-				InventoryManager.add_item("remote")
-				InventoryManager.add_item("battery")
 				has_ice = false
 				puzzle_container.interact()
 

@@ -243,8 +243,8 @@ func _process(delta: float) -> void:
 				glitch_effect.visible = false
 				
 			# Make sure sound stops if it's still playing (for very short sounds)
-			if switch_sound and switch_sound.is_playing() and switch_sound.get_playback_position() > 0.2:
-				switch_sound.stop()
+			# if switch_sound and switch_sound.is_playing() and switch_sound.get_playback_position() > 0.2:
+			# 	switch_sound.stop()
 	
 	# Handle animation for multiple textures if TV is on and we have textures to animate
 	elif tv_on_state and textures_to_animate.size() > 0 and (current_channel == 2 or current_channel == 4):
@@ -289,8 +289,10 @@ func show_glitch_effect():
 		glitch_effect.visible = true
 		
 		# Play the channel switch sound
-		if switch_sound and switch_sound.stream:
+		if switch_sound and switch_sound.stream and Global.in_modal:
 			switch_sound.play()
+			await get_tree().create_timer(0.2).timeout
+			switch_sound.stop()
 			print("Playing switch sound effect")
 		
 		print("Showing glitch effect")
