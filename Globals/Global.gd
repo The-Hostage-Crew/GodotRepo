@@ -14,7 +14,7 @@ var TheHostage_icon: bool = false
 var TheHostage: bool = false
 
 var glitch : bool = false
-var level : int =0 #klo 1 berarti easy ( sanity off ), 2 = hard ( sanity on )
+var level : int = 0 #klo 1 berarti easy ( sanity off ), 2 = hard ( sanity on )
 
 #chat edgar
 var last_chat_edgar: String = "TESSSS" #ini buat last chat yang ditampilin di histori
