@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg6bbxwufv523"]
+[gd_scene load_steps=12 format=3 uid="uid://dg6bbxwufv523"]
 
 [ext_resource type="PackedScene" uid="uid://cthwgflaqryy3" path="res://TheHostage/Puzzles/Television/base.tscn" id="1_hgape"]
 [ext_resource type="Texture2D" uid="uid://ytcj5g6dnb7x" path="res://assets/TheHostage/2D/stage_2/TV/ads_1.png" id="2_4oynw"]
+[ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="2_dfclw"]
 [ext_resource type="Script" uid="uid://crxtiadqtba54" path="res://TheHostage/Puzzles/Television/base.gd" id="2_x38lc"]
 [ext_resource type="Texture2D" uid="uid://b3e64xeu5j85k" path="res://assets/TheHostage/2D/stage_2/TV/ads_2.png" id="3_ritgu"]
 [ext_resource type="Texture2D" uid="uid://rmkitiv2jhoa" path="res://assets/TheHostage/2D/stage_2/TV/ads_3.png" id="4_01h2r"]
@@ -14,70 +15,105 @@
 [node name="WithRemote" type="CanvasLayer"]
 script = ExtResource("2_x38lc")
 
+[node name="Darken" parent="." instance=ExtResource("2_dfclw")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="TVArea" parent="." instance=ExtResource("1_hgape")]
-anchors_preset = -1
-anchor_left = 0.089
-anchor_top = 0.134
-anchor_right = 0.701
-anchor_bottom = 0.856
-offset_left = -102.528
-offset_top = -86.832
-offset_right = -807.552
-offset_bottom = -554.688
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Channels" type="Control" parent="TVArea"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Advertisement 1" type="TextureRect" parent="TVArea/Channels"]
 visible = false
 self_modulate = Color(0.703331, 0.854609, 0.919231, 1)
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_4oynw")
 
 [node name="Advertisement 2" type="TextureRect" parent="TVArea/Channels"]
 visible = false
 self_modulate = Color(0.97062, 0.882755, 0.683964, 1)
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_ritgu")
 
 [node name="Advertisement 3" type="TextureRect" parent="TVArea/Channels"]
 visible = false
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_01h2r")
 
 [node name="Talk Show" type="TextureRect" parent="TVArea/Channels"]
 visible = false
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_c5n6b")
 
 [node name="News 1" type="TextureRect" parent="TVArea/Channels"]
 visible = false
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_0ftkx")
 
 [node name="News 2" type="TextureRect" parent="TVArea/Channels"]
 visible = false
-layout_mode = 0
-offset_right = 880.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_cb1yv")
 
 [node name="GlitchEffect" type="TextureRect" parent="TVArea/Channels"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_dx2cp")
 
