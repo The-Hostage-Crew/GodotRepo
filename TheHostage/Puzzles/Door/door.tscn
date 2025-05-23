@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x8mrs6fw4jbm"]
+[gd_scene load_steps=15 format=3 uid="uid://x8mrs6fw4jbm"]
 
 [ext_resource type="PackedScene" uid="uid://xowfqgv6euob" path="res://TheHostage/Puzzles/DarkenModal/darken.tscn" id="1_4qhr8"]
 [ext_resource type="PackedScene" uid="uid://q51ynyhklo1u" path="res://TheHostage/Puzzles/Door/base.tscn" id="1_urg35"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://deqq13jfs2lim" path="res://assets/TheHostage/2D/doorlock_passcode/components/lamp/correct_answer/doorlock_lamp_green_glow_cropped.png" id="5_4qhr8"]
 [ext_resource type="AudioStream" uid="uid://cqhgqis05q0b0" path="res://assets/Sounds/SFX/Doorlock/262858__deleted_user_2906614__blip-1.wav" id="6_7tg6x"]
 [ext_resource type="Texture2D" uid="uid://cy2iobni5ydy" path="res://assets/TheHostage/WinScreen.png" id="11_3tfj2"]
+[ext_resource type="FontFile" uid="uid://c636clsm5w5mc" path="res://assets/Font/OCR/OCRAEXT.TTF" id="13_oamy2"]
+[ext_resource type="Script" uid="uid://bcudnhdeq3r7u" path="res://TheHostage/Puzzles/Door/end_screen.gd" id="14_wj12g"]
 
 [node name="DoorLock" type="Control"]
 layout_mode = 3
@@ -148,6 +150,7 @@ texture = ExtResource("3_3khd3")
 expand_mode = 1
 
 [node name="LampBaseTrue" type="TextureRect" parent="Base"]
+visible = false
 z_index = 1
 clip_contents = true
 layout_mode = 0
@@ -201,3 +204,109 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_3tfj2")
+
+[node name="WinScreenLuna" type="ColorRect" parent="Base"]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LunaText" type="RichTextLabel" parent="Base/WinScreenLuna"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.0
+offset_top = -24.5
+offset_right = 355.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("13_oamy2")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "Well done! Luna is still breathing today because of you!
+See you on the next stage :)"
+horizontal_alignment = 1
+
+[node name="EndScreen" type="ColorRect" parent="Base"]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("14_wj12g")
+
+[node name="EndScreenText" type="RichTextLabel" parent="Base/EndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.0
+offset_top = -37.5
+offset_right = 355.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("13_oamy2")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "You've reached the end… for now. The Hostage is still in development, and more is coming soon. Thank you for being part of the journey!"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Base/EndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = 135.0
+offset_right = 102.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="PlayAgain" type="Button" parent="Base/EndScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("13_oamy2")
+text = "Play Again"
+
+[node name="Exit" type="Button" parent="Base/EndScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("13_oamy2")
+text = "Exit Game"
+
+[connection signal="pressed" from="Base/EndScreen/Buttons/PlayAgain" to="Base/EndScreen" method="_on_play_again_pressed"]
+[connection signal="pressed" from="Base/EndScreen/Buttons/Exit" to="Base/EndScreen" method="_on_exit_pressed"]

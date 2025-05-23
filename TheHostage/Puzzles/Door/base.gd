@@ -5,6 +5,8 @@ const MAX_LENGTH := 8
 @export var CORRECT_CODE := "32348243"
 
 func _ready():
+	if Global.is_stage2_safebox:
+		CORRECT_CODE = "45071352"
 	for child in $GridContainer.get_children():
 		if child is Button:
 			var button_name := child.name
@@ -31,7 +33,7 @@ func _on_button_pressed(button_name: String) -> void:
 # Show glowing first, then resolve result
 func handle_code_check() -> void:
 	if input_text == CORRECT_CODE:
-		$LampBase.visible = true
+		$LampBaseTrue.visible = true
 		$GlowingLampTrue.visible = true
 		$SuccessAudio.play()
 		await get_tree().create_timer(1.0).timeout 
@@ -39,15 +41,23 @@ func handle_code_check() -> void:
 		await get_tree().create_timer(1.0).timeout 
 		Fade._in()
 		await Fade.transition_finished
-		$WinScreen.visible = true
+		if !Global.is_stage2_safebox:
+			$WinScreen.visible = true
+		else:
+			$WinScreenLuna.visible = true
 		Fade._out()
 		await Fade.transition_finished
 		await get_tree().create_timer(3.0).timeout 
 		Fade._in()
 		await Fade.transition_finished
 		Global.stage1 = true
-		Global.is_stage2_safebox = true
-		get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
+		if !Global.is_stage2_safebox:
+			Global.is_stage2_safebox = true
+			get_tree().change_scene_to_file("res://Desktop/MainDesktop/MainDesktop.tscn")
+		else:
+			$"EndScreen".visible = true
+			Fade._out()
+			await Fade.transition_finished
 	else:
 		$LampBase.visible = true
 		$GlowingLampFalse.visible = true
