@@ -57,7 +57,7 @@ func _ready() -> void:
 	hide_all_textures()
 	
 	# Connect input handling if remote is equipped
-	if check_remote_equipped():
+	if true:
 		# Connect to the TVArea for input instead of the Channels container
 		if !tv_area.is_connected("gui_input", Callable(self, "click_input_process")):
 			tv_area.connect("gui_input", Callable(self, "click_input_process"))
@@ -70,7 +70,7 @@ func _ready() -> void:
 	print("TV initialized. On: ", tv_on_state, " Channel: ", current_channel)
 
 func click_input_process(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and check_remote_equipped():
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			print("Click detected. Current channel: ", current_channel, " TV state: ", tv_on_state)
 			
@@ -103,11 +103,12 @@ func click_input_process(event):
 	
 func check_remote_equipped():
 	#TO DO: WRITE LOGIC OF GLOBAL CHECKING REMOTE STATUS HERE
-	
+	if InventoryManager.items.has("battery") and InventoryManager.items.has("remote"):
+		return true
 	# For testing, always return true
-	isRemote = true
-	print("Remote check: ", isRemote)
-	return isRemote
+	isRemote = InventoryManager.items.has("battery") and InventoryManager.items.has("remote")
+	#print("Remote check: ", isRemote)
+	return false
 	
 func show_channel():
 	print("Show channel called for channel: ", current_channel)
@@ -203,6 +204,10 @@ func hide_all_textures():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Handle the glitch effect timing and channel changes
+	if check_remote_equipped():
+		$TVArea/Channels.visible = true
+	else:
+		$TVArea/Channels.visible = false
 	if is_glitching:
 		glitch_timer += delta
 		
@@ -274,7 +279,7 @@ func show_current_texture():
 
 # Helper function to show the glitch effect
 func show_glitch_effect():
-	if glitch_effect:
+	if glitch_effect and $".".visible == true:
 		# Hide all regular textures
 		for child in tv_channels.get_children():
 			if child is TextureRect and child.name != "GlitchEffect":

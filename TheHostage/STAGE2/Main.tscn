@@ -368,9 +368,9 @@ transform = Transform3D(-0.590885, 0, -0.104189, 0, 0.6, 0, 0.104189, 0, -0.5908
 [node name="TVglb" parent="Room+ACC" instance=ExtResource("7_fn4ko")]
 transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 13.3291, 0.208611, -8.38504)
 
-[node name="TVCollision" parent="Room+ACC/TVglb" node_paths=PackedStringArray("tv_with_remote_modal", "tv_without_remote_modal") instance=ExtResource("2_h8xhn")]
-tv_with_remote_modal = NodePath("../../../WithRemote")
-tv_without_remote_modal = NodePath("../../../WithoutRemote")
+[node name="TVCollision" parent="Room+ACC/TVglb" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_h8xhn")]
+modal = NodePath("../../../WithRemote")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room+ACC/TVglb/TVCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229249, 0, 0.640381)
@@ -607,11 +607,6 @@ omni_range = 54.095
 
 [node name="WithRemote" parent="." instance=ExtResource("13_fqwok")]
 visible = false
-
-[node name="WithoutRemote" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Base" parent="WithoutRemote" instance=ExtResource("34_dcpj7")]
 
 [connection signal="screen_exited" from="Room+ACC/Statue2/VisibleOnScreenNotifier3D" to="Room+ACC/Statue2" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 [connection signal="pressed" from="CanvasLayer2/Main/MusicButton" to="CanvasLayer2/Main/MusicButton" method="_on_pressed"]
