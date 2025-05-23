@@ -1,5 +1,6 @@
 extends Node2D
 @export var player_ref: CharacterBody3D
+@onready var music_button: Button = $MusicButton
 
 var correct_sequence = [
 	"black 8", "black 9", "white 13", "black 8",
@@ -10,6 +11,10 @@ var current_sequence = []
 var expected_index := 0
 var failed := false
 var lose_counter := 0
+
+func _ready() -> void:
+	if Global.is_stage2_safebox_done == true:
+		music_button.visible = true
 
 func register_click(color: String, number: int) -> void:
 	var entry = "%s %d" % [color, number]

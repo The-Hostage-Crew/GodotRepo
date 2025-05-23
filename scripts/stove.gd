@@ -84,6 +84,7 @@ func complete_thawing():
 	thawing_active = false
 	thawing_finish = true
 	print("Thawing complete!")
+	Global.is_remote = true
 
 
 func check_scissor_equipped():
