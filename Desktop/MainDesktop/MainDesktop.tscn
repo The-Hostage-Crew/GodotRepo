@@ -398,6 +398,7 @@ shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
 
 [node name="MainDesktop" type="Node2D"]
+position = Vector2(0, -3)
 script = ExtResource("1_ofp3r")
 
 [node name="Desktop" type="Node2D" parent="."]

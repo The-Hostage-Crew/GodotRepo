@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://daxkam6s32gac"]
+[gd_scene load_steps=28 format=3 uid="uid://daxkam6s32gac"]
 
 [ext_resource type="Script" uid="uid://cpl6cmvaktu4b" path="res://TheHostage/Puzzles/Safebox/safebox.gd" id="1_i602w"]
 [ext_resource type="PackedScene" uid="uid://b8liro0ctgywv" path="res://TheHostage/Puzzles/Safebox/steel_rotator.tscn" id="1_mefdk"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bvnq1vubybcna" path="res://assets/TheHostage/2D/slider_components/button/button_Blue.png" id="17_gfkm2"]
 [ext_resource type="Texture2D" uid="uid://cgir7n4uxha8v" path="res://assets/TheHostage/2D/safebox/opened_safebox.png" id="18_qwohq"]
 [ext_resource type="Texture2D" uid="uid://cfee34k0tes73" path="res://assets/TheHostage/2D/safebox/safebox_scissor_taken.png" id="19_okfjx"]
+[ext_resource type="Texture2D" uid="uid://bgnr08jl45poe" path="res://assets/TheHostage/2D/safebox/stage 2/opened_safebox_stage2.png" id="22_p86q6"]
+[ext_resource type="Texture2D" uid="uid://d4hhkgmttvj8d" path="res://assets/TheHostage/2D/safebox/stage 2/opened_safebox2_stage2.png" id="23_dii7i"]
 
 [sub_resource type="Animation" id="Animation_okfjx"]
 length = 0.001
@@ -83,6 +85,95 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/SafeboxMusic:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/SafeboxMusicTaken:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fm5u5"]
+resource_name = "music-sheet"
+length = 5.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.51, 2.5, 2.75, 3.28, 4.25, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/SafeboxMusic:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2.75, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/SafeboxMusicTaken:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.75, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_qwohq"]
@@ -153,6 +244,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i602w"]
 _data = {
 &"RESET": SubResource("Animation_okfjx"),
+&"music-sheet": SubResource("Animation_fm5u5"),
 &"scissor": SubResource("Animation_qwohq")
 }
 
@@ -320,6 +412,20 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("19_okfjx")
+
+[node name="SafeboxMusic" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_p86q6")
+
+[node name="SafeboxMusicTaken" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("23_dii7i")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

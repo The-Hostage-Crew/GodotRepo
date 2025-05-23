@@ -3,8 +3,6 @@ extends Interactable
 @export var modal: Node
 @export var trauma_viewport: VideoStreamPlayer
 
-@onready var player: CharacterBody3D = %Player
-
 # Nullable use if player not found
 @export var player_ref: CharacterBody3D
 
@@ -42,18 +40,15 @@ func interact() -> void:
 		if !showed:
 			if player_ref:
 				player_ref.set_movement_enabled(false)
-			else:
-				player.set_movement_enabled(false)
-				
+			Global.in_modal = true
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			showed = true
 		else:
 			if player_ref:
 				player_ref.set_movement_enabled(true)
-			else:
-				player.set_movement_enabled(true)
 				
+			Global.in_modal = false
 			modal.set_visible(false)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			showed = false

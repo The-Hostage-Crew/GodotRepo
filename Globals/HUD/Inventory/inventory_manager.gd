@@ -16,6 +16,7 @@ var item_data := {
 	"battery_ice": preload("res://assets/TheHostage/2D/inventoryitem/Battery_Ice_Inventory.png"),
 	"remote": preload("res://assets/TheHostage/2D/inventoryitem/Remote_Inventory.png"),
 	"battery": preload("res://assets/TheHostage/2D/inventoryitem/Battery_Inventory.png"),
+	"music-sheet":preload("res://assets/TheHostage/2D/inventoryitem/piano-clue-icon.png")
 }
 
 

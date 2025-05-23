@@ -1,6 +1,10 @@
 # Global.gd
 extends Node
 
+# Pause Menu
+var cursor_enabled : bool = false
+var in_modal: bool = false
+
 var user_name: String = "lizi"
 var my_echo: bool = false
 var reply: bool = false
@@ -66,6 +70,9 @@ var timestamp: String = get_current_time_string()
 #apakah stage 1-2-3 sudah terlewati?
 var stage1 = false #klo stage1 menang ganti jadi True
 var stage2 = false #klo stage1 menang ganti jadi True
+
+var is_stage1_safebox = true
+var is_stage2_safebox = false
 
 func get_current_time_string() -> String:
 	var time_dict = Time.get_time_dict_from_system()
