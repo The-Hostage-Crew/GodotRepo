@@ -6,7 +6,7 @@ var MAX_SANITY = 100.0
 func decrease_sanity(amount):
 	if Global.level == 1:
 		return
-	elif Global.level == 1:
+	elif Global.level == 2:
 		HOSTAGE_SANITY -= amount
 
 func increase_sanity(amount):

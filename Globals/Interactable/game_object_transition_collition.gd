@@ -45,7 +45,8 @@ func interact() -> void:
 			if player_ref:
 				player_ref.set_movement_enabled(false)
 				if Global.is_stage2_safebox_done == true:
-					music_button.visible = true
+					if music_button:
+						music_button.visible = true
 			
 			Global.in_modal = true
 			modal.set_visible(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=73 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="Script" uid="uid://ivwpmg2571oi" path="res://TheHostage/STAGE2/main.gd" id="1_0t58k"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
@@ -26,15 +26,15 @@
 [ext_resource type="PackedScene" uid="uid://btcdnop40t70s" path="res://scenes/stove_interface.tscn" id="22_o2o4d"]
 [ext_resource type="PackedScene" uid="uid://bglswyt7apam2" path="res://TheHostage/STAGE2/Puzzle/Piano/main.tscn" id="24_7y5a0"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="26_ljuru"]
-[ext_resource type="AudioStream" uid="uid://ba7qvom6dttfh" path="res://assets/Sounds/piano/NormalPiano.wav" id="26_pel5l"]
+[ext_resource type="AudioStream" uid="uid://blhd6hiqjulbx" path="res://assets/Sounds/piano/NormalPiano.wav" id="26_pel5l"]
 [ext_resource type="PackedScene" uid="uid://c52358r0jgs17" path="res://assets/TheHostage/lamp/lamp2.glb" id="27_1ngtc"]
-[ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="27_1ngtc"]
-[ext_resource type="AudioStream" uid="uid://dmrbib5vosdso" path="res://assets/Sounds/piano/Scary1Piano.wav" id="27_cte0j"]
-[ext_resource type="AudioStream" uid="uid://b7xitgecqw4e0" path="res://assets/Sounds/piano/Scary2Piano.wav" id="28_ij6h0"]
+[ext_resource type="AudioStream" uid="uid://c6tswlrqkuw7f" path="res://assets/Sounds/piano/Scary1Piano.wav" id="27_cte0j"]
+[ext_resource type="AudioStream" uid="uid://omjxudk43lql" path="res://assets/Sounds/piano/Scary2Piano.wav" id="28_ij6h0"]
 [ext_resource type="Script" uid="uid://dgfbmrxc407ke" path="res://TheHostage/STAGE2/button_music.gd" id="29_ij6h0"]
 [ext_resource type="Texture2D" uid="uid://cut4pyem4bwna" path="res://assets/TheHostage/2D/inventoryitem/piano-clue.png" id="30_5qdqm"]
 [ext_resource type="Script" uid="uid://bjyxa7jauctid" path="res://TheHostage/STAGE2/close_button.gd" id="31_5qdqm"]
 [ext_resource type="PackedScene" uid="uid://cthwgflaqryy3" path="res://TheHostage/Puzzles/Television/base.tscn" id="34_dcpj7"]
+[ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="69_1ngtc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_y3a08"]
 vertices = PackedVector3Array(-25.1427, -2.78831, -37.6668, -25.1427, -2.78831, -21.9168, -24.3927, -2.78831, -21.4168, -6.89265, -2.78831, -20.6668, -6.89265, -2.78831, -37.6668, -24.3927, -2.78831, -20.6668, 18.3573, -2.78831, -35.9168, 17.6073, -2.78831, -35.1668, 17.8573, -2.78831, -33.4168, 20.3573, -2.78831, -33.4168, 23.1073, -2.78831, -34.9168, 22.3573, -2.78831, -35.9168, 20.3573, -2.78831, -23.1668, 18.8573, -2.78831, -23.1668, 18.8573, -2.78831, -20.6668, 21.1073, -2.78831, -32.6668, 21.1073, -2.78831, -23.9168, 23.8573, -2.78831, -20.6668, 23.8573, -2.78831, -34.9168, -3.64265, -2.78831, -30.4168, -2.89265, -2.78831, -30.4168, -2.89265, -2.78831, -31.4168, -3.64265, -2.78831, -35.1668, -2.14265, -2.78831, -32.1668, 7.10735, -2.78831, -32.1668, 7.10735, -2.78831, -35.1668, 8.60735, -2.78831, -31.1668, 9.35735, -2.78831, -29.9168, 10.1073, -2.78831, -29.9168, 16.8573, -2.78831, -32.6668, 10.8573, -2.78831, -29.1668, 10.8573, -2.78831, -27.9168, 16.8573, -2.78831, -27.9168, 29.3573, -2.78831, 1.33317, 29.6073, -2.78831, 2.08317, 30.3573, -2.78831, 2.08317, 30.3573, -2.78831, -34.9168, 29.3573, -2.78831, -34.9168, -2.89265, -2.78831, -24.4168, -3.64265, -2.78831, -20.6668, 7.10735, -2.78831, -20.6668, 7.10735, -2.78831, -23.6668, -2.14265, -2.78831, -23.6668, 6.60735, 0.21169, -27.6668, 8.10735, -0.0383101, -27.6668, 7.85735, -0.0383101, -28.4168, 6.60735, 0.21169, -28.1668, 6.10735, 0.21169, -28.6668, 6.10735, 0.21169, -30.1668, -0.892651, 0.21169, -30.1668, 6.10735, 0.21169, -27.1668, -0.892651, 0.21169, -25.6668, 6.10735, 0.21169, -25.6668, 10.1073, -2.78831, -25.9168, 9.35735, -2.78831, -25.9168, 8.60735, -2.78831, -24.6668, 8.10735, -2.78831, -19.4168, 17.6073, -2.78831, -23.1668, 14.8573, -2.78831, -20.6668, 16.8573, -2.78831, -23.9168, 14.1073, -2.78831, -19.4168, 10.8573, -2.78831, -26.6668, 20.1073, -2.78831, -13.9168, 19.3573, -2.78831, -14.4168, 17.6073, -2.78831, -14.4168, 17.1073, -2.78831, -11.9168, 17.1073, -2.78831, -10.4168, 19.6073, -2.78831, -10.6668, 6.35735, -2.78831, -13.4168, 6.60735, -2.78831, -9.91683, 12.6073, -2.78831, -11.9168, 13.3573, -2.78831, -12.6668, 14.1073, -2.78831, -18.6668, 20.1073, -2.78831, -10.1668, 16.8573, -2.78831, -15.1668, 16.8573, -2.78831, -17.9168, 14.8573, -2.78831, -17.9168, 7.35735, -2.78831, -18.1668, 16.3573, -2.78831, -12.6668, 6.35735, -2.78831, -18.1668, 12.6073, -2.78831, -9.91683, 18.8573, 11.2117, -18.4168, 18.8573, 11.2117, -16.4168, 24.3573, 11.2117, -16.4168, 24.3573, 11.2117, -18.4168, -18.3927, -2.78831, -12.1668, -18.3927, -2.78831, -14.6668, -19.3927, -2.78831, -14.6668, -20.1427, -2.78831, -15.4168, -24.3927, -2.78831, -18.1668, -24.3927, -2.78831, -12.1668, -20.1427, -2.78831, -18.1668, -7.64265, -2.78831, -16.9168, -6.89265, -2.78831, -16.9168, -6.89265, -2.78831, -18.1668, -8.39265, -2.78831, -16.1668, -10.1427, -2.78831, -18.1668, -10.1427, -2.78831, -15.4168, -17.6427, -2.78831, -12.1668, -16.8927, -2.78831, -11.4168, -10.8927, -2.78831, -14.6668, -9.39265, -2.78831, -12.1668, -16.8927, -2.78831, -7.16683, -9.39265, -2.78831, -7.16683, -8.39265, -2.78831, -12.9168, -3.64265, 0.46169, -18.1668, -3.64265, 0.46169, -12.1668, -3.14265, 0.46169, -12.1668, -3.14265, 0.46169, -18.1668, -1.14265, -2.78831, -12.1668, 1.60735, -2.78831, -11.9168, 1.60735, -2.78831, -13.1668, 2.35735, -2.78831, -13.9168, -1.14265, -2.78831, -18.1668, 5.85735, -2.78831, -13.9168, -18.1427, -1.03831, -17.9168, -18.1427, -1.03831, -16.6668, -12.1427, -1.03831, -16.6668, -12.1427, -1.03831, -17.9168, 25.6073, -2.78831, -14.4168, 23.3573, -2.78831, -14.4168, 23.1073, -2.78831, -13.9168, 19.6073, -2.78831, -4.16683, 18.1073, -2.78831, -4.16683, 18.3573, -2.78831, -0.916832, 20.3573, -2.78831, -4.91683, 26.1073, -2.78831, -0.916832, 26.1073, -2.78831, -14.9168, -4.39265, -2.78831, -3.66683, -5.39265, -2.78831, -3.66683, -5.39265, -2.78831, -2.16683, -2.39265, -2.78831, -2.16683, -3.64265, -2.78831, -4.41683, -1.89265, -2.78831, -10.1668, -3.64265, -2.78831, -10.1668, -1.14265, -2.78831, -10.9168, -1.64265, -2.78831, -1.41683, 4.10735, -2.78831, 0.583168, 4.10735, -2.78831, -2.91683, 2.35735, -2.78831, -2.91683, 1.60735, -2.78831, -3.66683, -1.64265, -2.78831, 0.583168, 3.60735, 0.46169, -11.9168, 3.60735, 0.46169, -4.91683, 4.60735, 0.46169, -4.91683, 4.60735, 0.46169, -11.9168, 3.85735, -2.78831, -11.6668, 3.85735, -2.78831, -5.16683, 4.35735, -2.78831, -5.16683, 4.35735, -2.78831, -11.6668, -7.39265, 0.96169, -10.9168, -7.39265, 0.96169, -6.41683, -6.89265, 0.96169, -6.41683, -6.89265, 0.96169, -10.9168, 14.6073, -0.28831, -10.6668, 14.6073, -0.28831, -5.16683, 15.1073, -0.28831, -5.16683, 15.1073, -0.28831, -10.6668, -24.3927, 2.46169, -10.1668, -24.3927, 2.46169, -6.16683, -18.8927, 2.46169, -6.16683, -18.8927, 2.46169, -10.1668, -24.3927, -2.78831, -9.91683, -24.3927, -2.78831, -6.41683, -19.1427, -2.78831, -6.41683, -19.1427, -2.78831, -9.91683, 17.1073, -2.78831, -4.41683, 16.3573, -2.78831, -3.16683, 5.85735, -2.78831, -2.91683, 13.6073, -2.78831, -0.916832, 13.3573, -2.78831, -3.16683, 12.6073, -2.78831, -3.91683, 6.60735, -2.78831, -3.66683, 12.8573, -2.78831, -0.166832, 12.8573, -2.78831, 0.583168, -6.14265, -2.78831, -3.66683, -7.89265, -2.78831, -2.16683, -6.64265, -2.78831, -4.41683, -8.64265, -2.78831, -4.41683, -17.6427, -2.78831, -4.16683, -19.1427, -2.78831, -4.16683, -18.8927, -2.78831, 0.583168, -8.64265, -2.78831, 0.583168, -8.64265, -2.78831, -1.41683, -9.39265, -2.78831, -5.16683, -16.8927, -2.78831, -4.91683, -24.3927, -2.78831, -4.16683, -24.3927, -2.78831, 0.583168)
@@ -218,8 +218,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6787, -0.317686, -18.1145)
 shape = SubResource("BoxShape3D_du68g")
 debug_color = Color(0.935544, 0.245217, 0.17507, 0.42)
 
-[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_h8xhn")]
+[node name="Piano" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11" node_paths=PackedStringArray("modal", "music_button", "player_ref") instance=ExtResource("2_h8xhn")]
 modal = NodePath("../../../../../CanvasLayer2/Main")
+music_button = NodePath("../../../../../CanvasLayer2/Main/MusicButton")
 player_ref = NodePath("../../../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D11/Piano"]
@@ -517,6 +518,7 @@ stream = ExtResource("28_ij6h0")
 volume_db = -15.0
 
 [node name="MusicButton" type="Button" parent="CanvasLayer2/Main"]
+visible = false
 offset_left = 1036.0
 offset_top = 13.0
 offset_right = 1137.0
@@ -559,7 +561,7 @@ visible = false
 
 [node name="CanvasSafeBox" type="CanvasLayer" parent="."]
 
-[node name="SafeboxPuzzle" parent="CanvasSafeBox" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("27_1ngtc")]
+[node name="SafeboxPuzzle" parent="CanvasSafeBox" node_paths=PackedStringArray("safebox_collision", "player") instance=ExtResource("69_1ngtc")]
 visible = false
 safebox_collision = NodePath("../../NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D4/Safebox Collision")
 player = NodePath("../../Player")

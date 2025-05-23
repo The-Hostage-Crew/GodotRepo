@@ -5,12 +5,14 @@ const MAX_LENGTH := 8
 @export var CORRECT_CODE := "32348243"
 
 func _ready():
-	if Global.is_stage2_safebox:
-		CORRECT_CODE = "45071352"
 	for child in $GridContainer.get_children():
 		if child is Button:
 			var button_name := child.name
 			child.pressed.connect(func(): _on_button_pressed(button_name))
+
+func _process(delta: float) -> void:
+	if Global.is_stage2_safebox:
+		CORRECT_CODE = "45071352"
 
 func _on_button_pressed(button_name: String) -> void:
 	$ClickAudio.play()
