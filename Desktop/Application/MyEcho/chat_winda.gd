@@ -7,14 +7,14 @@ var time_bool = false #inisiai timer untuk jeda tiap chat
 var notif_sfx = true
 
 func _ready() :
-	#nanti hapus
-	$"ScrollContainer/VBoxContainer/1".visible = false
-	$"ScrollContainer/VBoxContainer/2".visible = false
-	$"ScrollContainer/VBoxContainer/3".visible = false
-	$"ScrollContainer/VBoxContainer/4".visible = false
-	$"ScrollContainer/VBoxContainer/5".visible = false
-	$"ScrollContainer/VBoxContainer/6".visible = false
-	$"ScrollContainer/VBoxContainer/7".visible = false
+	if Global.stage1 == false :
+		$"ScrollContainer/VBoxContainer/1".visible = false
+		$"ScrollContainer/VBoxContainer/2".visible = false
+		$"ScrollContainer/VBoxContainer/3".visible = false
+		$"ScrollContainer/VBoxContainer/4".visible = false
+		$"ScrollContainer/VBoxContainer/5".visible = false
+		$"ScrollContainer/VBoxContainer/6".visible = false
+		$"ScrollContainer/VBoxContainer/7".visible = false
 
 
 	#inisiasi timer

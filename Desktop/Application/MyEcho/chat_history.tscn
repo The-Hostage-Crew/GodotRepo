@@ -474,7 +474,6 @@ theme_override_font_sizes/font_size = 12
 text = "Sedang mengetik ..."
 
 [node name="xxx_info" type="HBoxContainer" parent="chat_info"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 
@@ -482,9 +481,9 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_constants/margin_left = 10
 
-[node name="TextureRect" type="TextureRect" parent="chat_info/xxx_info/MarginContainer"]
+[node name="TextureRect2" type="TextureRect" parent="chat_info/xxx_info/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("11_d7lwf")
+texture = ExtResource("12_m747g")
 stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="chat_info/xxx_info"]

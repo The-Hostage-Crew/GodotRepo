@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6hvo1dlhfoa5"]
 
-[ext_resource type="FontFile" uid="uid://dmp6oo0wcqka3" path="res://assets/Font/CascadiaCode/CascadiaCode-VariableFont_wght.ttf" id="1_rvlha"]
+[ext_resource type="FontFile" uid="uid://dn6f12afvptqp" path="res://assets/Font/CascadiaCode/CascadiaCode-VariableFont_wght.ttf" id="1_rvlha"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evw6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vx5ut"]
 
-[node name="Input" type="Control"]
+[node name="level_input" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
