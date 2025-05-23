@@ -4,3 +4,4 @@ func _ready() -> void:
 	InventoryManager.items = []
 	InventoryManager.rebuild_inventory()
 	Global.is_stage2_safebox = true
+	$AtapRumah.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://kif4tufp4h6t"]
+[gd_scene load_steps=62 format=3 uid="uid://kif4tufp4h6t"]
 
 [ext_resource type="Script" uid="uid://ivwpmg2571oi" path="res://TheHostage/STAGE2/main.gd" id="1_0t58k"]
 [ext_resource type="PackedScene" uid="uid://dff2jbag28lnf" path="res://TheHostage/Player.tscn" id="1_o41f8"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://btcdnop40t70s" path="res://scenes/stove_interface.tscn" id="22_o2o4d"]
 [ext_resource type="PackedScene" uid="uid://bglswyt7apam2" path="res://TheHostage/STAGE2/Puzzle/Piano/main.tscn" id="24_7y5a0"]
 [ext_resource type="PackedScene" uid="uid://l61g8jokmiji" path="res://Globals/HUD/Inventory/inventory.tscn" id="26_ljuru"]
+[ext_resource type="PackedScene" uid="uid://c52358r0jgs17" path="res://assets/TheHostage/lamp/lamp2.glb" id="27_1ngtc"]
 [ext_resource type="PackedScene" uid="uid://daxkam6s32gac" path="res://TheHostage/Puzzles/Safebox/safebox.tscn" id="27_1ngtc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_y3a08"]
@@ -135,6 +136,11 @@ size = Vector3(3.88477, 6.91562, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wq2rp"]
 size = Vector3(0.102732, 0.158142, 0.0884476)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljuru"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ngtc"]
 
 [node name="Main2" type="Node3D"]
 script = ExtResource("1_0t58k")
@@ -360,16 +366,6 @@ transform = Transform3D(-1.5299e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5299e-07, 26
 [node name="Safebox" parent="Room+ACC" instance=ExtResource("16_h8xhn")]
 transform = Transform3D(-3.0598e-07, 0, -7, 0, 7, 0, 7, 0, -3.0598e-07, -6.63023, -0.456004, -8.55774)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151941, 2.42385, 0.0225496)
-light_energy = 16.0
-omni_range = 49.736
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860993, -7.18774, -27.0843)
-light_energy = 16.0
-omni_range = 49.736
-
 [node name="pintu" parent="." instance=ExtResource("10_35cjv")]
 transform = Transform3D(-4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -5.12541, -3.7763, -1.03522)
 
@@ -513,6 +509,45 @@ visible = false
 visible = false
 safebox_collision = NodePath("../../NavigationRegion3D/Obstacles/StaticBody3D/CollisionShape3D4/Safebox Collision")
 player = NodePath("../../Player")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, -14.8901, 1.16799, 4.36118)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, 3.48675, 1.16799, -38.8829)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.59, 0, 0, 0, 8.36, 0, 0, 0, 2.82, 19.7346, 1.16799, -38.8829)
+material_override = SubResource("StandardMaterial3D_ljuru")
+mesh = SubResource("BoxMesh_1ngtc")
+
+[node name="lamp2" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, -23.9663, 4.82731, -8.49565)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1555, 3.57162, -8.46034)
+light_energy = 16.0
+omni_range = 54.095
+
+[node name="lamp3" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, 3.07479, 4.82731, -10.0978)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.88566, 3.57162, -10.0624)
+light_energy = 16.0
+omni_range = 54.095
+
+[node name="lamp4" parent="." instance=ExtResource("27_1ngtc")]
+transform = Transform3D(4.655, 0, 0, 0, 4.655, 0, 0, 0, 4.655, 4.73136, 4.82731, -31.4899)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5422, 3.57162, -31.4546)
+light_energy = 16.0
+omni_range = 54.095
 
 [connection signal="screen_exited" from="Room+ACC/Statue2/VisibleOnScreenNotifier3D" to="Room+ACC/Statue2" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 
