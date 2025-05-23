@@ -103,11 +103,12 @@ func click_input_process(event):
 	
 func check_remote_equipped():
 	#TO DO: WRITE LOGIC OF GLOBAL CHECKING REMOTE STATUS HERE
-	
+	if InventoryManager.items.has("battery") and InventoryManager.items.has("remote"):
+		return true
 	# For testing, always return true
-	isRemote = true
-	print("Remote check: ", isRemote)
-	return isRemote
+	isRemote = InventoryManager.items.has("battery") and InventoryManager.items.has("remote")
+	#print("Remote check: ", isRemote)
+	return false
 	
 func show_channel():
 	print("Show channel called for channel: ", current_channel)
@@ -203,6 +204,10 @@ func hide_all_textures():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Handle the glitch effect timing and channel changes
+	if check_remote_equipped():
+		$TVArea/Channels.visible = true
+	else:
+		$TVArea/Channels.visible = false
 	if is_glitching:
 		glitch_timer += delta
 		

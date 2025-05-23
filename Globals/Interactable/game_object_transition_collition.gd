@@ -7,9 +7,6 @@ extends Interactable
 # Nullable use if player not found
 @export var player_ref: CharacterBody3D
 
-@export var tv_with_remote_modal: Node
-@export var tv_without_remote_modal: Node
-
 var showed := false
 var tirai_timer := Timer.new()
 
@@ -47,6 +44,11 @@ func interact() -> void:
 				if Global.is_stage2_safebox_done == true:
 					music_button.visible = true
 			
+			if modal.name == "WithRemote":
+				if Global.is_remote == true:
+					pass
+				else:
+					pass
 			Global.in_modal = true
 			modal.set_visible(true)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
