@@ -57,7 +57,7 @@ func _ready() -> void:
 	hide_all_textures()
 	
 	# Connect input handling if remote is equipped
-	if check_remote_equipped():
+	if true:
 		# Connect to the TVArea for input instead of the Channels container
 		if !tv_area.is_connected("gui_input", Callable(self, "click_input_process")):
 			tv_area.connect("gui_input", Callable(self, "click_input_process"))
@@ -70,7 +70,7 @@ func _ready() -> void:
 	print("TV initialized. On: ", tv_on_state, " Channel: ", current_channel)
 
 func click_input_process(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and check_remote_equipped():
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			print("Click detected. Current channel: ", current_channel, " TV state: ", tv_on_state)
 			
