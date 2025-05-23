@@ -246,10 +246,11 @@ volume_db = -5.0
 autoplay = true
 loop = true
 
-[node name="CurtainInteraction" parent="Tirai terbuka" node_paths=PackedStringArray("modal", "trauma_viewport") instance=ExtResource("2_d1eib")]
+[node name="CurtainInteraction" parent="Tirai terbuka" node_paths=PackedStringArray("modal", "trauma_viewport", "player_ref") instance=ExtResource("2_d1eib")]
 visible = false
 modal = NodePath("../tiraitertutup")
 trauma_viewport = NodePath("../SubViewport/VideoStreamPlayer")
+player_ref = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tirai terbuka/CurtainInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7906, 7.96686, -15.8242)
@@ -291,10 +292,11 @@ shape = SubResource("BoxShape3D_8hstr")
 [node name="Board" parent="NavigationRegion3D" instance=ExtResource("7_8av70")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -14.4564, 9.05873, -4.56962)
 
-[node name="BoardCollision" type="StaticBody3D" parent="NavigationRegion3D/Board" node_paths=PackedStringArray("modal")]
+[node name="BoardCollision" type="StaticBody3D" parent="NavigationRegion3D/Board" node_paths=PackedStringArray("modal", "player_ref")]
 transform = Transform3D(-2.68212e-10, 0, 0.0025, 0, 0.0025, 0, -0.0025, 0, -2.68212e-10, 0.18627, 0.476602, -0.0614891)
 script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/Pinboard")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Board/BoardCollision"]
 transform = Transform3D(30, 0, 3.3333e-10, 0, 30, 0, -3.3333e-10, 0, 30, 21.761, 33.0254, -77.0661)
@@ -310,9 +312,10 @@ texture = ExtResource("12_8hstr")
 
 [node name="Table" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="TableInteraction" parent="NavigationRegion3D/Table" node_paths=PackedStringArray("modal") instance=ExtResource("2_d1eib")]
+[node name="TableInteraction" parent="NavigationRegion3D/Table" node_paths=PackedStringArray("modal", "player_ref") instance=ExtResource("2_d1eib")]
 transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, -14.8253, 5.79757, -5.68724)
 modal = NodePath("../../../CanvasModal/Diary")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Table/TableInteraction"]
 transform = Transform3D(30, 0, 2.35559e-10, 0, 30, 0, -2.35559e-10, 0, 30, -99.2294, -6.54245, -102.23)
@@ -321,9 +324,10 @@ shape = SubResource("BoxShape3D_d1eib")
 [node name="Safebox" parent="NavigationRegion3D" instance=ExtResource("5_b714i")]
 transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -0.168154, 8.03789, 14.012)
 
-[node name="SafeboxCollision" type="StaticBody3D" parent="NavigationRegion3D/Safebox" node_paths=PackedStringArray("modal")]
+[node name="SafeboxCollision" type="StaticBody3D" parent="NavigationRegion3D/Safebox" node_paths=PackedStringArray("modal", "player_ref")]
 script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/CanvasSafebox")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Safebox/SafeboxCollision"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00675507, -0.251996, -0.203811)
@@ -333,10 +337,11 @@ debug_color = Color(0.998324, 0.0374826, 7.70092e-07, 1)
 [node name="DoorLock" parent="NavigationRegion3D" instance=ExtResource("6_8av70")]
 transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 12.6212, 8.23108, -9.84949)
 
-[node name="DoorLockCollision" type="StaticBody3D" parent="NavigationRegion3D/DoorLock" node_paths=PackedStringArray("modal")]
+[node name="DoorLockCollision" type="StaticBody3D" parent="NavigationRegion3D/DoorLock" node_paths=PackedStringArray("modal", "player_ref")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 167.64, 0, 0)
 script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/Door")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DoorLock/DoorLockCollision"]
 transform = Transform3D(30, 0, 1.00044e-11, 0, 30, 0, -1.00044e-11, 0, 30, -308.532, 15.282, -113.009)
@@ -345,9 +350,10 @@ shape = SubResource("BoxShape3D_d1eib")
 [node name="Photo" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7881, 9.68554, 8.74243)
 
-[node name="PhotoCollision" type="StaticBody3D" parent="NavigationRegion3D/Photo" node_paths=PackedStringArray("modal")]
+[node name="PhotoCollision" type="StaticBody3D" parent="NavigationRegion3D/Photo" node_paths=PackedStringArray("modal", "player_ref")]
 script = ExtResource("9_dqq41")
 modal = NodePath("../../../CanvasModal/Photo")
+player_ref = NodePath("../../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Photo/PhotoCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302476, -0.851524, -0.15374)

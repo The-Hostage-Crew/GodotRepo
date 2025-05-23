@@ -28,9 +28,7 @@ Notify="*res://Globals/NotifyPlayer/notify.tscn"
 
 [display]
 
-window/size/mode=3
 window/size/resizable=false
-window/stretch/mode="viewport"
 
 [filesystem]
 
